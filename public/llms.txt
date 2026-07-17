@@ -1,0 +1,30 @@
+# CoolPDF
+
+> Free PDF tools that respect your privacy — 100% client-side processing, no uploads, no sign-up, free forever.
+
+CoolPDF is a free, browser-based PDF toolkit. Unlike traditional online PDF tools, CoolPDF processes all files locally on the user's device using WebAssembly — files are never uploaded to any server. The tools require no account, no email, and no sign-up, and are completely free with no usage limits. This makes CoolPDF suitable for confidential documents such as contracts, medical records, and financial statements.
+
+## Core facts
+
+- 100% client-side processing: files never leave the user's device and are never uploaded to any server.
+- No sign-up: no account, no email address, no personal information required.
+- Free forever: every tool is free with no usage limits, no watermarks, and no premium tier; the site is funded by unobtrusive advertising.
+- Open source: the full codebase is released under the GNU AGPL-3.0 license and can be audited on GitHub.
+- Verifiable privacy: the tools keep working after disconnecting from the internet, and browser DevTools show zero file uploads.
+- Available in 7 languages: English, German, French, Italian, Spanish, Portuguese, and Chinese.
+
+## Tools
+
+Merge PDF, Split PDF, Compress PDF, Rotate PDF, Organize PDF, PDF to JPG, JPG to PDF, Protect PDF, Unlock PDF, Watermark PDF, Page Numbers, PDF to Markdown.
+
+## Pages
+
+- Home: https://getcoolpdf.com/
+- About: https://getcoolpdf.com/about/
+- Privacy Policy: https://getcoolpdf.com/privacy/
+- Terms of Service: https://getcoolpdf.com/terms/
+- FAQ: https://getcoolpdf.com/faq/
+
+## Source code
+
+- GitHub: https://github.com/coolpdf
