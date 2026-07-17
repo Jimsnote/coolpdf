@@ -1,7 +1,8 @@
 import { ArrowDown, CheckCircle2, Lock, Zap } from 'lucide-react';
+import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/locales/en';
-import { localizedUrl } from '@/lib/seo';
+import { localizedPath, localizedUrl } from '@/lib/seo';
 import { GITHUB_URL, SITE_NAME } from '@/lib/site';
 import { tools, toolNamesEn } from '@/lib/tools';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -95,14 +96,8 @@ export function HomePage({ locale, dict }: HomePageProps) {
             const Icon = tool.icon;
             const copy = dict.tools[tool.i18nKey];
             const live = tool.status === 'live';
-            return (
-              <div
-                key={tool.slug}
-                aria-disabled={!live}
-                className={`relative rounded-xl border border-slate-200 bg-white p-5 ${
-                  live ? 'shadow-sm transition-shadow hover:shadow-md' : 'opacity-80'
-                }`}
-              >
+            const cardBody = (
+              <>
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
                     <Icon className="h-5 w-5" aria-hidden />
@@ -115,6 +110,22 @@ export function HomePage({ locale, dict }: HomePageProps) {
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-slate-900">{copy.name}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{copy.description}</p>
+              </>
+            );
+            const cardClass = `relative rounded-xl border border-slate-200 bg-white p-5 ${
+              live ? 'shadow-sm transition-shadow hover:shadow-md' : 'opacity-80'
+            }`;
+            return live ? (
+              <Link
+                key={tool.slug}
+                href={localizedPath(locale, `/${tool.slug}`)}
+                className={cardClass}
+              >
+                {cardBody}
+              </Link>
+            ) : (
+              <div key={tool.slug} aria-disabled className={cardClass}>
+                {cardBody}
               </div>
             );
           })}

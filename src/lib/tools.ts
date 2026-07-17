@@ -30,13 +30,13 @@ export interface Tool {
  * exists.
  */
 export const tools: Tool[] = [
-  { slug: 'merge-pdf', icon: Merge, i18nKey: 'merge-pdf', status: 'coming-soon' },
-  { slug: 'split-pdf', icon: Scissors, i18nKey: 'split-pdf', status: 'coming-soon' },
+  { slug: 'merge-pdf', icon: Merge, i18nKey: 'merge-pdf', status: 'live' },
+  { slug: 'split-pdf', icon: Scissors, i18nKey: 'split-pdf', status: 'live' },
   { slug: 'compress-pdf', icon: Minimize2, i18nKey: 'compress-pdf', status: 'coming-soon' },
-  { slug: 'rotate-pdf', icon: RotateCw, i18nKey: 'rotate-pdf', status: 'coming-soon' },
+  { slug: 'rotate-pdf', icon: RotateCw, i18nKey: 'rotate-pdf', status: 'live' },
   { slug: 'organize-pdf', icon: LayoutGrid, i18nKey: 'organize-pdf', status: 'coming-soon' },
   { slug: 'pdf-to-jpg', icon: Image, i18nKey: 'pdf-to-jpg', status: 'coming-soon' },
-  { slug: 'jpg-to-pdf', icon: FileImage, i18nKey: 'jpg-to-pdf', status: 'coming-soon' },
+  { slug: 'jpg-to-pdf', icon: FileImage, i18nKey: 'jpg-to-pdf', status: 'live' },
   { slug: 'protect-pdf', icon: Lock, i18nKey: 'protect-pdf', status: 'coming-soon' },
   { slug: 'unlock-pdf', icon: LockOpen, i18nKey: 'unlock-pdf', status: 'coming-soon' },
   { slug: 'watermark-pdf', icon: Stamp, i18nKey: 'watermark-pdf', status: 'coming-soon' },

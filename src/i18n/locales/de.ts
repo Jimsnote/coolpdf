@@ -373,4 +373,199 @@ export const de = {
   },
   factSummary:
     'CoolPDF ist ein kostenloses, browserbasiertes PDF-Toolkit. Im Gegensatz zu herkömmlichen Online-PDF-Tools verarbeitet CoolPDF alle Dateien lokal auf dem Gerät des Nutzers mithilfe von WebAssembly — Dateien werden niemals auf einen Server hochgeladen. Die Tools benötigen kein Konto, keine E-Mail-Adresse und keine Registrierung und sind vollständig kostenlos, ohne Nutzungslimits. Dadurch eignet sich CoolPDF auch für vertrauliche Dokumente wie Verträge, Krankenakten und Finanzunterlagen.',
+  toolUi: {
+    privacyNote:
+      'Ihre Dateien werden lokal in Ihrem Browser verarbeitet — es wird nichts hochgeladen.',
+    dropPdfs: 'PDF-Dateien hierher ziehen oder klicken, um zu durchsuchen',
+    dropImages: 'JPG- oder PNG-Bilder hierher ziehen oder klicken, um zu durchsuchen',
+    moveUp: 'Nach oben',
+    moveDown: 'Nach unten',
+    remove: 'Entfernen',
+    processing: 'Wird verarbeitet…',
+    download: 'Herunterladen',
+    readyTitle: 'Ihre Datei ist fertig',
+    errors: {
+      onlyPdf: 'Es werden nur PDF-Dateien unterstützt.',
+      onlyImages: 'Es werden nur JPG- und PNG-Bilder unterstützt.',
+      tooManyFiles: 'Sie können höchstens {max} Dateien hinzufügen.',
+      fileTooLarge: '„{name}“ ist zu groß — das Limit beträgt {max} MB pro Datei.',
+      minFiles: 'Bitte fügen Sie mindestens {min} Dateien hinzu.',
+      encrypted: 'Diese PDF ist passwortgeschützt und kann hier nicht verarbeitet werden.',
+      corrupted: 'Diese Datei konnte nicht als gültige PDF gelesen werden.',
+      invalidRange: 'Ungültiger Seitenbereich. Verwenden Sie Zahlen und Bindestriche, z. B. 1-3, 5.',
+      rangeOutOfBounds: 'Der Seitenbereich überschreitet die Seitenzahl des Dokuments.',
+      generic: 'Beim Verarbeiten Ihrer Datei ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.',
+    },
+  },
+  toolPages: {
+    'merge-pdf': {
+      metaTitle: 'PDF zusammenfügen — kostenlos, ohne Upload, ohne Anmeldung | CoolPDF',
+      metaDescription:
+        'Kombinieren Sie bis zu 20 PDFs direkt in Ihrem Browser zu einer Datei. Sortieren, zusammenfügen, herunterladen — Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung.',
+      heading: 'PDF zusammenfügen',
+      intro:
+        'Kombinieren Sie mehrere PDF-Dokumente zu einer einzigen Datei — genau in der Reihenfolge, die Sie wählen. Das Zusammenfügen läuft vollständig auf Ihrem eigenen Gerät.',
+      button: 'PDF zusammenfügen',
+      stepsHeading: 'So fügen Sie PDF-Dateien zusammen',
+      steps: [
+        'Fügen Sie zwei oder mehr PDF-Dateien hinzu, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um Ihr Gerät zu durchsuchen (2–20 Dateien).',
+        'Bringen Sie die Dateien mit den Auf- und Ab-Pfeilen in die gewünschte Reihenfolge — dies wird die Seitenreihenfolge des fertigen Dokuments.',
+        'Klicken Sie auf „PDF zusammenfügen“. Die Dokumente werden lokal kombiniert, was meist nur wenige Sekunden dauert.',
+        'Laden Sie Ihre zusammengefügte PDF herunter. Die Originaldateien bleiben unverändert auf Ihrem Gerät.',
+      ],
+      privacyHeading: 'Verträge und Kontoauszüge zusammenfügen, ohne sie hochzuladen',
+      privacyText:
+        'PDFs, die sich lohnen zusammenzufügen, sind oft genau die, die Sie am wenigsten teilen möchten: unterschriebene Verträge, Kontoauszüge, Arztberichte, Bewerbungsunterlagen. Bei herkömmlichen Online-Tools wird jede dieser Dateien auf einen fremden Server hochgeladen, bevor das Zusammenfügen überhaupt beginnt. CoolPDF funktioniert umgekehrt: Der Code kommt in Ihren Browser, die Dateien bleiben auf Ihrem Gerät — nichts wird übertragen, in eine Warteschlange gestellt oder anderweitig gespeichert. Das macht das Tool sicher genug für den Arbeitslaptop, öffentliches WLAN oder Dokumente unter NDA. Es bedeutet auch: keine künstlichen Limits — Ihr Computer erledigt die Arbeit, also gibt es keine Serverkosten, die man Ihnen weiterberechnen müsste. Schließen Sie den Tab, und jede Spur Ihrer Dokumente ist verschwunden.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Gibt es ein Limit, wie viele PDFs ich zusammenfügen kann?',
+          answer:
+            'Sie können 2 bis 20 PDF-Dateien gleichzeitig zusammenfügen. Jede Datei darf bis zu 100 MB groß sein (50 MB auf Mobilgeräten) — deutlich mehr, als Alltagsdokumente benötigen.',
+        },
+        {
+          question: 'Verändert das Zusammenfügen die Qualität meiner PDFs?',
+          answer:
+            'Nein. Die Seiten werden exakt so in das neue Dokument kopiert, wie sie sind — keine Neukomprimierung, kein Rendering, keine Wasserzeichen. Text bleibt markierbar und Links funktionieren weiter.',
+        },
+        {
+          question: 'Werden meine Dateien auf einen Server hochgeladen?',
+          answer:
+            'Niemals. Das Zusammenfügen läuft vollständig in Ihrem Browser. Sie können nach dem Laden der Seite sogar die Internetverbindung trennen — das Tool funktioniert weiter.',
+        },
+      ],
+    },
+    'split-pdf': {
+      metaTitle: 'PDF teilen — kostenlos, Seiten lokal extrahieren | CoolPDF',
+      metaDescription:
+        'Seiten extrahieren, nach Bereichen teilen oder eine PDF alle N Seiten zerlegen — alles in Ihrem Browser. Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung, ohne Wasserzeichen.',
+      heading: 'PDF teilen',
+      intro:
+        'Extrahieren Sie jede Seite als eigene Datei, ziehen Sie individuelle Bereiche heraus oder zerlegen Sie ein Dokument in Stücke von N Seiten. Alles geschieht lokal in Ihrem Browser.',
+      button: 'PDF teilen',
+      modeLabel: 'Teilungsmodus',
+      modeAll: 'Alle Seiten extrahieren',
+      modeRanges: 'Nach Bereichen teilen',
+      modeEveryN: 'Alle N Seiten teilen',
+      rangesLabel: 'Seitenbereiche',
+      rangesPlaceholder: 'z. B. 1-3, 5-8',
+      everyNLabel: 'Seiten pro Datei',
+      stepsHeading: 'So teilen Sie eine PDF',
+      steps: [
+        'Fügen Sie die PDF hinzu, die Sie teilen möchten, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu durchsuchen.',
+        'Wählen Sie einen Modus: jede Seite einzeln, eigene Bereiche wie 1-3, 5-8 oder ein Stück alle N Seiten.',
+        'Klicken Sie auf „PDF teilen“. Jeder Teil wird in Sekunden lokal auf Ihrem Gerät erstellt.',
+        'Laden Sie das Ergebnis herunter — eine einzelne PDF, wenn nur ein Teil entstanden ist, sonst ein ZIP-Archiv mit allen Teilen.',
+      ],
+      privacyHeading: 'Vertrauliche Dokumente teilen — ohne Umweg über die Cloud',
+      privacyText:
+        'Eine PDF zu teilen geht oft darum, nur einen Teil weiterzugeben — eine einzelne Rechnung aus einem Buchhaltungsexport, ein Kapitel aus einem Scan, die relevanten Seiten eines Vertrags. Ironischerweise verlangen die meisten Online-Tools, dass Sie dafür zuerst das ganze Dokument auf ihre Server hochladen. CoolPDF macht diesen Umweg überflüssig: Das Teilen geschieht direkt in Ihrem Browser-Tab, auf Ihrem eigenen Rechner. Das Dokument wird lokal gelesen, zerlegt und gespeichert — kein Byte davon überquert das Netzwerk. Das ist sicher genug für Steuerunterlagen, Personalakten und juristische Dokumente. Und es ist schnell, weil es keine Upload-Warteschlange gibt. Wenn Sie den Tab schließen, bleibt nichts zurück.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Wie extrahiere ich nur bestimmte Seiten?',
+          answer:
+            'Wählen Sie „Nach Bereichen teilen“ und geben Sie die gewünschten Seiten ein, z. B. 1-3, 5-8. Jeder Bereich wird eine eigene PDF, und alle Teile werden zusammen in einer ZIP-Datei heruntergeladen.',
+        },
+        {
+          question: 'Verliert meine PDF beim Teilen an Qualität?',
+          answer:
+            'Nein. Die Seiten werden unverändert in die neuen Dokumente kopiert — Text, Bilder, Links und Formulare bleiben exakt erhalten. Nichts wird neu komprimiert oder mit einem Wasserzeichen versehen.',
+        },
+        {
+          question: 'Gibt es ein Limit bei Seitenzahl oder Dateigröße?',
+          answer:
+            'Dateien bis 100 MB (50 MB auf Mobilgeräten) werden unterstützt, ohne Limit bei der Seitenzahl. Weil Ihr eigenes Gerät die Arbeit macht, dauern sehr große Dokumente einfach etwas länger.',
+        },
+      ],
+    },
+    'rotate-pdf': {
+      metaTitle: 'PDF drehen — kostenlos, Seiten lokal ausrichten | CoolPDF',
+      metaDescription:
+        'Drehen Sie alle oder nur ausgewählte Seiten um 90°, 180° oder 270° — direkt in Ihrem Browser. Ohne Upload, ohne Anmeldung, ohne Wasserzeichen.',
+      heading: 'PDF drehen',
+      intro:
+        'Richten Sie seitliche Scans und kopfstehende Seiten in Sekunden gerade. Drehen Sie das ganze Dokument oder nur ausgewählte Seiten um 90°, 180° oder 270°.',
+      button: 'PDF drehen',
+      angleLabel: 'Drehwinkel (im Uhrzeigersinn)',
+      scopeLabel: 'Anwenden auf',
+      scopeAll: 'Alle Seiten',
+      scopeSelected: 'Nur ausgewählte Seiten',
+      pagesLabel: 'Seiten',
+      pagesPlaceholder: 'z. B. 1, 3, 5-8',
+      stepsHeading: 'So drehen Sie PDF-Seiten',
+      steps: [
+        'Fügen Sie die PDF hinzu, die Sie korrigieren möchten, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu durchsuchen.',
+        'Wählen Sie einen Drehwinkel — 90°, 180° oder 270° im Uhrzeigersinn.',
+        'Entscheiden Sie, ob jede Seite oder nur bestimmte gedreht werden sollen (z. B. 1, 3, 5-8), und klicken Sie auf „PDF drehen“.',
+        'Laden Sie die gedrehte PDF herunter. Nicht ausgewählte Seiten bleiben exakt wie zuvor.',
+      ],
+      privacyHeading: 'Scans geraderücken, ohne sie irgendwohin zu schicken',
+      privacyText:
+        'Gedrehte Seiten stammen meist von einem Scanner oder der Handykamera: unterschriebene Formulare, Ausweisdokumente, Quittungen, handschriftliche Notizen. Genau diese Dateien sollten nicht auf fremde Server wandern, nur um aufrecht gedreht zu werden. Bei CoolPDF geschieht die Drehung dort, wo die Datei bereits ist — in Ihrem Browser. Die Ausrichtung wird lokal angepasst und das Ergebnis direkt auf Ihrem Gerät gespeichert: kein Upload, keine Kopie auf einer fremden Festplatte, keine Speicherrichtlinie, der Sie vertrauen müssten. Die Änderung ist außerdem dauerhaft und standardkonform — das Dokument öffnet sich danach in jedem PDF-Reader, auf jedem Gerät, bei jedem Empfänger korrekt.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Kann ich nur einzelne Seiten drehen?',
+          answer:
+            'Ja. Wählen Sie „Nur ausgewählte Seiten“ und geben Sie die zu drehenden Seiten ein, z. B. 1, 3, 5-8. Alle anderen Seiten behalten ihre ursprüngliche Ausrichtung.',
+        },
+        {
+          question: 'Ist die Drehung dauerhaft?',
+          answer:
+            'Ja. Die Drehung wird in die PDF selbst geschrieben, sodass die Seiten in jedem PDF-Reader korrekt angezeigt werden — nicht nur in dem, mit dem Sie die Datei ansehen.',
+        },
+        {
+          question: 'Verändert das Drehen den Inhalt meiner Seiten?',
+          answer:
+            'Nein. Es ändert sich nur die Seitenausrichtung; der Inhalt bleibt unberührt. Text bleibt scharf, Bilder behalten ihre Auflösung, und nichts wird neu komprimiert.',
+        },
+      ],
+    },
+    'jpg-to-pdf': {
+      metaTitle: 'JPG in PDF umwandeln — kostenlos, lokal, ohne Upload | CoolPDF',
+      metaDescription:
+        'Wandeln Sie JPG- und PNG-Bilder direkt in Ihrem Browser in eine saubere A4-PDF um. Anpassen, füllen oder Originalgröße — Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung.',
+      heading: 'JPG in PDF',
+      intro:
+        'Wandeln Sie bis zu 20 JPG- oder PNG-Bilder in eine einzige A4-PDF um — ideal für Scans, Quittungen und Foto-Dokumente. Die Umwandlung läuft vollständig auf Ihrem Gerät.',
+      button: 'In PDF umwandeln',
+      orientationLabel: 'Seitenausrichtung',
+      orientationAuto: 'Auto (nach dem ersten Bild)',
+      orientationPortrait: 'Hochformat',
+      orientationLandscape: 'Querformat',
+      fitLabel: 'Bildplatzierung',
+      fitFit: 'Einpassen — ganzes Bild sichtbar, mit Rändern',
+      fitFill: 'Füllen — Seite ausfüllen, Ränder beschneiden',
+      fitOriginal: 'Original — Originalgröße, zentriert',
+      stepsHeading: 'So wandeln Sie Bilder in PDF um',
+      steps: [
+        'Fügen Sie bis zu 20 JPG- oder PNG-Bilder hinzu, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu durchsuchen.',
+        'Wählen Sie die Seitenausrichtung: Auto folgt dem Seitenverhältnis des ersten Bildes, oder erzwingen Sie Hoch- bzw. Querformat.',
+        'Legen Sie fest, wie Bilder platziert werden — einpassen mit Rändern, Seite füllen oder Originalgröße — und klicken Sie auf „In PDF umwandeln“.',
+        'Laden Sie Ihre PDF herunter — ein Bild pro Seite im A4-Format.',
+      ],
+      privacyHeading: 'Fotos in PDFs verwandeln, ohne ein einziges Pixel hochzuladen',
+      privacyText:
+        'Fotos und Scans sind meist persönlich: Passkopien, Belege für die Steuererklärung, Bilder von Whiteboards, handschriftliche Briefe. Ein typischer Konverter lädt jedes Bild auf einen Server hoch, wandelt es dort um und gibt Ihnen einen Download-Link zurück — Ihre Bilder liegen dann auf Infrastruktur, die Sie nicht kontrollieren. CoolPDF erledigt dieselbe Aufgabe vollständig auf Ihrem Gerät. Die Bilder werden von Ihrem Browser gelesen, auf A4-Seiten angeordnet und als PDF auf Ihrer eigenen Festplatte gespeichert. Nichts wird hochgeladen, also kann auch nichts abhandenkommen, protokolliert oder in einem Trainingsdatensatz landen. Es funktioniert sogar offline: Seite laden, WLAN ausschalten, umwandeln.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Welche Bildformate werden unterstützt?',
+          answer:
+            'JPG- und PNG-Bilder, bis zu 20 gleichzeitig. Jedes Bild wird eine A4-Seite, in der Reihenfolge, in der Sie die Dateien hinzugefügt haben.',
+        },
+        {
+          question: 'Was ist der Unterschied zwischen Einpassen, Füllen und Original?',
+          answer:
+            'Einpassen skaliert das Bild so, dass es vollständig sichtbar ist, mit Rändern. Füllen skaliert es so, dass es die ganze Seite bedeckt, und beschneidet die Ränder. Original behält die natürliche Größe des Bildes bei, zentriert auf der Seite.',
+        },
+        {
+          question: 'Verlieren meine Bilder an Qualität?',
+          answer:
+            'Nein. Bilder werden exakt so eingebettet, wie sie sind — ohne Neukomprimierung. Die PDF verpackt lediglich Ihre originalen Bilddaten: Was Sie im Bild sehen, bekommen Sie in der PDF.',
+        },
+      ],
+    },
+  },
 };

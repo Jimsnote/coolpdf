@@ -373,4 +373,199 @@ export const fr = {
   },
   factSummary:
     'CoolPDF est une boîte à outils PDF gratuite, utilisable dans le navigateur. Contrairement aux outils PDF en ligne traditionnels, CoolPDF traite tous les fichiers localement sur l’appareil de l’utilisateur grâce à WebAssembly — les fichiers ne sont jamais téléversés sur aucun serveur. Les outils n’exigent ni compte, ni adresse e-mail, ni inscription, et sont entièrement gratuits, sans limite d’utilisation. CoolPDF convient ainsi aux documents confidentiels tels que les contrats, les dossiers médicaux et les relevés financiers.',
+  toolUi: {
+    privacyNote:
+      'Vos fichiers sont traités localement dans votre navigateur — rien n’est téléversé.',
+    dropPdfs: 'Déposez vos fichiers PDF ici, ou cliquez pour parcourir',
+    dropImages: 'Déposez vos images JPG ou PNG ici, ou cliquez pour parcourir',
+    moveUp: 'Monter',
+    moveDown: 'Descendre',
+    remove: 'Supprimer',
+    processing: 'Traitement en cours…',
+    download: 'Télécharger',
+    readyTitle: 'Votre fichier est prêt',
+    errors: {
+      onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
+      onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
+      tooManyFiles: 'Vous pouvez ajouter au maximum {max} fichiers.',
+      fileTooLarge: '« {name} » est trop volumineux — la limite est de {max} Mo par fichier.',
+      minFiles: 'Veuillez ajouter au moins {min} fichiers.',
+      encrypted: 'Ce PDF est protégé par un mot de passe et ne peut pas être traité ici.',
+      corrupted: 'Ce fichier n’a pas pu être lu comme un PDF valide.',
+      invalidRange: 'Plage de pages invalide. Utilisez des chiffres et des tirets, par exemple 1-3, 5.',
+      rangeOutOfBounds: 'La plage de pages dépasse le nombre de pages du document.',
+      generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
+    },
+  },
+  toolPages: {
+    'merge-pdf': {
+      metaTitle: 'Fusionner des PDF en ligne gratuitement — Sans téléversement ni inscription | CoolPDF',
+      metaDescription:
+        'Combinez jusqu’à 20 PDF en un seul fichier directement dans votre navigateur. Réordonnez, fusionnez, téléchargez — vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+      heading: 'Fusionner PDF',
+      intro:
+        'Combinez plusieurs documents PDF en un seul fichier, dans l’ordre exact que vous choisissez. La fusion s’effectue entièrement sur votre propre appareil.',
+      button: 'Fusionner les PDF',
+      stepsHeading: 'Comment fusionner des fichiers PDF',
+      steps: [
+        'Ajoutez deux fichiers PDF ou plus en les déposant sur la zone de téléversement, ou cliquez pour parcourir votre appareil (2 à 20 fichiers).',
+        'Placez les fichiers dans l’ordre souhaité à l’aide des flèches haut et bas — ce sera l’ordre des pages du document final.',
+        'Cliquez sur « Fusionner les PDF ». Les documents sont combinés localement, ce qui ne prend généralement que quelques secondes.',
+        'Téléchargez votre PDF fusionné. Les fichiers d’origine restent intacts sur votre appareil.',
+      ],
+      privacyHeading: 'Fusionnez contrats et relevés sans les téléverser',
+      privacyText:
+        'Les PDF que l’on fusionne sont souvent ceux que l’on veut le moins partager : contrats signés, relevés bancaires, rapports médicaux, dossiers de candidature. Avec un outil en ligne classique, chacun de ces fichiers est téléversé sur un serveur distant avant même que la fusion ne commence. CoolPDF fonctionne à l’inverse. Le code de fusion vient dans votre navigateur et les fichiers restent sur votre appareil — rien n’est transmis, mis en file d’attente ni stocké ailleurs. L’outil est donc sûr sur un ordinateur professionnel, sur un Wi-Fi public ou avec des documents couverts par un NDA. Cela signifie aussi aucun quota artificiel : c’est votre ordinateur qui travaille, il n’y a donc pas de facture de serveur à vous répercuter. Fermez l’onglet et toute trace de vos documents disparaît.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Combien de PDF puis-je fusionner au maximum ?',
+          answer:
+            'Vous pouvez fusionner entre 2 et 20 fichiers PDF à la fois. Chaque fichier peut atteindre 100 Mo (50 Mo sur mobile), bien au-delà des besoins des documents du quotidien.',
+        },
+        {
+          question: 'La fusion altère-t-elle la qualité de mes PDF ?',
+          answer:
+            'Non. Les pages sont copiées dans le nouveau document exactement telles quelles — sans recompression, sans rendu, sans filigrane. Le texte reste sélectionnable et les liens continuent de fonctionner.',
+        },
+        {
+          question: 'Mes fichiers sont-ils téléversés sur un serveur ?',
+          answer:
+            'Jamais. La fusion s’effectue entièrement dans votre navigateur. Vous pouvez même vous déconnecter d’internet après le chargement de la page — l’outil continue de fonctionner.',
+        },
+      ],
+    },
+    'split-pdf': {
+      metaTitle: 'Diviser un PDF en ligne gratuitement — Extraction locale des pages | CoolPDF',
+      metaDescription:
+        'Extrayez des pages, divisez par plages ou découpez un PDF toutes les N pages — le tout dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription, sans filigrane.',
+      heading: 'Diviser PDF',
+      intro:
+        'Extrayez chaque page dans un fichier séparé, isolez des plages personnalisées ou découpez un document en segments de N pages. Tout se passe localement dans votre navigateur.',
+      button: 'Diviser le PDF',
+      modeLabel: 'Mode de division',
+      modeAll: 'Extraire toutes les pages',
+      modeRanges: 'Diviser par plages',
+      modeEveryN: 'Diviser toutes les N pages',
+      rangesLabel: 'Plages de pages',
+      rangesPlaceholder: 'ex. 1-3, 5-8',
+      everyNLabel: 'Pages par fichier',
+      stepsHeading: 'Comment diviser un PDF',
+      steps: [
+        'Ajoutez le PDF à diviser en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Choisissez un mode : chaque page séparément, des plages personnalisées comme 1-3, 5-8, ou un segment toutes les N pages.',
+        'Cliquez sur « Diviser le PDF ». Chaque partie est créée localement sur votre appareil en quelques secondes.',
+        'Téléchargez le résultat — un seul PDF si une seule partie a été produite, sinon une archive ZIP avec toutes les parties.',
+      ],
+      privacyHeading: 'Divisez des documents confidentiels sans détour par le cloud',
+      privacyText:
+        'Diviser un PDF sert souvent à n’en partager qu’une partie — une seule facture issue d’un export comptable, un chapitre d’un scan, les pages utiles d’un contrat. Ironiquement, la plupart des outils en ligne vous obligent d’abord à partager le document entier avec leurs serveurs. CoolPDF supprime ce détour : la division se fait dans l’onglet de votre navigateur, sur votre propre machine. Le document est lu, découpé et enregistré localement, et pas un octet ne traverse le réseau. C’est assez sûr pour des déclarations fiscales, des dossiers RH ou des documents juridiques — et c’est rapide, car il n’y a ni file d’attente de téléversement ni copie traitée à récupérer ailleurs. Quand vous fermez l’onglet, il ne reste rien.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Comment extraire seulement certaines pages ?',
+          answer:
+            'Choisissez « Diviser par plages » et saisissez les pages voulues, par exemple 1-3, 5-8. Chaque plage devient son propre PDF, et toutes les parties sont téléchargées ensemble dans un fichier ZIP.',
+        },
+        {
+          question: 'La division réduit-elle la qualité de mon PDF ?',
+          answer:
+            'Non. Les pages sont copiées sans modification dans les nouveaux documents — texte, images, liens et formulaires restent exactement identiques. Rien n’est recompressé ni marqué d’un filigrane.',
+        },
+        {
+          question: 'Y a-t-il une limite de pages ou de taille de fichier ?',
+          answer:
+            'Les fichiers jusqu’à 100 Mo (50 Mo sur mobile) sont pris en charge, sans limite de nombre de pages. Comme c’est votre appareil qui travaille, les très gros documents prennent simplement un peu plus de temps.',
+        },
+      ],
+    },
+    'rotate-pdf': {
+      metaTitle: 'Faire pivoter un PDF gratuitement — Pages tournées en local | CoolPDF',
+      metaDescription:
+        'Faites pivoter toutes les pages ou seulement celles de votre choix de 90°, 180° ou 270° — directement dans votre navigateur. Sans téléversement, sans inscription, sans filigrane.',
+      heading: 'Faire pivoter PDF',
+      intro:
+        'Corrigez les scans de travers et les pages à l’envers en quelques secondes. Faites pivoter tout le document ou seulement certaines pages de 90°, 180° ou 270°.',
+      button: 'Faire pivoter le PDF',
+      angleLabel: 'Angle de rotation (sens horaire)',
+      scopeLabel: 'Appliquer à',
+      scopeAll: 'Toutes les pages',
+      scopeSelected: 'Uniquement les pages sélectionnées',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'ex. 1, 3, 5-8',
+      stepsHeading: 'Comment faire pivoter des pages PDF',
+      steps: [
+        'Ajoutez le PDF à corriger en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Choisissez un angle de rotation — 90°, 180° ou 270° dans le sens horaire.',
+        'Indiquez si toutes les pages ou seulement certaines doivent pivoter (par exemple 1, 3, 5-8), puis cliquez sur « Faire pivoter le PDF ».',
+        'Téléchargez le PDF pivoté. Les pages non sélectionnées restent exactement comme avant.',
+      ],
+      privacyHeading: 'Redressez vos scans sans les envoyer nulle part',
+      privacyText:
+        'Les pages à faire pivoter viennent généralement d’un scanner ou de l’appareil photo d’un téléphone : formulaires signés, pièces d’identité, reçus, notes manuscrites. Ce sont précisément les fichiers qui ne devraient pas voyager vers le serveur d’un inconnu juste pour être remis à l’endroit. Avec CoolPDF, la rotation a lieu là où le fichier se trouve déjà — dans votre navigateur. L’orientation des pages est ajustée localement et le résultat est enregistré directement sur votre appareil : pas de téléversement, pas de copie sur un disque distant, pas de politique de conservation à croire sur parole. La modification est en outre permanente et conforme aux normes : le document s’ouvre ensuite correctement dans n’importe quel lecteur PDF, sur n’importe quel appareil, pour quiconque le recevra.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je ne faire pivoter que certaines pages ?',
+          answer:
+            'Oui. Choisissez « Uniquement les pages sélectionnées » et saisissez les pages à pivoter, par exemple 1, 3, 5-8. Toutes les autres pages conservent leur orientation d’origine.',
+        },
+        {
+          question: 'La rotation est-elle permanente ?',
+          answer:
+            'Oui. La rotation est inscrite dans le PDF lui-même : les pages s’affichent correctement dans tous les lecteurs PDF — pas seulement dans celui que vous utilisez pour voir le fichier.',
+        },
+        {
+          question: 'La rotation modifie-t-elle le contenu de mes pages ?',
+          answer:
+            'Non. Seule l’orientation de la page change ; le contenu reste intact. Le texte reste net, les images gardent leur résolution et rien n’est recompressé.',
+        },
+      ],
+    },
+    'jpg-to-pdf': {
+      metaTitle: 'Convertir JPG en PDF — Gratuit, local, sans téléversement | CoolPDF',
+      metaDescription:
+        'Transformez vos images JPG et PNG en un PDF A4 propre, dans votre navigateur. Ajustement, remplissage ou taille d’origine — vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+      heading: 'JPG en PDF',
+      intro:
+        'Convertissez jusqu’à 20 images JPG ou PNG en un seul PDF A4 — idéal pour les scans, les reçus et les documents photo. La conversion s’effectue entièrement sur votre appareil.',
+      button: 'Convertir en PDF',
+      orientationLabel: 'Orientation des pages',
+      orientationAuto: 'Auto (selon la première image)',
+      orientationPortrait: 'Portrait',
+      orientationLandscape: 'Paysage',
+      fitLabel: 'Placement de l’image',
+      fitFit: 'Ajuster — image entière visible, avec marges',
+      fitFill: 'Remplir — couvre la page, rogne les bords',
+      fitOriginal: 'Original — taille naturelle, centrée',
+      stepsHeading: 'Comment convertir des images en PDF',
+      steps: [
+        'Ajoutez jusqu’à 20 images JPG ou PNG en les déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Choisissez l’orientation des pages : auto suit le ratio de votre première image, ou forcez portrait ou paysage.',
+        'Choisissez le placement des images — ajustées avec marges, remplissant la page ou taille d’origine — puis cliquez sur « Convertir en PDF ».',
+        'Téléchargez votre PDF, avec une image par page au format A4.',
+      ],
+      privacyHeading: 'Transformez vos photos en PDF sans téléverser un seul pixel',
+      privacyText:
+        'Les photos et les scans sont souvent personnels : copies de passeport, reçus pour les impôts, photos de tableaux blancs, lettres manuscrites. Un convertisseur classique téléverse chaque image sur un serveur, la convertit là-bas et vous rend un lien de téléchargement — vos images vivent désormais sur une infrastructure que vous ne contrôlez pas. CoolPDF fait le même travail entièrement sur votre appareil. Les images sont lues par votre navigateur, mises en page sur des pages A4 et enregistrées en PDF sur votre propre disque. Rien n’est téléversé, donc rien ne peut fuiter, être consigné ni finir dans un jeu de données d’entraînement. Cela fonctionne même hors ligne : chargez la page, coupez le Wi-Fi et convertissez.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Quels formats d’image sont pris en charge ?',
+          answer:
+            'Les images JPG et PNG, jusqu’à 20 à la fois. Chaque image devient une page A4, dans l’ordre où vous avez ajouté les fichiers.',
+        },
+        {
+          question: 'Quelle est la différence entre Ajuster, Remplir et Original ?',
+          answer:
+            'Ajuster met l’image à l’échelle pour qu’elle soit entièrement visible, avec des marges. Remplir la met à l’échelle pour couvrir toute la page, en rognant les bords. Original conserve la taille naturelle de l’image, centrée sur la page.',
+        },
+        {
+          question: 'Mes images perdent-elles en qualité ?',
+          answer:
+            'Non. Les images sont intégrées exactement telles quelles — sans recompression. Le PDF se contente d’encapsuler vos données d’image d’origine : ce que vous voyez dans l’image est ce que vous obtenez dans le PDF.',
+        },
+      ],
+    },
+  },
 };

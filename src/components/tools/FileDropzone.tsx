@@ -1,0 +1,120 @@
+'use client';
+
+import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
+import { CloudUpload } from 'lucide-react';
+import type { Dictionary } from '@/i18n/locales/en';
+
+type AcceptedKind = 'pdf' | 'images';
+
+interface FileDropzoneProps {
+  accept: AcceptedKind;
+  multiple?: boolean;
+  /** Maximum total number of files, including the ones already selected. */
+  maxFiles: number;
+  /** Number of files already selected. */
+  currentCount: number;
+  /** Per-file size limit in bytes. */
+  maxSizeBytes: number;
+  onFiles: (files: File[]) => void;
+  dict: Dictionary;
+}
+
+function isAccepted(file: File, accept: AcceptedKind): boolean {
+  const name = file.name.toLowerCase();
+  if (accept === 'pdf') return file.type === 'application/pdf' || name.endsWith('.pdf');
+  return file.type === 'image/jpeg' || file.type === 'image/png' || /\.(jpe?g|png)$/.test(name);
+}
+
+/**
+ * Drag-and-drop area with click-to-browse fallback. Validates type, size,
+ * and file count before handing valid files to the parent; violations are
+ * shown as localized error text below the dropzone.
+ */
+export function FileDropzone({
+  accept,
+  multiple = true,
+  maxFiles,
+  currentCount,
+  maxSizeBytes,
+  onFiles,
+  dict,
+}: FileDropzoneProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [dragging, setDragging] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { toolUi } = dict;
+
+  function handleIncoming(incoming: File[]) {
+    setError(null);
+    if (incoming.some((file) => !isAccepted(file, accept))) {
+      setError(accept === 'pdf' ? toolUi.errors.onlyPdf : toolUi.errors.onlyImages);
+      return;
+    }
+    const oversized = incoming.find((file) => file.size > maxSizeBytes);
+    if (oversized) {
+      const maxMb = Math.round(maxSizeBytes / (1024 * 1024));
+      setError(
+        toolUi.errors.fileTooLarge
+          .replace('{name}', oversized.name)
+          .replace('{max}', String(maxMb)),
+      );
+      return;
+    }
+    const capacity = maxFiles - currentCount;
+    let accepted = incoming;
+    if (incoming.length > capacity) {
+      setError(toolUi.errors.tooManyFiles.replace('{max}', String(maxFiles)));
+      accepted = incoming.slice(0, Math.max(capacity, 0));
+    }
+    if (accepted.length > 0) onFiles(multiple ? accepted : accepted.slice(0, 1));
+  }
+
+  function onDrop(event: DragEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    setDragging(false);
+    handleIncoming(Array.from(event.dataTransfer.files));
+  }
+
+  function onChange(event: ChangeEvent<HTMLInputElement>) {
+    handleIncoming(Array.from(event.target.files ?? []));
+    event.target.value = '';
+  }
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => inputRef.current?.click()}
+        onDragOver={(event) => {
+          event.preventDefault();
+          setDragging(true);
+        }}
+        onDragLeave={() => setDragging(false)}
+        onDrop={onDrop}
+        className={`flex w-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-12 text-center transition-colors ${
+          dragging
+            ? 'border-brand-500 bg-brand-50'
+            : 'border-slate-300 bg-slate-50 hover:border-brand-400 hover:bg-brand-50'
+        }`}
+      >
+        <CloudUpload className="h-10 w-10 text-brand-600" aria-hidden />
+        <span className="text-sm font-medium text-slate-700">
+          {accept === 'pdf' ? toolUi.dropPdfs : toolUi.dropImages}
+        </span>
+      </button>
+      <input
+        ref={inputRef}
+        type="file"
+        hidden
+        multiple={multiple}
+        accept={accept === 'pdf' ? '.pdf,application/pdf' : '.jpg,.jpeg,.png,image/jpeg,image/png'}
+        onChange={onChange}
+      />
+      {error ? (
+        <p role="alert" className="mt-3 rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700">
+          {error}
+        </p>
+      ) : null}
+    </div>
+  );
+}

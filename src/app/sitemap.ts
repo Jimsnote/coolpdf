@@ -1,10 +1,18 @@
 import type { MetadataRoute } from 'next';
 import { defaultLocale, locales } from '@/i18n/config';
 import { localizedUrl } from '@/lib/seo';
+import { tools } from '@/lib/tools';
 
 export const dynamic = 'force-static';
 
-const paths = ['', '/about', '/privacy', '/terms', '/faq'];
+const staticPaths = ['', '/about', '/privacy', '/terms', '/faq'];
+
+/** Live tool pages, derived from the central registry. */
+const toolPaths = tools
+  .filter((tool) => tool.status === 'live')
+  .map((tool) => `/${tool.slug}`);
+
+const paths = [...staticPaths, ...toolPaths];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -16,12 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     languages['x-default'] = localizedUrl(defaultLocale, path);
 
+    const isTool = toolPaths.includes(path);
+
     for (const locale of locales) {
       entries.push({
         url: localizedUrl(locale, path),
         lastModified: new Date(),
-        changeFrequency: path === '' ? 'weekly' : 'monthly',
-        priority: path === '' ? 1 : 0.8,
+        changeFrequency: path === '' || isTool ? 'weekly' : 'monthly',
+        priority: path === '' ? 1 : isTool ? 0.9 : 0.8,
         alternates: { languages },
       });
     }

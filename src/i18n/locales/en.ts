@@ -373,6 +373,201 @@ export const en = {
   },
   factSummary:
     'CoolPDF is a free, browser-based PDF toolkit. Unlike traditional online PDF tools, CoolPDF processes all files locally on the user’s device using WebAssembly — files are never uploaded to any server. The tools require no account, no email, and no sign-up, and are completely free with no usage limits. This makes CoolPDF suitable for confidential documents such as contracts, medical records, and financial statements.',
+  toolUi: {
+    privacyNote:
+      'Your files are processed locally in your browser — nothing is uploaded.',
+    dropPdfs: 'Drop PDF files here, or click to browse',
+    dropImages: 'Drop JPG or PNG images here, or click to browse',
+    moveUp: 'Move up',
+    moveDown: 'Move down',
+    remove: 'Remove',
+    processing: 'Processing…',
+    download: 'Download',
+    readyTitle: 'Your file is ready',
+    errors: {
+      onlyPdf: 'Only PDF files are supported.',
+      onlyImages: 'Only JPG and PNG images are supported.',
+      tooManyFiles: 'You can add at most {max} files.',
+      fileTooLarge: '"{name}" is too large — the limit is {max} MB per file.',
+      minFiles: 'Please add at least {min} files.',
+      encrypted: 'This PDF is password-protected and cannot be processed here.',
+      corrupted: 'This file could not be read as a valid PDF.',
+      invalidRange: 'Invalid page range. Use numbers and hyphens, for example 1-3, 5.',
+      rangeOutOfBounds: 'The page range exceeds the number of pages in the document.',
+      generic: 'Something went wrong while processing your file. Please try again.',
+    },
+  },
+  toolPages: {
+    'merge-pdf': {
+      metaTitle: 'Merge PDF Online Free — No Upload, No Sign-Up | CoolPDF',
+      metaDescription:
+        'Combine up to 20 PDFs into one file directly in your browser. Reorder, merge, and download — files never leave your device. Free, no sign-up.',
+      heading: 'Merge PDF',
+      intro:
+        'Combine multiple PDF documents into a single file, in exactly the order you choose. The merge runs entirely on your own device.',
+      button: 'Merge PDF',
+      stepsHeading: 'How to merge PDF files',
+      steps: [
+        'Add two or more PDF files by dragging them onto the upload area, or click to browse your device (2–20 files).',
+        'Put the files in the order you want with the up and down arrows — this becomes the page order of the final document.',
+        'Click "Merge PDF". The documents are combined locally, which usually takes only a few seconds.',
+        'Download your merged PDF. The original files stay untouched on your device.',
+      ],
+      privacyHeading: 'Merge contracts and statements without uploading them',
+      privacyText:
+        'PDFs worth merging are often the ones you least want to share: signed contracts, bank statements, medical reports, application documents. With a conventional online tool, every one of those files is uploaded to a remote server before the merge even starts. CoolPDF works the other way around. The merging code comes to your browser and the files stay on your device — nothing is transmitted, queued, or stored anywhere else. That makes the tool safe to use on a work laptop, on public Wi-Fi, or with documents covered by an NDA. It also means there are no artificial quotas: your computer does the work, so there is no server bill to pass on to you. Close the tab and every trace of your documents is gone.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Is there a limit on how many PDFs I can merge?',
+          answer:
+            'You can merge between 2 and 20 PDF files at once. Each file can be up to 100 MB (50 MB on mobile devices), which is far more than everyday documents need.',
+        },
+        {
+          question: 'Will merging change the quality of my PDFs?',
+          answer:
+            'No. Pages are copied into the new document exactly as they are — no recompression, no rendering, no watermarks. Text stays selectable and links keep working.',
+        },
+        {
+          question: 'Are my files uploaded to a server?',
+          answer:
+            'Never. The merge runs entirely in your browser. You can even disconnect from the internet after the page loads — the tool keeps working.',
+        },
+      ],
+    },
+    'split-pdf': {
+      metaTitle: 'Split PDF Online Free — Extract Pages Locally | CoolPDF',
+      metaDescription:
+        'Extract pages, split by range, or cut a PDF every N pages — all in your browser. Files never leave your device. Free, no sign-up, no watermarks.',
+      heading: 'Split PDF',
+      intro:
+        'Extract every page as a separate file, pull out custom ranges, or split a document into chunks of N pages. Everything happens locally in your browser.',
+      button: 'Split PDF',
+      modeLabel: 'Split mode',
+      modeAll: 'Extract all pages',
+      modeRanges: 'Split by ranges',
+      modeEveryN: 'Split every N pages',
+      rangesLabel: 'Page ranges',
+      rangesPlaceholder: 'e.g. 1-3, 5-8',
+      everyNLabel: 'Pages per file',
+      stepsHeading: 'How to split a PDF',
+      steps: [
+        'Add the PDF you want to split by dragging it onto the upload area, or click to browse.',
+        'Choose a split mode: every page separately, custom ranges like 1-3, 5-8, or a chunk every N pages.',
+        'Click "Split PDF". Each part is created locally on your device in seconds.',
+        'Download the result — a single PDF if only one part was produced, otherwise a ZIP archive with all parts.',
+      ],
+      privacyHeading: 'Split confidential documents without a detour through the cloud',
+      privacyText:
+        'Splitting a PDF is often about sharing just one part of it — a single invoice from a full bookkeeping export, one chapter from a scan, the relevant pages of a contract. Ironically, most online tools make you share the whole document with their servers first. CoolPDF removes that detour entirely: the splitting happens inside your browser tab, on your own machine. The document is read, divided, and saved locally, and no byte of it crosses the network. That is safe enough for tax records, HR paperwork, and legal files — and it is fast, because there is no upload queue and no processed copy to download from somewhere else. When you close the tab, nothing remains behind.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'How do I extract only some pages?',
+          answer:
+            'Choose "Split by ranges" and enter the pages you need, for example 1-3, 5-8. Each range becomes its own PDF, and all parts are downloaded together in one ZIP file.',
+        },
+        {
+          question: 'Does splitting reduce the quality of my PDF?',
+          answer:
+            'No. Pages are copied unchanged into the new documents — text, images, links, and forms stay exactly as they were. Nothing is recompressed or watermarked.',
+        },
+        {
+          question: 'Is there a page or file-size limit?',
+          answer:
+            'Files up to 100 MB (50 MB on mobile) are supported, with no limit on page count. Because your own device does the work, very large documents simply take a little longer.',
+        },
+      ],
+    },
+    'rotate-pdf': {
+      metaTitle: 'Rotate PDF Online Free — Turn Pages Locally | CoolPDF',
+      metaDescription:
+        'Rotate all pages or just the ones you choose by 90°, 180°, or 270° — right in your browser. No uploads, no sign-up, no watermarks.',
+      heading: 'Rotate PDF',
+      intro:
+        'Fix sideways scans and upside-down pages in seconds. Rotate the whole document or only selected pages by 90°, 180°, or 270°.',
+      button: 'Rotate PDF',
+      angleLabel: 'Rotation angle (clockwise)',
+      scopeLabel: 'Apply to',
+      scopeAll: 'All pages',
+      scopeSelected: 'Selected pages only',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'e.g. 1, 3, 5-8',
+      stepsHeading: 'How to rotate PDF pages',
+      steps: [
+        'Add the PDF you want to fix by dragging it onto the upload area, or click to browse.',
+        'Pick a rotation angle — 90°, 180°, or 270° clockwise.',
+        'Choose whether to rotate every page or only specific ones (for example 1, 3, 5-8), then click "Rotate PDF".',
+        'Download the rotated PDF. Pages you did not select remain exactly as they were.',
+      ],
+      privacyHeading: 'Straighten scans without sending them anywhere',
+      privacyText:
+        'Rotated pages usually come from a scanner or a phone camera: signed forms, ID documents, receipts, handwritten notes. These are exactly the files that should not travel to a stranger’s server just to be turned upright. With CoolPDF, the rotation happens where the file already is — in your browser. The page orientation is adjusted locally and the result is saved straight back to your device, with no upload, no copy on a remote disk, and no retention policy you have to trust. The change is also permanent and standard-compliant, so the document opens correctly in any PDF reader, on any device, for anyone you share it with afterwards.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I rotate only some pages?',
+          answer:
+            'Yes. Choose "Selected pages only" and enter the pages to rotate, for example 1, 3, 5-8. All other pages keep their original orientation.',
+        },
+        {
+          question: 'Is the rotation permanent?',
+          answer:
+            'Yes. The rotation is written into the PDF itself, so the pages display correctly in every PDF reader — not just in the one you used to view the file.',
+        },
+        {
+          question: 'Will rotating affect the content of my pages?',
+          answer:
+            'No. Only the page orientation changes; the content itself is untouched. Text stays sharp, images keep their resolution, and nothing is recompressed.',
+        },
+      ],
+    },
+    'jpg-to-pdf': {
+      metaTitle: 'JPG to PDF Converter — Free, Local, No Upload | CoolPDF',
+      metaDescription:
+        'Turn JPG and PNG images into a clean A4 PDF in your browser. Fit, fill, or original size — files never leave your device. Free, no sign-up.',
+      heading: 'JPG to PDF',
+      intro:
+        'Convert up to 20 JPG or PNG images into a single A4 PDF — perfect for scans, receipts, and photo documents. The conversion runs entirely on your device.',
+      button: 'Convert to PDF',
+      orientationLabel: 'Page orientation',
+      orientationAuto: 'Auto (match the first image)',
+      orientationPortrait: 'Portrait',
+      orientationLandscape: 'Landscape',
+      fitLabel: 'Image placement',
+      fitFit: 'Fit — whole image visible, with margins',
+      fitFill: 'Fill — cover the page, crop the edges',
+      fitOriginal: 'Original — natural size, centered',
+      stepsHeading: 'How to convert images to PDF',
+      steps: [
+        'Add up to 20 JPG or PNG images by dragging them onto the upload area, or click to browse.',
+        'Choose the page orientation: auto follows the aspect ratio of your first image, or force portrait or landscape.',
+        'Pick how images are placed — fit with margins, fill the page, or keep the original size — then click "Convert to PDF".',
+        'Download your PDF, with one image per page in A4 format.',
+      ],
+      privacyHeading: 'Turn photos into PDFs without uploading a single pixel',
+      privacyText:
+        'Photos and scans tend to be personal: passport copies, receipts for your taxes, pictures of whiteboards, handwritten letters. A typical converter uploads every image to a server, converts it there, and hands you back a download link — your pictures now live on infrastructure you do not control. CoolPDF does the same job entirely on your device. The images are read by your browser, laid out on A4 pages, and saved as a PDF on your own disk. Nothing is uploaded, so nothing can leak, be logged, or end up in a training dataset. It even works offline: load the page, switch off the Wi-Fi, and convert away.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which image formats are supported?',
+          answer:
+            'JPG and PNG images, up to 20 at a time. Each image becomes one A4 page, in the order you added the files.',
+        },
+        {
+          question: 'What is the difference between Fit, Fill, and Original?',
+          answer:
+            'Fit scales the image so it is fully visible, with margins around it. Fill scales it to cover the whole page, cropping the edges. Original keeps the image’s natural size, centered on the page.',
+        },
+        {
+          question: 'Will my images lose quality?',
+          answer:
+            'No. Images are embedded exactly as they are — no recompression. The PDF simply wraps your original image data, so what you see in the image is what you get in the PDF.',
+        },
+      ],
+    },
+  },
 };
 
 export type Dictionary = typeof en;
