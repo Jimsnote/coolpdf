@@ -394,6 +394,7 @@ export const en = {
       corrupted: 'This file could not be read as a valid PDF.',
       invalidRange: 'Invalid page range. Use numbers and hyphens, for example 1-3, 5.',
       rangeOutOfBounds: 'The page range exceeds the number of pages in the document.',
+      noPages: 'At least one page must remain in the document.',
       generic: 'Something went wrong while processing your file. Please try again.',
     },
   },
@@ -564,6 +565,104 @@ export const en = {
           question: 'Will my images lose quality?',
           answer:
             'No. Images are embedded exactly as they are — no recompression. The PDF simply wraps your original image data, so what you see in the image is what you get in the PDF.',
+        },
+      ],
+    },
+    'organize-pdf': {
+      metaTitle: 'Organize PDF Pages Online Free — Reorder & Rotate | CoolPDF',
+      metaDescription:
+        'Reorder PDF pages with drag and drop, rotate or delete pages, and download a reorganized PDF — all in your browser. No uploads, no sign-up.',
+      heading: 'Organize PDF',
+      intro:
+        'Rearrange pages with drag and drop, rotate the sideways ones, and remove the pages you do not need. A live preview of every page makes it easy — and everything happens on your device.',
+      button: 'Download organized PDF',
+      loadingPreviews: 'Rendering page previews…',
+      loadMorePreviews: 'Load more previews',
+      selectAll: 'Select all',
+      clearSelection: 'Clear selection',
+      deleteSelected: 'Delete selected',
+      rotateSelected: 'Rotate selected 90°',
+      reset: 'Reset',
+      rotatePage: 'Rotate page 90°',
+      deletePage: 'Delete page',
+      restorePage: 'Restore page',
+      deletedBadge: 'Deleted',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} of {total} pages will be kept',
+      stepsHeading: 'How to organize PDF pages',
+      steps: [
+        'Add the PDF you want to reorganize by dragging it onto the upload area, or click to browse.',
+        'Drag the page thumbnails into the order you want — the number badge always shows the original page number.',
+        'Rotate or delete individual pages with the buttons on each thumbnail, or select several pages and use the toolbar. Deleted pages can be restored with one click.',
+        'Click "Download organized PDF". The rearranged document is assembled locally and saved to your device.',
+      ],
+      privacyHeading: 'Rearrange confidential documents page by page — privately',
+      privacyText:
+        'Reordering pages is often the last step before a document goes out: pulling the signed page to the front of a contract, removing blank scans from a tax file, moving the one chapter a client asked for to the top. These are not files that belong on a stranger’s server. CoolPDF renders the page previews and rebuilds the document entirely in your browser — the file is read from your own disk and the result is saved back to it, with no upload in between. There is no queue, no temporary copy on someone else’s storage, and no retention policy you have to trust. That makes the tool safe for legal files, medical records, and HR paperwork, even on public Wi-Fi. Close the tab and nothing of your document remains.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I undo a deleted page?',
+          answer:
+            'Yes. The delete button only marks the page — it appears dimmed and can be restored with one more click. Pages are only left out when you download, and even then the original file on your device stays unchanged.',
+        },
+        {
+          question: 'Does reorganizing reduce the quality of my PDF?',
+          answer:
+            'No. Pages are copied into the new document exactly as they are — no re-rendering, no recompression. Text stays selectable, links keep working, and rotations are written as standard page metadata.',
+        },
+        {
+          question: 'Is there a limit on file size or page count?',
+          answer:
+            'Files up to 100 MB are supported (50 MB on mobile), with no page limit. For very long documents the page previews are rendered in batches, so the tool stays responsive.',
+        },
+      ],
+    },
+    'pdf-to-jpg': {
+      metaTitle: 'PDF to JPG Converter — Free, Local, No Upload | CoolPDF',
+      metaDescription:
+        'Turn PDF pages into JPG or PNG images at 72, 150, or 300 DPI — right in your browser. Files never leave your device. Free, no sign-up.',
+      heading: 'PDF to JPG',
+      intro:
+        'Convert PDF pages into high-quality JPG or PNG images. Choose the resolution and the pages you need — the conversion runs entirely on your device.',
+      button: 'Convert to images',
+      formatLabel: 'Image format',
+      formatJpg: 'JPG — smaller files',
+      formatPng: 'PNG — lossless, larger files',
+      dpiLabel: 'Resolution',
+      dpiHint:
+        '300 DPI produces very large images and can be slow and memory-hungry on long documents.',
+      scopeLabel: 'Pages',
+      scopeAll: 'All pages',
+      scopeCustom: 'Selected pages',
+      pagesPlaceholder: 'e.g. 1-3, 5',
+      renderingProgress: 'Rendering page {current} of {total}…',
+      stepsHeading: 'How to convert PDF to JPG',
+      steps: [
+        'Add the PDF you want to convert by dragging it onto the upload area, or click to browse.',
+        'Choose the image format — JPG for small files, PNG for lossless quality — and the resolution: 72 DPI for screen use, 150 for documents, 300 for print.',
+        'Convert all pages or enter a range like 1-3, 5, then click "Convert to images".',
+        'Download the result — a single image if you converted one page, otherwise a ZIP archive with one image per page.',
+      ],
+      privacyHeading: 'Rasterize pages without handing over the document',
+      privacyText:
+        'Turning a PDF into images usually means the document is headed somewhere visual — a presentation, a messaging app, an upload form that only accepts pictures. Invoices, certificates, and official letters often take this route. With a typical online converter, the whole document is uploaded first and the images come back from a server you know nothing about. CoolPDF renders the pages right in your browser tab, using the same class of PDF engine that powers desktop readers. The file never crosses the network: it is read from your disk, rasterized by your device, and saved back to it. There is nothing to intercept, log, or leak — which also means the tool keeps working on a plane, in a factory, or anywhere else without a connection.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which DPI should I choose?',
+          answer:
+            '72 DPI matches the PDF’s screen size and is fine for web use. 150 DPI is a good middle ground for documents. 300 DPI is print quality — sharp, but the images get large and rendering takes longer.',
+        },
+        {
+          question: 'Why do I get a ZIP file?',
+          answer:
+            'Each PDF page becomes its own image. When more than one page is converted, all images are packed into a single ZIP archive so you get one tidy download.',
+        },
+        {
+          question: 'Does converting to JPG lose quality?',
+          answer:
+            'JPG uses light compression (92% quality), which is visually indistinguishable from the original for documents and photos. Choose PNG if you need pixel-perfect, lossless output.',
         },
       ],
     },

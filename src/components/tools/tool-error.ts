@@ -10,6 +10,7 @@ export function toolErrorMessage(err: unknown, dict: Dictionary): string {
   if (err instanceof PdfToolError) {
     if (err.code === 'invalidRange') return errors.invalidRange;
     if (err.code === 'rangeOutOfBounds') return errors.rangeOutOfBounds;
+    if (err.code === 'noPages') return errors.noPages;
     return errors.generic;
   }
   return errors[classifyPdfError(err)];

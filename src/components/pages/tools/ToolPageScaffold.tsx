@@ -7,7 +7,13 @@ import { SITE_NAME } from '@/lib/site';
 import { FactSummary } from '@/components/seo/FactSummary';
 import { JsonLd } from '@/components/seo/JsonLd';
 
-export type ToolSlug = 'merge-pdf' | 'split-pdf' | 'rotate-pdf' | 'jpg-to-pdf';
+export type ToolSlug =
+  | 'merge-pdf'
+  | 'split-pdf'
+  | 'rotate-pdf'
+  | 'jpg-to-pdf'
+  | 'organize-pdf'
+  | 'pdf-to-jpg';
 
 interface ToolPageScaffoldProps {
   locale: Locale;

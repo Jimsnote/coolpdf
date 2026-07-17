@@ -19,13 +19,22 @@ export class PdfToolError extends Error {
 /**
  * Maps an unknown thrown value (typically from `PDFDocument.load`) to a
  * `PdfErrorCode`. Encrypted PDFs are detected via pdf-lib's error name and
- * message; anything that fails to parse is treated as corrupted.
+ * message — and via pdf.js's `PasswordException`, thrown when a document
+ * needs a password before it can even be rendered; anything that fails to
+ * parse is treated as corrupted.
  */
 export function classifyPdfError(err: unknown): PdfErrorCode {
   if (err instanceof PdfToolError) return 'generic';
   const name = err instanceof Error ? err.name : '';
   const message = err instanceof Error ? err.message : String(err);
-  if (name === 'EncryptedPDFError' || /encrypt/i.test(message)) return 'encrypted';
+  if (
+    name === 'EncryptedPDFError' ||
+    name === 'PasswordException' ||
+    /encrypt/i.test(message) ||
+    /password/i.test(message)
+  ) {
+    return 'encrypted';
+  }
   if (/invalid|parse|corrupt|PDF header|not a PDF|trailer/i.test(message)) return 'corrupted';
   return 'generic';
 }

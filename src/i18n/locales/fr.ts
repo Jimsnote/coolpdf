@@ -394,6 +394,7 @@ export const fr = {
       corrupted: 'Ce fichier n’a pas pu être lu comme un PDF valide.',
       invalidRange: 'Plage de pages invalide. Utilisez des chiffres et des tirets, par exemple 1-3, 5.',
       rangeOutOfBounds: 'La plage de pages dépasse le nombre de pages du document.',
+      noPages: 'Au moins une page doit rester dans le document.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
     },
   },
@@ -564,6 +565,104 @@ export const fr = {
           question: 'Mes images perdent-elles en qualité ?',
           answer:
             'Non. Les images sont intégrées exactement telles quelles — sans recompression. Le PDF se contente d’encapsuler vos données d’image d’origine : ce que vous voyez dans l’image est ce que vous obtenez dans le PDF.',
+        },
+      ],
+    },
+    'organize-pdf': {
+      metaTitle: 'Organiser les pages d’un PDF en ligne gratuitement — Réordonner et faire pivoter | CoolPDF',
+      metaDescription:
+        'Réordonnez les pages d’un PDF par glisser-déposer, faites pivoter ou supprimez des pages, puis téléchargez le PDF réorganisé — le tout dans votre navigateur. Sans téléversement, sans inscription.',
+      heading: 'Organiser les pages PDF',
+      intro:
+        'Réorganisez les pages par glisser-déposer, faites pivoter celles qui sont de travers et retirez celles dont vous n’avez pas besoin. Un aperçu en direct de chaque page facilite le travail — et tout se passe sur votre appareil.',
+      button: 'Télécharger le PDF réorganisé',
+      loadingPreviews: 'Rendu des aperçus de pages…',
+      loadMorePreviews: 'Charger plus d’aperçus',
+      selectAll: 'Tout sélectionner',
+      clearSelection: 'Effacer la sélection',
+      deleteSelected: 'Supprimer la sélection',
+      rotateSelected: 'Faire pivoter la sélection de 90°',
+      reset: 'Réinitialiser',
+      rotatePage: 'Faire pivoter la page de 90°',
+      deletePage: 'Supprimer la page',
+      restorePage: 'Restaurer la page',
+      deletedBadge: 'Supprimée',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} pages sur {total} seront conservées',
+      stepsHeading: 'Comment organiser les pages d’un PDF',
+      steps: [
+        'Ajoutez le PDF à réorganiser en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Faites glisser les vignettes des pages dans l’ordre souhaité — le badge numéroté indique toujours le numéro de page d’origine.',
+        'Faites pivoter ou supprimez des pages individuelles à l’aide des boutons de chaque vignette, ou sélectionnez plusieurs pages et utilisez la barre d’outils. Les pages supprimées peuvent être restaurées en un clic.',
+        'Cliquez sur « Télécharger le PDF réorganisé ». Le document réorganisé est assemblé localement et enregistré sur votre appareil.',
+      ],
+      privacyHeading: 'Réorganisez des documents confidentiels page par page — en privé',
+      privacyText:
+        'Réordonner des pages est souvent la dernière étape avant l’envoi d’un document : placer la page signée au début d’un contrat, retirer les scans vides d’un dossier fiscal, remonter en tête le chapitre demandé par un client. Ce ne sont pas des fichiers qui ont leur place sur le serveur d’un inconnu. CoolPDF génère les aperçus des pages et reconstruit le document entièrement dans votre navigateur — le fichier est lu depuis votre propre disque et le résultat y est réenregistré, sans aucun téléversement entre les deux. Il n’y a ni file d’attente, ni copie temporaire sur le stockage d’un tiers, ni politique de conservation à croire sur parole. L’outil est donc sûr pour les dossiers juridiques, médicaux et RH, même sur un Wi-Fi public. Fermez l’onglet et il ne reste rien de votre document.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je annuler la suppression d’une page ?',
+          answer:
+            'Oui. Le bouton de suppression se contente de marquer la page — elle apparaît estompée et peut être restaurée en un clic. Les pages ne sont exclues qu’au moment du téléchargement, et même dans ce cas le fichier d’origine sur votre appareil reste inchangé.',
+        },
+        {
+          question: 'La réorganisation réduit-elle la qualité de mon PDF ?',
+          answer:
+            'Non. Les pages sont copiées dans le nouveau document exactement telles quelles — sans nouveau rendu, sans recompression. Le texte reste sélectionnable, les liens continuent de fonctionner et les rotations sont inscrites comme métadonnées de page standard.',
+        },
+        {
+          question: 'Y a-t-il une limite de taille de fichier ou de nombre de pages ?',
+          answer:
+            'Les fichiers jusqu’à 100 Mo sont pris en charge (50 Mo sur mobile), sans limite de pages. Pour les documents très longs, les aperçus de pages sont générés par lots, afin que l’outil reste fluide.',
+        },
+      ],
+    },
+    'pdf-to-jpg': {
+      metaTitle: 'Convertir PDF en JPG — Gratuit, local, sans téléversement | CoolPDF',
+      metaDescription:
+        'Transformez vos pages PDF en images JPG ou PNG à 72, 150 ou 300 DPI — directement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+      heading: 'PDF en JPG',
+      intro:
+        'Convertissez vos pages PDF en images JPG ou PNG de haute qualité. Choisissez la résolution et les pages voulues — la conversion s’effectue entièrement sur votre appareil.',
+      button: 'Convertir en images',
+      formatLabel: 'Format d’image',
+      formatJpg: 'JPG — fichiers plus légers',
+      formatPng: 'PNG — sans perte, fichiers plus lourds',
+      dpiLabel: 'Résolution',
+      dpiHint:
+        '300 DPI produit des images très volumineuses et peut être lent et gourmand en mémoire sur les documents longs.',
+      scopeLabel: 'Pages',
+      scopeAll: 'Toutes les pages',
+      scopeCustom: 'Pages sélectionnées',
+      pagesPlaceholder: 'ex. 1-3, 5',
+      renderingProgress: 'Rendu de la page {current} sur {total}…',
+      stepsHeading: 'Comment convertir un PDF en JPG',
+      steps: [
+        'Ajoutez le PDF à convertir en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Choisissez le format d’image — JPG pour des fichiers légers, PNG pour une qualité sans perte — et la résolution : 72 DPI pour l’écran, 150 pour les documents, 300 pour l’impression.',
+        'Convertissez toutes les pages ou saisissez une plage comme 1-3, 5, puis cliquez sur « Convertir en images ».',
+        'Téléchargez le résultat — une seule image si vous avez converti une seule page, sinon une archive ZIP avec une image par page.',
+      ],
+      privacyHeading: 'Convertissez vos pages en images sans confier le document',
+      privacyText:
+        'Transformer un PDF en images signifie généralement que le document est destiné à un usage visuel — une présentation, une application de messagerie, un formulaire de téléversement qui n’accepte que des images. Les factures, les certificats et les courriers officiels empruntent souvent cette voie. Avec un convertisseur en ligne classique, le document entier est d’abord téléversé, et les images reviennent d’un serveur dont vous ne savez rien. CoolPDF génère le rendu des pages directement dans l’onglet de votre navigateur, avec le même type de moteur PDF que les lecteurs de bureau. Le fichier ne traverse jamais le réseau : il est lu depuis votre disque, converti en images par votre appareil, puis réenregistré sur celui-ci. Il n’y a rien à intercepter, à consigner ou à faire fuiter — ce qui signifie aussi que l’outil continue de fonctionner dans un avion, dans une usine ou partout ailleurs sans connexion.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Quelle résolution (DPI) choisir ?',
+          answer:
+            '72 DPI correspond à la taille d’affichage du PDF et convient au web. 150 DPI est un bon compromis pour les documents. 300 DPI est une qualité d’impression — nette, mais les images deviennent volumineuses et le rendu prend plus de temps.',
+        },
+        {
+          question: 'Pourquoi est-ce que je reçois un fichier ZIP ?',
+          answer:
+            'Chaque page PDF devient sa propre image. Quand plusieurs pages sont converties, toutes les images sont regroupées dans une seule archive ZIP, pour un téléchargement unique et bien rangé.',
+        },
+        {
+          question: 'La conversion en JPG fait-elle perdre de la qualité ?',
+          answer:
+            'JPG utilise une compression légère (qualité de 92 %), visuellement indiscernable de l’original pour les documents et les photos. Choisissez PNG si vous avez besoin d’un résultat sans perte, fidèle au pixel près.',
         },
       ],
     },
