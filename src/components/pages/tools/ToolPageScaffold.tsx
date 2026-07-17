@@ -13,7 +13,10 @@ export type ToolSlug =
   | 'rotate-pdf'
   | 'jpg-to-pdf'
   | 'organize-pdf'
-  | 'pdf-to-jpg';
+  | 'pdf-to-jpg'
+  | 'compress-pdf'
+  | 'protect-pdf'
+  | 'unlock-pdf';
 
 interface ToolPageScaffoldProps {
   locale: Locale;

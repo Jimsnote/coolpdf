@@ -11,6 +11,9 @@ export function toolErrorMessage(err: unknown, dict: Dictionary): string {
     if (err.code === 'invalidRange') return errors.invalidRange;
     if (err.code === 'rangeOutOfBounds') return errors.rangeOutOfBounds;
     if (err.code === 'noPages') return errors.noPages;
+    if (err.code === 'corrupted') return errors.corrupted;
+    if (err.code === 'wrong-password') return errors.wrongPassword;
+    if (err.code === 'not-encrypted') return errors.notEncrypted;
     return errors.generic;
   }
   return errors[classifyPdfError(err)];

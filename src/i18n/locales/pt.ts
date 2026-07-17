@@ -385,6 +385,9 @@ export const pt = {
     processing: 'A processar…',
     download: 'Descarregar',
     readyTitle: 'O seu ficheiro está pronto',
+    engineLoading: 'A carregar o motor de PDF…',
+    engineLoadingProgress: 'A carregar o motor de PDF… {loaded} de {total} MB',
+    engineFirstRun: 'A primeira utilização descarrega cerca de {size} MB; depois disso fica em cache no seu dispositivo.',
     errors: {
       onlyPdf: 'Apenas ficheiros PDF são suportados.',
       onlyImages: 'Apenas imagens JPG e PNG são suportadas.',
@@ -396,6 +399,8 @@ export const pt = {
       invalidRange: 'Intervalo de páginas inválido. Use números e hífenes, por exemplo 1-3, 5.',
       rangeOutOfBounds: 'O intervalo de páginas excede o número de páginas do documento.',
       noPages: 'Pelo menos uma página deve permanecer no documento.',
+      wrongPassword: 'A palavra-passe está incorreta. Tente novamente.',
+      notEncrypted: 'Este PDF não está protegido por palavra-passe, pelo que não há nada para desbloquear.',
       generic: 'Ocorreu um erro ao processar o seu ficheiro. Tente novamente.',
     },
   },
@@ -664,6 +669,153 @@ export const pt = {
           question: 'Converter para JPG perde qualidade?',
           answer:
             'O JPG usa uma compressão ligeira (92% de qualidade), visualmente indistinguível do original em documentos e fotografias. Escolha PNG se precisar de um resultado sem perdas, perfeito ao píxel.',
+        },
+      ],
+    },
+    'compress-pdf': {
+      metaTitle: 'Compactar PDF online grátis — Sem carregamento, sem registo | CoolPDF',
+      metaDescription:
+        'Reduza o tamanho de ficheiros PDF com três níveis de qualidade, de 72 a 300 DPI — diretamente no seu navegador. Os ficheiros nunca saem do seu dispositivo. Grátis, sem registo.',
+      heading: 'Compactar PDF',
+      intro:
+        'Reduza PDFs grandes para uma fração do seu tamanho com três níveis de compressão. O motor de compressão é executado inteiramente no seu próprio dispositivo.',
+      button: 'Compactar PDF',
+      levelLabel: 'Nível de compressão',
+      levels: {
+        extreme: {
+          name: 'Extremo',
+          description: 'Tamanho mínimo, imagens a 72 DPI — ideal para e-mail e pré-visualizações na web.',
+        },
+        recommended: {
+          name: 'Recomendado',
+          description: 'Tamanho e qualidade equilibrados, imagens a 150 DPI — certo para a maioria dos documentos.',
+        },
+        light: {
+          name: 'Ligeiro',
+          description: 'Melhor qualidade, imagens a 300 DPI — mantém as páginas prontas para impressão.',
+        },
+      },
+      processingPages: 'A compactar a página {current} de {total}…',
+      stillWorking: 'Ainda a trabalhar — ficheiros grandes podem demorar vários minutos. Mantenha este separador aberto.',
+      resultSmaller: '{percent}% mais pequeno',
+      resultLarger:
+        '{percent}% maior — este PDF já estava bem compactado. Experimente o nível Ligeiro para manter mais qualidade.',
+      stepsHeading: 'Como compactar um PDF',
+      steps: [
+        'Adicione o PDF que quer reduzir arrastando-o para a área de carregamento, ou clique para procurar (até 150 MB).',
+        'Escolha um nível de compressão: Extremo para o tamanho mínimo, Recomendado para um equilíbrio, ou Ligeiro para qualidade de impressão.',
+        'Clique em “Compactar PDF”. A primeira execução descarrega o motor de compressão uma única vez; depois disso arranca instantaneamente.',
+        'Descarregue o PDF compactado e compare os tamanhos — o ficheiro original permanece intacto no seu dispositivo.',
+      ],
+      privacyHeading: 'Compacte documentos grandes sem os carregar',
+      privacyText:
+        'Um PDF que precisa de ser compactado é normalmente um que está prestes a ser enviado para algum lado — um contrato digitalizado para um advogado, um portefólio para um recrutador, relatórios médicos para uma seguradora. Ironicamente, a maioria dos compressores online obriga-o primeiro a carregar o ficheiro para os seus servidores, pelo que reduzir um documento sensível começa por o entregar. O CoolPDF compacta o documento onde ele já está: dentro do seu navegador, no seu próprio dispositivo. O motor de compressão — o mesmo Ghostscript em que as gráficas confiam há décadas — é compilado para WebAssembly e descarregado para a sua máquina uma única vez. O seu ficheiro é lido do seu disco, reconstruído mais pequeno e guardado de volta nele, sem carregamento, fila ou cópia remota em momento algum. Feche o separador e nada permanece.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Que nível de compressão devo escolher?',
+          answer:
+            'O “Recomendado” é certo para a maioria dos documentos — equilibra tamanho e legibilidade. Escolha “Extremo” quando tiver de respeitar um limite de anexos de e-mail e cada quilobyte contar, e “Ligeiro” quando o ficheiro for impresso ou ampliado com frequência.',
+        },
+        {
+          question: 'Por que ficou o meu PDF maior em vez de mais pequeno?',
+          answer:
+            'Alguns PDFs já estão fortemente otimizados — por exemplo, ficheiros gravados por outros compressores. Recodificar as suas imagens pode adicionar bytes em vez de os remover. Nesse caso, fique com o original ou experimente o nível “Ligeiro”, que recomprime de forma menos agressiva.',
+        },
+        {
+          question: 'Por que demora mais a primeira compressão?',
+          answer:
+            'A primeira execução descarrega o motor de compressão (cerca de 15 MB) para o seu dispositivo. Depois disso fica em cache, pelo que as compressões seguintes arrancam instantaneamente — e funcionam mesmo offline.',
+        },
+      ],
+    },
+    'protect-pdf': {
+      metaTitle: 'Proteger PDF com palavra-passe grátis — AES-256 | CoolPDF',
+      metaDescription:
+        'Encripte um PDF com AES-256 e controle as permissões de impressão, cópia e edição — localmente no seu navegador. Sem carregamento, grátis, sem registo.',
+      heading: 'Proteger PDF',
+      intro:
+        'Adicione encriptação por palavra-passe AES-256 ao seu PDF e decida exatamente o que os destinatários podem fazer com ele. Tudo acontece no seu próprio dispositivo.',
+      button: 'Proteger PDF',
+      passwordLabel: 'Palavra-passe (pelo menos 6 caracteres)',
+      confirmLabel: 'Confirmar palavra-passe',
+      passwordTooShort: 'A palavra-passe deve ter pelo menos 6 caracteres.',
+      passwordMismatch: 'As palavras-passe não coincidem.',
+      permissionsHeading: 'Permissões para os destinatários',
+      printingLabel: 'Impressão',
+      printFull: 'Permitida',
+      printLow: 'Apenas em baixa qualidade',
+      printNone: 'Não permitida',
+      allowCopying: 'Permitir copiar texto e imagens',
+      allowModifying: 'Permitir modificar o documento',
+      allowAnnotating: 'Permitir comentários e preenchimento de formulários',
+      allowAssembling: 'Permitir inserir, girar e eliminar páginas',
+      allowAccessibility: 'Permitir extração de texto para leitores de ecrã',
+      stepsHeading: 'Como proteger um PDF',
+      steps: [
+        'Adicione o PDF que quer proteger arrastando-o para a área de carregamento, ou clique para procurar.',
+        'Escolha uma palavra-passe com pelo menos 6 caracteres e introduza-a duas vezes para a confirmar.',
+        'Defina as permissões que os destinatários terão depois de abrir o ficheiro — impressão, cópia, edição e mais.',
+        'Clique em “Proteger PDF” e descarregue o ficheiro encriptado. Guarde bem a palavra-passe — não há forma de a recuperar.',
+      ],
+      privacyHeading: 'Encripte documentos sem os revelar — nem a palavra-passe',
+      privacyText:
+        'Proteger um PDF com palavra-passe é normalmente o último passo antes de enviar algo sensível: um recibo de vencimento para um funcionário, um extrato bancário para um contabilista, um atestado médico para uma seguradora. Usar uma ferramenta baseada em servidor para esse passo final anula o propósito — o original desprotegido viaja pela internet e entrega a palavra-passe escolhida a uma infraestrutura que não controla. O CoolPDF executa a encriptação inteiramente no seu dispositivo. O ficheiro é lido localmente, encriptado com AES-256 dentro do separador do seu navegador e guardado diretamente de volta no seu disco. A palavra-passe que digita nunca atravessa a rede — não há servidor que a possa receber. Isso torna a ferramenta segura para documentos confidenciais, mesmo num portátil de trabalho ou em Wi-Fi público. Quando fecha o separador, o ficheiro e a palavra-passe desaparecem.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Quão forte é a encriptação?',
+          answer:
+            'O CoolPDF usa AES-256, a encriptação mais forte definida pela norma PDF — o mesmo nível usado por aplicações governamentais e bancárias. Sem a palavra-passe, o conteúdo não pode ser lido.',
+        },
+        {
+          question: 'O que acontece se me esquecer da palavra-passe?',
+          answer:
+            'Não há opção de recuperação — é esse o propósito de uma encriptação forte. O CoolPDF nunca vê nem guarda a sua palavra-passe, por isso guarde-a num lugar seguro, como um gestor de palavras-passe.',
+        },
+        {
+          question: 'As permissões são respeitadas por todos os leitores de PDF?',
+          answer:
+            'Os leitores conformes — incluindo o Adobe Acrobat, o Chrome e o macOS Preview — respeitam as restrições de impressão, cópia e edição. São um mecanismo de política e não DRM, por isso encare-as como um pedido forte, não uma garantia.',
+        },
+      ],
+    },
+    'unlock-pdf': {
+      metaTitle: 'Desbloquear PDF online grátis — Remover palavra-passe | CoolPDF',
+      metaDescription:
+        'Remova a proteção por palavra-passe de PDFs que lhe pertencem, diretamente no seu navegador. Sem carregamento, sem registo, grátis — os ficheiros nunca saem do seu dispositivo.',
+      heading: 'Desbloquear PDF',
+      intro:
+        'Remova a palavra-passe de um PDF que lhe pertence para que abra sem ela. A desencriptação é executada localmente — nem o ficheiro nem a palavra-passe saem do seu dispositivo.',
+      legalNote: 'Desbloqueie apenas PDFs que lhe pertencem ou que tem permissão para modificar.',
+      passwordLabel: 'Palavra-passe atual',
+      button: 'Desbloquear PDF',
+      stepsHeading: 'Como desbloquear um PDF',
+      steps: [
+        'Adicione o PDF protegido por palavra-passe arrastando-o para a área de carregamento, ou clique para procurar.',
+        'Introduza a palavra-passe atual do documento.',
+        'Clique em “Desbloquear PDF” — a proteção é removida localmente em segundos.',
+        'Descarregue o PDF desbloqueado. A partir de agora abre em qualquer leitor sem palavra-passe.',
+      ],
+      privacyHeading: 'Remova palavras-passe sem entregar o ficheiro',
+      privacyText:
+        'Desbloquear um PDF é geralmente uma questão de conveniência: um extrato bancário antigo que arquivou com uma palavra-passe que está cansado de digitar, um contrato digitalizado que precisa de juntar ou anotar, um documento que quer voltar a proteger mais tarde com uma palavra-passe melhor. Numa ferramenta online típica, remover essa proteção começa por carregar o ficheiro ainda protegido — e a palavra-passe — para o servidor de um desconhecido. O CoolPDF remove a proteção onde o ficheiro já vive. A desencriptação acontece inteiramente dentro do separador do seu navegador: o documento é lido do seu próprio disco, desbloqueado com a palavra-passe que digita localmente e guardado de volta sem que um único byte atravesse a rede. Não há carregamento para interceptar, não há registo da sua palavra-passe e não fica nenhuma cópia para trás. Fechar o separador apaga todos os vestígios de ambos.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Esqueci-me da palavra-passe. O CoolPDF consegue quebrá-la?',
+          answer:
+            'Não. O CoolPDF remove a proteção apenas quando sabe a palavra-passe atual — não é uma ferramenta de quebra de palavras-passe, e a encriptação AES-256 não pode realisticamente ser quebrada por tentativas.',
+        },
+        {
+          question: 'É legal desbloquear um PDF?',
+          answer:
+            'Sim — para documentos que lhe pertencem ou que tem permissão para modificar, como os seus próprios extratos arquivados. Remover a proteção de ficheiros sobre os quais não tem direitos pode violar a lei ou contratos, e é por isso que esta página mostra um aviso.',
+        },
+        {
+          question: 'Desbloquear altera o documento?',
+          answer:
+            'Não. Apenas a camada de encriptação é removida — cada página, imagem e anotação permanece exatamente como estava no original.',
         },
       ],
     },

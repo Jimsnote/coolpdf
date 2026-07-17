@@ -384,6 +384,9 @@ export const it = {
     processing: 'Elaborazione in corso…',
     download: 'Scarica',
     readyTitle: 'Il tuo file è pronto',
+    engineLoading: 'Caricamento del motore PDF in corso…',
+    engineLoadingProgress: 'Caricamento del motore PDF in corso… {loaded} di {total} MB',
+    engineFirstRun: 'Al primo utilizzo vengono scaricati circa {size} MB, che poi restano nella cache del tuo dispositivo.',
     errors: {
       onlyPdf: 'Sono supportati solo file PDF.',
       onlyImages: 'Sono supportate solo immagini JPG e PNG.',
@@ -395,6 +398,8 @@ export const it = {
       invalidRange: 'Intervallo di pagine non valido. Usa numeri e trattini, ad esempio 1-3, 5.',
       rangeOutOfBounds: 'L’intervallo di pagine supera il numero di pagine del documento.',
       noPages: 'Nel documento deve rimanere almeno una pagina.',
+      wrongPassword: 'La password non è corretta. Riprova.',
+      notEncrypted: 'Questo PDF non è protetto da password, quindi non c’è nulla da sbloccare.',
       generic: 'Si è verificato un errore durante l’elaborazione del file. Riprova.',
     },
   },
@@ -663,6 +668,153 @@ export const it = {
           question: 'La conversione in JPG perde qualità?',
           answer:
             'Il formato JPG usa una compressione leggera (qualità 92%), visivamente indistinguibile dall’originale per documenti e foto. Scegli PNG se ti serve un risultato senza perdita, perfetto al pixel.',
+        },
+      ],
+    },
+    'compress-pdf': {
+      metaTitle: 'Comprimere PDF online gratis — Nessun caricamento | CoolPDF',
+      metaDescription:
+        'Riduci le dimensioni del PDF con tre livelli di qualità, da 72 a 300 DPI — direttamente nel tuo browser. I file non lasciano mai il tuo dispositivo. Gratis, senza registrazione.',
+      heading: 'Comprimi PDF',
+      intro:
+        'Riduci i PDF più pesanti a una frazione delle loro dimensioni con tre livelli di compressione. Il motore di compressione funziona interamente sul tuo dispositivo.',
+      button: 'Comprimi PDF',
+      levelLabel: 'Livello di compressione',
+      levels: {
+        extreme: {
+          name: 'Estremo',
+          description: 'Dimensioni minime, immagini a 72 DPI — ideale per e-mail e anteprime web.',
+        },
+        recommended: {
+          name: 'Consigliato',
+          description: 'Equilibrio tra dimensioni e qualità, immagini a 150 DPI — giusto per la maggior parte dei documenti.',
+        },
+        light: {
+          name: 'Leggero',
+          description: 'Massima qualità, immagini a 300 DPI — mantiene le pagine pronte per la stampa.',
+        },
+      },
+      processingPages: 'Compressione della pagina {current} di {total}…',
+      stillWorking: 'Ancora al lavoro — i file di grandi dimensioni possono richiedere diversi minuti. Tieni aperta questa scheda.',
+      resultSmaller: '{percent}% in meno',
+      resultLarger:
+        '{percent}% in più — questo PDF era già ben compresso. Prova il livello Leggero per mantenere più qualità.',
+      stepsHeading: 'Come comprimere un PDF',
+      steps: [
+        'Aggiungi il PDF da ridurre trascinandolo nell’area di caricamento, oppure fai clic per sfogliare (fino a 150 MB).',
+        'Scegli un livello di compressione: Estremo per le dimensioni minime, Consigliato per un equilibrio o Leggero per la qualità da stampa.',
+        'Fai clic su “Comprimi PDF”. Al primo utilizzo il motore di compressione viene scaricato una sola volta; dopo si avvia all’istante.',
+        'Scarica il PDF compresso e confronta le dimensioni — il file originale resta intatto sul tuo dispositivo.',
+      ],
+      privacyHeading: 'Comprimi documenti di grandi dimensioni senza caricarli',
+      privacyText:
+        'Un PDF da comprimere è di solito un documento che sta per essere inviato da qualche parte — un contratto scansionato per un avvocato, un portfolio per un selezionatore, referti medici per un’assicurazione. Ironia della sorte, la maggior parte dei compressori online ti chiede prima di caricare il file sui propri server, quindi ridurre un documento riservato inizia proprio cedendolo. CoolPDF comprime il documento dove si trova già: nel tuo browser, sul tuo dispositivo. Il motore di compressione — lo stesso Ghostscript di cui le tipografie si fidano da decenni — è compilato in WebAssembly e viene scaricato sul tuo computer una sola volta. Il file viene letto dal tuo disco, ricostruito più piccolo e salvato di nuovo lì, senza caricamenti, code o copie remote in nessun momento. Chiudi la scheda e non resta nulla.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Quale livello di compressione dovrei scegliere?',
+          answer:
+            '“Consigliato” è giusto per la maggior parte dei documenti — bilancia dimensioni e leggibilità. Scegli “Estremo” quando devi rispettare il limite di un allegato e-mail e ogni kilobyte conta, e “Leggero” quando il file verrà stampato o ingrandito spesso.',
+        },
+        {
+          question: 'Perché il mio PDF è diventato più grande invece che più piccolo?',
+          answer:
+            'Alcuni PDF sono già fortemente ottimizzati — ad esempio i file salvati da altri compressori. Ricodificare le loro immagini può aggiungere byte invece di toglierli. In quel caso tieni l’originale, oppure prova il livello “Leggero”, che ricomprime in modo meno aggressivo.',
+        },
+        {
+          question: 'Perché la prima compressione richiede più tempo?',
+          answer:
+            'Al primo utilizzo il motore di compressione (circa 15 MB) viene scaricato sul tuo dispositivo. Poi resta nella cache, quindi le compressioni successive partono all’istante — e funzionano anche offline.',
+        },
+      ],
+    },
+    'protect-pdf': {
+      metaTitle: 'Proteggere PDF con password gratis — AES-256 | CoolPDF',
+      metaDescription:
+        'Crittografa un PDF con AES-256 e controlla i permessi di stampa, copia e modifica — in locale nel tuo browser. Nessun caricamento, gratis, senza registrazione.',
+      heading: 'Proteggi PDF',
+      intro:
+        'Aggiungi la crittografia con password AES-256 al tuo PDF e decidi esattamente cosa possono fare i destinatari. Tutto avviene sul tuo dispositivo.',
+      button: 'Proteggi PDF',
+      passwordLabel: 'Password (almeno 6 caratteri)',
+      confirmLabel: 'Conferma password',
+      passwordTooShort: 'La password deve contenere almeno 6 caratteri.',
+      passwordMismatch: 'Le password non corrispondono.',
+      permissionsHeading: 'Permessi per i destinatari',
+      printingLabel: 'Stampa',
+      printFull: 'Consentita',
+      printLow: 'Solo in bassa qualità',
+      printNone: 'Non consentita',
+      allowCopying: 'Consenti la copia di testo e immagini',
+      allowModifying: 'Consenti la modifica del documento',
+      allowAnnotating: 'Consenti commenti e compilazione di moduli',
+      allowAssembling: 'Consenti l’inserimento, la rotazione e l’eliminazione di pagine',
+      allowAccessibility: 'Consenti l’estrazione del testo per gli screen reader',
+      stepsHeading: 'Come proteggere un PDF',
+      steps: [
+        'Aggiungi il PDF da proteggere trascinandolo nell’area di caricamento, oppure fai clic per sfogliare.',
+        'Scegli una password di almeno 6 caratteri e inseriscila due volte per confermarla.',
+        'Imposta i permessi che avranno i destinatari dopo l’apertura del file — stampa, copia, modifica e altro.',
+        'Fai clic su “Proteggi PDF” e scarica il file crittografato. Conserva la password in un posto sicuro — non c’è modo di recuperarla.',
+      ],
+      privacyHeading: 'Crittografa i documenti senza rivelarli — né loro né la password',
+      privacyText:
+        'Proteggere un PDF con password è di solito l’ultimo passaggio prima di inviare qualcosa di riservato: una busta paga a un dipendente, un estratto conto a un commercialista, un certificato medico a un’assicurazione. Usare uno strumento basato su server per quel passaggio finale vanifica lo scopo — l’originale non protetto viaggia attraverso internet e consegni la password scelta a un’infrastruttura che non controlli. CoolPDF esegue la crittografia interamente sul tuo dispositivo. Il file viene letto in locale, crittografato con AES-256 nella scheda del tuo browser e salvato di nuovo direttamente sul tuo disco. La password che digiti non attraversa mai la rete — non esiste un server che possa riceverla. Questo rende lo strumento sicuro per i documenti riservati, anche su un portatile di lavoro o su una rete Wi-Fi pubblica. Quando chiudi la scheda, il file e la password spariscono entrambi.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Quanto è forte la crittografia?',
+          answer:
+            'CoolPDF usa AES-256, la crittografia più robusta definita dallo standard PDF — lo stesso livello usato da governi e banche. Senza la password, il contenuto non può essere letto.',
+        },
+        {
+          question: 'Cosa succede se dimentico la password?',
+          answer:
+            'Non esiste un’opzione di recupero — è proprio il senso della crittografia forte. CoolPDF non vede né conserva mai la tua password, quindi tienila in un posto sicuro, ad esempio un gestore di password.',
+        },
+        {
+          question: 'I permessi vengono rispettati da tutti i lettori PDF?',
+          answer:
+            'I lettori conformi — inclusi Adobe Acrobat, Chrome e macOS Preview — rispettano le restrizioni su stampa, copia e modifica. Sono un meccanismo di policy, non un DRM, quindi considerali una richiesta forte, non una garanzia.',
+        },
+      ],
+    },
+    'unlock-pdf': {
+      metaTitle: 'Sbloccare PDF gratis — Rimuovi la password in locale | CoolPDF',
+      metaDescription:
+        'Rimuovi la protezione con password dai PDF di tua proprietà, direttamente nel tuo browser. Nessun caricamento, nessuna registrazione, gratis — i file non lasciano mai il tuo dispositivo.',
+      heading: 'Sblocca PDF',
+      intro:
+        'Rimuovi la password da un PDF di tua proprietà, così si apre senza. La decrittografia avviene in locale — né il file né la password lasciano il tuo dispositivo.',
+      legalNote: 'Sblocca solo PDF di tua proprietà o che hai il permesso di modificare.',
+      passwordLabel: 'Password attuale',
+      button: 'Sblocca PDF',
+      stepsHeading: 'Come sbloccare un PDF',
+      steps: [
+        'Aggiungi il PDF protetto da password trascinandolo nell’area di caricamento, oppure fai clic per sfogliare.',
+        'Inserisci la password attuale del documento.',
+        'Fai clic su “Sblocca PDF” — la protezione viene rimossa in locale in pochi secondi.',
+        'Scarica il PDF sbloccato. D’ora in poi si apre in qualsiasi lettore senza password.',
+      ],
+      privacyHeading: 'Rimuovi le password senza consegnare il file',
+      privacyText:
+        'Sbloccare un PDF è di solito una questione di comodità: un vecchio estratto conto archiviato con una password che sei stanco di digitare, un contratto scansionato che devi unire o annotare, un documento che vuoi proteggere di nuovo più avanti con una password migliore. Con un tipico strumento online, rimuovere quella protezione inizia caricando il file ancora protetto — e la password — sul server di uno sconosciuto. CoolPDF rimuove la protezione dove il file si trova già. La decrittografia avviene interamente nella scheda del tuo browser: il documento viene letto dal tuo disco, sbloccato con la password che digiti in locale e salvato di nuovo senza che un solo byte attraversi la rete. Non c’è alcun caricamento da intercettare, nessun registro della tua password e nessuna copia lasciata in giro. Chiudendo la scheda si cancella ogni traccia di entrambi.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Ho dimenticato la password. CoolPDF può violarla?',
+          answer:
+            'No. CoolPDF rimuove la protezione solo quando conosci la password attuale — non è uno strumento per forzare le password, e la crittografia AES-256 non può essere ragionevolmente violata andando a tentativi.',
+        },
+        {
+          question: 'È legale sbloccare un PDF?',
+          answer:
+            'Sì — per i documenti di tua proprietà o che hai il permesso di modificare, come i tuoi estratti conto archiviati. Rimuovere la protezione da file su cui non hai diritti può violare la legge o i contratti, ed è per questo che questa pagina mostra un promemoria.',
+        },
+        {
+          question: 'Lo sblocco modifica il documento?',
+          answer:
+            'No. Viene rimosso solo lo strato di crittografia — ogni pagina, immagine e annotazione resta esattamente com’era nell’originale.',
         },
       ],
     },

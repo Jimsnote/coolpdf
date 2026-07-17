@@ -384,6 +384,9 @@ export const en = {
     processing: 'Processing…',
     download: 'Download',
     readyTitle: 'Your file is ready',
+    engineLoading: 'Loading the PDF engine…',
+    engineLoadingProgress: 'Loading the PDF engine… {loaded} of {total} MB',
+    engineFirstRun: 'First use downloads about {size} MB; it is cached on your device afterwards.',
     errors: {
       onlyPdf: 'Only PDF files are supported.',
       onlyImages: 'Only JPG and PNG images are supported.',
@@ -395,6 +398,8 @@ export const en = {
       invalidRange: 'Invalid page range. Use numbers and hyphens, for example 1-3, 5.',
       rangeOutOfBounds: 'The page range exceeds the number of pages in the document.',
       noPages: 'At least one page must remain in the document.',
+      wrongPassword: 'The password is incorrect. Please try again.',
+      notEncrypted: 'This PDF is not password-protected, so there is nothing to unlock.',
       generic: 'Something went wrong while processing your file. Please try again.',
     },
   },
@@ -663,6 +668,153 @@ export const en = {
           question: 'Does converting to JPG lose quality?',
           answer:
             'JPG uses light compression (92% quality), which is visually indistinguishable from the original for documents and photos. Choose PNG if you need pixel-perfect, lossless output.',
+        },
+      ],
+    },
+    'compress-pdf': {
+      metaTitle: 'Compress PDF Online Free — No Upload, No Sign-Up | CoolPDF',
+      metaDescription:
+        'Reduce PDF file size with three quality levels, from 72 to 300 DPI — right in your browser. Files never leave your device. Free, no sign-up.',
+      heading: 'Compress PDF',
+      intro:
+        'Shrink large PDFs to a fraction of their size with three compression levels. The compression engine runs entirely on your own device.',
+      button: 'Compress PDF',
+      levelLabel: 'Compression level',
+      levels: {
+        extreme: {
+          name: 'Extreme',
+          description: 'Smallest size, 72 DPI images — great for e-mail and web previews.',
+        },
+        recommended: {
+          name: 'Recommended',
+          description: 'Balanced size and quality, 150 DPI images — right for most documents.',
+        },
+        light: {
+          name: 'Light',
+          description: 'Best quality, 300 DPI images — keeps pages print-ready.',
+        },
+      },
+      processingPages: 'Compressing page {current} of {total}…',
+      stillWorking: 'Still working — large files can take several minutes. Please keep this tab open.',
+      resultSmaller: '{percent}% smaller',
+      resultLarger:
+        '{percent}% larger — this PDF was already well compressed. Try the Light level to keep more quality.',
+      stepsHeading: 'How to compress a PDF',
+      steps: [
+        'Add the PDF you want to shrink by dragging it onto the upload area, or click to browse (up to 150 MB).',
+        'Pick a compression level: Extreme for the smallest size, Recommended for a balance, or Light for print quality.',
+        'Click "Compress PDF". The first run downloads the compression engine once; afterwards it starts instantly.',
+        'Download the compressed PDF and compare the sizes — the original file stays untouched on your device.',
+      ],
+      privacyHeading: 'Compress large documents without uploading them',
+      privacyText:
+        'A PDF that needs compressing is usually one that is about to be sent somewhere — a scanned contract going to a lawyer, a portfolio going to a recruiter, medical reports going to an insurer. Ironically, most online compressors make you upload the file to their servers first, so shrinking a sensitive document starts with giving it away. CoolPDF compresses the document where it already is: inside your browser, on your own device. The compression engine — the same Ghostscript trusted by print shops for decades — is compiled to WebAssembly and downloaded to your machine once. Your file is read from your disk, rebuilt smaller, and saved back to it, with no upload, queue, or remote copy at any point. Close the tab and nothing remains.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which compression level should I choose?',
+          answer:
+            '"Recommended" is right for most documents — it balances size and readability. Choose "Extreme" when you must fit an e-mail attachment limit and every kilobyte counts, and "Light" when the file will be printed or zoomed often.',
+        },
+        {
+          question: 'Why did my PDF get larger instead of smaller?',
+          answer:
+            'Some PDFs are already heavily optimized — for example files saved by other compressors. Re-encoding their images can add bytes instead of removing them. In that case keep the original, or try the "Light" level, which recompresses less aggressively.',
+        },
+        {
+          question: 'Why does the first compression take longer?',
+          answer:
+            'The first run downloads the compression engine (about 15 MB) to your device. It is cached afterwards, so later compressions start instantly — and even work offline.',
+        },
+      ],
+    },
+    'protect-pdf': {
+      metaTitle: 'Protect PDF with Password Online Free — AES-256 | CoolPDF',
+      metaDescription:
+        'Encrypt a PDF with AES-256 and control printing, copying, and editing permissions — locally in your browser. No upload, free, no sign-up.',
+      heading: 'Protect PDF',
+      intro:
+        'Add AES-256 password encryption to your PDF and decide exactly what recipients may do with it. Everything happens on your own device.',
+      button: 'Protect PDF',
+      passwordLabel: 'Password (at least 6 characters)',
+      confirmLabel: 'Confirm password',
+      passwordTooShort: 'The password must be at least 6 characters long.',
+      passwordMismatch: 'The passwords do not match.',
+      permissionsHeading: 'Permissions for recipients',
+      printingLabel: 'Printing',
+      printFull: 'Allowed',
+      printLow: 'Low quality only',
+      printNone: 'Not allowed',
+      allowCopying: 'Allow copying text and images',
+      allowModifying: 'Allow modifying the document',
+      allowAnnotating: 'Allow comments and form filling',
+      allowAssembling: 'Allow inserting, rotating, and deleting pages',
+      allowAccessibility: 'Allow text extraction for screen readers',
+      stepsHeading: 'How to protect a PDF',
+      steps: [
+        'Add the PDF you want to protect by dragging it onto the upload area, or click to browse.',
+        'Choose a password of at least 6 characters and enter it twice to confirm it.',
+        'Set the permissions recipients get after opening the file — printing, copying, editing, and more.',
+        'Click "Protect PDF" and download the encrypted file. Keep the password safe — there is no way to recover it.',
+      ],
+      privacyHeading: 'Encrypt documents without revealing them — or the password',
+      privacyText:
+        'Password-protecting a PDF is usually the last step before sending something sensitive: a payslip to an employee, a bank statement to an accountant, a medical certificate to an insurer. Using a server-based tool for that final step defeats the purpose — the unprotected original travels across the internet, and you hand the chosen password to infrastructure you do not control. CoolPDF performs the encryption entirely on your device. The file is read locally, encrypted with AES-256 inside your browser tab, and saved straight back to your disk. The password you type never crosses the network — there is no server that could receive it. That makes the tool safe for confidential documents, even on a work laptop or public Wi-Fi. When you close the tab, both the file and the password are gone.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'How strong is the encryption?',
+          answer:
+            'CoolPDF uses AES-256, the strongest encryption defined by the PDF standard — the same grade used by government and banking applications. Without the password, the content cannot be read.',
+        },
+        {
+          question: 'What happens if I forget the password?',
+          answer:
+            'There is no recovery option — that is the point of strong encryption. CoolPDF never sees or stores your password, so keep it somewhere safe, such as a password manager.',
+        },
+        {
+          question: 'Are the permissions enforced by every PDF reader?',
+          answer:
+            'Compliant readers — including Adobe Acrobat, Chrome, and macOS Preview — respect the printing, copying, and editing restrictions. They are a policy mechanism rather than DRM, so treat them as a strong request, not a guarantee.',
+        },
+      ],
+    },
+    'unlock-pdf': {
+      metaTitle: 'Unlock PDF Online Free — Remove Password Locally | CoolPDF',
+      metaDescription:
+        'Remove password protection from PDFs you own, directly in your browser. No upload, no sign-up, free — files never leave your device.',
+      heading: 'Unlock PDF',
+      intro:
+        'Remove the password from a PDF you own so it opens without one. The decryption runs locally — neither the file nor the password leaves your device.',
+      legalNote: 'Only unlock PDFs you own or have permission to modify.',
+      passwordLabel: 'Current password',
+      button: 'Unlock PDF',
+      stepsHeading: 'How to unlock a PDF',
+      steps: [
+        'Add the password-protected PDF by dragging it onto the upload area, or click to browse.',
+        'Enter the current password of the document.',
+        'Click "Unlock PDF" — the protection is removed locally in seconds.',
+        'Download the unlocked PDF. From now on it opens in any reader without a password.',
+      ],
+      privacyHeading: 'Remove passwords without handing over the file',
+      privacyText:
+        'Unlocking a PDF is usually about convenience: an old bank statement you archived with a password you are tired of typing, a scanned contract you need to merge or annotate, a document you want to protect again later with a better password. With a typical online tool, removing that protection starts with uploading the still-protected file — and the password — to a stranger’s server. CoolPDF removes the protection where the file already lives. The decryption happens entirely inside your browser tab: the document is read from your own disk, unlocked with the password you type locally, and saved back without a single byte crossing the network. There is no upload to intercept, no log of your password, and no copy left behind. Closing the tab erases every trace of both.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'I forgot the password. Can CoolPDF crack it?',
+          answer:
+            'No. CoolPDF removes protection only when you know the current password — it is not a password-cracking tool, and AES-256 encryption cannot realistically be broken by guessing.',
+        },
+        {
+          question: 'Is it legal to unlock a PDF?',
+          answer:
+            'Yes — for documents you own or have permission to modify, such as your own archived statements. Removing protection from files you have no rights to may violate law or contracts, which is why this page shows a reminder.',
+        },
+        {
+          question: 'Will unlocking change the document?',
+          answer:
+            'No. Only the encryption layer is removed — every page, image, and annotation stays exactly as it was in the original.',
         },
       ],
     },

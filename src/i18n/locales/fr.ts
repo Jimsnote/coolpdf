@@ -384,6 +384,9 @@ export const fr = {
     processing: 'Traitement en cours…',
     download: 'Télécharger',
     readyTitle: 'Votre fichier est prêt',
+    engineLoading: 'Chargement du moteur PDF…',
+    engineLoadingProgress: 'Chargement du moteur PDF… {loaded} sur {total} Mo',
+    engineFirstRun: 'La première utilisation télécharge environ {size} Mo ; le moteur est ensuite mis en cache sur votre appareil.',
     errors: {
       onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
       onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
@@ -395,6 +398,8 @@ export const fr = {
       invalidRange: 'Plage de pages invalide. Utilisez des chiffres et des tirets, par exemple 1-3, 5.',
       rangeOutOfBounds: 'La plage de pages dépasse le nombre de pages du document.',
       noPages: 'Au moins une page doit rester dans le document.',
+      wrongPassword: 'Le mot de passe est incorrect. Veuillez réessayer.',
+      notEncrypted: 'Ce PDF n’est pas protégé par un mot de passe, il n’y a donc rien à déverrouiller.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
     },
   },
@@ -663,6 +668,153 @@ export const fr = {
           question: 'La conversion en JPG fait-elle perdre de la qualité ?',
           answer:
             'JPG utilise une compression légère (qualité de 92 %), visuellement indiscernable de l’original pour les documents et les photos. Choisissez PNG si vous avez besoin d’un résultat sans perte, fidèle au pixel près.',
+        },
+      ],
+    },
+    'compress-pdf': {
+      metaTitle: 'Compresser PDF en ligne — Gratuit, sans téléversement | CoolPDF',
+      metaDescription:
+        'Réduisez la taille de vos PDF grâce à trois niveaux de qualité, de 72 à 300 DPI — directement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+      heading: 'Compresser PDF',
+      intro:
+        'Réduisez vos PDF volumineux à une fraction de leur taille grâce à trois niveaux de compression. Le moteur de compression fonctionne entièrement sur votre propre appareil.',
+      button: 'Compresser PDF',
+      levelLabel: 'Niveau de compression',
+      levels: {
+        extreme: {
+          name: 'Extrême',
+          description: 'Taille minimale, images à 72 DPI — idéal pour l’e-mail et les aperçus web.',
+        },
+        recommended: {
+          name: 'Recommandé',
+          description: 'Équilibre entre taille et qualité, images à 150 DPI — convient à la plupart des documents.',
+        },
+        light: {
+          name: 'Léger',
+          description: 'Meilleure qualité, images à 300 DPI — garde les pages prêtes pour l’impression.',
+        },
+      },
+      processingPages: 'Compression de la page {current} sur {total}…',
+      stillWorking: 'Traitement toujours en cours — les fichiers volumineux peuvent prendre plusieurs minutes. Veuillez garder cet onglet ouvert.',
+      resultSmaller: '{percent} % plus léger',
+      resultLarger:
+        '{percent} % plus lourd — ce PDF était déjà bien compressé. Essayez le niveau Léger pour conserver davantage de qualité.',
+      stepsHeading: 'Comment compresser un PDF',
+      steps: [
+        'Ajoutez le PDF à réduire en le déposant sur la zone de téléversement, ou cliquez pour parcourir (jusqu’à 150 Mo).',
+        'Choisissez un niveau de compression : Extrême pour la taille minimale, Recommandé pour un équilibre, ou Léger pour une qualité d’impression.',
+        'Cliquez sur « Compresser PDF ». La première exécution télécharge le moteur de compression une seule fois ; ensuite, il démarre instantanément.',
+        'Téléchargez le PDF compressé et comparez les tailles — le fichier d’origine reste intact sur votre appareil.',
+      ],
+      privacyHeading: 'Compressez vos documents volumineux sans les téléverser',
+      privacyText:
+        'Un PDF à compresser est généralement un fichier sur le point d’être envoyé — un contrat scanné destiné à un avocat, un portfolio pour un recruteur, des rapports médicaux pour un assureur. Paradoxalement, la plupart des compresseurs en ligne exigent d’abord le téléversement du fichier sur leurs serveurs : réduire un document sensible commence donc par s’en dessaisir. CoolPDF compresse le document là où il se trouve déjà : dans votre navigateur, sur votre propre appareil. Le moteur de compression — le même Ghostscript auquel les imprimeurs font confiance depuis des décennies — est compilé en WebAssembly et téléchargé une seule fois sur votre machine. Votre fichier est lu depuis votre disque, reconstruit en plus léger, puis réenregistré sur celui-ci, sans aucun téléversement, file d’attente ni copie distante. Fermez l’onglet et il ne reste rien.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Quel niveau de compression choisir ?',
+          answer:
+            '« Recommandé » convient à la plupart des documents — il équilibre taille et lisibilité. Choisissez « Extrême » quand vous devez respecter une limite de pièce jointe et que chaque kilo-octet compte, et « Léger » quand le fichier sera souvent imprimé ou zoomé.',
+        },
+        {
+          question: 'Pourquoi mon PDF est-il devenu plus lourd ?',
+          answer:
+            'Certains PDF sont déjà fortement optimisés — par exemple les fichiers enregistrés par d’autres compresseurs. Réencoder leurs images peut alors ajouter des octets au lieu d’en retirer. Dans ce cas, gardez l’original ou essayez le niveau « Léger », qui recompresse moins agressivement.',
+        },
+        {
+          question: 'Pourquoi la première compression est-elle plus longue ?',
+          answer:
+            'La première exécution télécharge le moteur de compression (environ 15 Mo) sur votre appareil. Il est ensuite mis en cache, donc les compressions suivantes démarrent instantanément — et fonctionnent même hors ligne.',
+        },
+      ],
+    },
+    'protect-pdf': {
+      metaTitle: 'Protéger un PDF par mot de passe — Gratuit, AES-256 | CoolPDF',
+      metaDescription:
+        'Chiffrez un PDF avec AES-256 et contrôlez les permissions d’impression, de copie et de modification — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+      heading: 'Protéger PDF',
+      intro:
+        'Ajoutez un chiffrement par mot de passe AES-256 à votre PDF et décidez précisément de ce que les destinataires peuvent en faire. Tout se passe sur votre propre appareil.',
+      button: 'Protéger PDF',
+      passwordLabel: 'Mot de passe (au moins 6 caractères)',
+      confirmLabel: 'Confirmer le mot de passe',
+      passwordTooShort: 'Le mot de passe doit contenir au moins 6 caractères.',
+      passwordMismatch: 'Les mots de passe ne correspondent pas.',
+      permissionsHeading: 'Permissions des destinataires',
+      printingLabel: 'Impression',
+      printFull: 'Autorisée',
+      printLow: 'Basse qualité uniquement',
+      printNone: 'Non autorisée',
+      allowCopying: 'Autoriser la copie de texte et d’images',
+      allowModifying: 'Autoriser la modification du document',
+      allowAnnotating: 'Autoriser les commentaires et le remplissage de formulaires',
+      allowAssembling: 'Autoriser l’insertion, la rotation et la suppression de pages',
+      allowAccessibility: 'Autoriser l’extraction de texte pour les lecteurs d’écran',
+      stepsHeading: 'Comment protéger un PDF',
+      steps: [
+        'Ajoutez le PDF à protéger en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Choisissez un mot de passe d’au moins 6 caractères et saisissez-le deux fois pour le confirmer.',
+        'Définissez les permissions accordées aux destinataires après l’ouverture du fichier — impression, copie, modification, et plus encore.',
+        'Cliquez sur « Protéger PDF » et téléchargez le fichier chiffré. Gardez le mot de passe en lieu sûr — il est impossible de le récupérer.',
+      ],
+      privacyHeading: 'Chiffrez vos documents sans les révéler — ni dévoiler le mot de passe',
+      privacyText:
+        'Protéger un PDF par mot de passe est généralement la dernière étape avant l’envoi d’un document sensible : une fiche de paie pour un employé, un relevé bancaire pour un comptable, un certificat médical pour un assureur. Recourir à un outil sur serveur pour cette dernière étape va à l’encontre du but recherché — l’original non protégé voyage sur Internet, et vous confiez le mot de passe choisi à une infrastructure que vous ne contrôlez pas. CoolPDF effectue le chiffrement entièrement sur votre appareil. Le fichier est lu localement, chiffré avec AES-256 dans l’onglet de votre navigateur, puis réenregistré directement sur votre disque. Le mot de passe saisi ne traverse jamais le réseau — il n’existe aucun serveur pour le recevoir. L’outil est donc sûr pour les documents confidentiels, même sur un ordinateur professionnel ou un Wi-Fi public. À la fermeture de l’onglet, le fichier comme le mot de passe ont disparu.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Quelle est la force du chiffrement ?',
+          answer:
+            'CoolPDF utilise AES-256, le chiffrement le plus fort défini par la norme PDF — le même niveau que celui des applications gouvernementales et bancaires. Sans le mot de passe, le contenu ne peut pas être lu.',
+        },
+        {
+          question: 'Que se passe-t-il si j’oublie le mot de passe ?',
+          answer:
+            'Il n’existe aucune option de récupération — c’est précisément le principe d’un chiffrement fort. CoolPDF ne voit ni ne stocke jamais votre mot de passe, conservez-le donc en lieu sûr, par exemple dans un gestionnaire de mots de passe.',
+        },
+        {
+          question: 'Les permissions sont-elles respectées par tous les lecteurs PDF ?',
+          answer:
+            'Les lecteurs conformes — dont Adobe Acrobat, Chrome et macOS Preview — respectent les restrictions d’impression, de copie et de modification. Il s’agit d’un mécanisme de politique plutôt que d’un DRM : considérez-les comme une demande ferme, pas comme une garantie.',
+        },
+      ],
+    },
+    'unlock-pdf': {
+      metaTitle: 'Déverrouiller un PDF en ligne — Gratuit et local | CoolPDF',
+      metaDescription:
+        'Supprimez la protection par mot de passe des PDF qui vous appartiennent, directement dans votre navigateur. Sans téléversement ni inscription, gratuit — vos fichiers ne quittent jamais votre appareil.',
+      heading: 'Déverrouiller PDF',
+      intro:
+        'Supprimez le mot de passe d’un PDF qui vous appartient pour qu’il s’ouvre sans en demander. Le déchiffrement s’effectue localement — ni le fichier ni le mot de passe ne quittent votre appareil.',
+      legalNote: 'Déverrouillez uniquement des PDF qui vous appartiennent ou que vous êtes autorisé à modifier.',
+      passwordLabel: 'Mot de passe actuel',
+      button: 'Déverrouiller PDF',
+      stepsHeading: 'Comment déverrouiller un PDF',
+      steps: [
+        'Ajoutez le PDF protégé par mot de passe en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Saisissez le mot de passe actuel du document.',
+        'Cliquez sur « Déverrouiller PDF » — la protection est supprimée localement en quelques secondes.',
+        'Téléchargez le PDF déverrouillé. Il s’ouvre désormais dans n’importe quel lecteur, sans mot de passe.',
+      ],
+      privacyHeading: 'Supprimez des mots de passe sans confier le fichier',
+      privacyText:
+        'Déverrouiller un PDF est souvent une question de confort : un vieux relevé bancaire archivé avec un mot de passe que vous en avez assez de taper, un contrat scanné que vous devez fusionner ou annoter, un document que vous souhaitez protéger à nouveau plus tard avec un meilleur mot de passe. Avec un outil en ligne classique, la suppression de cette protection commence par le téléversement du fichier encore protégé — et du mot de passe — sur le serveur d’un inconnu. CoolPDF supprime la protection là où le fichier réside déjà. Le déchiffrement se déroule entièrement dans l’onglet de votre navigateur : le document est lu depuis votre propre disque, déverrouillé avec le mot de passe saisi localement, puis réenregistré sans qu’un seul octet ne traverse le réseau. Aucun téléversement à intercepter, aucune trace de votre mot de passe, aucune copie laissée derrière. La fermeture de l’onglet efface toute trace des deux.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'J’ai oublié le mot de passe. CoolPDF peut-il le craquer ?',
+          answer:
+            'Non. CoolPDF ne supprime la protection que si vous connaissez le mot de passe actuel — ce n’est pas un outil de piratage, et le chiffrement AES-256 ne peut pas être raisonnablement cassé par essais successifs.',
+        },
+        {
+          question: 'Est-il légal de déverrouiller un PDF ?',
+          answer:
+            'Oui — pour les documents qui vous appartiennent ou que vous êtes autorisé à modifier, comme vos propres relevés archivés. Supprimer la protection de fichiers sur lesquels vous n’avez aucun droit peut enfreindre la loi ou des contrats, c’est pourquoi cette page affiche un rappel.',
+        },
+        {
+          question: 'Le déverrouillage modifie-t-il le document ?',
+          answer:
+            'Non. Seule la couche de chiffrement est supprimée — chaque page, image et annotation reste exactement comme dans l’original.',
         },
       ],
     },
