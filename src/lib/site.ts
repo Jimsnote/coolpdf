@@ -6,7 +6,7 @@ export const SITE_URL = (
 ).replace(/\/$/, '');
 
 export const GITHUB_URL =
-  process.env.NEXT_PUBLIC_GITHUB_URL ?? 'https://github.com/coolpdf';
+  process.env.NEXT_PUBLIC_GITHUB_URL ?? 'https://github.com/Jimsnote/coolpdf';
 
 export const CONTACT_EMAIL = 'support@getcoolpdf.com';
 

@@ -53,7 +53,7 @@ npm run type-check # tsc --noEmit
 - **Build output directory:** `out`
 - No environment variables are required. Optional ones (see `.env.example`):
   - `NEXT_PUBLIC_SITE_URL` — canonical URL used for metadata/hreflang/sitemap (default `https://getcoolpdf.com`)
-  - `NEXT_PUBLIC_GITHUB_URL` — GitHub link target (default `https://github.com/coolpdf`)
+  - `NEXT_PUBLIC_GITHUB_URL` — GitHub link target (default `https://github.com/Jimsnote/coolpdf`)
   - `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` — enables the cookieless Cloudflare Web Analytics beacon
   - `NEXT_PUBLIC_ADSENSE_CLIENT` — enables the AdSense ad component
 
@@ -87,7 +87,7 @@ public/
 
 ## Contributing
 
-Issues and pull requests are welcome on GitHub: <https://github.com/coolpdf>
+Issues and pull requests are welcome on GitHub: <https://github.com/Jimsnote/coolpdf>
 
 ## License
 

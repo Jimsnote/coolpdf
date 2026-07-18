@@ -40,4 +40,4 @@ Twelve tools, each running 100% client-side in the browser:
 
 ## Source code
 
-- GitHub: https://github.com/coolpdf
+- GitHub: https://github.com/Jimsnote/coolpdf

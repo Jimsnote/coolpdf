@@ -142,7 +142,7 @@ npx serve out      # 以产物形态本地预览
 | 变量 | 用途 |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | 默认 https://getcoolpdf.com |
-| `NEXT_PUBLIC_GITHUB_URL` | **发布 GitHub 后必须改为真实仓库地址**（当前占位 https://github.com/coolpdf 是 404，页脚/About/llms.txt 引用它） |
+| `NEXT_PUBLIC_GITHUB_URL` | GitHub 仓库地址（当前默认 https://github.com/Jimsnote/coolpdf，页脚/About/llms.txt 引用它） |
 | `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | Cloudflare Web Analytics token（设置后全站注入 beacon） |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | ca-pub-xxx（设置后 AdBanner 可用，目前未放置广告位） |
 
