@@ -85,6 +85,7 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
     }
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const inputs = await Promise.all(
         items.map(async ({ file }) => new Uint8Array(await file.arrayBuffer())),

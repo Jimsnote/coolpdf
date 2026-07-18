@@ -62,6 +62,7 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
     if (items.length === 0) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       // Phone photos carry an EXIF orientation tag; normalizing here (before
       // embedding) keeps auto-orientation and fit calculations correct.

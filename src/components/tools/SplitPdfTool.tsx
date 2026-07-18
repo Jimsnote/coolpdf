@@ -61,6 +61,7 @@ export function SplitPdfTool({ dict }: SplitPdfToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       let outputs: SplitOutput[];

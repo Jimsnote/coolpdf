@@ -388,6 +388,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
     }
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const output = await organizePdf(bytes, sequence);

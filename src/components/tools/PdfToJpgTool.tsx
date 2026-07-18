@@ -68,6 +68,7 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     setNotice(null);
     setProgress(null);
     try {

@@ -63,6 +63,7 @@ export function WatermarkPdfTool({ dict }: WatermarkPdfToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const pdfBytes = new Uint8Array(await file.arrayBuffer());
       let output: Uint8Array;

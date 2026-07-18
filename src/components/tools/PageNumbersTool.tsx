@@ -56,6 +56,7 @@ export function PageNumbersTool({ dict }: PageNumbersToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const output = await addPageNumbers(bytes, {

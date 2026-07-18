@@ -50,6 +50,7 @@ export function PdfToMarkdownTool({ dict }: PdfToMarkdownToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setResult(null);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const markdown = await pdfToMarkdown(
