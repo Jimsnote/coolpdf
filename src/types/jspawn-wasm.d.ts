@@ -20,7 +20,11 @@ interface JspawnEmscriptenModule {
 
 interface JspawnEmscriptenModuleOptions {
   noInitialRun?: boolean;
-  /** Pre-fetched wasm bytes; skips Emscripten's own download. */
+  /**
+   * NOTE: the jspawn Emscripten builds IGNORE this option — their
+   * getBinaryPromise() always fetches the locateFile URL. Kept here only for
+   * documentation; use locateFile with a blob URL of pre-fetched bytes.
+   */
   wasmBinary?: ArrayBuffer;
   locateFile?: (path: string) => string;
   print?: (text: string) => void;

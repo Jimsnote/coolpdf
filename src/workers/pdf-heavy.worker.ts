@@ -72,22 +72,37 @@ async function downloadWasm(url: string): Promise<ArrayBuffer> {
   return bytes.buffer;
 }
 
+/** Every wasm binary starts with the magic word "\0asm" — guards against 404 HTML pages. */
+function hasWasmMagic(bytes: ArrayBuffer): boolean {
+  const head = new Uint8Array(bytes, 0, 4);
+  return head[0] === 0x00 && head[1] === 0x61 && head[2] === 0x73 && head[3] === 0x6d;
+}
+
 /**
  * Loads a wasm binary, preferring Cache Storage over the network. The
  * binaries are several MB and change only with package upgrades (the URLs
  * are versioned), so caching them across sessions is safe. Falls back to a
  * plain fetch when Cache Storage is unavailable (private mode, quota).
+ * Poisoned cache entries (e.g. an HTML error page cached during a broken
+ * dev-server session) are detected via the magic word and self-healed.
  */
 async function fetchWasm(url: string): Promise<ArrayBuffer> {
   let cache: Cache | null = null;
   try {
     cache = await caches.open(WASM_CACHE);
     const hit = await cache.match(url);
-    if (hit) return hit.arrayBuffer();
+    if (hit) {
+      const cached = await hit.arrayBuffer();
+      if (hasWasmMagic(cached)) return cached;
+      await cache.delete(url);
+    }
   } catch {
     cache = null;
   }
   const bytes = await downloadWasm(url);
+  if (!hasWasmMagic(bytes)) {
+    throw new Error(`Fetched ${url} but the content is not a wasm binary`);
+  }
   if (cache) {
     try {
       await cache.put(
@@ -99,6 +114,18 @@ async function fetchWasm(url: string): Promise<ArrayBuffer> {
     }
   }
   return bytes;
+}
+
+/**
+ * Pre-fetches an engine's wasm binary (with download progress + Cache
+ * Storage) and hands it to Emscripten as a blob URL. The jspawn Emscripten
+ * builds ignore the `wasmBinary` option and always fetch the locateFile URL,
+ * so a blob URL is the only way to keep our caching/progress layer. The
+ * caller must revoke the URL once the factory promise resolves.
+ */
+async function engineBlobUrl(engine: keyof WasmManifest): Promise<string> {
+  const bytes = await fetchWasm(await wasmUrl(engine));
+  return URL.createObjectURL(new Blob([bytes], { type: 'application/wasm' }));
 }
 
 /**
@@ -199,26 +226,33 @@ async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuf
   if (!looksLikePdf(input)) throw new TaskError('corrupted');
 
   const { default: createGs } = await import('@jspawn/ghostscript-wasm/gs.js');
-  const wasmBinary = await fetchWasm(await wasmUrl('ghostscript'));
+  const wasmBlobUrl = await engineBlobUrl('ghostscript');
 
   // Ghostscript prints "Processing pages 1 through N." then one "Page n" line
   // per page on stdout; turn that into genuine progress events.
   let totalPages: number | null = null;
-  const mod = await createGs({
-    noInitialRun: true,
-    wasmBinary,
-    print: (line: string) => {
-      const range = /^Processing pages \d+ through (\d+)/.exec(line);
-      if (range) {
-        totalPages = Number(range[1]);
-        return;
-      }
-      const page = /^Page (\d+)/.exec(line);
-      if (page) {
-        post({ type: 'progress', stage: 'process', current: Number(page[1]), total: totalPages });
-      }
-    },
-  });
+  let mod: JspawnEmscriptenModule;
+  try {
+    mod = await createGs({
+      noInitialRun: true,
+      // This Emscripten build ignores `wasmBinary` and always fetches the
+      // locateFile URL — hand it the pre-fetched bytes as a blob URL.
+      locateFile: () => wasmBlobUrl,
+      print: (line: string) => {
+        const range = /^Processing pages \d+ through (\d+)/.exec(line);
+        if (range) {
+          totalPages = Number(range[1]);
+          return;
+        }
+        const page = /^Page (\d+)/.exec(line);
+        if (page) {
+          post({ type: 'progress', stage: 'process', current: Number(page[1]), total: totalPages });
+        }
+      },
+    });
+  } finally {
+    URL.revokeObjectURL(wasmBlobUrl);
+  }
 
   post({ type: 'progress', stage: 'process', current: null, total: null });
   mod.FS.writeFile('input.pdf', input);
@@ -251,15 +285,21 @@ async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuf
 
 async function createQpdf() {
   const { default: createQpdfModule } = await import('@jspawn/qpdf-wasm/qpdf.js');
-  const wasmBinary = await fetchWasm(await wasmUrl('qpdf'));
+  const wasmBlobUrl = await engineBlobUrl('qpdf');
   const stdout: string[] = [];
   const stderr: string[] = [];
-  const mod = await createQpdfModule({
-    noInitialRun: true,
-    wasmBinary,
-    print: (line: string) => stdout.push(line),
-    printErr: (line: string) => stderr.push(line),
-  });
+  let mod: JspawnEmscriptenModule;
+  try {
+    mod = await createQpdfModule({
+      noInitialRun: true,
+      // See runCompress: `wasmBinary` is ignored, locateFile must be a blob URL.
+      locateFile: () => wasmBlobUrl,
+      print: (line: string) => stdout.push(line),
+      printErr: (line: string) => stderr.push(line),
+    });
+  } finally {
+    URL.revokeObjectURL(wasmBlobUrl);
+  }
   return { mod, stdout, stderr };
 }
 

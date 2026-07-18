@@ -229,6 +229,10 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; wo
 
 验证基线：type-check ✓ lint ✓ build ✓（119 页 + sitemap/robots/llms.txt/_headers/og.png/wasm manifest 全部就位）；Node 逻辑测试多轮全过。
 
+**上线前人工验收发现的追加修复（均已回归验证）**：
+- 范围输入只认英文逗号 + 处理失败时旧结果卡不清除 → 输入归一化（中文标点/全角字符/尾随逗号容错），9 个工具组件处理开始时统一清空旧结果（`13f6562`）
+- **压缩/加解密浏览器端失败**：jspawn 的 Emscripten 构建**忽略 `wasmBinary` 配置**（二进制永远 fetch locateFile 的 URL，在 Worker 中解析为无效路径）→ 改为预取字节生成 blob URL 传给 locateFile（保留下载进度 + Cache Storage），并经 Node 实证（垃圾 wasmBinary 被忽略、wasm 唯一来源为 locateFile URL）；fetchWasm 增加 wasm 魔数校验，中毒缓存自愈
+
 ---
 
 ## 9. 上线前人工验收清单（浏览器真机，Node 测不了的部分）
