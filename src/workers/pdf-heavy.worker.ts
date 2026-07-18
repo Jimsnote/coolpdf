@@ -16,6 +16,8 @@ import type {
 // Keep in sync with the installed package versions (the script prints them).
 const GS_WASM_URL = '/wasm/gs-0.0.2.wasm';
 const QPDF_WASM_URL = '/wasm/qpdf-0.0.2.wasm';
+/** Cache Storage bucket for the wasm binaries, so they are downloaded once. */
+const WASM_CACHE = 'coolpdf-wasm';
 
 /** Minimal worker-global surface (the project compiles with the DOM lib only). */
 interface WorkerScope {
@@ -39,7 +41,7 @@ function post(event: HeavyEvent, transfer?: Transferable[]) {
  * Downloads a wasm binary while reporting byte progress, so the UI can show
  * how the (large, first-use-only) download is advancing.
  */
-async function fetchWasm(url: string): Promise<ArrayBuffer> {
+async function downloadWasm(url: string): Promise<ArrayBuffer> {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Failed to fetch ${url}: HTTP ${response.status}`);
   const totalHeader = Number(response.headers.get('content-length'));
@@ -64,6 +66,35 @@ async function fetchWasm(url: string): Promise<ArrayBuffer> {
   return bytes.buffer;
 }
 
+/**
+ * Loads a wasm binary, preferring Cache Storage over the network. The
+ * binaries are several MB and change only with package upgrades (the URLs
+ * are versioned), so caching them across sessions is safe. Falls back to a
+ * plain fetch when Cache Storage is unavailable (private mode, quota).
+ */
+async function fetchWasm(url: string): Promise<ArrayBuffer> {
+  let cache: Cache | null = null;
+  try {
+    cache = await caches.open(WASM_CACHE);
+    const hit = await cache.match(url);
+    if (hit) return hit.arrayBuffer();
+  } catch {
+    cache = null;
+  }
+  const bytes = await downloadWasm(url);
+  if (cache) {
+    try {
+      await cache.put(
+        url,
+        new Response(bytes.slice(0), { headers: { 'Content-Type': 'application/wasm' } }),
+      );
+    } catch {
+      // A failed cache write (e.g. quota) is not fatal.
+    }
+  }
+  return bytes;
+}
+
 function looksLikePdf(bytes: Uint8Array): boolean {
   // '%PDF-'
   return (
@@ -85,6 +116,21 @@ function readOutput(mod: JspawnEmscriptenModule, path: string): Uint8Array {
   }
   if (out.length === 0) throw new TaskError('corrupted');
   return out;
+}
+
+/**
+ * Probes whether the input is encrypted with qpdf `--is-encrypted`
+ * (exit 0 = encrypted). Used on compress/encrypt failure paths so a
+ * password-protected input is reported as 'encrypted', not 'corrupted'.
+ */
+async function probeEncryptedPdf(input: Uint8Array): Promise<boolean> {
+  try {
+    const { mod } = await createQpdf();
+    mod.FS.writeFile('input.pdf', input);
+    return mod.callMain(['--is-encrypted', 'input.pdf']) === 0;
+  } catch {
+    return false;
+  }
 }
 
 async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuffer> {
@@ -126,8 +172,19 @@ async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuf
   ]);
   // Ghostscript reports fatal errors on stderr but can still exit 0, so the
   // output file itself is the source of truth.
-  const out = readOutput(mod, 'output.pdf');
-  if (code !== 0 || !looksLikePdf(out)) throw new TaskError('corrupted');
+  let out: Uint8Array | null = null;
+  try {
+    const read = mod.FS.readFile('output.pdf');
+    if (read.length > 0 && looksLikePdf(read)) out = read;
+  } catch {
+    out = null;
+  }
+  if (code !== 0 || out === null) {
+    // Ghostscript cannot open encrypted PDFs without a password — check for
+    // that before writing the file off as corrupted.
+    if (await probeEncryptedPdf(input)) throw new TaskError('encrypted');
+    throw new TaskError('corrupted');
+  }
   return out.slice().buffer;
 }
 
@@ -135,12 +192,14 @@ async function createQpdf() {
   const { default: createQpdfModule } = await import('@jspawn/qpdf-wasm/qpdf.js');
   const wasmBinary = await fetchWasm(QPDF_WASM_URL);
   const stdout: string[] = [];
+  const stderr: string[] = [];
   const mod = await createQpdfModule({
     noInitialRun: true,
     wasmBinary,
     print: (line: string) => stdout.push(line),
+    printErr: (line: string) => stderr.push(line),
   });
-  return { mod, stdout };
+  return { mod, stdout, stderr };
 }
 
 function yn(flag: boolean): 'y' | 'n' {
@@ -174,8 +233,13 @@ async function runEncrypt(
     'input.pdf',
     'output.pdf',
   ]);
+  // qpdf exit code 3 means "success with warnings" — the output is valid.
+  if (code !== 0 && code !== 3) {
+    // qpdf cannot read an already-encrypted input without its password.
+    if (mod.callMain(['--is-encrypted', 'input.pdf']) === 0) throw new TaskError('encrypted');
+    throw new TaskError('corrupted');
+  }
   const out = readOutput(mod, 'output.pdf');
-  if (code !== 0) throw new TaskError('corrupted');
   return out.slice().buffer;
 }
 
@@ -183,22 +247,44 @@ async function runDecrypt(pdf: ArrayBuffer, password: string): Promise<ArrayBuff
   const input = new Uint8Array(pdf);
   if (!looksLikePdf(input)) throw new TaskError('corrupted');
 
-  const { mod, stdout } = await createQpdf();
+  const { mod, stdout, stderr } = await createQpdf();
   post({ type: 'progress', stage: 'process', current: null, total: null });
   mod.FS.writeFile('input.pdf', input);
 
-  // Probe first: qpdf reports "File is not encrypted" on stdout, and exits
-  // non-zero when the supplied password is wrong.
-  const probe = mod.callMain(['--show-encryption', `--password=${password}`, 'input.pdf']);
-  if (probe === 0 && /not encrypted/i.test(stdout.join('\n'))) {
-    throw new TaskError('not-encrypted');
+  // Restriction-only PDFs (permissions protected, no open password) unlock
+  // with an empty password — always try that first so the field can be left
+  // blank, then fall back to the password the user typed.
+  const candidates = password.length > 0 ? ['', password] : [''];
+  let lastStderr = '';
+  for (const candidate of candidates) {
+    stdout.length = 0;
+    stderr.length = 0;
+    // Probe first: qpdf reports "File is not encrypted" on stdout, and exits
+    // non-zero when the supplied password is wrong.
+    const probe = mod.callMain(['--show-encryption', `--password=${candidate}`, 'input.pdf']);
+    if (probe === 0 && /not encrypted/i.test(stdout.join('\n'))) {
+      throw new TaskError('not-encrypted');
+    }
+    if (probe === 0) {
+      stderr.length = 0;
+      const code = mod.callMain([
+        '--decrypt',
+        `--password=${candidate}`,
+        'input.pdf',
+        'output.pdf',
+      ]);
+      if (code === 0 || code === 3) {
+        // readOutput verifies the output file actually exists and is non-empty.
+        return readOutput(mod, 'output.pdf').slice().buffer;
+      }
+      if (/invalid password/i.test(stderr.join('\n'))) throw new TaskError('wrong-password');
+      throw new TaskError('corrupted');
+    }
+    lastStderr = stderr.join('\n');
   }
-  if (probe !== 0) throw new TaskError('wrong-password');
-
-  const code = mod.callMain(['--decrypt', `--password=${password}`, 'input.pdf', 'output.pdf']);
-  if (code !== 0) throw new TaskError('wrong-password');
-  const out = readOutput(mod, 'output.pdf');
-  return out.slice().buffer;
+  // Every probe failed: a wrong password says "invalid password" on stderr;
+  // anything else means the file itself could not be read.
+  throw new TaskError(/invalid password/i.test(lastStderr) ? 'wrong-password' : 'corrupted');
 }
 
 ctx.onmessage = async (event: MessageEvent<HeavyRequest>) => {

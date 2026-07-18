@@ -40,19 +40,25 @@ export async function addPageNumbers(
   const pages = doc.getPages();
   const total = pages.length;
 
-  if (options.startPage < 1 || options.startPage > total) {
+  const startPage = Math.floor(options.startPage);
+  if (!Number.isFinite(startPage) || startPage < 1 || startPage > total) {
     throw new PdfToolError(
       'rangeOutOfBounds',
       `Numbering cannot start on page ${options.startPage} — the document has ${total} pages`,
     );
   }
 
-  const firstIndex = options.startPage - 1;
-  const fontSize = Math.max(6, options.fontSize);
+  const firstIndex = startPage - 1;
+  const fontSize = Number.isFinite(options.fontSize)
+    ? Math.min(72, Math.max(6, options.fontSize))
+    : 12;
+  const startNumber = Number.isFinite(options.startNumber)
+    ? Math.max(0, Math.floor(options.startNumber))
+    : 0;
 
   for (let i = firstIndex; i < total; i += 1) {
     const page = pages[i];
-    const number = Math.max(0, Math.floor(options.startNumber)) + (i - firstIndex);
+    const number = startNumber + (i - firstIndex);
     const text = options.format === 'n-of-total' ? `${number} of ${total}` : `${number}`;
     const { width, height } = page.getSize();
     const textWidth = font.widthOfTextAtSize(text, fontSize);

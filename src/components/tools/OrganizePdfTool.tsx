@@ -217,11 +217,19 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
   useEffect(() => {
     const doc = docRef.current;
     if (!doc || docReady === 0) return undefined;
+    const limit = Math.min(visibleCount, pages.length);
+    let hasMissing = false;
+    for (let i = 0; i < limit; i += 1) {
+      if (!pages[i].thumb) {
+        hasMissing = true;
+        break;
+      }
+    }
+    if (!hasMissing) return undefined;
     const session = sessionRef.current;
     let cancelled = false;
     setRenderingThumbs(true);
     void (async () => {
-      const limit = Math.min(visibleCount, pagesRef.current.length);
       for (let i = 0; i < limit; i += 1) {
         if (cancelled || sessionRef.current !== session) return;
         const item = pagesRef.current[i];
@@ -241,7 +249,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
     return () => {
       cancelled = true;
     };
-  }, [docReady, visibleCount]);
+  }, [docReady, visibleCount, pages]);
 
   async function handleFiles(files: File[]) {
     const next = files[0];
@@ -351,10 +359,18 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
   }
 
   function reset() {
+    // Pages that were rotated need a fresh thumbnail at 0° — nulling their
+    // thumb lets the render effect above regenerate it.
     setPages((prev) =>
       [...prev]
         .sort((a, b) => a.sourceIndex - b.sourceIndex)
-        .map((p) => ({ ...p, rotation: 0 as PageRotation, deleted: false, selected: false })),
+        .map((p) => ({
+          ...p,
+          rotation: 0 as PageRotation,
+          deleted: false,
+          selected: false,
+          thumb: p.rotation === 0 ? p.thumb : null,
+        })),
     );
   }
 
@@ -400,6 +416,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
             maxFiles={1}
             currentCount={file ? 1 : 0}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={handleFiles}
             dict={dict}
           />

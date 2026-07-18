@@ -209,8 +209,8 @@ export const fr = {
       items: [
         'Vos fichiers sont traités à 100 % localement dans votre navigateur. Nous ne les recevons, ne les stockons et ne les touchons même jamais.',
         'Pas de compte, pas d’adresse e-mail, pas d’informations personnelles — jamais.',
-        'Nous utilisons Cloudflare Web Analytics, un outil de statistiques sans cookie et respectueux de la vie privée.',
-        'Nous affichons des publicités Google AdSense pour que CoolPDF reste gratuit. Google peut utiliser des cookies pour les publicités personnalisées, et vous pouvez vous y opposer.',
+        'Nous pouvons utiliser Cloudflare Web Analytics, un outil de statistiques sans cookie et respectueux de la vie privée, lorsqu’il est activé.',
+        'Nous pouvons afficher des publicités Google AdSense pour que CoolPDF reste gratuit. Si la publicité est activée, Google peut utiliser des cookies pour les publicités personnalisées, et vous pouvez vous y opposer.',
       ],
     },
     sections: [
@@ -229,13 +229,13 @@ export const fr = {
       {
         title: '3. Statistiques',
         paragraphs: [
-          'Nous utilisons Cloudflare Web Analytics pour comprendre le trafic global — par exemple, quelles pages sont populaires et d’où viennent approximativement les visiteurs. Cet outil fonctionne sans cookie, ne suit pas les utilisateurs individuels et ne collecte aucune donnée personnelle. Il ne peut pas voir les fichiers que vous traitez, car nous ne le pouvons pas non plus.',
+          'Lorsqu’il est activé, nous utilisons Cloudflare Web Analytics pour comprendre le trafic global — par exemple, quelles pages sont populaires et d’où viennent approximativement les visiteurs. Cet outil fonctionne sans cookie, ne suit pas les utilisateurs individuels et ne collecte aucune donnée personnelle. Il ne peut pas voir les fichiers que vous traitez, car nous ne le pouvons pas non plus.',
         ],
       },
       {
         title: '4. Publicité — Google AdSense',
         paragraphs: [
-          'CoolPDF est financé par la publicité diffusée via Google AdSense. Google et ses partenaires peuvent utiliser des cookies pour diffuser des publicités personnalisées en fonction de votre historique de navigation. Vous pouvez désactiver la publicité personnalisée à tout moment via Google Ads Settings (adssettings.google.com). Les visiteurs de l’EEE et du Royaume-Uni verront un bandeau de gestion du consentement avant l’affichage de toute publicité personnalisée. Pour plus de détails, consultez la politique de confidentialité de Google à l’adresse policies.google.com/privacy.',
+          'CoolPDF peut afficher des publicités diffusées via Google AdSense pour que le service reste gratuit. Si la publicité est activée, Google et ses partenaires peuvent utiliser des cookies pour diffuser des publicités personnalisées en fonction de votre historique de navigation. Vous pouvez désactiver la publicité personnalisée à tout moment via Google Ads Settings (adssettings.google.com). Avant l’activation de toute publicité personnalisée, un bandeau de gestion du consentement sera présenté aux visiteurs de l’EEE et du Royaume-Uni. Pour plus de détails, consultez la politique de confidentialité de Google à l’adresse policies.google.com/privacy.',
         ],
       },
       {
@@ -322,7 +322,7 @@ export const fr = {
       {
         question: 'CoolPDF est-il vraiment gratuit ?',
         answer:
-          'Oui. Chaque outil est entièrement gratuit, sans limite d’utilisation, sans filigrane et sans version premium. Ce sont des publicités discrètes qui permettent à CoolPDF de rester gratuit pour tous.',
+          'Oui. Chaque outil est entièrement gratuit, sans limite d’utilisation, sans filigrane et sans version premium. Si elles sont activées, ce sont des publicités discrètes qui permettent à CoolPDF de rester gratuit pour tous.',
       },
       {
         question: 'Dois-je créer un compte ou m’inscrire ?',
@@ -352,7 +352,7 @@ export const fr = {
       {
         question: 'Comment CoolPDF gagne-t-il de l’argent ?',
         answer:
-          'Nous affichons des publicités diffusées par Google AdSense. La publicité est notre seule source de revenus, et c’est elle qui permet à chaque outil de rester gratuit, sans limite d’utilisation.',
+          'Nous pouvons afficher des publicités diffusées par Google AdSense. La publicité est notre source de revenus prévue, et c’est elle qui permet à chaque outil de rester gratuit, sans limite d’utilisation.',
       },
       {
         question: 'Quels navigateurs sont pris en charge ?',
@@ -401,6 +401,9 @@ export const fr = {
       wrongPassword: 'Le mot de passe est incorrect. Veuillez réessayer.',
       notEncrypted: 'Ce PDF n’est pas protégé par un mot de passe, il n’y a donc rien à déverrouiller.',
       noText: 'Ce PDF semble être composé d’images numérisées sans texte extractible.',
+      tooManyPages: 'Ce document contient trop de pages pour cet outil — la limite est de {max} pages.',
+      filesSkipped: '{count} fichier(s) non pris en charge ont été ignorés.',
+      totalTooLarge: 'Les fichiers sélectionnés sont trop volumineux ensemble — la limite totale est de {max} Mo.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
     },
   },
@@ -638,6 +641,8 @@ export const fr = {
       dpiLabel: 'Résolution',
       dpiHint:
         '300 DPI produit des images très volumineuses et peut être lent et gourmand en mémoire sur les documents longs.',
+      dpiReduced:
+        'Certaines pages ont été rendues à une résolution réduite, car elles dépassent la limite de taille de canevas de votre appareil à la résolution choisie.',
       scopeLabel: 'Pages',
       scopeAll: 'Toutes les pages',
       scopeCustom: 'Pages sélectionnées',
@@ -788,7 +793,7 @@ export const fr = {
       intro:
         'Supprimez le mot de passe d’un PDF qui vous appartient pour qu’il s’ouvre sans en demander. Le déchiffrement s’effectue localement — ni le fichier ni le mot de passe ne quittent votre appareil.',
       legalNote: 'Déverrouillez uniquement des PDF qui vous appartiennent ou que vous êtes autorisé à modifier.',
-      passwordLabel: 'Mot de passe actuel',
+      passwordLabel: 'Mot de passe actuel (si nécessaire)',
       button: 'Déverrouiller PDF',
       stepsHeading: 'Comment déverrouiller un PDF',
       steps: [

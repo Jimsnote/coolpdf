@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Image as ImageIcon, Loader2, Trash2 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
+import { normalizeImageForPdf } from '@/lib/pdf/image-orientation';
 import {
   imagesToPdf,
   type ImageFitMode,
@@ -62,11 +63,10 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
     setBusy(true);
     setError(null);
     try {
+      // Phone photos carry an EXIF orientation tag; normalizing here (before
+      // embedding) keeps auto-orientation and fit calculations correct.
       const images: ImageInput[] = await Promise.all(
-        items.map(async ({ file }) => ({
-          bytes: new Uint8Array(await file.arrayBuffer()),
-          type: /\.png$/i.test(file.name) || file.type === 'image/png' ? 'png' : 'jpg',
-        })),
+        items.map(({ file }) => normalizeImageForPdf(file)),
       );
       const bytes = await imagesToPdf(images, orientation, fitMode);
       const blob = pdfBlob(bytes);
@@ -93,8 +93,10 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
             maxFiles={MAX_FILES}
             currentCount={items.length}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={(files) => {
               setError(null);
+              setResult(null);
               setItems((prev) => [
                 ...prev,
                 ...files.map((file) => ({ id: nextId.current++, file })),
@@ -117,9 +119,10 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
                     type="button"
                     aria-label={`${ui.remove}: ${item.file.name}`}
                     disabled={busy}
-                    onClick={() =>
-                      setItems((prev) => prev.filter((entry) => entry.id !== item.id))
-                    }
+                    onClick={() => {
+                      setResult(null);
+                      setItems((prev) => prev.filter((entry) => entry.id !== item.id));
+                    }}
                     className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
                   >
                     <Trash2 className="h-4 w-4" aria-hidden />

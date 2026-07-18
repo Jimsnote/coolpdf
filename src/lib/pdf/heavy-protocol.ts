@@ -36,7 +36,12 @@ export type HeavyProgress =
   | { stage: 'download'; loaded: number; total: number | null }
   | { stage: 'process'; current: number | null; total: number | null };
 
-export type HeavyErrorCode = 'corrupted' | 'wrong-password' | 'not-encrypted' | 'generic';
+export type HeavyErrorCode =
+  | 'encrypted'
+  | 'corrupted'
+  | 'wrong-password'
+  | 'not-encrypted'
+  | 'generic';
 
 /** Worker → main thread. `done` transfers the result buffer back. */
 export type HeavyEvent =

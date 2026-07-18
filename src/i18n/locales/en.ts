@@ -209,8 +209,8 @@ export const en = {
       items: [
         'Your files are processed 100% locally in your browser. We never receive, store, or even touch them.',
         'No account, no email address, no personal information — ever.',
-        'We use Cloudflare Web Analytics, a cookieless, privacy-friendly statistics tool.',
-        'We show Google AdSense ads to keep CoolPDF free. Google may use cookies for personalized ads, and you can opt out.',
+        'We may use Cloudflare Web Analytics, a cookieless, privacy-friendly statistics tool, when it is enabled.',
+        'We may display Google AdSense ads to keep CoolPDF free. If ads are enabled, Google may use cookies for personalized ads, and you can opt out.',
       ],
     },
     sections: [
@@ -229,13 +229,13 @@ export const en = {
       {
         title: '3. Analytics',
         paragraphs: [
-          'We use Cloudflare Web Analytics to understand aggregate traffic — for example, which pages are popular and roughly where visitors come from. It is cookieless, does not track individual users, and does not collect personal data. It cannot see the files you process, because neither can we.',
+          'When enabled, we use Cloudflare Web Analytics to understand aggregate traffic — for example, which pages are popular and roughly where visitors come from. It is cookieless, does not track individual users, and does not collect personal data. It cannot see the files you process, because neither can we.',
         ],
       },
       {
         title: '4. Advertising — Google AdSense',
         paragraphs: [
-          'CoolPDF is funded by advertising served through Google AdSense. Google and its partners may use cookies to serve personalized ads based on your browsing history. You can opt out of personalized advertising at any time via Google Ads Settings (adssettings.google.com). Visitors from the EEA and the UK will see a consent management prompt before any personalized ads are shown. For details, see Google’s Privacy Policy at policies.google.com/privacy.',
+          'CoolPDF may display ads served through Google AdSense to keep the service free. If advertising is enabled, Google and its partners may use cookies to serve personalized ads based on your browsing history. You can opt out of personalized advertising at any time via Google Ads Settings (adssettings.google.com). Before any personalized advertising is enabled, visitors from the EEA and the UK will be presented with a consent management prompt. For details, see Google’s Privacy Policy at policies.google.com/privacy.',
         ],
       },
       {
@@ -322,7 +322,7 @@ export const en = {
       {
         question: 'Is CoolPDF really free?',
         answer:
-          'Yes. Every tool is completely free, with no usage limits, no watermarks, and no premium tier. Unobtrusive ads are what keep CoolPDF free for everyone.',
+          'Yes. Every tool is completely free, with no usage limits, no watermarks, and no premium tier. Unobtrusive ads, if enabled, are what keep CoolPDF free for everyone.',
       },
       {
         question: 'Do I need to create an account or sign up?',
@@ -352,7 +352,7 @@ export const en = {
       {
         question: 'How does CoolPDF make money?',
         answer:
-          'We display ads served by Google AdSense. Advertising is our only revenue source, and it is what allows every tool to stay free with no usage limits.',
+          'We may display ads served by Google AdSense. Advertising is our planned revenue source, and it is what allows every tool to stay free with no usage limits.',
       },
       {
         question: 'What browsers are supported?',
@@ -401,6 +401,9 @@ export const en = {
       wrongPassword: 'The password is incorrect. Please try again.',
       notEncrypted: 'This PDF is not password-protected, so there is nothing to unlock.',
       noText: 'This PDF appears to be scanned images with no extractable text.',
+      tooManyPages: 'This document has too many pages for this tool — the limit is {max} pages.',
+      filesSkipped: '{count} unsupported file(s) were skipped.',
+      totalTooLarge: 'The selected files are too large together — the total limit is {max} MB.',
       generic: 'Something went wrong while processing your file. Please try again.',
     },
   },
@@ -638,6 +641,8 @@ export const en = {
       dpiLabel: 'Resolution',
       dpiHint:
         '300 DPI produces very large images and can be slow and memory-hungry on long documents.',
+      dpiReduced:
+        'Some pages were rendered at a lower resolution because they exceed your device’s canvas size limit at the chosen DPI.',
       scopeLabel: 'Pages',
       scopeAll: 'All pages',
       scopeCustom: 'Selected pages',
@@ -788,7 +793,7 @@ export const en = {
       intro:
         'Remove the password from a PDF you own so it opens without one. The decryption runs locally — neither the file nor the password leaves your device.',
       legalNote: 'Only unlock PDFs you own or have permission to modify.',
-      passwordLabel: 'Current password',
+      passwordLabel: 'Current password (if needed)',
       button: 'Unlock PDF',
       stepsHeading: 'How to unlock a PDF',
       steps: [

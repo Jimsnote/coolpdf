@@ -78,8 +78,10 @@ export function PdfToMarkdownTool({ dict }: PdfToMarkdownToolProps) {
             maxFiles={1}
             currentCount={file ? 1 : 0}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={(files) => {
               setError(null);
+              setResult(null);
               setFile(files[0] ?? null);
             }}
             dict={dict}
@@ -97,7 +99,10 @@ export function PdfToMarkdownTool({ dict }: PdfToMarkdownToolProps) {
                 type="button"
                 aria-label={`${ui.remove}: ${file.name}`}
                 disabled={busy}
-                onClick={() => setFile(null)}
+                onClick={() => {
+                  setFile(null);
+                  setResult(null);
+                }}
                 className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
               >
                 <Trash2 className="h-4 w-4" aria-hidden />

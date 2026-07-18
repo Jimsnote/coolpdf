@@ -1,5 +1,6 @@
 import { degrees, PDFDocument } from '@cantoo/pdf-lib';
 import { PdfToolError } from './errors';
+import { normalizeRotation } from './rotate';
 
 /** One page in the final document, referencing the source PDF. */
 export interface OrganizePageInstruction {
@@ -30,7 +31,7 @@ export async function organizePdf(
   );
   pages.forEach((page, index) => {
     const current = page.getRotation().angle;
-    page.setRotation(degrees((current + sequence[index].rotation) % 360));
+    page.setRotation(degrees(normalizeRotation(current + sequence[index].rotation)));
     organized.addPage(page);
   });
   return organized.save();

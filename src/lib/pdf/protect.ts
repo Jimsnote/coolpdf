@@ -31,6 +31,7 @@ export function protectPdf(
   password: string,
   permissions: ProtectPermissions,
   onProgress?: (progress: HeavyProgress) => void,
+  signal?: AbortSignal,
 ): Promise<Uint8Array> {
   return runHeavyTask(
     {
@@ -48,18 +49,22 @@ export function protectPdf(
     },
     bytes,
     onProgress,
+    signal,
   );
 }
 
 /**
- * Removes password protection from a PDF with qpdf `--decrypt`. Throws a
- * `PdfToolError` with code `wrong-password` or `not-encrypted` for the two
- * expected failure modes. Runs in a Web Worker.
+ * Removes password protection from a PDF with qpdf `--decrypt`. PDFs that are
+ * only permission-restricted (no open password) are unlocked with an empty
+ * password, so `password` may be blank. Throws a `PdfToolError` with code
+ * `wrong-password` or `not-encrypted` for the two expected failure modes.
+ * Runs in a Web Worker.
  */
 export function unlockPdf(
   bytes: Uint8Array,
   password: string,
   onProgress?: (progress: HeavyProgress) => void,
+  signal?: AbortSignal,
 ): Promise<Uint8Array> {
-  return runHeavyTask({ kind: 'decrypt', password }, bytes, onProgress);
+  return runHeavyTask({ kind: 'decrypt', password }, bytes, onProgress, signal);
 }

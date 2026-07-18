@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FileText, Loader2, Trash2 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 import {
@@ -46,6 +46,7 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
   const [progress, setProgress] = useState<HeavyProgress | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
@@ -57,6 +58,9 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
     if (!result) return undefined;
     return () => URL.revokeObjectURL(result.url);
   }, [result]);
+
+  // Terminate the worker when the component unmounts mid-task.
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   function setFlag(key: keyof Omit<ProtectPermissions, 'printing'>, value: boolean) {
     setPermissions((current) => ({ ...current, [key]: value }));
@@ -76,14 +80,17 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
     setError(null);
     setResult(null);
     setProgress(null);
+    const controller = new AbortController();
+    abortRef.current = controller;
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
-      const output = await protectPdf(bytes, password, permissions, setProgress);
+      const output = await protectPdf(bytes, password, permissions, setProgress, controller.signal);
       const blob = pdfBlob(output);
       setResult({ name: 'protected.pdf', size: blob.size, url: URL.createObjectURL(blob) });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
+      abortRef.current = null;
       setBusy(false);
       setProgress(null);
     }
@@ -119,6 +126,7 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
             maxFiles={1}
             currentCount={file ? 1 : 0}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={(files) => {
               setError(null);
               setResult(null);
@@ -139,7 +147,10 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
                 type="button"
                 aria-label={`${ui.remove}: ${file.name}`}
                 disabled={busy}
-                onClick={() => setFile(null)}
+                onClick={() => {
+                  setFile(null);
+                  setResult(null);
+                }}
                 className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
               >
                 <Trash2 className="h-4 w-4" aria-hidden />

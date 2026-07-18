@@ -29,6 +29,8 @@ const MAX_FILES = 20;
 const MIN_FILES = 2;
 const DESKTOP_MAX_BYTES = 100 * 1024 * 1024;
 const MOBILE_MAX_BYTES = 50 * 1024 * 1024;
+/** Combined size cap — all inputs are held in memory during the merge. */
+const TOTAL_MAX_BYTES = 300 * 1024 * 1024;
 
 export function MergePdfTool({ dict }: MergePdfToolProps) {
   const ui = dict.toolUi;
@@ -53,6 +55,16 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
 
   function addFiles(files: File[]) {
     setError(null);
+    setResult(null);
+    const total =
+      items.reduce((sum, item) => sum + item.file.size, 0) +
+      files.reduce((sum, file) => sum + file.size, 0);
+    if (total > TOTAL_MAX_BYTES) {
+      setError(
+        ui.errors.totalTooLarge.replace('{max}', String(Math.round(TOTAL_MAX_BYTES / 1024 / 1024))),
+      );
+      return;
+    }
     setItems((prev) => [...prev, ...files.map((file) => ({ id: nextId.current++, file }))]);
   }
 
@@ -99,6 +111,7 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
             maxFiles={MAX_FILES}
             currentCount={items.length}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={addFiles}
             dict={dict}
           />
@@ -135,9 +148,10 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
                     type="button"
                     aria-label={`${ui.remove}: ${item.file.name}`}
                     disabled={busy}
-                    onClick={() =>
-                      setItems((prev) => prev.filter((entry) => entry.id !== item.id))
-                    }
+                    onClick={() => {
+                      setResult(null);
+                      setItems((prev) => prev.filter((entry) => entry.id !== item.id));
+                    }}
                     className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
                   >
                     <Trash2 className="h-4 w-4" aria-hidden />

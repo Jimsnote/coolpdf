@@ -83,16 +83,38 @@ export async function renderThumbnail(
 }
 
 /**
+ * One rendered page plus a flag telling the caller whether the requested DPI
+ * had to be reduced to stay within the canvas size limit.
+ */
+export interface RenderedPage {
+  canvas: HTMLCanvasElement;
+  clamped: boolean;
+}
+
+/**
  * Renders a page (1-based) at export quality to a canvas. Scale is `dpi/72`;
- * the page's own rotation is respected automatically.
+ * the page's own rotation is respected automatically. When `maxPixels` is
+ * given (e.g. the iOS canvas limit of 16,777,216 pixels), the scale is
+ * reduced until the bitmap fits, and the result is flagged as clamped.
  */
 export async function renderPageAtDpi(
   doc: PDFDocumentProxy,
   pageNumber: number,
   dpi: number,
-): Promise<HTMLCanvasElement> {
+  maxPixels?: number,
+): Promise<RenderedPage> {
   const page = await doc.getPage(pageNumber);
-  return renderToCanvas(page, dpi / 72);
+  let scale = dpi / 72;
+  let clamped = false;
+  if (maxPixels) {
+    const base = page.getViewport({ scale: 1 });
+    if (base.width * base.height * scale * scale > maxPixels) {
+      scale = Math.sqrt(maxPixels / (base.width * base.height));
+      clamped = true;
+    }
+  }
+  const canvas = await renderToCanvas(page, scale);
+  return { canvas, clamped };
 }
 
 /** Promisified `canvas.toBlob`. */

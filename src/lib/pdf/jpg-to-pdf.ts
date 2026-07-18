@@ -13,7 +13,10 @@ const A4_WIDTH = 595.28;
 const A4_HEIGHT = 841.89;
 
 /**
- * Converts JPG/PNG images into an A4 PDF, one image per page.
+ * Converts JPG/PNG images into an A4 PDF, one image per page. Images are
+ * embedded as-is — EXIF orientation must be normalized upstream (see
+ * `image-orientation.ts`), otherwise phone photos would land sideways and
+ * the auto/fit calculations below would use the wrong dimensions.
  *
  * Orientation 'auto' picks landscape when the first image is wider than it
  * is tall, otherwise portrait; the choice applies to every page. Fit modes:

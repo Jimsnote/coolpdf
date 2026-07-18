@@ -117,6 +117,8 @@ export interface TextWatermarkPng {
 
 /** Supersampling factor so the embedded text stays sharp when zoomed. */
 const TEXT_SCALE = 4;
+/** Widest canvas browsers reliably support (iOS caps at 4096 per dimension). */
+const MAX_CANVAS_DIM = 4096;
 
 /**
  * Renders watermark text to a PNG on an offscreen canvas. Drawing text with
@@ -133,16 +135,25 @@ export async function renderTextWatermarkPng(
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Canvas 2D is not available');
-  const px = fontSize * TEXT_SCALE;
-  const font = `600 ${px}px system-ui, -apple-system, "Segoe UI", sans-serif`;
-  ctx.font = font;
-  const padX = px * 0.25;
-  const width = Math.max(1, Math.ceil(ctx.measureText(text).width + padX * 2));
+  const fontOf = (px: number) =>
+    `600 ${px}px system-ui, -apple-system, "Segoe UI", sans-serif`;
+  let px = fontSize * TEXT_SCALE;
+  ctx.font = fontOf(px);
+  let width = Math.max(1, Math.ceil(ctx.measureText(text).width + px * 0.5));
+  // Long text at a large font can exceed the canvas size limit — shrink the
+  // supersampling until it fits. The point size is unaffected.
+  if (width > MAX_CANVAS_DIM) {
+    px = Math.max(1, Math.floor(px * (MAX_CANVAS_DIM / width)));
+    ctx.font = fontOf(px);
+    width = Math.max(1, Math.ceil(ctx.measureText(text).width + px * 0.5));
+  }
+  const scale = px / fontSize;
   const height = Math.max(1, Math.ceil(px * 1.35));
+  const padX = px * 0.25;
   // Resizing clears the context state, so the font is set again afterwards.
   canvas.width = width;
   canvas.height = height;
-  ctx.font = font;
+  ctx.font = fontOf(px);
   ctx.fillStyle = color;
   ctx.textBaseline = 'middle';
   ctx.fillText(text, padX, height / 2);
@@ -152,9 +163,12 @@ export async function renderTextWatermarkPng(
       'image/png',
     );
   });
+  // Release the canvas backing store immediately.
+  canvas.width = 0;
+  canvas.height = 0;
   return {
     png: new Uint8Array(await blob.arrayBuffer()),
-    widthPoints: width / TEXT_SCALE,
-    heightPoints: height / TEXT_SCALE,
+    widthPoints: width / scale,
+    heightPoints: height / scale,
   };
 }

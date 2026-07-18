@@ -1,8 +1,13 @@
 /**
- * Wraps generated PDF bytes in a downloadable Blob. `bytes.slice()` copies
- * the data into a fresh, exactly-sized ArrayBuffer, which keeps the Blob
- * constructor's typing (and any underlying buffer pooling) happy.
+ * Wraps generated PDF bytes in a downloadable Blob. The caller owns `bytes`
+ * (freshly produced by pdf-lib), so the Blob can share the underlying
+ * ArrayBuffer instead of paying for another full copy. A view onto a larger
+ * pooled buffer still gets sliced down to its exact region.
  */
 export function pdfBlob(bytes: Uint8Array): Blob {
-  return new Blob([bytes.slice().buffer as ArrayBuffer], { type: 'application/pdf' });
+  const buffer =
+    bytes.byteOffset === 0 && bytes.byteLength === bytes.buffer.byteLength
+      ? (bytes.buffer as ArrayBuffer)
+      : (bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer);
+  return new Blob([buffer], { type: 'application/pdf' });
 }

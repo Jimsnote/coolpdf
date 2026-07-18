@@ -21,6 +21,7 @@ export function compressPdf(
   bytes: Uint8Array,
   level: CompressionLevel,
   onProgress?: (progress: HeavyProgress) => void,
+  signal?: AbortSignal,
 ): Promise<Uint8Array> {
-  return runHeavyTask({ kind: 'compress', preset: LEVEL_PRESETS[level] }, bytes, onProgress);
+  return runHeavyTask({ kind: 'compress', preset: LEVEL_PRESETS[level] }, bytes, onProgress, signal);
 }

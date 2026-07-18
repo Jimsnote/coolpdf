@@ -15,6 +15,8 @@ interface FileDropzoneProps {
   currentCount: number;
   /** Per-file size limit in bytes. */
   maxSizeBytes: number;
+  /** Ignore new files while the parent is busy processing. */
+  disabled?: boolean;
   onFiles: (files: File[]) => void;
   dict: Dictionary;
 }
@@ -28,7 +30,9 @@ function isAccepted(file: File, accept: AcceptedKind): boolean {
 /**
  * Drag-and-drop area with click-to-browse fallback. Validates type, size,
  * and file count before handing valid files to the parent; violations are
- * shown as localized error text below the dropzone.
+ * shown as localized error text below the dropzone. A mixed drop keeps the
+ * supported files and reports how many were skipped, instead of rejecting
+ * the whole batch.
  */
 export function FileDropzone({
   accept,
@@ -36,6 +40,7 @@ export function FileDropzone({
   maxFiles,
   currentCount,
   maxSizeBytes,
+  disabled = false,
   onFiles,
   dict,
 }: FileDropzoneProps) {
@@ -45,27 +50,36 @@ export function FileDropzone({
   const { toolUi } = dict;
 
   function handleIncoming(incoming: File[]) {
+    if (disabled || incoming.length === 0) return;
     setError(null);
-    if (incoming.some((file) => !isAccepted(file, accept))) {
+    const valid = incoming.filter((file) => isAccepted(file, accept));
+    const skipped = incoming.length - valid.length;
+    if (valid.length === 0) {
       setError(accept === 'pdf' ? toolUi.errors.onlyPdf : toolUi.errors.onlyImages);
       return;
     }
-    const oversized = incoming.find((file) => file.size > maxSizeBytes);
+    const messages: string[] = [];
+    if (skipped > 0) {
+      messages.push(toolUi.errors.filesSkipped.replace('{count}', String(skipped)));
+    }
+    const oversized = valid.find((file) => file.size > maxSizeBytes);
     if (oversized) {
       const maxMb = Math.round(maxSizeBytes / (1024 * 1024));
-      setError(
+      messages.push(
         toolUi.errors.fileTooLarge
           .replace('{name}', oversized.name)
           .replace('{max}', String(maxMb)),
       );
+      setError(messages.join(' '));
       return;
     }
     const capacity = maxFiles - currentCount;
-    let accepted = incoming;
-    if (incoming.length > capacity) {
-      setError(toolUi.errors.tooManyFiles.replace('{max}', String(maxFiles)));
-      accepted = incoming.slice(0, Math.max(capacity, 0));
+    let accepted = valid;
+    if (valid.length > capacity) {
+      messages.push(toolUi.errors.tooManyFiles.replace('{max}', String(maxFiles)));
+      accepted = valid.slice(0, Math.max(capacity, 0));
     }
+    if (messages.length > 0) setError(messages.join(' '));
     if (accepted.length > 0) onFiles(multiple ? accepted : accepted.slice(0, 1));
   }
 
@@ -84,14 +98,15 @@ export function FileDropzone({
     <div>
       <button
         type="button"
+        disabled={disabled}
         onClick={() => inputRef.current?.click()}
         onDragOver={(event) => {
           event.preventDefault();
-          setDragging(true);
+          if (!disabled) setDragging(true);
         }}
         onDragLeave={() => setDragging(false)}
         onDrop={onDrop}
-        className={`flex w-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-12 text-center transition-colors ${
+        className={`flex w-full flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-12 text-center transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
           dragging
             ? 'border-brand-500 bg-brand-50'
             : 'border-slate-300 bg-slate-50 hover:border-brand-400 hover:bg-brand-50'

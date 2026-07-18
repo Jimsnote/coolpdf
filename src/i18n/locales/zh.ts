@@ -206,8 +206,8 @@ export const zh = {
       items: [
         '您的文件 100% 在您的浏览器中本地处理。我们从不接收、存储，甚至从不接触它们。',
         '没有账号，没有邮箱地址，没有个人信息——永远如此。',
-        '我们使用 Cloudflare Web Analytics，这是一款无 Cookie、保护隐私的统计工具。',
-        '我们通过 Google AdSense 展示广告来维持 CoolPDF 免费。Google 可能会使用 Cookie 投放个性化广告，您可以选择退出。',
+        '在启用时，我们可能会使用 Cloudflare Web Analytics——一款无 Cookie、保护隐私的统计工具。',
+        '我们可能会展示 Google AdSense 广告以维持 CoolPDF 免费。如果启用广告，Google 可能会使用 Cookie 投放个性化广告，您可以选择退出。',
       ],
     },
     sections: [
@@ -226,13 +226,13 @@ export const zh = {
       {
         title: '3. 统计分析',
         paragraphs: [
-          '我们使用 Cloudflare Web Analytics 来了解整体流量情况——例如哪些页面受欢迎、访客大致来自哪里。它不使用 Cookie，不追踪单个用户，也不收集个人数据。它看不到您处理的文件，因为连我们自己都看不到。',
+          '在启用时，我们使用 Cloudflare Web Analytics 来了解整体流量情况——例如哪些页面受欢迎、访客大致来自哪里。它不使用 Cookie，不追踪单个用户，也不收集个人数据。它看不到您处理的文件，因为连我们自己都看不到。',
         ],
       },
       {
         title: '4. 广告——Google AdSense',
         paragraphs: [
-          'CoolPDF 由 Google AdSense 投放的广告提供资金支持。Google 及其合作伙伴可能会使用 Cookie，根据您的浏览历史投放个性化广告。您可以随时通过 Google Ads Settings（adssettings.google.com）退出个性化广告。来自欧洲经济区和英国的访客在看到任何个性化广告之前，会先看到同意管理提示。详情请参阅 Google 的隐私政策：policies.google.com/privacy。',
+          'CoolPDF 可能会展示由 Google AdSense 投放的广告，以维持服务免费。如果启用广告，Google 及其合作伙伴可能会使用 Cookie，根据您的浏览历史投放个性化广告。您可以随时通过 Google Ads Settings（adssettings.google.com）退出个性化广告。在启用任何个性化广告之前，来自欧洲经济区和英国的访客将先看到同意管理提示。详情请参阅 Google 的隐私政策：policies.google.com/privacy。',
         ],
       },
       {
@@ -316,7 +316,7 @@ export const zh = {
       {
         question: 'CoolPDF 真的免费吗？',
         answer:
-          '真的。所有工具完全免费，没有使用限制，没有水印，也没有付费高级版。正是那些不打扰您的广告，让 CoolPDF 能对所有人保持免费。',
+          '真的。所有工具完全免费，没有使用限制，没有水印，也没有付费高级版。如果启用广告，正是那些不打扰您的广告，让 CoolPDF 能对所有人保持免费。',
       },
       {
         question: '我需要创建账号或注册吗？',
@@ -346,7 +346,7 @@ export const zh = {
       {
         question: 'CoolPDF 如何盈利？',
         answer:
-          '我们展示由 Google AdSense 投放的广告。广告是我们唯一的收入来源，也正是它让每个工具都能保持免费且不设使用限制。',
+          '我们可能会展示由 Google AdSense 投放的广告。广告是我们计划的收入来源，也正是它让每个工具都能保持免费且不设使用限制。',
       },
       {
         question: '支持哪些浏览器？',
@@ -394,6 +394,9 @@ export const zh = {
       wrongPassword: '密码不正确，请重试。',
       notEncrypted: '此 PDF 未设置密码保护，无需解锁。',
       noText: '此 PDF 似乎是扫描图片，没有可提取的文本。',
+      tooManyPages: '此文档页数过多，超出本工具上限（{max} 页）。',
+      filesSkipped: '已跳过 {count} 个不支持的文件。',
+      totalTooLarge: '所选文件合计过大——总量上限为 {max} MB。',
       generic: '处理文件时出错，请重试。',
     },
   },
@@ -624,6 +627,7 @@ export const zh = {
       formatPng: 'PNG——无损，文件更大',
       dpiLabel: '分辨率',
       dpiHint: '300 DPI 会生成非常大的图片，处理长文档时可能较慢且占用较多内存。',
+      dpiReduced: '部分页面已自动降低分辨率渲染，因为在所选 DPI 下超出了您设备的画布尺寸上限。',
       scopeLabel: '页面',
       scopeAll: '所有页面',
       scopeCustom: '指定页面',
@@ -770,7 +774,7 @@ export const zh = {
       heading: '解锁 PDF',
       intro: '移除您自己的 PDF 上的密码，让它无需密码即可打开。解密在本地运行——文件和密码都不会离开您的设备。',
       legalNote: '请仅解锁您拥有或有权修改的 PDF。',
-      passwordLabel: '当前密码',
+      passwordLabel: '当前密码（如需要）',
       button: '解锁 PDF',
       stepsHeading: '如何解锁 PDF',
       steps: [

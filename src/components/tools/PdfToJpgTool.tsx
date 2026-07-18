@@ -33,6 +33,10 @@ interface Progress {
 const DPI_OPTIONS: Dpi[] = [72, 150, 300];
 const MAX_SIZE_BYTES = 100 * 1024 * 1024;
 const MOBILE_MAX_BYTES = 50 * 1024 * 1024;
+/** Page cap keeps every rendered blob plus the ZIP within memory budgets. */
+const MAX_PAGES = 200;
+/** iOS Safari refuses canvases with more pixels than this. */
+const MAX_CANVAS_PIXELS = 16777216;
 
 export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
   const ui = dict.toolUi;
@@ -46,6 +50,7 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<Progress | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
 
   useEffect(() => {
@@ -63,6 +68,7 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
     if (!file) return;
     setBusy(true);
     setError(null);
+    setNotice(null);
     setProgress(null);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
@@ -73,29 +79,41 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
           scope === 'custom'
             ? parsePageRanges(pagesInput, pageCount)
             : Array.from({ length: pageCount }, (_, i) => i);
+        if (indices.length > MAX_PAGES) {
+          setError(ui.errors.tooManyPages.replace('{max}', String(MAX_PAGES)));
+          return;
+        }
         const mime = format === 'jpg' ? 'image/jpeg' : 'image/png';
-        const outputs: { name: string; blob: Blob }[] = [];
+        // A single page downloads directly; several pages stream into the
+        // ZIP one at a time, so blobs never pile up in a separate array.
+        const zip = indices.length > 1 ? new JSZip() : null;
+        let single: { name: string; blob: Blob } | null = null;
+        let clamped = false;
         for (const [i, pageIndex] of indices.entries()) {
           // Sequential rendering keeps peak memory to one canvas at a time.
           // eslint-disable-next-line no-await-in-loop
-          const canvas = await renderPageAtDpi(doc.doc, pageIndex + 1, dpi);
+          const rendered = await renderPageAtDpi(doc.doc, pageIndex + 1, dpi, MAX_CANVAS_PIXELS);
           // eslint-disable-next-line no-await-in-loop
-          const blob = await canvasToBlob(canvas, mime, format === 'jpg' ? 0.92 : undefined);
+          const blob = await canvasToBlob(
+            rendered.canvas,
+            mime,
+            format === 'jpg' ? 0.92 : undefined,
+          );
+          clamped = clamped || rendered.clamped;
           // Release the canvas backing store immediately.
-          canvas.width = 0;
-          canvas.height = 0;
-          outputs.push({ name: `page-${pageIndex + 1}.${format}`, blob });
+          rendered.canvas.width = 0;
+          rendered.canvas.height = 0;
+          const name = `page-${pageIndex + 1}.${format}`;
+          if (zip) zip.file(name, blob);
+          else single = { name, blob };
           setProgress({ done: i + 1, total: indices.length });
         }
+        if (clamped) setNotice(copy.dpiReduced);
 
-        if (outputs.length === 1) {
-          const { name, blob } = outputs[0];
+        if (single !== null) {
+          const { name, blob } = single;
           setResult({ name, size: blob.size, url: URL.createObjectURL(blob) });
-        } else {
-          const zip = new JSZip();
-          for (const output of outputs) {
-            zip.file(output.name, output.blob);
-          }
+        } else if (zip) {
           const blob = await zip.generateAsync({ type: 'blob' });
           setResult({ name: 'images.zip', size: blob.size, url: URL.createObjectURL(blob) });
         }
@@ -123,8 +141,11 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
             maxFiles={1}
             currentCount={file ? 1 : 0}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={(files) => {
               setError(null);
+              setNotice(null);
+              setResult(null);
               setFile(files[0] ?? null);
             }}
             dict={dict}
@@ -142,7 +163,11 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
                 type="button"
                 aria-label={`${ui.remove}: ${file.name}`}
                 disabled={busy}
-                onClick={() => setFile(null)}
+                onClick={() => {
+                  setFile(null);
+                  setResult(null);
+                  setNotice(null);
+                }}
                 className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
               >
                 <Trash2 className="h-4 w-4" aria-hidden />
@@ -251,6 +276,10 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
         ) : error ? (
           <p role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
             {error}
+          </p>
+        ) : notice ? (
+          <p role="status" className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            {notice}
           </p>
         ) : undefined
       }

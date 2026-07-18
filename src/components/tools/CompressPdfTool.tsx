@@ -43,6 +43,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const slowTimer = useRef<number | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
@@ -58,6 +59,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
   useEffect(
     () => () => {
       if (slowTimer.current !== null) window.clearTimeout(slowTimer.current);
+      abortRef.current?.abort();
     },
     [],
   );
@@ -70,9 +72,11 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
     setProgress(null);
     setSlowNotice(false);
     slowTimer.current = window.setTimeout(() => setSlowNotice(true), SLOW_NOTICE_MS);
+    const controller = new AbortController();
+    abortRef.current = controller;
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
-      const output = await compressPdf(bytes, level, setProgress);
+      const output = await compressPdf(bytes, level, setProgress, controller.signal);
       const blob = pdfBlob(output);
       setResult({
         name: 'compressed.pdf',
@@ -87,6 +91,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
         window.clearTimeout(slowTimer.current);
         slowTimer.current = null;
       }
+      abortRef.current = null;
       setBusy(false);
       setProgress(null);
     }
@@ -117,6 +122,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
             maxFiles={1}
             currentCount={file ? 1 : 0}
             maxSizeBytes={maxSizeBytes}
+            disabled={busy}
             onFiles={(files) => {
               setError(null);
               setResult(null);
@@ -137,7 +143,10 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
                 type="button"
                 aria-label={`${ui.remove}: ${file.name}`}
                 disabled={busy}
-                onClick={() => setFile(null)}
+                onClick={() => {
+                  setFile(null);
+                  setResult(null);
+                }}
                 className="rounded p-1.5 text-slate-500 hover:bg-slate-100 hover:text-red-600 disabled:opacity-30"
               >
                 <Trash2 className="h-4 w-4" aria-hidden />

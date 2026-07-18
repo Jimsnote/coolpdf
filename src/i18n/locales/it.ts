@@ -209,8 +209,8 @@ export const it = {
       items: [
         'I tuoi file vengono elaborati al 100% localmente nel tuo browser. Non li riceviamo, non li archiviamo e non li tocchiamo nemmeno.',
         'Nessun account, nessun indirizzo email, nessuna informazione personale. Mai.',
-        'Utilizziamo Cloudflare Web Analytics, uno strumento di statistiche senza cookie e rispettoso della privacy.',
-        'Mostriamo annunci di Google AdSense per mantenere CoolPDF gratuito. Google può utilizzare cookie per annunci personalizzati, e puoi disattivarli.',
+        'Possiamo utilizzare Cloudflare Web Analytics, uno strumento di statistiche senza cookie e rispettoso della privacy, quando è attivato.',
+        'Potremmo mostrare annunci di Google AdSense per mantenere CoolPDF gratuito. Se gli annunci sono attivati, Google può utilizzare cookie per annunci personalizzati, e puoi disattivarli.',
       ],
     },
     sections: [
@@ -229,13 +229,13 @@ export const it = {
       {
         title: '3. Statistiche',
         paragraphs: [
-          'Utilizziamo Cloudflare Web Analytics per comprendere il traffico aggregato, ad esempio quali pagine sono popolari e da dove provengono approssimativamente i visitatori. Non utilizza cookie, non traccia i singoli utenti e non raccoglie dati personali. Non può vedere i file che elabori, perché non possiamo vederli nemmeno noi.',
+          'Quando è attivato, utilizziamo Cloudflare Web Analytics per comprendere il traffico aggregato, ad esempio quali pagine sono popolari e da dove provengono approssimativamente i visitatori. Non utilizza cookie, non traccia i singoli utenti e non raccoglie dati personali. Non può vedere i file che elabori, perché non possiamo vederli nemmeno noi.',
         ],
       },
       {
         title: '4. Pubblicità — Google AdSense',
         paragraphs: [
-          'CoolPDF è finanziato dalla pubblicità erogata tramite Google AdSense. Google e i suoi partner possono utilizzare cookie per mostrarti annunci personalizzati in base alla tua cronologia di navigazione. Puoi disattivare la pubblicità personalizzata in qualsiasi momento tramite Google Ads Settings (adssettings.google.com). I visitatori dello Spazio economico europeo e del Regno Unito vedranno una richiesta di consenso prima che vengano mostrati annunci personalizzati. Per i dettagli, consulta le Norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
+          'CoolPDF potrebbe mostrare annunci erogati tramite Google AdSense per mantenere il servizio gratuito. Se la pubblicità è attivata, Google e i suoi partner possono utilizzare cookie per mostrarti annunci personalizzati in base alla tua cronologia di navigazione. Puoi disattivare la pubblicità personalizzata in qualsiasi momento tramite Google Ads Settings (adssettings.google.com). Prima che venga attivata qualsiasi pubblicità personalizzata, ai visitatori dello Spazio economico europeo e del Regno Unito verrà presentata una richiesta di consenso. Per i dettagli, consulta le Norme sulla privacy di Google all’indirizzo policies.google.com/privacy.',
         ],
       },
       {
@@ -322,7 +322,7 @@ export const it = {
       {
         question: 'CoolPDF è davvero gratuito?',
         answer:
-          'Sì. Ogni strumento è completamente gratuito, senza limiti di utilizzo, senza filigrane e senza livelli premium. Sono gli annunci discreti a mantenere CoolPDF gratuito per tutti.',
+          'Sì. Ogni strumento è completamente gratuito, senza limiti di utilizzo, senza filigrane e senza livelli premium. Se attivati, sono gli annunci discreti a mantenere CoolPDF gratuito per tutti.',
       },
       {
         question: 'Devo creare un account o registrarmi?',
@@ -352,7 +352,7 @@ export const it = {
       {
         question: 'Come guadagna CoolPDF?',
         answer:
-          'Mostriamo annunci erogati da Google AdSense. La pubblicità è la nostra unica fonte di entrate ed è ciò che permette a ogni strumento di restare gratuito e senza limiti di utilizzo.',
+          'Potremmo mostrare annunci erogati da Google AdSense. La pubblicità è la nostra fonte di entrate prevista ed è ciò che permette a ogni strumento di restare gratuito e senza limiti di utilizzo.',
       },
       {
         question: 'Quali browser sono supportati?',
@@ -401,6 +401,9 @@ export const it = {
       wrongPassword: 'La password non è corretta. Riprova.',
       notEncrypted: 'Questo PDF non è protetto da password, quindi non c’è nulla da sbloccare.',
       noText: 'Questo PDF sembra composto da immagini scansionate senza testo estraibile.',
+      tooManyPages: 'Questo documento ha troppe pagine per questo strumento — il limite è di {max} pagine.',
+      filesSkipped: '{count} file non supportati sono stati ignorati.',
+      totalTooLarge: 'I file selezionati sono troppo grandi nel complesso — il limite totale è di {max} MB.',
       generic: 'Si è verificato un errore durante l’elaborazione del file. Riprova.',
     },
   },
@@ -638,6 +641,8 @@ export const it = {
       dpiLabel: 'Risoluzione',
       dpiHint:
         '300 DPI produce immagini molto grandi e può risultare lento e avido di memoria sui documenti lunghi.',
+      dpiReduced:
+        'Alcune pagine sono state renderizzate a una risoluzione inferiore perché superano il limite di dimensioni del canvas del tuo dispositivo ai DPI scelti.',
       scopeLabel: 'Pagine',
       scopeAll: 'Tutte le pagine',
       scopeCustom: 'Pagine selezionate',
@@ -788,7 +793,7 @@ export const it = {
       intro:
         'Rimuovi la password da un PDF di tua proprietà, così si apre senza. La decrittografia avviene in locale — né il file né la password lasciano il tuo dispositivo.',
       legalNote: 'Sblocca solo PDF di tua proprietà o che hai il permesso di modificare.',
-      passwordLabel: 'Password attuale',
+      passwordLabel: 'Password attuale (se necessaria)',
       button: 'Sblocca PDF',
       stepsHeading: 'Come sbloccare un PDF',
       steps: [
