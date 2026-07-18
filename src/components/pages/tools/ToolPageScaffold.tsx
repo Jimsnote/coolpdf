@@ -16,7 +16,10 @@ export type ToolSlug =
   | 'pdf-to-jpg'
   | 'compress-pdf'
   | 'protect-pdf'
-  | 'unlock-pdf';
+  | 'unlock-pdf'
+  | 'watermark-pdf'
+  | 'page-numbers'
+  | 'pdf-to-markdown';
 
 interface ToolPageScaffoldProps {
   locale: Locale;

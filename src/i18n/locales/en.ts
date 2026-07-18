@@ -400,6 +400,7 @@ export const en = {
       noPages: 'At least one page must remain in the document.',
       wrongPassword: 'The password is incorrect. Please try again.',
       notEncrypted: 'This PDF is not password-protected, so there is nothing to unlock.',
+      noText: 'This PDF appears to be scanned images with no extractable text.',
       generic: 'Something went wrong while processing your file. Please try again.',
     },
   },
@@ -815,6 +816,147 @@ export const en = {
           question: 'Will unlocking change the document?',
           answer:
             'No. Only the encryption layer is removed — every page, image, and annotation stays exactly as it was in the original.',
+        },
+      ],
+    },
+    'watermark-pdf': {
+      metaTitle: 'Add Watermark to PDF Online Free — Text or Image | CoolPDF',
+      metaDescription:
+        'Stamp a text or image watermark on every page of your PDF — tiled or centered, with adjustable opacity — right in your browser. No upload, free, no sign-up.',
+      heading: 'Watermark PDF',
+      intro:
+        'Stamp a text or image watermark over every page of your PDF — tiled diagonally or centered, with the size, color, and opacity you choose. Everything runs on your own device.',
+      button: 'Add Watermark',
+      typeLabel: 'Watermark type',
+      typeText: 'Text',
+      typeImage: 'Image (PNG or JPG)',
+      textLabel: 'Watermark text',
+      textPlaceholder: 'e.g. CONFIDENTIAL',
+      fontSizeLabel: 'Font size',
+      colorLabel: 'Text color',
+      opacityLabel: 'Opacity',
+      layoutLabel: 'Placement',
+      layoutTile: 'Tiled — repeated diagonally on every page',
+      layoutCenter: 'Centered — one stamp per page',
+      scaleLabel: 'Image size (relative to page width)',
+      stepsHeading: 'How to watermark a PDF',
+      steps: [
+        'Add the PDF you want to watermark by dragging it onto the upload area, or click to browse.',
+        'Choose a text or image watermark. For text, type the wording and pick a size and color; for an image, upload a PNG or JPG and set its size.',
+        'Adjust the opacity and choose the placement — tiled diagonally across every page or a single centered stamp — then click "Add Watermark".',
+        'Download the watermarked PDF. The original file stays untouched on your device.',
+      ],
+      privacyHeading: 'Watermark sensitive documents without uploading them',
+      privacyText:
+        'Stamping a watermark on a PDF is usually the last step before sharing something sensitive: a draft contract marked confidential, a design preview carrying your studio’s name, an ID copy that may only be used for one purpose. With a conventional online tool, that unprotected original is uploaded to a server before the watermark ever touches it. CoolPDF works the other way around. Text watermarks are drawn with your device’s own fonts — which is why Chinese, Arabic, or emoji wording works just as well as English — turned into an image, and stamped onto the pages right inside your browser tab. Image watermarks never travel either. Nothing is uploaded, queued, or stored anywhere else, which makes the tool safe for unreleased designs, NDA material, and personal documents. Close the tab and every trace is gone.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I watermark with Chinese, Arabic, or emoji text?',
+          answer:
+            'Yes. Text watermarks are drawn with your device’s own fonts and embedded as an image, so any language and symbol works — not just the Latin alphabet that classic PDF fonts are limited to.',
+        },
+        {
+          question: 'What is the difference between tiled and centered?',
+          answer:
+            'Tiled repeats the watermark diagonally across the whole page, which makes it hard to crop out — good for confidentiality stamps. Centered places a single diagonal copy in the middle of each page, which reads more like a logo.',
+        },
+        {
+          question: 'Which image formats can I use as a watermark?',
+          answer:
+            'PNG and JPG. PNG is the better choice for logos because it keeps transparency, so the page content stays visible around your mark. Use the size slider to scale the image relative to the page width.',
+        },
+      ],
+    },
+    'page-numbers': {
+      metaTitle: 'Add Page Numbers to PDF Online Free | CoolPDF',
+      metaDescription:
+        'Insert page numbers into your PDF — six positions, "1 of N" formats, custom start page — locally in your browser. No upload, free, no sign-up.',
+      heading: 'Page Numbers',
+      intro:
+        'Add page numbers to your PDF exactly where you want them: six positions, two formats, and full control over where numbering starts. Processing happens entirely on your device.',
+      button: 'Add Page Numbers',
+      positionLabel: 'Position',
+      posTopLeft: 'Top left',
+      posTopCenter: 'Top center',
+      posTopRight: 'Top right',
+      posBottomLeft: 'Bottom left',
+      posBottomCenter: 'Bottom center',
+      posBottomRight: 'Bottom right',
+      formatLabel: 'Format',
+      formatN: 'Number only (1, 2, 3…)',
+      formatTotal: 'Number and total (1 of N)',
+      startNumberLabel: 'First number',
+      startPageLabel: 'Start numbering on page',
+      fontSizeLabel: 'Font size',
+      stepsHeading: 'How to add page numbers to a PDF',
+      steps: [
+        'Add the PDF you want to number by dragging it onto the upload area, or click to browse.',
+        'Pick one of the six positions — a corner, or centered at the top or bottom — and choose the format: just the number, or number and total.',
+        'Optionally change the first number, the page numbering starts on, and the font size, then click "Add Page Numbers".',
+        'Download the numbered PDF. The original file stays untouched on your device.',
+      ],
+      privacyHeading: 'Number finished documents without uploading them',
+      privacyText:
+        'Adding page numbers is often the final touch before a document goes out: a thesis for the printer, a contract for signature, a report for the board. The file is usually finished and confidential at that point — and yet most online tools ask you to upload it first. CoolPDF inserts the numbers where the file already is: on your own device. The PDF is read by your browser, stamped with numbers in the position and format you chose, and saved straight back to your disk. Nothing crosses the network, so nothing can be intercepted, logged, or left behind on a server. That makes the tool safe for legal filings, medical records, and financial reports — and fast, because there is no upload queue and no processed copy to fetch back. Closing the tab removes every trace of the document.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I skip the cover page?',
+          answer:
+            'Yes. Set "Start numbering on page" to 2 (or any later page) and the earlier pages stay clean. Combine it with "First number" if the visible numbering should begin at 1 — or continue an existing sequence.',
+        },
+        {
+          question: 'What does the "1 of N" format show?',
+          answer:
+            'It prints the current number and the total page count of the document, for example "3 of 12". The total always counts every page in the file, including any unnumbered ones at the front.',
+        },
+        {
+          question: 'Will the numbers overlap my content?',
+          answer:
+            'Numbers are placed in the page margin, 24 points from the edge. Most documents keep that area free, but if yours has content running to the very edge, pick a position on the opposite side or a smaller font size.',
+        },
+      ],
+    },
+    'pdf-to-markdown': {
+      metaTitle: 'PDF to Markdown Converter Online Free | CoolPDF',
+      metaDescription:
+        'Turn PDF text into clean Markdown — headings, paragraphs, and lists detected automatically — locally in your browser. No upload, free, no sign-up.',
+      heading: 'PDF to Markdown',
+      intro:
+        'Turn the text of your PDF into clean, structured Markdown — headings, paragraphs, and lists detected automatically, headers and footers removed. The conversion runs entirely in your browser.',
+      button: 'Convert to Markdown',
+      scopeLabel: 'Pages',
+      scopeAll: 'All pages',
+      scopeCustom: 'Selected pages only',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'e.g. 1-3, 5',
+      stepsHeading: 'How to convert PDF to Markdown',
+      steps: [
+        'Add the PDF you want to convert by dragging it onto the upload area, or click to browse.',
+        'Choose whether to convert all pages or only a range (for example 1-3, 5).',
+        'Click "Convert to Markdown" — headings, paragraphs, and lists are detected automatically, and repeating headers and footers are removed.',
+        'Download the Markdown file and open it in any editor, note-taking app, or static site generator.',
+      ],
+      privacyHeading: 'Convert documents to Markdown without uploading them',
+      privacyText:
+        'Converting a PDF to Markdown usually means feeding it into an AI tool or a cloud converter — and uploading the whole document in the process. That is a problem when the file is a draft paper, an internal report, or a contract you need to quote from. CoolPDF does the extraction locally: a PDF engine running in your browser reads the text layer, detects headings from font sizes, rebuilds paragraphs and lists, and hands you a clean Markdown file. The document never leaves your device, so there is nothing to intercept and nothing stored on someone else’s server. It even works offline — load the page, disconnect, and convert away. When you close the tab, both the PDF and the Markdown are gone.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Are images extracted as well?',
+          answer:
+            'No. The converter extracts text only — headings, paragraphs, and lists. Embedded images are skipped, so export figure-heavy pages separately if you need them (the PDF to JPG tool can help).',
+        },
+        {
+          question: 'How are headings detected?',
+          answer:
+            'By font size. The most common size is treated as body text; noticeably larger lines become headings — #, ##, or ### depending on how much bigger they are. Detection is heuristic, so a quick review of the result is always a good idea.',
+        },
+        {
+          question: 'Why do I get a message about a scanned PDF?',
+          answer:
+            'Scans are photos of pages without a real text layer, so there is nothing to extract. Run the file through OCR software first — once the scan has a text layer, this tool can convert it.',
         },
       ],
     },

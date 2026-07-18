@@ -14,6 +14,7 @@ export function toolErrorMessage(err: unknown, dict: Dictionary): string {
     if (err.code === 'corrupted') return errors.corrupted;
     if (err.code === 'wrong-password') return errors.wrongPassword;
     if (err.code === 'not-encrypted') return errors.notEncrypted;
+    if (err.code === 'no-text') return errors.noText;
     return errors.generic;
   }
   return errors[classifyPdfError(err)];

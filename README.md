@@ -12,6 +12,23 @@ Live site: <https://getcoolpdf.com>
 
 Don't take our word for it: disconnect from the internet after a page loads and the tools still work; watch the Network tab in DevTools and see zero file uploads; audit the source code — it's open source (AGPL-3.0).
 
+## Tools
+
+All twelve tools run 100% locally in your browser — no uploads, no sign-up, free forever:
+
+- **Merge PDF** — combine multiple PDFs into a single file, in the order you want
+- **Split PDF** — extract a page range or split one PDF into separate documents
+- **Compress PDF** — shrink the file size while keeping the quality you need
+- **Rotate PDF** — rotate single pages or an entire document in seconds
+- **Organize PDF** — reorder, delete, and rearrange pages with drag and drop
+- **PDF to JPG** — turn each PDF page into a high-quality JPG image
+- **JPG to PDF** — convert JPG images into a clean, shareable PDF document
+- **Protect PDF** — add AES-256 password encryption to keep your PDF private
+- **Unlock PDF** — remove password protection from PDFs you own
+- **Watermark PDF** — stamp a text or image watermark over every page, tiled or centered
+- **Page Numbers** — add page numbers to your PDF, exactly where you want them
+- **PDF to Markdown** — extract clean, structured Markdown from any PDF
+
 ## Tech stack
 
 - **Next.js 15** (App Router, `output: 'export'` static export to `out/`) + **React 19** + **TypeScript** (strict)

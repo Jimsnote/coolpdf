@@ -39,9 +39,9 @@ export const tools: Tool[] = [
   { slug: 'jpg-to-pdf', icon: FileImage, i18nKey: 'jpg-to-pdf', status: 'live' },
   { slug: 'protect-pdf', icon: Lock, i18nKey: 'protect-pdf', status: 'live' },
   { slug: 'unlock-pdf', icon: LockOpen, i18nKey: 'unlock-pdf', status: 'live' },
-  { slug: 'watermark-pdf', icon: Stamp, i18nKey: 'watermark-pdf', status: 'coming-soon' },
-  { slug: 'page-numbers', icon: Hash, i18nKey: 'page-numbers', status: 'coming-soon' },
-  { slug: 'pdf-to-markdown', icon: FileText, i18nKey: 'pdf-to-markdown', status: 'coming-soon' },
+  { slug: 'watermark-pdf', icon: Stamp, i18nKey: 'watermark-pdf', status: 'live' },
+  { slug: 'page-numbers', icon: Hash, i18nKey: 'page-numbers', status: 'live' },
+  { slug: 'pdf-to-markdown', icon: FileText, i18nKey: 'pdf-to-markdown', status: 'live' },
 ];
 
 /** English tool names, used for JSON-LD featureList regardless of locale. */

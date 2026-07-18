@@ -400,6 +400,7 @@ export const de = {
       noPages: 'Mindestens eine Seite muss im Dokument verbleiben.',
       wrongPassword: 'Das Passwort ist falsch. Bitte versuchen Sie es erneut.',
       notEncrypted: 'Diese PDF ist nicht passwortgeschützt — es gibt nichts zu entsperren.',
+      noText: 'Diese PDF scheint aus gescannten Bildern zu bestehen und enthält keinen extrahierbaren Text.',
       generic: 'Beim Verarbeiten Ihrer Datei ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.',
     },
   },
@@ -815,6 +816,147 @@ export const de = {
           question: 'Verändert das Entsperren das Dokument?',
           answer:
             'Nein. Nur die Verschlüsselungsschicht wird entfernt — jede Seite, jedes Bild und jede Anmerkung bleibt exakt so wie im Original.',
+        },
+      ],
+    },
+    'watermark-pdf': {
+      metaTitle: 'PDF mit Wasserzeichen versehen — kostenlos, Text oder Bild | CoolPDF',
+      metaDescription:
+        'Versehen Sie jede Seite Ihrer PDF mit einem Text- oder Bildwasserzeichen — gefliest oder zentriert, mit einstellbarer Deckkraft — direkt im Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+      heading: 'PDF mit Wasserzeichen',
+      intro:
+        'Versehen Sie jede Seite Ihrer PDF mit einem Text- oder Bildwasserzeichen — diagonal gefliest oder zentriert, mit Größe, Farbe und Deckkraft nach Wahl. Alles läuft auf Ihrem eigenen Gerät.',
+      button: 'Wasserzeichen hinzufügen',
+      typeLabel: 'Art des Wasserzeichens',
+      typeText: 'Text',
+      typeImage: 'Bild (PNG oder JPG)',
+      textLabel: 'Wasserzeichentext',
+      textPlaceholder: 'z. B. VERTRAULICH',
+      fontSizeLabel: 'Schriftgröße',
+      colorLabel: 'Textfarbe',
+      opacityLabel: 'Deckkraft',
+      layoutLabel: 'Platzierung',
+      layoutTile: 'Gefliest — diagonal über jede Seite wiederholt',
+      layoutCenter: 'Zentriert — ein Stempel pro Seite',
+      scaleLabel: 'Bildgröße (relativ zur Seitenbreite)',
+      stepsHeading: 'So versehen Sie eine PDF mit einem Wasserzeichen',
+      steps: [
+        'Fügen Sie die gewünschte PDF hinzu, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu suchen.',
+        'Wählen Sie ein Text- oder Bildwasserzeichen. Bei Text geben Sie den Wortlaut ein und wählen Größe und Farbe; bei einem Bild laden Sie eine PNG- oder JPG-Datei hoch und legen die Größe fest.',
+        'Stellen Sie die Deckkraft ein und wählen Sie die Platzierung — diagonal über jede Seite gefliest oder ein einzelner zentrierter Stempel — und klicken Sie dann auf „Wasserzeichen hinzufügen“.',
+        'Laden Sie die PDF mit Wasserzeichen herunter. Die Originaldatei bleibt unverändert auf Ihrem Gerät.',
+      ],
+      privacyHeading: 'Sensible Dokumente mit Wasserzeichen versehen — ohne Upload',
+      privacyText:
+        'Ein Wasserzeichen ist meist der letzte Schritt, bevor etwas Sensibles geteilt wird: ein als vertraulich gekennzeichneter Vertragsentwurf, eine Designvorschau mit dem Namen Ihres Studios, eine Ausweiskopie, die nur für einen Zweck verwendet werden darf. Bei herkömmlichen Online-Tools wird das ungeschützte Original erst auf einen Server hochgeladen, bevor das Wasserzeichen es überhaupt berührt. CoolPDF arbeitet umgekehrt. Textwasserzeichen werden mit den eigenen Schriften Ihres Geräts gezeichnet — deshalb funktionieren Chinesisch, Arabisch oder Emojis genauso gut wie Deutsch —, in ein Bild umgewandelt und direkt in Ihrem Browser-Tab auf die Seiten gestempelt. Auch Bildwasserzeichen verlassen Ihr Gerät nicht. Nichts wird hochgeladen, zwischengespeichert oder anderswo abgelegt — das macht das Tool sicher für unveröffentlichte Designs, NDA-Material und persönliche Dokumente. Schließen Sie den Tab, und jede Spur ist verschwunden.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Funktionieren Wasserzeichen mit chinesischem, arabischem oder Emoji-Text?',
+          answer:
+            'Ja. Textwasserzeichen werden mit den eigenen Schriften Ihres Geräts gezeichnet und als Bild eingebettet — jede Sprache und jedes Symbol funktioniert, nicht nur das lateinische Alphabet, auf das klassische PDF-Schriften beschränkt sind.',
+        },
+        {
+          question: 'Was ist der Unterschied zwischen gefliest und zentriert?',
+          answer:
+            'Gefliest wiederholt das Wasserzeichen diagonal über die ganze Seite — es lässt sich kaum herausschneiden und eignet sich gut für Vertraulichkeitsstempel. Zentriert platziert eine einzelne diagonale Kopie in der Mitte jeder Seite, was eher wie ein Logo wirkt.',
+        },
+        {
+          question: 'Welche Bildformate kann ich als Wasserzeichen verwenden?',
+          answer:
+            'PNG und JPG. PNG ist für Logos die bessere Wahl, weil die Transparenz erhalten bleibt und der Seiteninhalt um das Zeichen herum sichtbar bleibt. Mit dem Größenregler skalieren Sie das Bild relativ zur Seitenbreite.',
+        },
+      ],
+    },
+    'page-numbers': {
+      metaTitle: 'Seitenzahlen in PDF einfügen — kostenlos online | CoolPDF',
+      metaDescription:
+        'Fügen Sie Ihrer PDF Seitenzahlen hinzu — sechs Positionen, Formate wie „1 von N“, freie Startseite — lokal in Ihrem Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+      heading: 'Seitenzahlen',
+      intro:
+        'Fügen Sie Ihrer PDF Seitenzahlen genau dort hinzu, wo Sie sie haben möchten: sechs Positionen, zwei Formate und volle Kontrolle über den Beginn der Nummerierung. Die Verarbeitung erfolgt vollständig auf Ihrem Gerät.',
+      button: 'Seitenzahlen hinzufügen',
+      positionLabel: 'Position',
+      posTopLeft: 'Oben links',
+      posTopCenter: 'Oben mittig',
+      posTopRight: 'Oben rechts',
+      posBottomLeft: 'Unten links',
+      posBottomCenter: 'Unten mittig',
+      posBottomRight: 'Unten rechts',
+      formatLabel: 'Format',
+      formatN: 'Nur Zahl (1, 2, 3…)',
+      formatTotal: 'Zahl und Gesamtzahl (1 von N)',
+      startNumberLabel: 'Erste Zahl',
+      startPageLabel: 'Nummerierung beginnt auf Seite',
+      fontSizeLabel: 'Schriftgröße',
+      stepsHeading: 'So fügen Sie einer PDF Seitenzahlen hinzu',
+      steps: [
+        'Fügen Sie die PDF hinzu, die Sie nummerieren möchten, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu suchen.',
+        'Wählen Sie eine der sechs Positionen — eine Ecke oder mittig oben bzw. unten — und das Format: nur die Zahl oder Zahl und Gesamtzahl.',
+        'Ändern Sie bei Bedarf die erste Zahl, die Seite, auf der die Nummerierung beginnt, und die Schriftgröße, und klicken Sie dann auf „Seitenzahlen hinzufügen“.',
+        'Laden Sie die nummerierte PDF herunter. Die Originaldatei bleibt unverändert auf Ihrem Gerät.',
+      ],
+      privacyHeading: 'Fertige Dokumente nummerieren — ohne Upload',
+      privacyText:
+        'Seitenzahlen sind oft der letzte Schliff, bevor ein Dokument herausgeht: eine Abschlussarbeit für den Druck, ein Vertrag zur Unterschrift, ein Bericht fürs Gremium. Zu diesem Zeitpunkt ist die Datei in der Regel fertig und vertraulich — und trotzdem verlangen die meisten Online-Tools zuerst einen Upload. CoolPDF fügt die Zahlen dort ein, wo die Datei bereits liegt: auf Ihrem eigenen Gerät. Die PDF wird von Ihrem Browser gelesen, mit Zahlen an der gewählten Position und im gewählten Format versehen und direkt auf Ihrer Festplatte gespeichert. Nichts überquert das Netzwerk — nichts kann abgefangen, protokolliert oder auf einem Server zurückgelassen werden. Das macht das Tool sicher für Gerichtsunterlagen, medizinische Aufzeichnungen und Finanzberichte — und schnell, weil es weder eine Upload-Warteschlange noch eine verarbeitete Kopie zum Zurückholen gibt. Beim Schließen des Tabs verschwindet jede Spur des Dokuments.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Kann ich das Deckblatt überspringen?',
+          answer:
+            'Ja. Setzen Sie „Nummerierung beginnt auf Seite“ auf 2 (oder eine spätere Seite), und die vorderen Seiten bleiben frei. Kombinieren Sie das mit „Erste Zahl“, wenn die sichtbare Nummerierung bei 1 beginnen soll — oder setzen Sie eine bestehende Folge fort.',
+        },
+        {
+          question: 'Was zeigt das Format „1 von N“?',
+          answer:
+            'Es druckt die aktuelle Zahl und die Gesamtseitenzahl des Dokuments, zum Beispiel „3 of 12“. Die Gesamtzahl zählt immer alle Seiten der Datei, einschließlich eventueller nicht nummerierter Seiten am Anfang.',
+        },
+        {
+          question: 'Überlappen die Zahlen meinen Inhalt?',
+          answer:
+            'Die Zahlen stehen im Seitenrand, 24 Punkte vom Rand entfernt. Die meisten Dokumente halten diesen Bereich frei; falls Ihr Inhalt bis an den Rand reicht, wählen Sie eine Position auf der gegenüberliegenden Seite oder eine kleinere Schriftgröße.',
+        },
+      ],
+    },
+    'pdf-to-markdown': {
+      metaTitle: 'PDF in Markdown umwandeln — kostenlos online | CoolPDF',
+      metaDescription:
+        'Wandeln Sie PDF-Text in sauberes Markdown um — Überschriften, Absätze und Listen automatisch erkannt — lokal in Ihrem Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+      heading: 'PDF in Markdown',
+      intro:
+        'Wandeln Sie den Text Ihrer PDF in sauberes, strukturiertes Markdown um — Überschriften, Absätze und Listen werden automatisch erkannt, Kopf- und Fußzeilen entfernt. Die Umwandlung läuft vollständig in Ihrem Browser.',
+      button: 'In Markdown umwandeln',
+      scopeLabel: 'Seiten',
+      scopeAll: 'Alle Seiten',
+      scopeCustom: 'Nur ausgewählte Seiten',
+      pagesLabel: 'Seiten',
+      pagesPlaceholder: 'z. B. 1-3, 5',
+      stepsHeading: 'So wandeln Sie PDF in Markdown um',
+      steps: [
+        'Fügen Sie die PDF hinzu, die Sie umwandeln möchten, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu suchen.',
+        'Wählen Sie, ob alle Seiten oder nur ein Bereich umgewandelt werden soll (zum Beispiel 1-3, 5).',
+        'Klicken Sie auf „In Markdown umwandeln“ — Überschriften, Absätze und Listen werden automatisch erkannt, wiederkehrende Kopf- und Fußzeilen entfernt.',
+        'Laden Sie die Markdown-Datei herunter und öffnen Sie sie in einem beliebigen Editor, einer Notiz-App oder einem Static-Site-Generator.',
+      ],
+      privacyHeading: 'Dokumente in Markdown umwandeln — ohne Upload',
+      privacyText:
+        'Eine PDF in Markdown umzuwandeln bedeutet meist, sie in ein KI-Tool oder einen Cloud-Konverter zu füttern — und dabei das ganze Dokument hochzuladen. Das ist ein Problem, wenn die Datei ein Entwurf, ein interner Bericht oder ein Vertrag ist, aus dem Sie zitieren möchten. CoolPDF erledigt die Extraktion lokal: Eine PDF-Engine in Ihrem Browser liest die Textebene, erkennt Überschriften an den Schriftgrößen, baut Absätze und Listen wieder auf und übergibt Ihnen eine saubere Markdown-Datei. Das Dokument verlässt Ihr Gerät nie — es gibt nichts abzufangen und nichts, das auf fremden Servern gespeichert würde. Es funktioniert sogar offline: Seite laden, Verbindung trennen, umwandeln. Beim Schließen des Tabs sind sowohl die PDF als auch das Markdown verschwunden.',
+      faqHeading: 'Häufige Fragen',
+      faq: [
+        {
+          question: 'Werden auch Bilder extrahiert?',
+          answer:
+            'Nein. Der Konverter extrahiert nur Text — Überschriften, Absätze und Listen. Eingebettete Bilder werden übersprungen; exportieren Sie bildreiche Seiten bei Bedarf separat (das Tool PDF in JPG kann helfen).',
+        },
+        {
+          question: 'Wie werden Überschriften erkannt?',
+          answer:
+            'Anhand der Schriftgröße. Die häufigste Größe gilt als Fließtext; deutlich größere Zeilen werden zu Überschriften — #, ## oder ###, je nachdem, wie viel größer sie sind. Die Erkennung ist heuristisch, ein kurzer Blick auf das Ergebnis lohnt sich also immer.',
+        },
+        {
+          question: 'Warum erhalte ich eine Meldung über eine gescannte PDF?',
+          answer:
+            'Scans sind Fotos von Seiten ohne echte Textebene — es gibt nichts zu extrahieren. Lassen Sie die Datei zuerst durch eine OCR-Software laufen; sobald der Scan eine Textebene hat, kann dieses Tool ihn umwandeln.',
         },
       ],
     },

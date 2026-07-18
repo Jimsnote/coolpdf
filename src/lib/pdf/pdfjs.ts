@@ -7,15 +7,18 @@ let pdfjsPromise: Promise<PdfjsModule> | null = null;
 /**
  * Lazily loads pdf.js so it never lands in the first-paint bundle, and points
  * its worker at the static asset webpack emits for `pdf.worker.min.mjs`
- * (resolved via `new URL(..., import.meta.url)`).
+ * (resolved via `new URL(..., import.meta.url)`). The workerSrc assignment is
+ * browser-only: under bare Node (tests) the caller sets it explicitly.
  */
 export function getPdfjs(): Promise<PdfjsModule> {
   if (!pdfjsPromise) {
     pdfjsPromise = import('pdfjs-dist').then((pdfjs) => {
-      pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-        'pdfjs-dist/build/pdf.worker.min.mjs',
-        import.meta.url,
-      ).toString();
+      if (typeof document !== 'undefined') {
+        pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+          'pdfjs-dist/build/pdf.worker.min.mjs',
+          import.meta.url,
+        ).toString();
+      }
       return pdfjs;
     });
   }

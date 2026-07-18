@@ -400,6 +400,7 @@ export const fr = {
       noPages: 'Au moins une page doit rester dans le document.',
       wrongPassword: 'Le mot de passe est incorrect. Veuillez réessayer.',
       notEncrypted: 'Ce PDF n’est pas protégé par un mot de passe, il n’y a donc rien à déverrouiller.',
+      noText: 'Ce PDF semble être composé d’images numérisées sans texte extractible.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
     },
   },
@@ -815,6 +816,147 @@ export const fr = {
           question: 'Le déverrouillage modifie-t-il le document ?',
           answer:
             'Non. Seule la couche de chiffrement est supprimée — chaque page, image et annotation reste exactement comme dans l’original.',
+        },
+      ],
+    },
+    'watermark-pdf': {
+      metaTitle: 'Ajouter un filigrane à un PDF en ligne gratuit — texte ou image | CoolPDF',
+      metaDescription:
+        'Apposez un filigrane texte ou image sur chaque page de votre PDF — en mosaïque ou centré, opacité réglable — directement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+      heading: 'Filigrane PDF',
+      intro:
+        'Apposez un filigrane texte ou image sur chaque page de votre PDF — en mosaïque diagonale ou centré, avec la taille, la couleur et l’opacité de votre choix. Tout s’exécute sur votre propre appareil.',
+      button: 'Ajouter le filigrane',
+      typeLabel: 'Type de filigrane',
+      typeText: 'Texte',
+      typeImage: 'Image (PNG ou JPG)',
+      textLabel: 'Texte du filigrane',
+      textPlaceholder: 'ex. CONFIDENTIEL',
+      fontSizeLabel: 'Taille de police',
+      colorLabel: 'Couleur du texte',
+      opacityLabel: 'Opacité',
+      layoutLabel: 'Placement',
+      layoutTile: 'Mosaïque — répété en diagonale sur chaque page',
+      layoutCenter: 'Centré — un seul tampon par page',
+      scaleLabel: 'Taille de l’image (relative à la largeur de la page)',
+      stepsHeading: 'Comment ajouter un filigrane à un PDF',
+      steps: [
+        'Ajoutez le PDF à filigraner en le faisant glisser sur la zone de téléversement, ou cliquez pour parcourir vos fichiers.',
+        'Choisissez un filigrane texte ou image. Pour un texte, saisissez le libellé et choisissez la taille et la couleur ; pour une image, téléversez un PNG ou un JPG et réglez sa taille.',
+        'Ajustez l’opacité et choisissez le placement — mosaïque diagonale sur chaque page ou tampon unique centré — puis cliquez sur « Ajouter le filigrane ».',
+        'Téléchargez le PDF filigrané. Le fichier d’origine reste intact sur votre appareil.',
+      ],
+      privacyHeading: 'Filigranez des documents sensibles sans les téléverser',
+      privacyText:
+        'Apposer un filigrane sur un PDF est souvent la dernière étape avant de partager un document sensible : un projet de contrat marqué confidentiel, un aperçu de design au nom de votre studio, une copie de pièce d’identité réservée à un usage unique. Avec un outil en ligne classique, cet original non protégé est d’abord téléversé sur un serveur, avant même que le filigrane ne le touche. CoolPDF fait l’inverse. Les filigranes texte sont dessinés avec les polices de votre appareil — c’est pourquoi le chinois, l’arabe ou les émojis fonctionnent aussi bien que le français —, convertis en image, puis tamponnés sur les pages directement dans l’onglet de votre navigateur. Les images ne voyagent pas non plus. Rien n’est téléversé, mis en file d’attente ou stocké ailleurs, ce qui rend l’outil sûr pour des maquettes inédites, des documents sous NDA et des fichiers personnels. Fermez l’onglet et toute trace disparaît.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je filigraner avec du texte chinois, arabe ou des émojis ?',
+          answer:
+            'Oui. Les filigranes texte sont dessinés avec les polices de votre appareil et intégrés comme image : toutes les langues et tous les symboles fonctionnent, pas seulement l’alphabet latin auquel les polices PDF classiques sont limitées.',
+        },
+        {
+          question: 'Quelle différence entre mosaïque et centré ?',
+          answer:
+            'La mosaïque répète le filigrane en diagonale sur toute la page, ce qui le rend difficile à rogner — idéal pour les mentions de confidentialité. Le mode centré place une seule copie diagonale au milieu de chaque page, ce qui évoque plutôt un logo.',
+        },
+        {
+          question: 'Quels formats d’image puis-je utiliser comme filigrane ?',
+          answer:
+            'PNG et JPG. Le PNG est le meilleur choix pour les logos, car il conserve la transparence : le contenu de la page reste visible autour de votre marque. Utilisez le curseur pour dimensionner l’image par rapport à la largeur de la page.',
+        },
+      ],
+    },
+    'page-numbers': {
+      metaTitle: 'Ajouter des numéros de page à un PDF en ligne gratuit | CoolPDF',
+      metaDescription:
+        'Insérez des numéros de page dans votre PDF — six positions, formats « 1 sur N », page de départ au choix — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+      heading: 'Numéros de page',
+      intro:
+        'Ajoutez des numéros de page à votre PDF exactement où vous le souhaitez : six positions, deux formats et un contrôle total sur le début de la numérotation. Le traitement s’effectue entièrement sur votre appareil.',
+      button: 'Ajouter les numéros de page',
+      positionLabel: 'Position',
+      posTopLeft: 'Haut gauche',
+      posTopCenter: 'Haut centre',
+      posTopRight: 'Haut droite',
+      posBottomLeft: 'Bas gauche',
+      posBottomCenter: 'Bas centre',
+      posBottomRight: 'Bas droite',
+      formatLabel: 'Format',
+      formatN: 'Numéro seul (1, 2, 3…)',
+      formatTotal: 'Numéro et total (1 sur N)',
+      startNumberLabel: 'Premier numéro',
+      startPageLabel: 'Commencer la numérotation à la page',
+      fontSizeLabel: 'Taille de police',
+      stepsHeading: 'Comment ajouter des numéros de page à un PDF',
+      steps: [
+        'Ajoutez le PDF à numéroter en le faisant glisser sur la zone de téléversement, ou cliquez pour parcourir vos fichiers.',
+        'Choisissez l’une des six positions — un coin, ou centré en haut ou en bas — puis le format : le numéro seul, ou le numéro et le total.',
+        'Modifiez si besoin le premier numéro, la page où commence la numérotation et la taille de police, puis cliquez sur « Ajouter les numéros de page ».',
+        'Téléchargez le PDF numéroté. Le fichier d’origine reste intact sur votre appareil.',
+      ],
+      privacyHeading: 'Numérotez des documents finalisés sans les téléverser',
+      privacyText:
+        'L’ajout de numéros de page est souvent la touche finale avant l’envoi d’un document : une thèse pour l’imprimeur, un contrat à signer, un rapport pour le conseil. À ce stade, le fichier est en général abouti et confidentiel — et pourtant, la plupart des outils en ligne exigent d’abord un téléversement. CoolPDF insère les numéros là où le fichier se trouve déjà : sur votre propre appareil. Le PDF est lu par votre navigateur, marqué de numéros à la position et au format choisis, puis enregistré directement sur votre disque. Rien ne traverse le réseau : rien ne peut être intercepté, consigné ou oublié sur un serveur. L’outil est donc sûr pour des dossiers juridiques, médicaux et financiers — et rapide, car il n’y a ni file d’attente de téléversement ni copie traitée à récupérer. Fermez l’onglet et toute trace du document disparaît.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je sauter la page de couverture ?',
+          answer:
+            'Oui. Réglez « Commencer la numérotation à la page » sur 2 (ou une page ultérieure) et les premières pages restent vierges. Combinez avec « Premier numéro » si la numérotation visible doit commencer à 1 — ou poursuivez une numérotation existante.',
+        },
+        {
+          question: 'Que montre le format « 1 sur N » ?',
+          answer:
+            'Il affiche le numéro courant et le nombre total de pages du document, par exemple « 3 of 12 ». Le total compte toujours toutes les pages du fichier, y compris celles non numérotées au début.',
+        },
+        {
+          question: 'Les numéros vont-ils chevaucher mon contenu ?',
+          answer:
+            'Les numéros sont placés dans la marge, à 24 points du bord. La plupart des documents laissent cette zone libre, mais si votre contenu va jusqu’au bord, choisissez une position du côté opposé ou une taille de police plus petite.',
+        },
+      ],
+    },
+    'pdf-to-markdown': {
+      metaTitle: 'Convertir un PDF en Markdown en ligne gratuit | CoolPDF',
+      metaDescription:
+        'Transformez le texte d’un PDF en Markdown propre — titres, paragraphes et listes détectés automatiquement — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+      heading: 'PDF en Markdown',
+      intro:
+        'Transformez le texte de votre PDF en Markdown propre et structuré — titres, paragraphes et listes détectés automatiquement, en-têtes et pieds de page supprimés. La conversion s’effectue entièrement dans votre navigateur.',
+      button: 'Convertir en Markdown',
+      scopeLabel: 'Pages',
+      scopeAll: 'Toutes les pages',
+      scopeCustom: 'Pages sélectionnées uniquement',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'ex. 1-3, 5',
+      stepsHeading: 'Comment convertir un PDF en Markdown',
+      steps: [
+        'Ajoutez le PDF à convertir en le faisant glisser sur la zone de téléversement, ou cliquez pour parcourir vos fichiers.',
+        'Choisissez de convertir toutes les pages ou seulement une plage (par exemple 1-3, 5).',
+        'Cliquez sur « Convertir en Markdown » — titres, paragraphes et listes sont détectés automatiquement, et les en-têtes et pieds de page récurrents sont supprimés.',
+        'Téléchargez le fichier Markdown et ouvrez-le dans n’importe quel éditeur, application de notes ou générateur de site statique.',
+      ],
+      privacyHeading: 'Convertissez des documents en Markdown sans les téléverser',
+      privacyText:
+        'Convertir un PDF en Markdown signifie en général le passer dans un outil d’IA ou un convertisseur en ligne — et téléverser tout le document au passage. C’est un problème quand le fichier est un article en préparation, un rapport interne ou un contrat que vous devez citer. CoolPDF fait l’extraction en local : un moteur PDF exécuté dans votre navigateur lit la couche texte, détecte les titres d’après les tailles de police, reconstruit paragraphes et listes, puis vous remet un fichier Markdown propre. Le document ne quitte jamais votre appareil : rien à intercepter, rien de stocké sur le serveur de quelqu’un d’autre. Cela fonctionne même hors ligne — chargez la page, déconnectez-vous, convertissez. Fermez l’onglet, et le PDF comme le Markdown disparaissent.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Les images sont-elles extraites aussi ?',
+          answer:
+            'Non. Le convertisseur n’extrait que le texte — titres, paragraphes et listes. Les images intégrées sont ignorées ; exportez séparément les pages riches en figures si nécessaire (l’outil PDF en JPG peut aider).',
+        },
+        {
+          question: 'Comment les titres sont-ils détectés ?',
+          answer:
+            'Par la taille de police. La taille la plus fréquente est traitée comme le corps du texte ; les lignes nettement plus grandes deviennent des titres — #, ## ou ### selon l’écart. La détection est heuristique : un rapide contrôle du résultat est toujours une bonne idée.',
+        },
+        {
+          question: 'Pourquoi un message concernant un PDF numérisé ?',
+          answer:
+            'Les numérisations sont des photos de pages sans véritable couche texte : il n’y a rien à extraire. Passez d’abord le fichier dans un logiciel OCR — une fois la couche texte créée, cet outil pourra le convertir.',
         },
       ],
     },

@@ -400,6 +400,7 @@ export const es = {
       noPages: 'Debe quedar al menos una página en el documento.',
       wrongPassword: 'La contraseña es incorrecta. Inténtalo de nuevo.',
       notEncrypted: 'Este PDF no está protegido con contraseña, así que no hay nada que desbloquear.',
+      noText: 'Este PDF parece consistir en imágenes escaneadas sin texto extraíble.',
       generic: 'Se produjo un error al procesar tu archivo. Inténtalo de nuevo.',
     },
   },
@@ -815,6 +816,147 @@ export const es = {
           question: '¿Desbloquear cambia el documento?',
           answer:
             'No. Solo se elimina la capa de cifrado: cada página, imagen y anotación permanece exactamente como estaba en el original.',
+        },
+      ],
+    },
+    'watermark-pdf': {
+      metaTitle: 'Añadir marca de agua a PDF online gratis — texto o imagen | CoolPDF',
+      metaDescription:
+        'Estampa una marca de agua de texto o imagen en cada página de tu PDF — en mosaico o centrada, con opacidad ajustable — directamente en tu navegador. Sin subidas, gratis, sin registro.',
+      heading: 'Marca de agua PDF',
+      intro:
+        'Estampa una marca de agua de texto o imagen en cada página de tu PDF — en mosaico diagonal o centrada, con el tamaño, el color y la opacidad que elijas. Todo se ejecuta en tu propio dispositivo.',
+      button: 'Añadir marca de agua',
+      typeLabel: 'Tipo de marca de agua',
+      typeText: 'Texto',
+      typeImage: 'Imagen (PNG o JPG)',
+      textLabel: 'Texto de la marca de agua',
+      textPlaceholder: 'p. ej. CONFIDENCIAL',
+      fontSizeLabel: 'Tamaño de fuente',
+      colorLabel: 'Color del texto',
+      opacityLabel: 'Opacidad',
+      layoutLabel: 'Colocación',
+      layoutTile: 'Mosaico — repetida en diagonal en cada página',
+      layoutCenter: 'Centrada — un sello por página',
+      scaleLabel: 'Tamaño de la imagen (respecto al ancho de página)',
+      stepsHeading: 'Cómo añadir una marca de agua a un PDF',
+      steps: [
+        'Añade el PDF que quieres marcar arrastrándolo al área de subida, o haz clic para buscarlo.',
+        'Elige una marca de agua de texto o de imagen. Para texto, escribe el contenido y elige tamaño y color; para una imagen, sube un PNG o JPG y ajusta su tamaño.',
+        'Ajusta la opacidad y elige la colocación — mosaico diagonal en cada página o un único sello centrado — y haz clic en «Añadir marca de agua».',
+        'Descarga el PDF con marca de agua. El archivo original permanece intacto en tu dispositivo.',
+      ],
+      privacyHeading: 'Marca documentos sensibles sin subirlos',
+      privacyText:
+        'Estampar una marca de agua en un PDF suele ser el último paso antes de compartir algo sensible: un borrador de contrato marcado como confidencial, una vista previa de diseño con el nombre de tu estudio, una copia de un documento de identidad válida para un solo uso. Con una herramienta online convencional, ese original sin protección se sube a un servidor antes de que la marca de agua siquiera lo toque. CoolPDF funciona al revés. Las marcas de texto se dibujan con las fuentes de tu propio dispositivo — por eso el chino, el árabe o los emojis funcionan tan bien como el español —, se convierten en imagen y se estampan en las páginas directamente en la pestaña de tu navegador. Las imágenes tampoco viajan. Nada se sube, se encola ni se almacena en otro lugar, lo que hace que la herramienta sea segura para diseños inéditos, material bajo NDA y documentos personales. Cierra la pestaña y todo rastro desaparece.',
+      faqHeading: 'Preguntas frecuentes',
+      faq: [
+        {
+          question: '¿Puedo usar texto en chino, árabe o emojis en la marca de agua?',
+          answer:
+            'Sí. Las marcas de texto se dibujan con las fuentes de tu dispositivo y se incrustan como imagen, así que funciona cualquier idioma y símbolo — no solo el alfabeto latino al que se limitan las fuentes PDF clásicas.',
+        },
+        {
+          question: '¿Qué diferencia hay entre mosaico y centrada?',
+          answer:
+            'El mosaico repite la marca en diagonal por toda la página, lo que dificulta recortarla — ideal para sellos de confidencialidad. La centrada coloca una única copia diagonal en el medio de cada página, con un aspecto más parecido a un logotipo.',
+        },
+        {
+          question: '¿Qué formatos de imagen puedo usar como marca de agua?',
+          answer:
+            'PNG y JPG. PNG es la mejor opción para logotipos porque conserva la transparencia, de modo que el contenido de la página sigue visible alrededor de tu marca. Usa el control deslizante para escalar la imagen respecto al ancho de la página.',
+        },
+      ],
+    },
+    'page-numbers': {
+      metaTitle: 'Añadir números de página a PDF online gratis | CoolPDF',
+      metaDescription:
+        'Inserta números de página en tu PDF — seis posiciones, formatos «1 de N», página inicial a tu elección — localmente en tu navegador. Sin subidas, gratis, sin registro.',
+      heading: 'Números de página',
+      intro:
+        'Añade números de página a tu PDF exactamente donde quieras: seis posiciones, dos formatos y control total sobre dónde empieza la numeración. El procesamiento ocurre por completo en tu dispositivo.',
+      button: 'Añadir números de página',
+      positionLabel: 'Posición',
+      posTopLeft: 'Arriba a la izquierda',
+      posTopCenter: 'Arriba al centro',
+      posTopRight: 'Arriba a la derecha',
+      posBottomLeft: 'Abajo a la izquierda',
+      posBottomCenter: 'Abajo al centro',
+      posBottomRight: 'Abajo a la derecha',
+      formatLabel: 'Formato',
+      formatN: 'Solo número (1, 2, 3…)',
+      formatTotal: 'Número y total (1 de N)',
+      startNumberLabel: 'Primer número',
+      startPageLabel: 'Empezar la numeración en la página',
+      fontSizeLabel: 'Tamaño de fuente',
+      stepsHeading: 'Cómo añadir números de página a un PDF',
+      steps: [
+        'Añade el PDF que quieres numerar arrastrándolo al área de subida, o haz clic para buscarlo.',
+        'Elige una de las seis posiciones — una esquina, o centrado arriba o abajo — y el formato: solo el número, o número y total.',
+        'Si lo necesitas, cambia el primer número, la página donde empieza la numeración y el tamaño de fuente, y haz clic en «Añadir números de página».',
+        'Descarga el PDF numerado. El archivo original permanece intacto en tu dispositivo.',
+      ],
+      privacyHeading: 'Numera documentos terminados sin subirlos',
+      privacyText:
+        'Añadir números de página suele ser el toque final antes de que un documento salga: una tesis para la imprenta, un contrato para firmar, un informe para la junta. En ese momento el archivo suele estar terminado y ser confidencial — y aun así, la mayoría de las herramientas online piden subirlo primero. CoolPDF inserta los números donde el archivo ya está: en tu propio dispositivo. El PDF lo lee tu navegador, se estampa con los números en la posición y el formato elegidos y se guarda directamente en tu disco. Nada cruza la red, así que nada puede ser interceptado, registrado ni olvidado en un servidor. Eso hace que la herramienta sea segura para documentos legales, historiales médicos e informes financieros — y rápida, porque no hay cola de subida ni copia procesada que descargar de otro sitio. Al cerrar la pestaña, todo rastro del documento desaparece.',
+      faqHeading: 'Preguntas frecuentes',
+      faq: [
+        {
+          question: '¿Puedo saltarme la portada?',
+          answer:
+            'Sí. Pon «Empezar la numeración en la página» en 2 (o en una página posterior) y las primeras páginas quedan limpias. Combínalo con «Primer número» si la numeración visible debe empezar en 1 — o continúa una secuencia existente.',
+        },
+        {
+          question: '¿Qué muestra el formato «1 de N»?',
+          answer:
+            'Muestra el número actual y el número total de páginas del documento, por ejemplo «3 of 12». El total siempre cuenta todas las páginas del archivo, incluidas las no numeradas del principio.',
+        },
+        {
+          question: '¿Se solaparán los números con mi contenido?',
+          answer:
+            'Los números se colocan en el margen, a 24 puntos del borde. La mayoría de los documentos deja esa zona libre, pero si tu contenido llega hasta el borde, elige una posición en el lado opuesto o un tamaño de fuente menor.',
+        },
+      ],
+    },
+    'pdf-to-markdown': {
+      metaTitle: 'Convertidor de PDF a Markdown online gratis | CoolPDF',
+      metaDescription:
+        'Convierte el texto de un PDF en Markdown limpio — títulos, párrafos y listas detectados automáticamente — localmente en tu navegador. Sin subidas, gratis, sin registro.',
+      heading: 'PDF a Markdown',
+      intro:
+        'Convierte el texto de tu PDF en Markdown limpio y estructurado: títulos, párrafos y listas detectados automáticamente, encabezados y pies de página eliminados. La conversión se ejecuta por completo en tu navegador.',
+      button: 'Convertir a Markdown',
+      scopeLabel: 'Páginas',
+      scopeAll: 'Todas las páginas',
+      scopeCustom: 'Solo páginas seleccionadas',
+      pagesLabel: 'Páginas',
+      pagesPlaceholder: 'p. ej. 1-3, 5',
+      stepsHeading: 'Cómo convertir PDF a Markdown',
+      steps: [
+        'Añade el PDF que quieres convertir arrastrándolo al área de subida, o haz clic para buscarlo.',
+        'Elige si convertir todas las páginas o solo un rango (por ejemplo 1-3, 5).',
+        'Haz clic en «Convertir a Markdown» — los títulos, párrafos y listas se detectan automáticamente, y los encabezados y pies de página repetidos se eliminan.',
+        'Descarga el archivo Markdown y ábrelo en cualquier editor, aplicación de notas o generador de sitios estáticos.',
+      ],
+      privacyHeading: 'Convierte documentos a Markdown sin subirlos',
+      privacyText:
+        'Convertir un PDF a Markdown suele significar pasarlo por una herramienta de IA o un conversor en la nube — y subir todo el documento en el proceso. Eso es un problema cuando el archivo es un borrador de artículo, un informe interno o un contrato del que necesitas citar. CoolPDF hace la extracción en local: un motor PDF que se ejecuta en tu navegador lee la capa de texto, detecta los títulos a partir de los tamaños de fuente, reconstruye párrafos y listas y te entrega un archivo Markdown limpio. El documento nunca sale de tu dispositivo: no hay nada que interceptar ni nada almacenado en servidores ajenos. Incluso funciona sin conexión — carga la página, desconéctate y convierte. Al cerrar la pestaña, tanto el PDF como el Markdown desaparecen.',
+      faqHeading: 'Preguntas frecuentes',
+      faq: [
+        {
+          question: '¿También se extraen las imágenes?',
+          answer:
+            'No. El conversor solo extrae texto — títulos, párrafos y listas. Las imágenes incrustadas se omiten; exporta por separado las páginas con muchas figuras si las necesitas (la herramienta PDF a JPG puede ayudar).',
+        },
+        {
+          question: '¿Cómo se detectan los títulos?',
+          answer:
+            'Por el tamaño de fuente. El tamaño más frecuente se trata como cuerpo de texto; las líneas notablemente más grandes se convierten en títulos — #, ## o ### según cuánto más grandes sean. La detección es heurística, así que siempre conviene revisar rápidamente el resultado.',
+        },
+        {
+          question: '¿Por qué aparece un mensaje sobre un PDF escaneado?',
+          answer:
+            'Los escaneos son fotos de páginas sin una capa de texto real, así que no hay nada que extraer. Pasa primero el archivo por un software OCR — cuando el escaneo tenga capa de texto, esta herramienta podrá convertirlo.',
         },
       ],
     },

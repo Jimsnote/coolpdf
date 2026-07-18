@@ -400,6 +400,7 @@ export const it = {
       noPages: 'Nel documento deve rimanere almeno una pagina.',
       wrongPassword: 'La password non è corretta. Riprova.',
       notEncrypted: 'Questo PDF non è protetto da password, quindi non c’è nulla da sbloccare.',
+      noText: 'Questo PDF sembra composto da immagini scansionate senza testo estraibile.',
       generic: 'Si è verificato un errore durante l’elaborazione del file. Riprova.',
     },
   },
@@ -815,6 +816,147 @@ export const it = {
           question: 'Lo sblocco modifica il documento?',
           answer:
             'No. Viene rimosso solo lo strato di crittografia — ogni pagina, immagine e annotazione resta esattamente com’era nell’originale.',
+        },
+      ],
+    },
+    'watermark-pdf': {
+      metaTitle: 'Aggiungi filigrana al PDF online gratis — testo o immagine | CoolPDF',
+      metaDescription:
+        'Apponi una filigrana di testo o immagine su ogni pagina del tuo PDF — affiancata o centrata, con opacità regolabile — direttamente nel browser. Nessun upload, gratis, senza registrazione.',
+      heading: 'Filigrana PDF',
+      intro:
+        'Apponi una filigrana di testo o immagine su ogni pagina del tuo PDF — affiancata in diagonale o centrata, con dimensione, colore e opacità a tua scelta. Tutto avviene sul tuo dispositivo.',
+      button: 'Aggiungi filigrana',
+      typeLabel: 'Tipo di filigrana',
+      typeText: 'Testo',
+      typeImage: 'Immagine (PNG o JPG)',
+      textLabel: 'Testo della filigrana',
+      textPlaceholder: 'es. RISERVATO',
+      fontSizeLabel: 'Dimensione carattere',
+      colorLabel: 'Colore del testo',
+      opacityLabel: 'Opacità',
+      layoutLabel: 'Posizionamento',
+      layoutTile: 'Affiancata — ripetuta in diagonale su ogni pagina',
+      layoutCenter: 'Centrata — un solo timbro per pagina',
+      scaleLabel: 'Dimensione immagine (relativa alla larghezza della pagina)',
+      stepsHeading: 'Come aggiungere una filigrana a un PDF',
+      steps: [
+        'Aggiungi il PDF da filigranare trascinandolo sull’area di upload, oppure fai clic per sfogliare i file.',
+        'Scegli una filigrana di testo o immagine. Per il testo, digita la dicitura e scegli dimensione e colore; per un’immagine, carica un PNG o un JPG e impostane la dimensione.',
+        'Regola l’opacità e scegli il posizionamento — affiancata in diagonale su ogni pagina o un singolo timbro centrato — poi fai clic su "Aggiungi filigrana".',
+        'Scarica il PDF con filigrana. Il file originale resta inalterato sul tuo dispositivo.',
+      ],
+      privacyHeading: 'Filigrana su documenti sensibili senza caricarli',
+      privacyText:
+        'Apporre una filigrana a un PDF è di solito l’ultimo passo prima di condividere qualcosa di sensibile: una bozza di contratto contrassegnata come riservata, l’anteprima di un progetto con il nome del tuo studio, la copia di un documento d’identità utilizzabile per un solo scopo. Con un classico strumento online, l’originale non protetto viene caricato su un server prima ancora che la filigrana lo sfiori. CoolPDF fa il contrario. Le filigrane di testo vengono disegnate con i caratteri del tuo dispositivo — ecco perché cinese, arabo o emoji funzionano come l’italiano —, convertite in immagine e timbrate sulle pagine direttamente nella scheda del browser. Anche le immagini non viaggiano. Nulla viene caricato, accodato o archiviato altrove: lo strumento è sicuro per progetti inediti, materiale sotto NDA e documenti personali. Chiudi la scheda e ogni traccia scompare.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Posso usare testo cinese, arabo o emoji nella filigrana?',
+          answer:
+            'Sì. Le filigrane di testo sono disegnate con i caratteri del tuo dispositivo e incorporate come immagine: funzionano tutte le lingue e tutti i simboli, non solo l’alfabeto latino a cui sono limitati i font PDF classici.',
+        },
+        {
+          question: 'Che differenza c’è tra affiancata e centrata?',
+          answer:
+            'La modalità affiancata ripete la filigrana in diagonale su tutta la pagina, rendendola difficile da ritagliare — ideale per i timbri di riservatezza. La modalità centrata posiziona una singola copia diagonale al centro di ogni pagina, con un effetto più simile a un logo.',
+        },
+        {
+          question: 'Quali formati di immagine posso usare come filigrana?',
+          answer:
+            'PNG e JPG. Il PNG è la scelta migliore per i loghi perché mantiene la trasparenza, così il contenuto della pagina resta visibile attorno al marchio. Usa il cursore per ridimensionare l’immagine rispetto alla larghezza della pagina.',
+        },
+      ],
+    },
+    'page-numbers': {
+      metaTitle: 'Aggiungi numeri di pagina al PDF online gratis | CoolPDF',
+      metaDescription:
+        'Inserisci numeri di pagina nel tuo PDF — sei posizioni, formati "1 di N", pagina iniziale a scelta — in locale nel tuo browser. Nessun upload, gratis, senza registrazione.',
+      heading: 'Numeri di pagina',
+      intro:
+        'Aggiungi i numeri di pagina al tuo PDF esattamente dove vuoi: sei posizioni, due formati e pieno controllo su dove inizia la numerazione. L’elaborazione avviene interamente sul tuo dispositivo.',
+      button: 'Aggiungi numeri di pagina',
+      positionLabel: 'Posizione',
+      posTopLeft: 'In alto a sinistra',
+      posTopCenter: 'In alto al centro',
+      posTopRight: 'In alto a destra',
+      posBottomLeft: 'In basso a sinistra',
+      posBottomCenter: 'In basso al centro',
+      posBottomRight: 'In basso a destra',
+      formatLabel: 'Formato',
+      formatN: 'Solo numero (1, 2, 3…)',
+      formatTotal: 'Numero e totale (1 di N)',
+      startNumberLabel: 'Primo numero',
+      startPageLabel: 'Inizia la numerazione alla pagina',
+      fontSizeLabel: 'Dimensione carattere',
+      stepsHeading: 'Come aggiungere i numeri di pagina a un PDF',
+      steps: [
+        'Aggiungi il PDF da numerare trascinandolo sull’area di upload, oppure fai clic per sfogliare i file.',
+        'Scegli una delle sei posizioni — un angolo, oppure centrato in alto o in basso — e il formato: solo il numero oppure numero e totale.',
+        'Se serve, modifica il primo numero, la pagina da cui parte la numerazione e la dimensione del carattere, poi fai clic su "Aggiungi numeri di pagina".',
+        'Scarica il PDF numerato. Il file originale resta inalterato sul tuo dispositivo.',
+      ],
+      privacyHeading: 'Numera i documenti finali senza caricarli',
+      privacyText:
+        'Aggiungere i numeri di pagina è spesso il tocco finale prima che un documento esca: una tesi per la stampa, un contratto da firmare, un report per il consiglio. A quel punto il file è di solito definitivo e riservato — eppure la maggior parte degli strumenti online chiede prima di caricarlo. CoolPDF inserisce i numeri dove il file si trova già: sul tuo dispositivo. Il PDF viene letto dal browser, marcato con i numeri nella posizione e nel formato scelti e salvato direttamente sul tuo disco. Nulla attraversa la rete: niente può essere intercettato, registrato o lasciato su un server. Lo strumento è sicuro per atti giudiziari, cartelle cliniche e report finanziari — ed è veloce, perché non c’è coda di upload né una copia elaborata da scaricare altrove. Chiudendo la scheda, ogni traccia del documento scompare.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Posso saltare la copertina?',
+          answer:
+            'Sì. Imposta "Inizia la numerazione alla pagina" su 2 (o una pagina successiva) e le pagine iniziali restano pulite. Combinalo con "Primo numero" se la numerazione visibile deve partire da 1 — oppure prosegui una sequenza esistente.',
+        },
+        {
+          question: 'Cosa mostra il formato "1 di N"?',
+          answer:
+            'Mostra il numero corrente e il numero totale di pagine del documento, per esempio "3 of 12". Il totale conta sempre tutte le pagine del file, comprese eventuali pagine non numerate all’inizio.',
+        },
+        {
+          question: 'I numeri si sovrappongono al contenuto?',
+          answer:
+            'I numeri sono posizionati nel margine, a 24 punti dal bordo. La maggior parte dei documenti lascia libera quell’area, ma se il tuo contenuto arriva fino al bordo, scegli una posizione sul lato opposto o una dimensione del carattere più piccola.',
+        },
+      ],
+    },
+    'pdf-to-markdown': {
+      metaTitle: 'Convertitore PDF in Markdown online gratis | CoolPDF',
+      metaDescription:
+        'Trasforma il testo del PDF in Markdown pulito — titoli, paragrafi ed elenchi rilevati automaticamente — in locale nel tuo browser. Nessun upload, gratis, senza registrazione.',
+      heading: 'PDF in Markdown',
+      intro:
+        'Trasforma il testo del tuo PDF in Markdown pulito e strutturato: titoli, paragrafi ed elenchi rilevati automaticamente, intestazioni e piè di pagina rimossi. La conversione avviene interamente nel tuo browser.',
+      button: 'Converti in Markdown',
+      scopeLabel: 'Pagine',
+      scopeAll: 'Tutte le pagine',
+      scopeCustom: 'Solo pagine selezionate',
+      pagesLabel: 'Pagine',
+      pagesPlaceholder: 'es. 1-3, 5',
+      stepsHeading: 'Come convertire un PDF in Markdown',
+      steps: [
+        'Aggiungi il PDF da convertire trascinandolo sull’area di upload, oppure fai clic per sfogliare i file.',
+        'Scegli se convertire tutte le pagine o solo un intervallo (per esempio 1-3, 5).',
+        'Fai clic su "Converti in Markdown" — titoli, paragrafi ed elenchi vengono rilevati automaticamente e le intestazioni e i piè di pagina ricorrenti vengono rimossi.',
+        'Scarica il file Markdown e aprilo in qualsiasi editor, app di note o generatore di siti statici.',
+      ],
+      privacyHeading: 'Converti documenti in Markdown senza caricarli',
+      privacyText:
+        'Convertire un PDF in Markdown significa di solito passarlo a uno strumento di IA o a un convertitore cloud — caricando l’intero documento. È un problema quando il file è una bozza di articolo, un report interno o un contratto da cui devi citare. CoolPDF esegue l’estrazione in locale: un motore PDF nel tuo browser legge il livello di testo, rileva i titoli dalle dimensioni dei caratteri, ricostruisce paragrafi ed elenchi e ti consegna un file Markdown pulito. Il documento non lascia mai il tuo dispositivo: non c’è nulla da intercettare e nulla archiviato su server altrui. Funziona anche offline — carica la pagina, disconnettiti e converti. Quando chiudi la scheda, sia il PDF sia il Markdown scompaiono.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Vengono estratte anche le immagini?',
+          answer:
+            'No. Il convertitore estrae solo il testo — titoli, paragrafi ed elenchi. Le immagini incorporate vengono saltate; se ti servono, esporta separatamente le pagine ricche di figure (lo strumento PDF in JPG può aiutare).',
+        },
+        {
+          question: 'Come vengono rilevati i titoli?',
+          answer:
+            'Dalla dimensione del carattere. La dimensione più frequente è trattata come corpo del testo; le righe nettamente più grandi diventano titoli — #, ## o ### a seconda di quanto sono più grandi. Il rilevamento è euristico, quindi vale sempre la pena dare una rapida occhiata al risultato.',
+        },
+        {
+          question: 'Perché ricevo un messaggio su un PDF scansionato?',
+          answer:
+            'Le scansioni sono foto di pagine senza un vero livello di testo: non c’è nulla da estrarre. Passa prima il file in un software OCR — quando la scansione avrà un livello di testo, questo strumento potrà convertirla.',
         },
       ],
     },
