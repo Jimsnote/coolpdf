@@ -148,13 +148,14 @@ npx serve out      # 以产物形态本地预览
 
 ### 4.2 部署（Cloudflare Pages）
 
-1. GitHub Desktop → Add `C:\home\coolpdf` → Publish（建议 Public，符合 AGPL 开源卖点）
-2. Cloudflare → Workers & Pages → Pages → Connect to Git → 选仓库
-3. Framework preset: **Next.js (Static HTML Export)**；Build command `npm run build`；Output `out`
-4. Custom domains 绑定 `getcoolpdf.com`（同账号自动 DNS + 自动证书）；顺手绑 `www`
-5. 每次 push main 自动部署
+1. GitHub Desktop → Add `C:\home\coolpdf` → Publish（Public，符合 AGPL 开源卖点；已发布至 https://github.com/Jimsnote/coolpdf）
+2. Cloudflare 新版控制台（Pages 已并入 Workers）：Create application → **Worker** → Import a repository → 选 `Jimsnote/coolpdf`
+3. 构建设置：Build command `npm run build`；**Deploy command `npx wrangler deploy`**；Framework preset 若有则选 **None**
+4. **关键**：仓库根目录的 `wrangler.jsonc`（`assets.directory: ./out`）告诉 wrangler 这是纯静态站——没有它，wrangler 会把项目误判为全栈 Next.js 并自动套 OpenNext 适配器，然后因找不到 `.next/standalone` 服务端产物而构建失败（2026-07-18 首次部署即踩此坑，日志存证）
+5. Custom domains 绑定 `getcoolpdf.com`（同账号自动 DNS + 自动证书）；顺手绑 `www`
+6. 每次 push main 自动部署
 
-部署链路已验证项：postinstall/prebuild 双钩子保证 Pages 构建时 wasm 就位；全部资源根绝对路径，locale 前缀页面无 404；`out/404.html` 就位；构建镜像 Node 22 兼容。
+部署链路已验证项：postinstall/prebuild 双钩子保证构建时 wasm 就位；全部资源根绝对路径，locale 前缀页面无 404；`out/404.html` 就位（wrangler.jsonc 配 `not_found_handling: 404-page`）；`_headers` 在 Workers Static Assets 下同样生效；构建镜像 Node 22 兼容。
 
 ### 4.3 `public/_headers` 安全头
 
