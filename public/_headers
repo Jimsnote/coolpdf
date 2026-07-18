@@ -1,15 +1,18 @@
-# Cloudflare Pages custom headers (https://developers.cloudflare.com/pages/configuration/headers/)
+# Cloudflare custom headers (served by Workers Static Assets / Pages).
 #
-# NOTE: keep the CSP in sync with the integrations actually enabled.
-# - Enabling Cloudflare Web Analytics (NEXT_PUBLIC_CF_ANALYTICS_TOKEN) also
-#   needs: script-src + connect-src to allow static.cloudflareinsights.com
-#   and cloudflareinsights.com.
-# - Enabling Google AdSense (NEXT_PUBLIC_ADSENSE_CLIENT) needs the official
-#   Google list of hosts (pagead2.googlesyndication.com etc.) added to
-#   script-src, frame-src, img-src and connect-src.
-# Make those changes when the integrations are switched on, not before.
+# CSP design notes:
+# - script-src includes 'unsafe-inline' because Next.js static export embeds
+#   inline hydration payloads (self.__next_f.push) in every page; their hashes
+#   change with each build and nonces would require edge HTML rewriting.
+#   The directive that actually enforces "files never leave the device" is
+#   connect-src 'self', which stays strict.
+# - static.cloudflareinsights.com / cloudflareinsights.com are allowed because
+#   Cloudflare Web Analytics (automatic beacon injection) is enabled on the zone.
+# - Enabling Google AdSense later will need Google's official host list
+#   (pagead2.googlesyndication.com etc.) added to script-src, frame-src,
+#   img-src and connect-src. Make that change when ads are switched on.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()

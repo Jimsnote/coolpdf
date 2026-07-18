@@ -159,11 +159,13 @@ npx serve out      # 以产物形态本地预览
 
 ### 4.3 `public/_headers` 安全头
 
-CSP 当前策略：`default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; ...`
+CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://cloudflareinsights.com; ...`
 
-**两个未来必须改的点**（文件内注释也有）：
-- 启用 Cloudflare Web Analytics → `connect-src` 加 `cloudflareinsights.com`
-- 启用 AdSense → 按 Google 官方清单放宽（pagead2.googlesyndication.com 等 script/img/frame/connect 多项），接入广告时一并处理
+设计说明（2026-07-18 线上事故教训）：
+- `script-src` 必须含 `'unsafe-inline'`：Next.js 静态导出在每页内联 hydration 数据脚本（`self.__next_f.push`），哈希随构建变化无法穷举，nonce 需边缘改写——曾用纯 `'self'` 导致全站白屏（React 无法水合，console 一串 CSP violation + "Connection closed"）
+- **隐私强制点是 `connect-src 'self'`**（禁止数据外发），它保持严格不变；script-src 放宽不改变"文件不出设备"的浏览器层保证
+- 已放行 `static.cloudflareinsights.com` / `cloudflareinsights.com`（Cloudflare Web Analytics 自动注入已开启）
+- 启用 AdSense 时：按 Google 官方清单放宽（pagead2.googlesyndication.com 等 script/img/frame/connect 多项），接入广告时一并处理
 
 ### 4.4 升级注意事项
 
