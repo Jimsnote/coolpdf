@@ -12,12 +12,18 @@ import type {
   QpdfPermissions,
 } from '@/lib/pdf/heavy-protocol';
 
-// Versioned wasm asset names, copied to public/wasm/ by scripts/copy-wasm.mjs.
-// Keep in sync with the installed package versions (the script prints them).
-const GS_WASM_URL = '/wasm/gs-0.0.2.wasm';
-const QPDF_WASM_URL = '/wasm/qpdf-0.0.2.wasm';
+// Versioned wasm asset names are published in /wasm/manifest.json by
+// scripts/copy-wasm.mjs (generated from the installed package versions), and
+// resolved at runtime so this file never hardcodes them.
+const WASM_MANIFEST_URL = '/wasm/manifest.json';
 /** Cache Storage bucket for the wasm binaries, so they are downloaded once. */
 const WASM_CACHE = 'coolpdf-wasm';
+
+/** Maps each heavy engine to its versioned wasm file name in /wasm/. */
+interface WasmManifest {
+  ghostscript: string;
+  qpdf: string;
+}
 
 /** Minimal worker-global surface (the project compiles with the DOM lib only). */
 interface WorkerScope {
@@ -95,6 +101,61 @@ async function fetchWasm(url: string): Promise<ArrayBuffer> {
   return bytes;
 }
 
+/**
+ * Loads the wasm manifest, preferring Cache Storage over the network just
+ * like the binaries. The manifest is tiny and versioned file names keep its
+ * answers valid, so caching it across sessions is safe. Falls back to a
+ * plain fetch when Cache Storage is unavailable.
+ */
+async function fetchManifest(): Promise<WasmManifest> {
+  let cache: Cache | null = null;
+  try {
+    cache = await caches.open(WASM_CACHE);
+    const hit = await cache.match(WASM_MANIFEST_URL);
+    if (hit) return (await hit.json()) as WasmManifest;
+  } catch {
+    cache = null;
+  }
+  const response = await fetch(WASM_MANIFEST_URL);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${WASM_MANIFEST_URL}: HTTP ${response.status}`);
+  }
+  const manifest = (await response.json()) as WasmManifest;
+  if (cache) {
+    try {
+      await cache.put(
+        WASM_MANIFEST_URL,
+        new Response(JSON.stringify(manifest), {
+          headers: { 'Content-Type': 'application/json' },
+        }),
+      );
+    } catch {
+      // A failed cache write (e.g. quota) is not fatal.
+    }
+  }
+  return manifest;
+}
+
+/** Memoized manifest lookup — one worker instance handles one task. */
+let manifestPromise: Promise<WasmManifest> | null = null;
+
+function getManifest(): Promise<WasmManifest> {
+  if (!manifestPromise) {
+    manifestPromise = fetchManifest();
+    // Do not cache a rejection: a later retry should hit the network again.
+    manifestPromise.catch(() => {
+      manifestPromise = null;
+    });
+  }
+  return manifestPromise;
+}
+
+/** Resolves an engine's versioned wasm URL through the manifest. */
+async function wasmUrl(engine: keyof WasmManifest): Promise<string> {
+  const manifest = await getManifest();
+  return `/wasm/${manifest[engine]}`;
+}
+
 function looksLikePdf(bytes: Uint8Array): boolean {
   // '%PDF-'
   return (
@@ -138,7 +199,7 @@ async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuf
   if (!looksLikePdf(input)) throw new TaskError('corrupted');
 
   const { default: createGs } = await import('@jspawn/ghostscript-wasm/gs.js');
-  const wasmBinary = await fetchWasm(GS_WASM_URL);
+  const wasmBinary = await fetchWasm(await wasmUrl('ghostscript'));
 
   // Ghostscript prints "Processing pages 1 through N." then one "Page n" line
   // per page on stdout; turn that into genuine progress events.
@@ -190,7 +251,7 @@ async function runCompress(pdf: ArrayBuffer, preset: GsPreset): Promise<ArrayBuf
 
 async function createQpdf() {
   const { default: createQpdfModule } = await import('@jspawn/qpdf-wasm/qpdf.js');
-  const wasmBinary = await fetchWasm(QPDF_WASM_URL);
+  const wasmBinary = await fetchWasm(await wasmUrl('qpdf'));
   const stdout: string[] = [];
   const stderr: string[] = [];
   const mod = await createQpdfModule({

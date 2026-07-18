@@ -29,7 +29,7 @@ export const es = {
     comingSoon: 'Próximamente',
   },
   home: {
-    metaTitle: 'Herramientas PDF gratuitas que respetan tu privacidad | CoolPDF',
+    metaTitle: 'Herramientas PDF gratis que respetan tu privacidad | CoolPDF',
     metaDescription:
       'Une, divide, comprime y protege PDF directamente en tu navegador. Procesamiento 100% local: sin subidas, sin registro y gratis para siempre.',
     hero: {
@@ -146,7 +146,7 @@ export const es = {
   about: {
     metaTitle: 'Acerca de nosotros | CoolPDF',
     metaDescription:
-      'CoolPDF es un conjunto de herramientas PDF gratuito y de código abierto que procesa cada archivo localmente en tu navegador. Descubre por qué lo construimos así.',
+      'CoolPDF es un conjunto de herramientas PDF gratuito y de código abierto que procesa cada archivo localmente en tu navegador. Descubre por qué.',
     heading: 'Acerca de CoolPDF',
     sections: [
       {
@@ -411,7 +411,7 @@ export const es = {
     'merge-pdf': {
       metaTitle: 'Unir PDF online gratis — Sin subidas ni registro | CoolPDF',
       metaDescription:
-        'Combina hasta 20 PDF en un solo archivo directamente en tu navegador. Reordena, une y descarga: los archivos nunca salen de tu dispositivo. Gratis, sin registro.',
+        'Combina hasta 20 PDF en un solo archivo directamente en tu navegador. Reordena, une y descarga: los archivos nunca salen de tu dispositivo.',
       heading: 'Unir PDF',
       intro:
         'Combina varios documentos PDF en un solo archivo, exactamente en el orden que elijas. La unión se ejecuta por completo en tu propio dispositivo.',
@@ -446,9 +446,9 @@ export const es = {
       ],
     },
     'split-pdf': {
-      metaTitle: 'Dividir PDF online gratis — Extrae páginas localmente | CoolPDF',
+      metaTitle: 'Dividir PDF online gratis — Extrae páginas | CoolPDF',
       metaDescription:
-        'Extrae páginas, divide por rangos o corta un PDF cada N páginas, todo en tu navegador. Los archivos nunca salen de tu dispositivo. Gratis, sin registro, sin marcas de agua.',
+        'Extrae páginas, divide por rangos o corta un PDF cada N páginas, todo en tu navegador. Gratis, sin registro, sin marcas de agua.',
       heading: 'Dividir PDF',
       intro:
         'Extrae cada página en un archivo independiente, saca rangos personalizados o divide un documento en bloques de N páginas. Todo ocurre localmente en tu navegador.',
@@ -535,7 +535,7 @@ export const es = {
     'jpg-to-pdf': {
       metaTitle: 'Convertir JPG a PDF — Gratis, local, sin subidas | CoolPDF',
       metaDescription:
-        'Convierte imágenes JPG y PNG en un PDF A4 limpio en tu navegador. Ajustar, rellenar o tamaño original: los archivos nunca salen de tu dispositivo. Gratis, sin registro.',
+        'Convierte imágenes JPG y PNG en un PDF A4 limpio en tu navegador. Ajustar, rellenar o tamaño original: los archivos no salen de tu dispositivo.',
       heading: 'JPG a PDF',
       intro:
         'Convierte hasta 20 imágenes JPG o PNG en un único PDF A4: perfecto para escaneos, recibos y documentos con fotos. La conversión se ejecuta por completo en tu dispositivo.',
@@ -578,7 +578,7 @@ export const es = {
       ],
     },
     'organize-pdf': {
-      metaTitle: 'Organizar PDF online gratis — Reordena y gira páginas | CoolPDF',
+      metaTitle: 'Organizar PDF online gratis — Reordena páginas | CoolPDF',
       metaDescription:
         'Reordena las páginas de un PDF arrastrando y soltando, gíralas o elimínalas y descarga un PDF reorganizado, todo en tu navegador. Sin subidas, sin registro.',
       heading: 'Organizar PDF',
@@ -678,9 +678,9 @@ export const es = {
       ],
     },
     'compress-pdf': {
-      metaTitle: 'Comprimir PDF online gratis — Sin subidas ni registro | CoolPDF',
+      metaTitle: 'Comprimir PDF online gratis — Sin subidas | CoolPDF',
       metaDescription:
-        'Reduce el tamaño de tus PDF con tres niveles de calidad, de 72 a 300 DPI, directamente en tu navegador. Los archivos nunca salen de tu dispositivo. Gratis, sin registro.',
+        'Reduce el tamaño de tus PDF con tres niveles de calidad, de 72 a 300 DPI, directamente en tu navegador. Gratis, sin registro.',
       heading: 'Comprimir PDF',
       intro:
         'Reduce los PDF grandes a una fracción de su tamaño con tres niveles de compresión. El motor de compresión se ejecuta por completo en tu propio dispositivo.',
@@ -788,7 +788,7 @@ export const es = {
     'unlock-pdf': {
       metaTitle: 'Desbloquear PDF online gratis — Quitar contraseña | CoolPDF',
       metaDescription:
-        'Elimina la protección con contraseña de los PDF que te pertenecen, directamente en tu navegador. Sin subidas ni registro, gratis: los archivos nunca salen de tu dispositivo.',
+        'Elimina la protección con contraseña de los PDF que te pertenecen, directamente en tu navegador. Gratis, sin registro.',
       heading: 'Desbloquear PDF',
       intro:
         'Elimina la contraseña de un PDF que te pertenece para que se abra sin ella. El descifrado se ejecuta localmente: ni el archivo ni la contraseña salen de tu dispositivo.',
@@ -798,7 +798,7 @@ export const es = {
       stepsHeading: 'Cómo desbloquear un PDF',
       steps: [
         'Añade el PDF protegido con contraseña arrastrándolo al área de carga, o haz clic para examinar.',
-        'Introduce la contraseña actual del documento.',
+        'Introduce la contraseña del documento, si es necesario.',
         'Haz clic en «Desbloquear PDF»: la protección se elimina localmente en segundos.',
         'Descarga el PDF desbloqueado. A partir de ahora se abre en cualquier lector sin contraseña.',
       ],
@@ -825,9 +825,9 @@ export const es = {
       ],
     },
     'watermark-pdf': {
-      metaTitle: 'Añadir marca de agua a PDF online gratis — texto o imagen | CoolPDF',
+      metaTitle: 'Añadir marca de agua a un PDF — texto o imagen | CoolPDF',
       metaDescription:
-        'Estampa una marca de agua de texto o imagen en cada página de tu PDF — en mosaico o centrada, con opacidad ajustable — directamente en tu navegador. Sin subidas, gratis, sin registro.',
+        'Estampa una marca de agua de texto o imagen en cada página de tu PDF — en mosaico o centrada, opacidad ajustable — directamente en tu navegador. Gratis.',
       heading: 'Marca de agua PDF',
       intro:
         'Estampa una marca de agua de texto o imagen en cada página de tu PDF — en mosaico diagonal o centrada, con el tamaño, el color y la opacidad que elijas. Todo se ejecuta en tu propio dispositivo.',
@@ -876,7 +876,7 @@ export const es = {
     'page-numbers': {
       metaTitle: 'Añadir números de página a PDF online gratis | CoolPDF',
       metaDescription:
-        'Inserta números de página en tu PDF — seis posiciones, formatos «1 de N», página inicial a tu elección — localmente en tu navegador. Sin subidas, gratis, sin registro.',
+        'Inserta números de página en tu PDF — seis posiciones, formatos «1 de N», página inicial a tu elección — localmente en tu navegador. Gratis.',
       heading: 'Números de página',
       intro:
         'Añade números de página a tu PDF exactamente donde quieras: seis posiciones, dos formatos y control total sobre dónde empieza la numeración. El procesamiento ocurre por completo en tu dispositivo.',
@@ -926,7 +926,7 @@ export const es = {
     'pdf-to-markdown': {
       metaTitle: 'Convertidor de PDF a Markdown online gratis | CoolPDF',
       metaDescription:
-        'Convierte el texto de un PDF en Markdown limpio — títulos, párrafos y listas detectados automáticamente — localmente en tu navegador. Sin subidas, gratis, sin registro.',
+        'Convierte el texto de un PDF en Markdown limpio — títulos, párrafos y listas detectados automáticamente — localmente en tu navegador. Gratis.',
       heading: 'PDF a Markdown',
       intro:
         'Convierte el texto de tu PDF en Markdown limpio y estructurado: títulos, párrafos y listas detectados automáticamente, encabezados y pies de página eliminados. La conversión se ejecuta por completo en tu navegador.',

@@ -29,9 +29,9 @@ export const de = {
     comingSoon: 'Demnächst verfügbar',
   },
   home: {
-    metaTitle: 'Kostenlose PDF-Tools, die Ihre Privatsphäre respektieren | CoolPDF',
+    metaTitle: 'Gratis PDF-Tools, die Ihre Privatsphäre schützen | CoolPDF',
     metaDescription:
-      'PDFs direkt im Browser zusammenfügen, teilen, komprimieren und schützen. 100 % clientseitige Verarbeitung — keine Uploads, keine Registrierung, für immer kostenlos.',
+      'PDFs direkt im Browser zusammenfügen, teilen, komprimieren und schützen. 100 % lokal — keine Uploads, keine Registrierung, für immer kostenlos.',
     hero: {
       title: 'Kostenlose PDF-Tools, die Ihre Privatsphäre respektieren',
       subtitle:
@@ -409,9 +409,9 @@ export const de = {
   },
   toolPages: {
     'merge-pdf': {
-      metaTitle: 'PDF zusammenfügen — kostenlos, ohne Upload, ohne Anmeldung | CoolPDF',
+      metaTitle: 'PDF zusammenfügen — kostenlos, ohne Upload | CoolPDF',
       metaDescription:
-        'Kombinieren Sie bis zu 20 PDFs direkt in Ihrem Browser zu einer Datei. Sortieren, zusammenfügen, herunterladen — Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung.',
+        'Kombinieren Sie bis zu 20 PDFs direkt in Ihrem Browser zu einer Datei. Sortieren, zusammenfügen, herunterladen — Dateien verlassen nie Ihr Gerät.',
       heading: 'PDF zusammenfügen',
       intro:
         'Kombinieren Sie mehrere PDF-Dokumente zu einer einzigen Datei — genau in der Reihenfolge, die Sie wählen. Das Zusammenfügen läuft vollständig auf Ihrem eigenen Gerät.',
@@ -448,7 +448,7 @@ export const de = {
     'split-pdf': {
       metaTitle: 'PDF teilen — kostenlos, Seiten lokal extrahieren | CoolPDF',
       metaDescription:
-        'Seiten extrahieren, nach Bereichen teilen oder eine PDF alle N Seiten zerlegen — alles in Ihrem Browser. Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung, ohne Wasserzeichen.',
+        'Seiten extrahieren, nach Bereichen teilen oder alle N Seiten zerlegen — alles in Ihrem Browser. Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Wasserzeichen.',
       heading: 'PDF teilen',
       intro:
         'Extrahieren Sie jede Seite als eigene Datei, ziehen Sie individuelle Bereiche heraus oder zerlegen Sie ein Dokument in Stücke von N Seiten. Alles geschieht lokal in Ihrem Browser.',
@@ -533,9 +533,9 @@ export const de = {
       ],
     },
     'jpg-to-pdf': {
-      metaTitle: 'JPG in PDF umwandeln — kostenlos, lokal, ohne Upload | CoolPDF',
+      metaTitle: 'JPG in PDF umwandeln — kostenlos, ohne Upload | CoolPDF',
       metaDescription:
-        'Wandeln Sie JPG- und PNG-Bilder direkt in Ihrem Browser in eine saubere A4-PDF um. Anpassen, füllen oder Originalgröße — Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung.',
+        'Wandeln Sie JPG- und PNG-Bilder in Ihrem Browser in eine saubere A4-PDF um. Anpassen, füllen oder Originalgröße — Dateien verlassen nie Ihr Gerät.',
       heading: 'JPG in PDF',
       intro:
         'Wandeln Sie bis zu 20 JPG- oder PNG-Bilder in eine einzige A4-PDF um — ideal für Scans, Quittungen und Foto-Dokumente. Die Umwandlung läuft vollständig auf Ihrem Gerät.',
@@ -578,9 +578,9 @@ export const de = {
       ],
     },
     'organize-pdf': {
-      metaTitle: 'PDF-Seiten organisieren — kostenlos, neu anordnen & drehen | CoolPDF',
+      metaTitle: 'PDF-Seiten organisieren — neu anordnen & drehen | CoolPDF',
       metaDescription:
-        'Ordnen Sie PDF-Seiten per Drag & Drop neu an, drehen oder löschen Sie Seiten und laden Sie das neu organisierte PDF herunter — alles in Ihrem Browser. Keine Uploads, keine Anmeldung.',
+        'Ordnen Sie PDF-Seiten per Drag & Drop neu an, drehen oder löschen Sie Seiten und laden Sie das Ergebnis herunter — alles lokal in Ihrem Browser.',
       heading: 'PDF-Seiten organisieren',
       intro:
         'Ordnen Sie Seiten per Drag & Drop neu an, drehen Sie die seitlichen und entfernen Sie die Seiten, die Sie nicht brauchen. Eine Live-Vorschau jeder Seite macht es einfach — und alles geschieht auf Ihrem Gerät.',
@@ -628,9 +628,9 @@ export const de = {
       ],
     },
     'pdf-to-jpg': {
-      metaTitle: 'PDF in JPG umwandeln — kostenlos, lokal, ohne Upload | CoolPDF',
+      metaTitle: 'PDF in JPG umwandeln — kostenlos, ohne Upload | CoolPDF',
       metaDescription:
-        'Wandeln Sie PDF-Seiten direkt in Ihrem Browser in JPG- oder PNG-Bilder um — mit 72, 150 oder 300 DPI. Dateien verlassen nie Ihr Gerät. Kostenlos, ohne Anmeldung.',
+        'Wandeln Sie PDF-Seiten in JPG- oder PNG-Bilder um — mit 72, 150 oder 300 DPI, direkt in Ihrem Browser. Dateien verlassen nie Ihr Gerät.',
       heading: 'PDF in JPG umwandeln',
       intro:
         'Wandeln Sie PDF-Seiten in hochwertige JPG- oder PNG-Bilder um. Wählen Sie die Auflösung und die Seiten, die Sie brauchen — die Umwandlung läuft vollständig auf Ihrem Gerät.',
@@ -788,17 +788,17 @@ export const de = {
     'unlock-pdf': {
       metaTitle: 'PDF entsperren — Passwort lokal entfernen | CoolPDF',
       metaDescription:
-        'Entfernen Sie den Passwortschutz von PDFs, die Ihnen gehören — direkt in Ihrem Browser. Ohne Upload, ohne Anmeldung, kostenlos — Dateien verlassen nie Ihr Gerät.',
+        'Entfernen Sie den Passwortschutz von PDFs, die Ihnen gehören — direkt in Ihrem Browser. Ohne Upload, kostenlos, ohne Anmeldung.',
       heading: 'PDF entsperren',
       intro:
-        'Entfernen Sie das Passwort aus einer PDF, die Ihnen gehört, damit sie sich ohne öffnen lässt. Die Entschlüsselung läuft lokal — weder die Datei noch das Passwort verlässt Ihr Gerät.',
+        'Entfernen Sie das Passwort aus einer PDF, die Ihnen gehört, damit sie sich ohne Passwort öffnen lässt. Die Entschlüsselung läuft lokal — weder die Datei noch das Passwort verlässt Ihr Gerät.',
       legalNote: 'Entsperren Sie nur PDFs, die Ihnen gehören oder die Sie ändern dürfen.',
       passwordLabel: 'Aktuelles Passwort (falls erforderlich)',
       button: 'PDF entsperren',
       stepsHeading: 'So entsperren Sie eine PDF',
       steps: [
         'Fügen Sie die passwortgeschützte PDF hinzu, indem Sie sie auf den Upload-Bereich ziehen, oder klicken Sie, um zu durchsuchen.',
-        'Geben Sie das aktuelle Passwort des Dokuments ein.',
+        'Geben Sie bei Bedarf das Passwort des Dokuments ein.',
         'Klicken Sie auf „PDF entsperren“ — der Schutz wird lokal in Sekunden entfernt.',
         'Laden Sie die entsperrte PDF herunter. Ab jetzt öffnet sie sich in jedem Reader ohne Passwort.',
       ],
@@ -825,9 +825,9 @@ export const de = {
       ],
     },
     'watermark-pdf': {
-      metaTitle: 'PDF mit Wasserzeichen versehen — kostenlos, Text oder Bild | CoolPDF',
+      metaTitle: 'PDF mit Wasserzeichen versehen — kostenlos | CoolPDF',
       metaDescription:
-        'Versehen Sie jede Seite Ihrer PDF mit einem Text- oder Bildwasserzeichen — gefliest oder zentriert, mit einstellbarer Deckkraft — direkt im Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+        'Versehen Sie jede Seite Ihrer PDF mit einem Text- oder Bildwasserzeichen — gefliest oder zentriert, Deckkraft einstellbar — direkt im Browser. Kostenlos.',
       heading: 'PDF mit Wasserzeichen',
       intro:
         'Versehen Sie jede Seite Ihrer PDF mit einem Text- oder Bildwasserzeichen — diagonal gefliest oder zentriert, mit Größe, Farbe und Deckkraft nach Wahl. Alles läuft auf Ihrem eigenen Gerät.',
@@ -876,7 +876,7 @@ export const de = {
     'page-numbers': {
       metaTitle: 'Seitenzahlen in PDF einfügen — kostenlos online | CoolPDF',
       metaDescription:
-        'Fügen Sie Ihrer PDF Seitenzahlen hinzu — sechs Positionen, Formate wie „1 von N“, freie Startseite — lokal in Ihrem Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+        'Fügen Sie Ihrer PDF Seitenzahlen hinzu — sechs Positionen, Formate wie „1 von N“, freie Startseite — lokal in Ihrem Browser. Kostenlos.',
       heading: 'Seitenzahlen',
       intro:
         'Fügen Sie Ihrer PDF Seitenzahlen genau dort hinzu, wo Sie sie haben möchten: sechs Positionen, zwei Formate und volle Kontrolle über den Beginn der Nummerierung. Die Verarbeitung erfolgt vollständig auf Ihrem Gerät.',
@@ -926,7 +926,7 @@ export const de = {
     'pdf-to-markdown': {
       metaTitle: 'PDF in Markdown umwandeln — kostenlos online | CoolPDF',
       metaDescription:
-        'Wandeln Sie PDF-Text in sauberes Markdown um — Überschriften, Absätze und Listen automatisch erkannt — lokal in Ihrem Browser. Kein Upload, kostenlos, ohne Anmeldung.',
+        'Wandeln Sie PDF-Text in sauberes Markdown um — Überschriften, Absätze und Listen automatisch erkannt — lokal in Ihrem Browser. Kostenlos.',
       heading: 'PDF in Markdown',
       intro:
         'Wandeln Sie den Text Ihrer PDF in sauberes, strukturiertes Markdown um — Überschriften, Absätze und Listen werden automatisch erkannt, Kopf- und Fußzeilen entfernt. Die Umwandlung läuft vollständig in Ihrem Browser.',

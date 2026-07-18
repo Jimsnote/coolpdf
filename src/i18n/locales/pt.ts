@@ -16,7 +16,7 @@ export const pt = {
   },
   footer: {
     pillars:
-      'Processamento 100% no lado do cliente · Os seus ficheiros nunca saem do seu dispositivo · Sem necessidade de cadastro',
+      'Processamento 100% no lado do cliente · Os seus ficheiros nunca saem do seu dispositivo · Sem necessidade de registo',
     pagesHeading: 'Páginas',
     about: 'Sobre',
     privacy: 'Política de Privacidade',
@@ -30,13 +30,13 @@ export const pt = {
   },
   home: {
     metaTitle:
-      'Ferramentas de PDF grátis que respeitam a sua privacidade | CoolPDF',
+      'Ferramentas de PDF grátis e privadas | CoolPDF',
     metaDescription:
-      'Junte, divida, compacte e proteja PDFs diretamente no seu navegador. Processamento 100% local — sem uploads, sem cadastro, grátis para sempre.',
+      'Junte, divida, comprima e proteja PDFs diretamente no seu navegador. Processamento 100% local — sem uploads, sem registo, grátis para sempre.',
     hero: {
       title: 'Ferramentas de PDF grátis que respeitam a sua privacidade',
       subtitle:
-        'Junte, divida, compacte e proteja PDFs diretamente no seu navegador. Sem uploads. Sem cadastro. Sem servidores. Os seus ficheiros são processados localmente no seu dispositivo — nunca tocam na internet.',
+        'Junte, divida, comprima e proteja PDFs diretamente no seu navegador. Sem uploads. Sem registo. Sem servidores. Os seus ficheiros são processados localmente no seu dispositivo — nunca tocam na internet.',
       cta: 'Ver as ferramentas',
     },
     pillars: {
@@ -48,14 +48,14 @@ export const pt = {
             'Os seus ficheiros nunca saem do seu dispositivo. Todas as ferramentas funcionam localmente no seu navegador, por isso nada é enviado para um servidor.',
         },
         {
-          title: 'Sem cadastro',
+          title: 'Sem registo',
           description:
             'Sem contas, sem endereços de e-mail, sem esperas. Abra a página e comece a trabalhar imediatamente.',
         },
         {
           title: 'Grátis para sempre',
           description:
-            "Todas as ferramentas são completamente gratuitas, sem limites de utilização, sem marcas d'água e sem nível premium.",
+            "Todas as ferramentas são completamente gratuitas, sem limites de utilização, sem marcas de água e sem nível premium.",
         },
       ],
     },
@@ -67,7 +67,7 @@ export const pt = {
     why: {
       heading: 'Por que o processamento local é importante',
       paragraphs: [
-        'A maioria das ferramentas de PDF online pede-lhe que envie os seus ficheiros para os respetivos servidores antes de que algo aconteça. É uma troca estranha quando se para para pensar: para girar uma página ou juntar dois documentos, entrega o ficheiro em si. E os PDFs raramente são triviais — são contratos, declarações de impostos, registos médicos, extratos bancários e documentos de identidade. Depois de enviado, o ficheiro percorre uma infraestrutura que não controla: servidores web, filas, armazenamento temporário, cópias de segurança. Não tem como verificar quando é realmente eliminado, nem quem pode aceder a ele entretanto.',
+        'A maioria das ferramentas de PDF online pede-lhe que envie os seus ficheiros para os respetivos servidores antes de que algo aconteça. É uma troca estranha quando se para para pensar: para rodar uma página ou juntar dois documentos, entrega o ficheiro em si. E os PDFs raramente são triviais — são contratos, declarações de impostos, registos médicos, extratos bancários e documentos de identidade. Depois de enviado, o ficheiro percorre uma infraestrutura que não controla: servidores web, filas, armazenamento temporário, cópias de segurança. Não tem como verificar quando é realmente eliminado, nem quem pode aceder a ele entretanto.',
         'O CoolPDF adota a abordagem oposta. Em vez de enviar o ficheiro para o processamento, enviamos o processamento para o ficheiro. Os navegadores modernos são notavelmente poderosos, e o WebAssembly permite-nos executar motores de PDF de nível industrial diretamente no separador do navegador, a uma velocidade quase nativa. Quando utiliza uma ferramenta do CoolPDF, o documento é lido pelo seu próprio dispositivo, transformado por código em execução no seu próprio navegador e guardado de volta no seu próprio disco. Em nenhum momento um único byte do ficheiro atravessa a rede.',
         'Este design é melhor em todas as dimensões que importam. É mais privado, porque não há upload para interceptar ou divulgar. É mais rápido, porque não há ida e volta a um servidor nem fila de espera. É mais fiável, porque as ferramentas continuam a funcionar mesmo com uma ligação instável. E é mais barato de operar, e é por isso que o CoolPDF pode ser genuinamente grátis, sem limites de utilização.',
         'Achamos que é assim que as ferramentas de documentos sempre deveriam ter funcionado. Os seus ficheiros pertencem ao seu dispositivo — e é exatamente aí que o CoolPDF os mantém.',
@@ -104,16 +104,16 @@ export const pt = {
       description: 'Extraia um intervalo de páginas ou divida um PDF em documentos separados.',
     },
     'compress-pdf': {
-      name: 'Compactar PDF',
+      name: 'Comprimir PDF',
       description: 'Reduza o tamanho do ficheiro mantendo a qualidade de que precisa.',
     },
     'rotate-pdf': {
-      name: 'Girar PDF',
-      description: 'Gire páginas individuais ou um documento inteiro em segundos.',
+      name: 'Rodar PDF',
+      description: 'Rode páginas individuais ou um documento inteiro em segundos.',
     },
     'organize-pdf': {
       name: 'Organizar PDF',
-      description: 'Reordene, elimine e reorganize páginas com arrastar e soltar.',
+      description: 'Reordene, elimine e reorganize páginas com arrastar e largar.',
     },
     'pdf-to-jpg': {
       name: 'PDF para JPG',
@@ -132,8 +132,8 @@ export const pt = {
       description: 'Remova a proteção por palavra-passe de PDFs que lhe pertencem.',
     },
     'watermark-pdf': {
-      name: "Marca d'água PDF",
-      description: 'Carimbe texto ou uma imagem sobre todas as páginas do seu documento.',
+      name: "Marca de água PDF",
+      description: 'Aplique texto ou uma imagem sobre todas as páginas do seu documento.',
     },
     'page-numbers': {
       name: 'Números de página',
@@ -147,13 +147,13 @@ export const pt = {
   about: {
     metaTitle: 'Sobre nós | CoolPDF',
     metaDescription:
-      'O CoolPDF é um conjunto de ferramentas de PDF gratuito e de código aberto que processa todos os ficheiros localmente no seu navegador. Saiba por que o construímos assim.',
+      'O CoolPDF é um conjunto de ferramentas de PDF gratuito e de código aberto que processa todos os ficheiros localmente no seu navegador. Saiba porquê.',
     heading: 'Sobre o CoolPDF',
     sections: [
       {
         title: 'A nossa missão',
         paragraphs: [
-          'O CoolPDF existe para tornar o trabalho quotidiano com PDF — juntar, dividir, compactar, proteger — gratuito, instantâneo e privado para todos. Acreditamos que nunca deve ter de trocar os seus documentos por conveniência, por isso construímos um conjunto de ferramentas em que os ficheiros ficam consigo e as ferramentas vêm até ao seu navegador.',
+          'O CoolPDF existe para tornar o trabalho quotidiano com PDF — juntar, dividir, comprimir, proteger — gratuito, instantâneo e privado para todos. Acreditamos que nunca deve ter de trocar os seus documentos por conveniência, por isso construímos um conjunto de ferramentas em que os ficheiros ficam consigo e as ferramentas vêm até ao seu navegador.',
         ],
       },
       {
@@ -182,7 +182,7 @@ export const pt = {
           'Não armazenamos os seus ficheiros — fechar o separador remove qualquer vestígio.',
           'Não analisamos o conteúdo dos seus documentos.',
           'Não exigimos uma conta, um endereço de e-mail nem qualquer informação pessoal.',
-          "Não impomos limites de utilização, marcas d'água nem níveis premium.",
+          "Não impomos limites de utilização, marcas de água nem níveis premium.",
         ],
       },
       {
@@ -202,7 +202,7 @@ export const pt = {
   privacy: {
     metaTitle: 'Política de Privacidade | CoolPDF',
     metaDescription:
-      'O CoolPDF processa todos os ficheiros localmente no seu navegador — nunca recebemos, armazenamos ou acedemos aos seus documentos. Leia a nossa política de privacidade.',
+      'O CoolPDF processa todos os ficheiros localmente no seu navegador — nunca recebemos nem armazenamos os seus documentos. Leia a nossa política de privacidade.',
     heading: 'Política de Privacidade',
     lastUpdated: 'Última atualização: julho de 2026',
     tldr: {
@@ -323,7 +323,7 @@ export const pt = {
       {
         question: 'O CoolPDF é mesmo grátis?',
         answer:
-          "Sim. Todas as ferramentas são completamente gratuitas, sem limites de utilização, sem marcas d'água e sem nível premium. Se ativados, anúncios discretos são o que mantém o CoolPDF grátis para todos.",
+          "Sim. Todas as ferramentas são completamente gratuitas, sem limites de utilização, sem marcas de água e sem nível premium. Se ativados, anúncios discretos são o que mantém o CoolPDF grátis para todos.",
       },
       {
         question: 'Preciso de criar uma conta ou me cadastrar?',
@@ -368,12 +368,12 @@ export const pt = {
       {
         question: 'Que ferramentas de PDF o CoolPDF oferece?',
         answer:
-          "O CoolPDF oferece doze ferramentas: Juntar PDF, Dividir PDF, Compactar PDF, Girar PDF, Organizar PDF, PDF para JPG, JPG para PDF, Proteger PDF, Desbloquear PDF, Marca d'água PDF, Números de página e PDF para Markdown. Todas funcionam localmente no seu navegador.",
+          "O CoolPDF oferece doze ferramentas: Juntar PDF, Dividir PDF, Comprimir PDF, Rodar PDF, Organizar PDF, PDF para JPG, JPG para PDF, Proteger PDF, Desbloquear PDF, Marca de água PDF, Números de página e PDF para Markdown. Todas funcionam localmente no seu navegador.",
       },
     ],
   },
   factSummary:
-    'O CoolPDF é um conjunto gratuito de ferramentas de PDF baseado no navegador. Ao contrário das ferramentas de PDF online tradicionais, o CoolPDF processa todos os ficheiros localmente no dispositivo do utilizador usando WebAssembly — os ficheiros nunca são enviados para nenhum servidor. As ferramentas não exigem conta, e-mail nem cadastro e são completamente grátis, sem limites de utilização. Isto torna o CoolPDF adequado para documentos confidenciais, como contratos, registos médicos e demonstrações financeiras.',
+    'O CoolPDF é um conjunto gratuito de ferramentas de PDF baseado no navegador. Ao contrário das ferramentas de PDF online tradicionais, o CoolPDF processa todos os ficheiros localmente no dispositivo do utilizador usando WebAssembly — os ficheiros nunca são enviados para nenhum servidor. As ferramentas não exigem conta, e-mail nem registo e são completamente grátis, sem limites de utilização. Isto torna o CoolPDF adequado para documentos confidenciais, como contratos, registos médicos e demonstrações financeiras.',
   toolUi: {
     privacyNote:
       'Os seus ficheiros são processados localmente no seu navegador — nada é carregado.',
@@ -410,9 +410,9 @@ export const pt = {
   },
   toolPages: {
     'merge-pdf': {
-      metaTitle: 'Juntar PDF online grátis — Sem carregamento, sem registo | CoolPDF',
+      metaTitle: 'Juntar PDF online grátis — Sem carregamento | CoolPDF',
       metaDescription:
-        'Combine até 20 PDF num único ficheiro diretamente no seu navegador. Reordene, junte e descarregue — os ficheiros nunca saem do seu dispositivo. Grátis, sem registo.',
+        'Combine até 20 PDF num único ficheiro diretamente no seu navegador. Reordene, junte e descarregue — os ficheiros nunca saem do seu dispositivo.',
       heading: 'Juntar PDF',
       intro:
         'Combine vários documentos PDF num único ficheiro, exatamente na ordem que escolher. A junção é executada inteiramente no seu próprio dispositivo.',
@@ -447,9 +447,9 @@ export const pt = {
       ],
     },
     'split-pdf': {
-      metaTitle: 'Dividir PDF online grátis — Extraia páginas localmente | CoolPDF',
+      metaTitle: 'Dividir PDF online grátis — Extraia páginas | CoolPDF',
       metaDescription:
-        'Extraia páginas, divida por intervalos ou corte um PDF a cada N páginas — tudo no seu navegador. Os ficheiros nunca saem do seu dispositivo. Grátis, sem registo, sem marcas de água.',
+        'Extraia páginas, divida por intervalos ou corte um PDF a cada N páginas — tudo no seu navegador. Grátis, sem registo, sem marcas de água.',
       heading: 'Dividir PDF',
       intro:
         'Extraia cada página num ficheiro separado, retire intervalos personalizados ou divida um documento em blocos de N páginas. Tudo acontece localmente no seu navegador.',
@@ -466,7 +466,7 @@ export const pt = {
         'Adicione o PDF que quer dividir arrastando-o para a área de carregamento, ou clique para procurar.',
         'Escolha um modo: cada página separadamente, intervalos personalizados como 1-3, 5-8, ou um bloco a cada N páginas.',
         'Clique em “Dividir PDF”. Cada parte é criada localmente no seu dispositivo em segundos.',
-        'Descarregue o resultado — um único PDF se só tiver sido produzida uma parte, caso contrário um arquivo ZIP com todas as partes.',
+        'Descarregue o resultado — um único PDF se só tiver sido produzida uma parte, caso contrário um ficheiro ZIP com todas as partes.',
       ],
       privacyHeading: 'Divida documentos confidenciais sem desvios pela nuvem',
       privacyText:
@@ -491,13 +491,13 @@ export const pt = {
       ],
     },
     'rotate-pdf': {
-      metaTitle: 'Girar PDF online grátis — Rode páginas localmente | CoolPDF',
+      metaTitle: 'Rodar PDF online grátis — Rode páginas localmente | CoolPDF',
       metaDescription:
         'Rode todas as páginas ou apenas as que escolher em 90°, 180° ou 270° — diretamente no seu navegador. Sem carregamentos, sem registo, sem marcas de água.',
-      heading: 'Girar PDF',
+      heading: 'Rodar PDF',
       intro:
         'Corrija digitalizações tortas e páginas de cabeça para baixo em segundos. Rode todo o documento ou apenas as páginas selecionadas em 90°, 180° ou 270°.',
-      button: 'Girar PDF',
+      button: 'Rodar PDF',
       angleLabel: 'Ângulo de rotação (sentido horário)',
       scopeLabel: 'Aplicar a',
       scopeAll: 'Todas as páginas',
@@ -508,7 +508,7 @@ export const pt = {
       steps: [
         'Adicione o PDF que quer corrigir arrastando-o para a área de carregamento, ou clique para procurar.',
         'Escolha um ângulo de rotação — 90°, 180° ou 270° no sentido horário.',
-        'Decida se quer rodar todas as páginas ou apenas algumas (por exemplo 1, 3, 5-8) e clique em “Girar PDF”.',
+        'Decida se quer rodar todas as páginas ou apenas algumas (por exemplo 1, 3, 5-8) e clique em “Rodar PDF”.',
         'Descarregue o PDF rodado. As páginas que não selecionou permanecem exatamente como estavam.',
       ],
       privacyHeading: 'Endireite digitalizações sem as enviar para lado nenhum',
@@ -534,9 +534,9 @@ export const pt = {
       ],
     },
     'jpg-to-pdf': {
-      metaTitle: 'Converter JPG para PDF — Grátis, local, sem carregamento | CoolPDF',
+      metaTitle: 'Converter JPG para PDF — Grátis e local | CoolPDF',
       metaDescription:
-        'Transforme imagens JPG e PNG num PDF A4 limpo no seu navegador. Ajustar, preencher ou tamanho original — os ficheiros nunca saem do seu dispositivo. Grátis, sem registo.',
+        'Transforme imagens JPG e PNG num PDF A4 limpo no seu navegador. Ajustar, preencher ou tamanho original — os ficheiros ficam no seu dispositivo.',
       heading: 'JPG para PDF',
       intro:
         'Converta até 20 imagens JPG ou PNG num único PDF A4 — perfeito para digitalizações, recibos e documentos fotográficos. A conversão é executada inteiramente no seu dispositivo.',
@@ -558,7 +558,7 @@ export const pt = {
       ],
       privacyHeading: 'Transforme fotos em PDF sem carregar um único píxel',
       privacyText:
-        'Fotos e digitalizações tendem a ser pessoais: cópias do passaporte, recibos para os impostos, fotografias de quadros brancos, cartas manuscritas. Um conversor típico carrega cada imagem para um servidor, converte-a lá e devolve-lhe uma ligação de descarga — as suas imagens passam a viver numa infraestrutura que não controla. O CoolPDF faz o mesmo trabalho inteiramente no seu dispositivo. As imagens são lidas pelo seu navegador, paginadas em folhas A4 e guardadas como PDF no seu próprio disco. Nada é carregado, por isso nada pode vazar, ser registado ou acabar num conjunto de dados de treino. Funciona até offline: carregue a página, desligue o Wi-Fi e converta à vontade.',
+        'Fotos e digitalizações tendem a ser pessoais: cópias do passaporte, recibos para os impostos, fotografias de quadros brancos, cartas manuscritas. Um conversor típico carrega cada imagem para um servidor, converte-a lá e devolve-lhe uma ligação de transferência — as suas imagens passam a viver numa infraestrutura que não controla. O CoolPDF faz o mesmo trabalho inteiramente no seu dispositivo. As imagens são lidas pelo seu navegador, paginadas em folhas A4 e guardadas como PDF no seu próprio disco. Nada é carregado, por isso nada pode vazar, ser registado ou acabar num conjunto de dados de treino. Funciona até offline: carregue a página, desligue o Wi-Fi e converta à vontade.',
       faqHeading: 'Perguntas frequentes',
       faq: [
         {
@@ -579,12 +579,12 @@ export const pt = {
       ],
     },
     'organize-pdf': {
-      metaTitle: 'Organizar páginas PDF online grátis — Reordene e rode | CoolPDF',
+      metaTitle: 'Organizar páginas PDF online grátis | CoolPDF',
       metaDescription:
-        'Reordene páginas de PDF com arrastar e soltar, rode ou elimine páginas e descarregue um PDF reorganizado — tudo no seu navegador. Sem carregamentos, sem registo.',
+        'Reordene páginas de PDF com arrastar e largar, rode ou elimine páginas e descarregue o resultado — tudo no seu navegador. Grátis.',
       heading: 'Organizar páginas PDF',
       intro:
-        'Reorganize as páginas com arrastar e soltar, rode as que estão tortas e remova as de que não precisa. Uma pré-visualização em tempo real de cada página facilita o trabalho — e tudo acontece no seu dispositivo.',
+        'Reorganize as páginas com arrastar e largar, rode as que estão tortas e remova as de que não precisa. Uma pré-visualização em tempo real de cada página facilita o trabalho — e tudo acontece no seu dispositivo.',
       button: 'Descarregar PDF organizado',
       loadingPreviews: 'A renderizar as pré-visualizações das páginas…',
       loadMorePreviews: 'Carregar mais pré-visualizações',
@@ -629,9 +629,9 @@ export const pt = {
       ],
     },
     'pdf-to-jpg': {
-      metaTitle: 'Converter PDF para JPG — Grátis, local, sem carregamento | CoolPDF',
+      metaTitle: 'Converter PDF para JPG — Grátis e local | CoolPDF',
       metaDescription:
-        'Transforme páginas de PDF em imagens JPG ou PNG a 72, 150 ou 300 DPI — diretamente no seu navegador. Os ficheiros nunca saem do seu dispositivo. Grátis, sem registo.',
+        'Transforme páginas de PDF em imagens JPG ou PNG a 72, 150 ou 300 DPI — diretamente no seu navegador. Grátis, sem registo.',
       heading: 'PDF para JPG',
       intro:
         'Converta páginas de PDF em imagens JPG ou PNG de alta qualidade. Escolha a resolução e as páginas de que precisa — a conversão é executada inteiramente no seu dispositivo.',
@@ -654,7 +654,7 @@ export const pt = {
         'Adicione o PDF que quer converter arrastando-o para a área de carregamento, ou clique para procurar.',
         'Escolha o formato de imagem — JPG para ficheiros mais pequenos, PNG para qualidade sem perdas — e a resolução: 72 DPI para uso no ecrã, 150 para documentos, 300 para impressão.',
         'Converta todas as páginas ou introduza um intervalo como 1-3, 5, e clique em “Converter para imagens”.',
-        'Descarregue o resultado — uma única imagem se tiver convertido uma página, caso contrário um arquivo ZIP com uma imagem por página.',
+        'Descarregue o resultado — uma única imagem se tiver convertido uma página, caso contrário um ficheiro ZIP com uma imagem por página.',
       ],
       privacyHeading: 'Converta páginas em imagens sem entregar o documento',
       privacyText:
@@ -669,7 +669,7 @@ export const pt = {
         {
           question: 'Por que recebo um ficheiro ZIP?',
           answer:
-            'Cada página do PDF torna-se uma imagem própria. Quando mais do que uma página é convertida, todas as imagens são reunidas num único arquivo ZIP, para que receba uma única descarga organizada.',
+            'Cada página do PDF torna-se uma imagem própria. Quando mais do que uma página é convertida, todas as imagens são reunidas num único ficheiro ZIP, para que receba uma única transferência organizada.',
         },
         {
           question: 'Converter para JPG perde qualidade?',
@@ -679,13 +679,13 @@ export const pt = {
       ],
     },
     'compress-pdf': {
-      metaTitle: 'Compactar PDF online grátis — Sem carregamento, sem registo | CoolPDF',
+      metaTitle: 'Comprimir PDF online grátis — Sem carregamento | CoolPDF',
       metaDescription:
-        'Reduza o tamanho de ficheiros PDF com três níveis de qualidade, de 72 a 300 DPI — diretamente no seu navegador. Os ficheiros nunca saem do seu dispositivo. Grátis, sem registo.',
-      heading: 'Compactar PDF',
+        'Reduza o tamanho de ficheiros PDF com três níveis de qualidade, de 72 a 300 DPI — diretamente no seu navegador. Grátis, sem registo.',
+      heading: 'Comprimir PDF',
       intro:
         'Reduza PDFs grandes para uma fração do seu tamanho com três níveis de compressão. O motor de compressão é executado inteiramente no seu próprio dispositivo.',
-      button: 'Compactar PDF',
+      button: 'Comprimir PDF',
       levelLabel: 'Nível de compressão',
       levels: {
         extreme: {
@@ -701,21 +701,21 @@ export const pt = {
           description: 'Melhor qualidade, imagens a 300 DPI — mantém as páginas prontas para impressão.',
         },
       },
-      processingPages: 'A compactar a página {current} de {total}…',
+      processingPages: 'A comprimir a página {current} de {total}…',
       stillWorking: 'Ainda a trabalhar — ficheiros grandes podem demorar vários minutos. Mantenha este separador aberto.',
       resultSmaller: '{percent}% mais pequeno',
       resultLarger:
-        '{percent}% maior — este PDF já estava bem compactado. Experimente o nível Ligeiro para manter mais qualidade.',
-      stepsHeading: 'Como compactar um PDF',
+        '{percent}% maior — este PDF já estava bem comprimido. Experimente o nível Ligeiro para manter mais qualidade.',
+      stepsHeading: 'Como comprimir um PDF',
       steps: [
         'Adicione o PDF que quer reduzir arrastando-o para a área de carregamento, ou clique para procurar (até 150 MB).',
         'Escolha um nível de compressão: Extremo para o tamanho mínimo, Recomendado para um equilíbrio, ou Ligeiro para qualidade de impressão.',
-        'Clique em “Compactar PDF”. A primeira execução descarrega o motor de compressão uma única vez; depois disso arranca instantaneamente.',
-        'Descarregue o PDF compactado e compare os tamanhos — o ficheiro original permanece intacto no seu dispositivo.',
+        'Clique em “Comprimir PDF”. A primeira execução descarrega o motor de compressão uma única vez; depois disso arranca instantaneamente.',
+        'Descarregue o PDF comprimido e compare os tamanhos — o ficheiro original permanece intacto no seu dispositivo.',
       ],
-      privacyHeading: 'Compacte documentos grandes sem os carregar',
+      privacyHeading: 'Comprima documentos grandes sem os carregar',
       privacyText:
-        'Um PDF que precisa de ser compactado é normalmente um que está prestes a ser enviado para algum lado — um contrato digitalizado para um advogado, um portefólio para um recrutador, relatórios médicos para uma seguradora. Ironicamente, a maioria dos compressores online obriga-o primeiro a carregar o ficheiro para os seus servidores, pelo que reduzir um documento sensível começa por o entregar. O CoolPDF compacta o documento onde ele já está: dentro do seu navegador, no seu próprio dispositivo. O motor de compressão — o mesmo Ghostscript em que as gráficas confiam há décadas — é compilado para WebAssembly e descarregado para a sua máquina uma única vez. O seu ficheiro é lido do seu disco, reconstruído mais pequeno e guardado de volta nele, sem carregamento, fila ou cópia remota em momento algum. Feche o separador e nada permanece.',
+        'Um PDF que precisa de ser comprimido é normalmente um que está prestes a ser enviado para algum lado — um contrato digitalizado para um advogado, um portefólio para um recrutador, relatórios médicos para uma seguradora. Ironicamente, a maioria dos compressores online obriga-o primeiro a carregar o ficheiro para os seus servidores, pelo que reduzir um documento sensível começa por o entregar. O CoolPDF comprime o documento onde ele já está: dentro do seu navegador, no seu próprio dispositivo. O motor de compressão — o mesmo Ghostscript em que as gráficas confiam há décadas — é compilado para WebAssembly e descarregado para a sua máquina uma única vez. O seu ficheiro é lido do seu disco, reconstruído mais pequeno e guardado de volta nele, sem carregamento, fila ou cópia remota em momento algum. Feche o separador e nada permanece.',
       faqHeading: 'Perguntas frequentes',
       faq: [
         {
@@ -755,7 +755,7 @@ export const pt = {
       allowCopying: 'Permitir copiar texto e imagens',
       allowModifying: 'Permitir modificar o documento',
       allowAnnotating: 'Permitir comentários e preenchimento de formulários',
-      allowAssembling: 'Permitir inserir, girar e eliminar páginas',
+      allowAssembling: 'Permitir inserir, rodar e eliminar páginas',
       allowAccessibility: 'Permitir extração de texto para leitores de ecrã',
       stepsHeading: 'Como proteger um PDF',
       steps: [
@@ -787,9 +787,9 @@ export const pt = {
       ],
     },
     'unlock-pdf': {
-      metaTitle: 'Desbloquear PDF online grátis — Remover palavra-passe | CoolPDF',
+      metaTitle: 'Desbloquear PDF online grátis | CoolPDF',
       metaDescription:
-        'Remova a proteção por palavra-passe de PDFs que lhe pertencem, diretamente no seu navegador. Sem carregamento, sem registo, grátis — os ficheiros nunca saem do seu dispositivo.',
+        'Remova a proteção por palavra-passe de PDFs que lhe pertencem, diretamente no seu navegador. Grátis, sem registo.',
       heading: 'Desbloquear PDF',
       intro:
         'Remova a palavra-passe de um PDF que lhe pertence para que abra sem ela. A desencriptação é executada localmente — nem o ficheiro nem a palavra-passe saem do seu dispositivo.',
@@ -799,7 +799,7 @@ export const pt = {
       stepsHeading: 'Como desbloquear um PDF',
       steps: [
         'Adicione o PDF protegido por palavra-passe arrastando-o para a área de carregamento, ou clique para procurar.',
-        'Introduza a palavra-passe atual do documento.',
+        'Introduza a palavra-passe do documento, se necessário.',
         'Clique em “Desbloquear PDF” — a proteção é removida localmente em segundos.',
         'Descarregue o PDF desbloqueado. A partir de agora abre em qualquer leitor sem palavra-passe.',
       ],
@@ -826,49 +826,49 @@ export const pt = {
       ],
     },
     'watermark-pdf': {
-      metaTitle: "Adicionar marca d'água ao PDF online grátis — texto ou imagem | CoolPDF",
+      metaTitle: "Adicionar marca de água ao PDF — texto ou imagem | CoolPDF",
       metaDescription:
-        "Carimbe uma marca d'água de texto ou imagem em todas as páginas do seu PDF — em mosaico ou centrada, com opacidade ajustável — diretamente no navegador. Sem uploads, grátis, sem cadastro.",
-      heading: "Marca d'água PDF",
+        "Aplique uma marca de água de texto ou imagem em todas as páginas do seu PDF — em mosaico ou centrada, opacidade ajustável — diretamente no navegador. Grátis.",
+      heading: "Marca de água PDF",
       intro:
-        "Carimbe uma marca d'água de texto ou imagem em todas as páginas do seu PDF — em mosaico diagonal ou centrada, com o tamanho, a cor e a opacidade à sua escolha. Tudo é executado no seu próprio dispositivo.",
-      button: "Adicionar marca d'água",
-      typeLabel: "Tipo de marca d'água",
+        "Aplique uma marca de água de texto ou imagem em todas as páginas do seu PDF — em mosaico diagonal ou centrada, com o tamanho, a cor e a opacidade à sua escolha. Tudo é executado no seu próprio dispositivo.",
+      button: "Adicionar marca de água",
+      typeLabel: "Tipo de marca de água",
       typeText: 'Texto',
       typeImage: 'Imagem (PNG ou JPG)',
-      textLabel: "Texto da marca d'água",
+      textLabel: "Texto da marca de água",
       textPlaceholder: 'ex. CONFIDENCIAL',
       fontSizeLabel: 'Tamanho da fonte',
       colorLabel: 'Cor do texto',
       opacityLabel: 'Opacidade',
       layoutLabel: 'Posicionamento',
       layoutTile: 'Mosaico — repetida na diagonal em todas as páginas',
-      layoutCenter: 'Centrada — um carimbo por página',
+      layoutCenter: 'Centrada — uma marca por página',
       scaleLabel: 'Tamanho da imagem (relativo à largura da página)',
-      stepsHeading: "Como adicionar uma marca d'água a um PDF",
+      stepsHeading: "Como adicionar uma marca de água a um PDF",
       steps: [
-        'Adicione o PDF que quer carimbar arrastando-o para a área de carregamento, ou clique para procurar.',
+        'Adicione o PDF que quer marcar arrastando-o para a área de carregamento, ou clique para procurar.',
         'Escolha uma marca de texto ou de imagem. Para texto, escreva o conteúdo e escolha o tamanho e a cor; para uma imagem, carregue um PNG ou JPG e defina o tamanho.',
-        'Ajuste a opacidade e escolha o posicionamento — mosaico na diagonal em todas as páginas ou um único carimbo centrado — e clique em “Adicionar marca d\'água”.',
-        "Descarregue o PDF com marca d'água. O ficheiro original permanece intacto no seu dispositivo.",
+        'Ajuste a opacidade e escolha o posicionamento — mosaico na diagonal em todas as páginas ou uma única marca centrada — e clique em “Adicionar marca de água”.',
+        "Descarregue o PDF com marca de água. O ficheiro original permanece intacto no seu dispositivo.",
       ],
-      privacyHeading: 'Carimbe documentos sensíveis sem os enviar',
+      privacyHeading: 'Marque documentos sensíveis sem os enviar',
       privacyText:
-        "Carimbar um PDF com marca d'água é normalmente o último passo antes de partilhar algo sensível: uma minuta de contrato marcada como confidencial, uma pré-visualização de design com o nome do seu estúdio, uma cópia de um documento de identidade que só pode ser usada para um fim. Numa ferramenta online convencional, esse original desprotegido é enviado para um servidor antes sequer de a marca lhe tocar. O CoolPDF funciona ao contrário. As marcas de texto são desenhadas com as fontes do seu próprio dispositivo — é por isso que chinês, árabe ou emojis funcionam tão bem como português —, convertidas em imagem e carimbadas nas páginas diretamente no separador do navegador. As imagens também não viajam. Nada é enviado, enfileirado ou armazenado noutro lugar, o que torna a ferramenta segura para designs inéditos, material sob NDA e documentos pessoais. Feche o separador e qualquer rasto desaparece.",
+        "Aplicar uma marca de água a um PDF é normalmente o último passo antes de partilhar algo sensível: uma minuta de contrato marcada como confidencial, uma pré-visualização de design com o nome do seu estúdio, uma cópia de um documento de identidade que só pode ser usada para um fim. Numa ferramenta online convencional, esse original desprotegido é enviado para um servidor antes sequer de a marca lhe tocar. O CoolPDF funciona ao contrário. As marcas de texto são desenhadas com as fontes do seu próprio dispositivo — é por isso que chinês, árabe ou emojis funcionam tão bem como português —, convertidas em imagem e aplicadas nas páginas diretamente no separador do navegador. As imagens também não viajam. Nada é enviado, posto em fila ou armazenado noutro lugar, o que torna a ferramenta segura para designs inéditos, material sob NDA e documentos pessoais. Feche o separador e qualquer rasto desaparece.",
       faqHeading: 'Perguntas frequentes',
       faq: [
         {
-          question: "Posso usar texto em chinês, árabe ou emojis na marca d'água?",
+          question: "Posso usar texto em chinês, árabe ou emojis na marca de água?",
           answer:
             'Sim. As marcas de texto são desenhadas com as fontes do seu dispositivo e incorporadas como imagem, por isso qualquer idioma e símbolo funciona — não apenas o alfabeto latino a que os tipos de letra PDF clássicos se limitam.',
         },
         {
           question: 'Qual é a diferença entre mosaico e centrada?',
           answer:
-            'O mosaico repete a marca na diagonal por toda a página, o que a torna difícil de recortar — ideal para carimbos de confidencialidade. A centrada coloca uma única cópia na diagonal no meio de cada página, com um aspeto mais parecido com um logótipo.',
+            'O mosaico repete a marca na diagonal por toda a página, o que a torna difícil de recortar — ideal para marcas de confidencialidade. A centrada coloca uma única cópia na diagonal no meio de cada página, com um aspeto mais parecido com um logótipo.',
         },
         {
-          question: "Que formatos de imagem posso usar como marca d'água?",
+          question: "Que formatos de imagem posso usar como marca de água?",
           answer:
             'PNG e JPG. O PNG é a melhor escolha para logótipos porque mantém a transparência, pelo que o conteúdo da página permanece visível à volta da sua marca. Use o controlo de tamanho para dimensionar a imagem relativamente à largura da página.',
         },
@@ -877,7 +877,7 @@ export const pt = {
     'page-numbers': {
       metaTitle: 'Adicionar números de página ao PDF online grátis | CoolPDF',
       metaDescription:
-        'Insira números de página no seu PDF — seis posições, formatos “1 de N”, página inicial à escolha — localmente no seu navegador. Sem uploads, grátis, sem cadastro.',
+        'Insira números de página no seu PDF — seis posições, formatos “1 de N”, página inicial à escolha — localmente no seu navegador. Grátis.',
       heading: 'Números de página',
       intro:
         'Adicione números de página ao seu PDF exatamente onde quiser: seis posições, dois formatos e controlo total sobre onde começa a numeração. O processamento acontece inteiramente no seu dispositivo.',
@@ -904,7 +904,7 @@ export const pt = {
       ],
       privacyHeading: 'Numere documentos finalizados sem os enviar',
       privacyText:
-        'Adicionar números de página é muitas vezes o toque final antes de um documento sair: uma tese para a gráfica, um contrato para assinatura, um relatório para a administração. Nessa altura, o ficheiro está normalmente terminado e é confidencial — e, mesmo assim, a maioria das ferramentas online pede primeiro o envio. O CoolPDF insere os números onde o ficheiro já está: no seu próprio dispositivo. O PDF é lido pelo navegador, carimbado com os números na posição e no formato escolhidos e guardado diretamente no seu disco. Nada atravessa a rede, pelo que nada pode ser interceptado, registado ou deixado num servidor. Isso torna a ferramenta segura para processos judiciais, registos médicos e relatórios financeiros — e rápida, porque não há fila de envio nem cópia processada para ir buscar a outro lugar. Ao fechar o separador, qualquer rasto do documento desaparece.',
+        'Adicionar números de página é muitas vezes o toque final antes de um documento sair: uma tese para a gráfica, um contrato para assinatura, um relatório para a administração. Nessa altura, o ficheiro está normalmente terminado e é confidencial — e, mesmo assim, a maioria das ferramentas online pede primeiro o envio. O CoolPDF insere os números onde o ficheiro já está: no seu próprio dispositivo. O PDF é lido pelo navegador, marcado com os números na posição e no formato escolhidos e guardado diretamente no seu disco. Nada atravessa a rede, pelo que nada pode ser interceptado, registado ou deixado num servidor. Isso torna a ferramenta segura para processos judiciais, registos médicos e relatórios financeiros — e rápida, porque não há fila de envio nem cópia processada para ir buscar a outro lugar. Ao fechar o separador, qualquer rasto do documento desaparece.',
       faqHeading: 'Perguntas frequentes',
       faq: [
         {
@@ -927,7 +927,7 @@ export const pt = {
     'pdf-to-markdown': {
       metaTitle: 'Conversor de PDF para Markdown online grátis | CoolPDF',
       metaDescription:
-        'Transforme o texto de um PDF em Markdown limpo — títulos, parágrafos e listas detetados automaticamente — localmente no seu navegador. Sem uploads, grátis, sem cadastro.',
+        'Transforme o texto de um PDF em Markdown limpo — títulos, parágrafos e listas detetados automaticamente — localmente no seu navegador. Grátis.',
       heading: 'PDF para Markdown',
       intro:
         'Transforme o texto do seu PDF em Markdown limpo e estruturado: títulos, parágrafos e listas detetados automaticamente, cabeçalhos e rodapés removidos. A conversão é executada inteiramente no seu navegador.',

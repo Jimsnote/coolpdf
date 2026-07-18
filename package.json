@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "CoolPDF — privacy-first, 100% client-side PDF tools",
+  "engines": {
+    "node": ">=20 <23"
+  },
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/copy-wasm.mjs",

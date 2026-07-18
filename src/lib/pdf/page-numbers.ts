@@ -1,5 +1,5 @@
-import { PDFDocument, rgb, StandardFonts } from '@cantoo/pdf-lib';
 import { PdfToolError } from './errors';
+import { getPdfLib } from './pdf-lib';
 
 export type PageNumberPosition =
   | 'top-left'
@@ -23,7 +23,6 @@ export interface PageNumberOptions {
 
 /** Distance from the page edge, in points. */
 const MARGIN = 24;
-const COLOR = rgb(0.25, 0.25, 0.25);
 
 /**
  * Prints a page number on every page from `startPage` onwards. Numbers are
@@ -35,6 +34,8 @@ export async function addPageNumbers(
   bytes: Uint8Array,
   options: PageNumberOptions,
 ): Promise<Uint8Array> {
+  const { PDFDocument, rgb, StandardFonts } = await getPdfLib();
+  const color = rgb(0.25, 0.25, 0.25);
   const doc = await PDFDocument.load(bytes);
   const font = await doc.embedFont(StandardFonts.Helvetica);
   const pages = doc.getPages();
@@ -73,7 +74,7 @@ export async function addPageNumbers(
       x = (width - textWidth) / 2;
     }
 
-    page.drawText(text, { x, y, size: fontSize, font, color: COLOR });
+    page.drawText(text, { x, y, size: fontSize, font, color });
   }
 
   return doc.save();

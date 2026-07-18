@@ -402,7 +402,7 @@ export const zh = {
   },
   toolPages: {
     'merge-pdf': {
-      metaTitle: '合并 PDF 在线免费版——无需上传、无需注册 | CoolPDF',
+      metaTitle: '免费在线合并 PDF - 无需上传 | CoolPDF',
       metaDescription:
         '在浏览器中直接将最多 20 个 PDF 合并为一个文件。排序、合并、下载——文件永不离开您的设备。免费，无需注册。',
       heading: '合并 PDF',
@@ -438,7 +438,7 @@ export const zh = {
       ],
     },
     'split-pdf': {
-      metaTitle: '拆分 PDF 在线免费版——本地提取页面 | CoolPDF',
+      metaTitle: '免费在线拆分 PDF - 本地提取页面 | CoolPDF',
       metaDescription:
         '在浏览器中提取页面、按范围拆分，或每 N 页切分一个 PDF。文件永不离开您的设备。免费，无需注册，无水印。',
       heading: '拆分 PDF',
@@ -481,7 +481,7 @@ export const zh = {
       ],
     },
     'rotate-pdf': {
-      metaTitle: '旋转 PDF 在线免费版——本地旋转页面 | CoolPDF',
+      metaTitle: '免费在线旋转 PDF - 无需上传 | CoolPDF',
       metaDescription:
         '在浏览器中将全部页面或指定页面旋转 90°、180° 或 270°。无需上传、无需注册、无水印。',
       heading: '旋转 PDF',
@@ -567,7 +567,7 @@ export const zh = {
       ],
     },
     'organize-pdf': {
-      metaTitle: '整理 PDF 页面在线免费版——重新排序与旋转 | CoolPDF',
+      metaTitle: '免费在线整理 PDF 页面 - 无需上传 | CoolPDF',
       metaDescription:
         '在浏览器中通过拖放重新排序 PDF 页面，旋转或删除页面，并下载整理后的 PDF。无需上传、无需注册。',
       heading: '整理 PDF 页面',
@@ -779,7 +779,7 @@ export const zh = {
       stepsHeading: '如何解锁 PDF',
       steps: [
         '将受密码保护的 PDF 拖到上传区域，或点击选择文件。',
-        '输入文档的当前密码。',
+        '如需要，输入文档的密码。',
         '点击“解锁 PDF”——保护将在本地于数秒内移除。',
         '下载解锁后的 PDF。从此以后，它可以在任何阅读器中无需密码打开。',
       ],

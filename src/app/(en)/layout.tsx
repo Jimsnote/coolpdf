@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
-import { CF_ANALYTICS_TOKEN, SITE_NAME } from '@/lib/site';
-import './globals.css';
+import { SITE_NAME } from '@/lib/site';
+import { AnalyticsScript } from '@/components/layout/AnalyticsScript';
+import '../globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   description: 'Free PDF tools that respect your privacy',
 };
 
-export default function RootLayout({
+/**
+ * Root layout of the (en) route group: every unprefixed, English page.
+ */
+export default function EnRootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -23,14 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        {CF_ANALYTICS_TOKEN ? (
-          <Script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon={JSON.stringify({ token: CF_ANALYTICS_TOKEN })}
-            strategy="afterInteractive"
-          />
-        ) : null}
+        <AnalyticsScript />
       </body>
     </html>
   );

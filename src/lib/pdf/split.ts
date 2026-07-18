@@ -1,5 +1,6 @@
-import { PDFDocument } from '@cantoo/pdf-lib';
+import type { PDFDocument } from '@cantoo/pdf-lib';
 import { PdfToolError } from './errors';
+import { getPdfLib } from './pdf-lib';
 
 /** A single output file produced by splitting. */
 export interface SplitOutput {
@@ -16,6 +17,7 @@ export const SPLIT_ALL_MAX_PAGES = 500;
 
 /** Loads a document once so the UI can validate ranges against its length. */
 export async function getPdfPageCount(bytes: Uint8Array): Promise<number> {
+  const { PDFDocument } = await getPdfLib();
   const doc = await PDFDocument.load(bytes);
   return doc.getPageCount();
 }
@@ -25,6 +27,7 @@ async function extractSegment(
   indices: number[],
   name: string,
 ): Promise<SplitOutput> {
+  const { PDFDocument } = await getPdfLib();
   const doc = await PDFDocument.create();
   const pages = await doc.copyPages(source, indices);
   for (const page of pages) {
@@ -57,6 +60,7 @@ function uniqueName(name: string, used: Set<string>): string {
 
 /** Extract all pages: every page becomes its own one-page PDF. */
 export async function splitAllPages(bytes: Uint8Array): Promise<SplitOutput[]> {
+  const { PDFDocument } = await getPdfLib();
   const source = await PDFDocument.load(bytes);
   const pageCount = source.getPageCount();
   if (pageCount > SPLIT_ALL_MAX_PAGES) {
@@ -78,6 +82,7 @@ export async function splitByRanges(
   bytes: Uint8Array,
   segments: number[][],
 ): Promise<SplitOutput[]> {
+  const { PDFDocument } = await getPdfLib();
   const source = await PDFDocument.load(bytes);
   const outputs: SplitOutput[] = [];
   const seenSegments = new Set<string>();
@@ -102,6 +107,7 @@ export async function splitEveryNPages(bytes: Uint8Array, n: number): Promise<Sp
   if (!Number.isInteger(n) || n < 1) {
     throw new PdfToolError('invalidRange', `Pages per file must be a positive integer, got ${n}`);
   }
+  const { PDFDocument } = await getPdfLib();
   const source = await PDFDocument.load(bytes);
   const pageCount = source.getPageCount();
   const outputs: SplitOutput[] = [];

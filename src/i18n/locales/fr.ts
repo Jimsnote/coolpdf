@@ -29,9 +29,9 @@ export const fr = {
     comingSoon: 'Bientôt disponible',
   },
   home: {
-    metaTitle: 'Outils PDF gratuits qui respectent votre vie privée | CoolPDF',
+    metaTitle: 'Outils PDF gratuits respectant votre vie privée | CoolPDF',
     metaDescription:
-      'Fusionnez, divisez, compressez et protégez vos PDF directement dans votre navigateur. Traitement 100 % côté client — aucun téléversement, aucune inscription, gratuit pour toujours.',
+      'Fusionnez, divisez, compressez et protégez vos PDF directement dans votre navigateur. 100 % local — aucun téléversement, aucune inscription.',
     hero: {
       title: 'Des outils PDF gratuits qui respectent votre vie privée',
       subtitle:
@@ -146,7 +146,7 @@ export const fr = {
   about: {
     metaTitle: 'À propos | CoolPDF',
     metaDescription:
-      'CoolPDF est une boîte à outils PDF gratuite et open source qui traite chaque fichier localement dans votre navigateur. Découvrez pourquoi nous l’avons conçue ainsi.',
+      'CoolPDF est une boîte à outils PDF gratuite et open source qui traite chaque fichier localement dans votre navigateur. Découvrez pourquoi.',
     heading: 'À propos de CoolPDF',
     sections: [
       {
@@ -201,7 +201,7 @@ export const fr = {
   privacy: {
     metaTitle: 'Politique de confidentialité | CoolPDF',
     metaDescription:
-      'CoolPDF traite tous les fichiers localement dans votre navigateur — nous ne recevons, ne stockons ni ne consultons jamais vos documents. Lisez notre politique de confidentialité.',
+      'CoolPDF traite tous les fichiers localement dans votre navigateur — nous ne recevons ni ne stockons jamais vos documents. Lisez notre politique.',
     heading: 'Politique de confidentialité',
     lastUpdated: 'Dernière mise à jour : juillet 2026',
     tldr: {
@@ -409,9 +409,9 @@ export const fr = {
   },
   toolPages: {
     'merge-pdf': {
-      metaTitle: 'Fusionner des PDF en ligne gratuitement — Sans téléversement ni inscription | CoolPDF',
+      metaTitle: 'Fusionner des PDF en ligne gratuit | CoolPDF',
       metaDescription:
-        'Combinez jusqu’à 20 PDF en un seul fichier directement dans votre navigateur. Réordonnez, fusionnez, téléchargez — vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+        'Combinez jusqu’à 20 PDF en un seul fichier directement dans votre navigateur. Réordonnez, fusionnez, téléchargez — vos fichiers restent sur votre appareil.',
       heading: 'Fusionner PDF',
       intro:
         'Combinez plusieurs documents PDF en un seul fichier, dans l’ordre exact que vous choisissez. La fusion s’effectue entièrement sur votre propre appareil.',
@@ -446,9 +446,9 @@ export const fr = {
       ],
     },
     'split-pdf': {
-      metaTitle: 'Diviser un PDF en ligne gratuitement — Extraction locale des pages | CoolPDF',
+      metaTitle: 'Diviser un PDF en ligne gratuit | CoolPDF',
       metaDescription:
-        'Extrayez des pages, divisez par plages ou découpez un PDF toutes les N pages — le tout dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription, sans filigrane.',
+        'Extrayez des pages, divisez par plages ou découpez un PDF toutes les N pages — le tout dans votre navigateur. Gratuit, sans inscription, sans filigrane.',
       heading: 'Diviser PDF',
       intro:
         'Extrayez chaque page dans un fichier séparé, isolez des plages personnalisées ou découpez un document en segments de N pages. Tout se passe localement dans votre navigateur.',
@@ -490,9 +490,9 @@ export const fr = {
       ],
     },
     'rotate-pdf': {
-      metaTitle: 'Faire pivoter un PDF gratuitement — Pages tournées en local | CoolPDF',
+      metaTitle: 'Faire pivoter un PDF en ligne gratuit | CoolPDF',
       metaDescription:
-        'Faites pivoter toutes les pages ou seulement celles de votre choix de 90°, 180° ou 270° — directement dans votre navigateur. Sans téléversement, sans inscription, sans filigrane.',
+        'Faites pivoter toutes les pages ou seulement celles de votre choix de 90°, 180° ou 270° — directement dans votre navigateur. Sans inscription.',
       heading: 'Faire pivoter PDF',
       intro:
         'Corrigez les scans de travers et les pages à l’envers en quelques secondes. Faites pivoter tout le document ou seulement certaines pages de 90°, 180° ou 270°.',
@@ -533,9 +533,9 @@ export const fr = {
       ],
     },
     'jpg-to-pdf': {
-      metaTitle: 'Convertir JPG en PDF — Gratuit, local, sans téléversement | CoolPDF',
+      metaTitle: 'Convertir JPG en PDF — Gratuit et local | CoolPDF',
       metaDescription:
-        'Transformez vos images JPG et PNG en un PDF A4 propre, dans votre navigateur. Ajustement, remplissage ou taille d’origine — vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+        'Transformez vos images JPG et PNG en un PDF A4 propre, dans votre navigateur. Ajustement, remplissage ou taille d’origine — fichiers jamais téléversés.',
       heading: 'JPG en PDF',
       intro:
         'Convertissez jusqu’à 20 images JPG ou PNG en un seul PDF A4 — idéal pour les scans, les reçus et les documents photo. La conversion s’effectue entièrement sur votre appareil.',
@@ -578,9 +578,9 @@ export const fr = {
       ],
     },
     'organize-pdf': {
-      metaTitle: 'Organiser les pages d’un PDF en ligne gratuitement — Réordonner et faire pivoter | CoolPDF',
+      metaTitle: 'Organiser les pages d’un PDF en ligne gratuit | CoolPDF',
       metaDescription:
-        'Réordonnez les pages d’un PDF par glisser-déposer, faites pivoter ou supprimez des pages, puis téléchargez le PDF réorganisé — le tout dans votre navigateur. Sans téléversement, sans inscription.',
+        'Réordonnez les pages d’un PDF par glisser-déposer, faites pivoter ou supprimez des pages, puis téléchargez le résultat — le tout dans votre navigateur.',
       heading: 'Organiser les pages PDF',
       intro:
         'Réorganisez les pages par glisser-déposer, faites pivoter celles qui sont de travers et retirez celles dont vous n’avez pas besoin. Un aperçu en direct de chaque page facilite le travail — et tout se passe sur votre appareil.',
@@ -628,9 +628,9 @@ export const fr = {
       ],
     },
     'pdf-to-jpg': {
-      metaTitle: 'Convertir PDF en JPG — Gratuit, local, sans téléversement | CoolPDF',
+      metaTitle: 'Convertir PDF en JPG — Gratuit et local | CoolPDF',
       metaDescription:
-        'Transformez vos pages PDF en images JPG ou PNG à 72, 150 ou 300 DPI — directement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+        'Transformez vos pages PDF en images JPG ou PNG à 72, 150 ou 300 DPI — directement dans votre navigateur. Gratuit, sans inscription.',
       heading: 'PDF en JPG',
       intro:
         'Convertissez vos pages PDF en images JPG ou PNG de haute qualité. Choisissez la résolution et les pages voulues — la conversion s’effectue entièrement sur votre appareil.',
@@ -678,9 +678,9 @@ export const fr = {
       ],
     },
     'compress-pdf': {
-      metaTitle: 'Compresser PDF en ligne — Gratuit, sans téléversement | CoolPDF',
+      metaTitle: 'Compresser PDF en ligne gratuit | CoolPDF',
       metaDescription:
-        'Réduisez la taille de vos PDF grâce à trois niveaux de qualité, de 72 à 300 DPI — directement dans votre navigateur. Vos fichiers ne quittent jamais votre appareil. Gratuit, sans inscription.',
+        'Réduisez la taille de vos PDF grâce à trois niveaux de qualité, de 72 à 300 DPI — directement dans votre navigateur. Gratuit, sans inscription.',
       heading: 'Compresser PDF',
       intro:
         'Réduisez vos PDF volumineux à une fraction de leur taille grâce à trois niveaux de compression. Le moteur de compression fonctionne entièrement sur votre propre appareil.',
@@ -735,9 +735,9 @@ export const fr = {
       ],
     },
     'protect-pdf': {
-      metaTitle: 'Protéger un PDF par mot de passe — Gratuit, AES-256 | CoolPDF',
+      metaTitle: 'Protéger un PDF par mot de passe — AES-256 | CoolPDF',
       metaDescription:
-        'Chiffrez un PDF avec AES-256 et contrôlez les permissions d’impression, de copie et de modification — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+        'Chiffrez un PDF avec AES-256 et contrôlez les permissions d’impression, de copie et de modification — localement dans votre navigateur. Gratuit.',
       heading: 'Protéger PDF',
       intro:
         'Ajoutez un chiffrement par mot de passe AES-256 à votre PDF et décidez précisément de ce que les destinataires peuvent en faire. Tout se passe sur votre propre appareil.',
@@ -788,7 +788,7 @@ export const fr = {
     'unlock-pdf': {
       metaTitle: 'Déverrouiller un PDF en ligne — Gratuit et local | CoolPDF',
       metaDescription:
-        'Supprimez la protection par mot de passe des PDF qui vous appartiennent, directement dans votre navigateur. Sans téléversement ni inscription, gratuit — vos fichiers ne quittent jamais votre appareil.',
+        'Supprimez la protection par mot de passe des PDF qui vous appartiennent, directement dans votre navigateur. Gratuit, sans inscription.',
       heading: 'Déverrouiller PDF',
       intro:
         'Supprimez le mot de passe d’un PDF qui vous appartient pour qu’il s’ouvre sans en demander. Le déchiffrement s’effectue localement — ni le fichier ni le mot de passe ne quittent votre appareil.',
@@ -798,7 +798,7 @@ export const fr = {
       stepsHeading: 'Comment déverrouiller un PDF',
       steps: [
         'Ajoutez le PDF protégé par mot de passe en le déposant sur la zone de téléversement, ou cliquez pour parcourir.',
-        'Saisissez le mot de passe actuel du document.',
+        'Saisissez le mot de passe du document, si nécessaire.',
         'Cliquez sur « Déverrouiller PDF » — la protection est supprimée localement en quelques secondes.',
         'Téléchargez le PDF déverrouillé. Il s’ouvre désormais dans n’importe quel lecteur, sans mot de passe.',
       ],
@@ -825,9 +825,9 @@ export const fr = {
       ],
     },
     'watermark-pdf': {
-      metaTitle: 'Ajouter un filigrane à un PDF en ligne gratuit — texte ou image | CoolPDF',
+      metaTitle: 'Ajouter un filigrane à un PDF — texte ou image | CoolPDF',
       metaDescription:
-        'Apposez un filigrane texte ou image sur chaque page de votre PDF — en mosaïque ou centré, opacité réglable — directement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+        'Apposez un filigrane texte ou image sur chaque page de votre PDF — en mosaïque ou centré, opacité réglable — directement dans votre navigateur. Gratuit.',
       heading: 'Filigrane PDF',
       intro:
         'Apposez un filigrane texte ou image sur chaque page de votre PDF — en mosaïque diagonale ou centré, avec la taille, la couleur et l’opacité de votre choix. Tout s’exécute sur votre propre appareil.',
@@ -874,9 +874,9 @@ export const fr = {
       ],
     },
     'page-numbers': {
-      metaTitle: 'Ajouter des numéros de page à un PDF en ligne gratuit | CoolPDF',
+      metaTitle: 'Ajouter des numéros de page à un PDF | CoolPDF',
       metaDescription:
-        'Insérez des numéros de page dans votre PDF — six positions, formats « 1 sur N », page de départ au choix — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+        'Insérez des numéros de page dans votre PDF — six positions, formats « 1 sur N », page de départ au choix — localement dans votre navigateur. Gratuit.',
       heading: 'Numéros de page',
       intro:
         'Ajoutez des numéros de page à votre PDF exactement où vous le souhaitez : six positions, deux formats et un contrôle total sur le début de la numérotation. Le traitement s’effectue entièrement sur votre appareil.',
@@ -926,7 +926,7 @@ export const fr = {
     'pdf-to-markdown': {
       metaTitle: 'Convertir un PDF en Markdown en ligne gratuit | CoolPDF',
       metaDescription:
-        'Transformez le texte d’un PDF en Markdown propre — titres, paragraphes et listes détectés automatiquement — localement dans votre navigateur. Sans téléversement, gratuit, sans inscription.',
+        'Transformez le texte d’un PDF en Markdown propre — titres, paragraphes et listes détectés automatiquement — localement dans votre navigateur. Gratuit.',
       heading: 'PDF en Markdown',
       intro:
         'Transformez le texte de votre PDF en Markdown propre et structuré — titres, paragraphes et listes détectés automatiquement, en-têtes et pieds de page supprimés. La conversion s’effectue entièrement dans votre navigateur.',

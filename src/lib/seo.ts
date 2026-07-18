@@ -37,6 +37,9 @@ export function buildAlternates(path: string, locale: Locale = defaultLocale): A
   };
 }
 
+/** Static Open Graph share image (1200x630), generated in public/og.png. */
+export const OG_IMAGE_URL = `${SITE_URL}/og.png`;
+
 /**
  * Full per-page metadata: localized title/description, canonical + hreflang
  * alternates, Open Graph (with the correct og:locale) and Twitter card.
@@ -59,11 +62,13 @@ export function pageMetadata(
       siteName: SITE_NAME,
       locale: ogLocales[locale],
       type: 'website',
+      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: SITE_NAME }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [OG_IMAGE_URL],
     },
   };
 }

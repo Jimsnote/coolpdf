@@ -1,4 +1,5 @@
-import { degrees, PDFDocument, type PDFImage, type PDFPage } from '@cantoo/pdf-lib';
+import type { PDFDocument, PDFImage, PDFPage } from '@cantoo/pdf-lib';
+import { getPdfLib, type PdfLib } from './pdf-lib';
 
 export type WatermarkLayout = 'tile' | 'center';
 
@@ -41,6 +42,7 @@ function embedImage(doc: PDFDocument, bytes: Uint8Array): Promise<PDFImage> {
  * solved backwards from the desired center.
  */
 function drawStampCentered(
+  degrees: PdfLib['degrees'],
   page: PDFPage,
   image: PDFImage,
   cx: number,
@@ -73,6 +75,7 @@ export async function applyImageWatermark(
   imageBytes: Uint8Array,
   options: ApplyImageWatermarkOptions,
 ): Promise<Uint8Array> {
+  const { PDFDocument, degrees } = await getPdfLib();
   const doc = await PDFDocument.load(pdfBytes);
   const image = await embedImage(doc, imageBytes);
   const aspect = image.height / image.width;
@@ -88,7 +91,7 @@ export async function applyImageWatermark(
     const height = width * aspect;
 
     if (options.layout === 'center') {
-      drawStampCentered(page, image, pageWidth / 2, pageHeight / 2, width, height, opacity);
+      drawStampCentered(degrees, page, image, pageWidth / 2, pageHeight / 2, width, height, opacity);
     } else {
       // The axis-aligned bounding box of a 45°-rotated stamp.
       const bbox = (width + height) * Math.SQRT1_2;
@@ -98,7 +101,7 @@ export async function applyImageWatermark(
       for (let cy = -bbox; cy <= pageHeight + bbox; cy += stepY) {
         const offset = row % 2 === 0 ? 0 : stepX / 2;
         for (let cx = -bbox + offset; cx <= pageWidth + bbox; cx += stepX) {
-          drawStampCentered(page, image, cx, cy, width, height, opacity);
+          drawStampCentered(degrees, page, image, cx, cy, width, height, opacity);
         }
         row += 1;
       }

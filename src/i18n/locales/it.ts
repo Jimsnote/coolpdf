@@ -29,9 +29,9 @@ export const it = {
     comingSoon: 'Prossimamente',
   },
   home: {
-    metaTitle: 'Strumenti PDF gratuiti che rispettano la tua privacy | CoolPDF',
+    metaTitle: 'Strumenti PDF gratuiti che rispettano la privacy | CoolPDF',
     metaDescription:
-      'Unisci, dividi, comprimi e proteggi i PDF direttamente nel tuo browser. Elaborazione 100% lato client: nessun caricamento, nessuna registrazione, gratis per sempre.',
+      'Unisci, dividi, comprimi e proteggi i PDF direttamente nel tuo browser. 100% locale: nessun caricamento, nessuna registrazione.',
     hero: {
       title: 'Strumenti PDF gratuiti che rispettano la tua privacy',
       subtitle:
@@ -201,7 +201,7 @@ export const it = {
   privacy: {
     metaTitle: 'Informativa sulla privacy | CoolPDF',
     metaDescription:
-      'CoolPDF elabora tutti i file localmente nel tuo browser: non riceviamo, non archiviamo e non accediamo mai ai tuoi documenti. Leggi la nostra informativa sulla privacy.',
+      'CoolPDF elabora tutti i file localmente nel tuo browser: non riceviamo né archiviamo mai i tuoi documenti. Leggi la nostra informativa.',
     heading: 'Informativa sulla privacy',
     lastUpdated: 'Ultimo aggiornamento: luglio 2026',
     tldr: {
@@ -409,9 +409,9 @@ export const it = {
   },
   toolPages: {
     'merge-pdf': {
-      metaTitle: 'Unire PDF online gratis — Nessun caricamento, nessuna registrazione | CoolPDF',
+      metaTitle: 'Unire PDF online gratis — Nessun caricamento | CoolPDF',
       metaDescription:
-        'Combina fino a 20 PDF in un unico file direttamente nel tuo browser. Riordina, unisci e scarica — i file non lasciano mai il tuo dispositivo. Gratis, senza registrazione.',
+        'Combina fino a 20 PDF in un unico file direttamente nel tuo browser. Riordina, unisci e scarica — i file non lasciano mai il tuo dispositivo.',
       heading: 'Unisci PDF',
       intro:
         'Combina più documenti PDF in un unico file, esattamente nell’ordine che preferisci. L’unione avviene interamente sul tuo dispositivo.',
@@ -446,9 +446,9 @@ export const it = {
       ],
     },
     'split-pdf': {
-      metaTitle: 'Dividere PDF online gratis — Estrai pagine in locale | CoolPDF',
+      metaTitle: 'Dividere PDF online gratis — Estrai pagine | CoolPDF',
       metaDescription:
-        'Estrai pagine, dividi per intervalli o taglia un PDF ogni N pagine — tutto nel tuo browser. I file non lasciano mai il tuo dispositivo. Gratis, senza registrazione, senza filigrane.',
+        'Estrai pagine, dividi per intervalli o taglia un PDF ogni N pagine — tutto nel tuo browser. Gratis, senza registrazione, senza filigrane.',
       heading: 'Dividi PDF',
       intro:
         'Estrai ogni pagina in un file separato, ricava intervalli personalizzati o dividi un documento in blocchi di N pagine. Tutto avviene in locale nel tuo browser.',
@@ -490,7 +490,7 @@ export const it = {
       ],
     },
     'rotate-pdf': {
-      metaTitle: 'Ruotare PDF online gratis — Pagine ruotate in locale | CoolPDF',
+      metaTitle: 'Ruotare PDF online gratis — in locale | CoolPDF',
       metaDescription:
         'Ruota tutte le pagine o solo quelle che scegli di 90°, 180° o 270° — direttamente nel tuo browser. Nessun caricamento, nessuna registrazione, nessuna filigrana.',
       heading: 'Ruota PDF',
@@ -533,9 +533,9 @@ export const it = {
       ],
     },
     'jpg-to-pdf': {
-      metaTitle: 'Convertire JPG in PDF — Gratis, in locale, senza caricamenti | CoolPDF',
+      metaTitle: 'Convertire JPG in PDF — Gratis e in locale | CoolPDF',
       metaDescription:
-        'Trasforma immagini JPG e PNG in un PDF A4 pulito nel tuo browser. Adatta, riempi o dimensione originale — i file non lasciano mai il tuo dispositivo. Gratis, senza registrazione.',
+        'Trasforma immagini JPG e PNG in un PDF A4 pulito nel tuo browser. Adatta, riempi o dimensione originale — i file restano sul tuo dispositivo.',
       heading: 'JPG in PDF',
       intro:
         'Converti fino a 20 immagini JPG o PNG in un unico PDF A4 — perfetto per scansioni, ricevute e documenti fotografici. La conversione avviene interamente sul tuo dispositivo.',
@@ -578,9 +578,9 @@ export const it = {
       ],
     },
     'organize-pdf': {
-      metaTitle: 'Organizzare le pagine di un PDF online gratis — Riordina e ruota | CoolPDF',
+      metaTitle: 'Organizzare pagine PDF online gratis | CoolPDF',
       metaDescription:
-        'Riordina le pagine del PDF con il trascinamento, ruota o elimina le pagine e scarica un PDF riorganizzato — tutto nel tuo browser. Nessun caricamento, nessuna registrazione.',
+        'Riordina le pagine del PDF con il trascinamento, ruota o elimina le pagine e scarica il risultato — tutto nel tuo browser. Gratis.',
       heading: 'Organizza PDF',
       intro:
         'Disponi le pagine con il trascinamento, ruota quelle storte ed elimina quelle che non ti servono. Un’anteprima in tempo reale di ogni pagina rende tutto facile — e ogni cosa avviene sul tuo dispositivo.',
@@ -628,9 +628,9 @@ export const it = {
       ],
     },
     'pdf-to-jpg': {
-      metaTitle: 'Convertire PDF in JPG — Gratis, in locale, senza caricamenti | CoolPDF',
+      metaTitle: 'Convertire PDF in JPG — Gratis e in locale | CoolPDF',
       metaDescription:
-        'Trasforma le pagine del PDF in immagini JPG o PNG a 72, 150 o 300 DPI — direttamente nel tuo browser. I file non lasciano mai il tuo dispositivo. Gratis, senza registrazione.',
+        'Trasforma le pagine del PDF in immagini JPG o PNG a 72, 150 o 300 DPI — direttamente nel tuo browser. Gratis, senza registrazione.',
       heading: 'PDF in JPG',
       intro:
         'Converti le pagine del PDF in immagini JPG o PNG di alta qualità. Scegli la risoluzione e le pagine che ti servono — la conversione avviene interamente sul tuo dispositivo.',
@@ -680,7 +680,7 @@ export const it = {
     'compress-pdf': {
       metaTitle: 'Comprimere PDF online gratis — Nessun caricamento | CoolPDF',
       metaDescription:
-        'Riduci le dimensioni del PDF con tre livelli di qualità, da 72 a 300 DPI — direttamente nel tuo browser. I file non lasciano mai il tuo dispositivo. Gratis, senza registrazione.',
+        'Riduci le dimensioni del PDF con tre livelli di qualità, da 72 a 300 DPI — direttamente nel tuo browser. Gratis, senza registrazione.',
       heading: 'Comprimi PDF',
       intro:
         'Riduci i PDF più pesanti a una frazione delle loro dimensioni con tre livelli di compressione. Il motore di compressione funziona interamente sul tuo dispositivo.',
@@ -786,9 +786,9 @@ export const it = {
       ],
     },
     'unlock-pdf': {
-      metaTitle: 'Sbloccare PDF gratis — Rimuovi la password in locale | CoolPDF',
+      metaTitle: 'Sbloccare PDF gratis — Rimuovi la password | CoolPDF',
       metaDescription:
-        'Rimuovi la protezione con password dai PDF di tua proprietà, direttamente nel tuo browser. Nessun caricamento, nessuna registrazione, gratis — i file non lasciano mai il tuo dispositivo.',
+        'Rimuovi la protezione con password dai PDF di tua proprietà, direttamente nel tuo browser. Gratis, senza registrazione.',
       heading: 'Sblocca PDF',
       intro:
         'Rimuovi la password da un PDF di tua proprietà, così si apre senza. La decrittografia avviene in locale — né il file né la password lasciano il tuo dispositivo.',
@@ -798,7 +798,7 @@ export const it = {
       stepsHeading: 'Come sbloccare un PDF',
       steps: [
         'Aggiungi il PDF protetto da password trascinandolo nell’area di caricamento, oppure fai clic per sfogliare.',
-        'Inserisci la password attuale del documento.',
+        'Inserisci la password del documento, se necessario.',
         'Fai clic su “Sblocca PDF” — la protezione viene rimossa in locale in pochi secondi.',
         'Scarica il PDF sbloccato. D’ora in poi si apre in qualsiasi lettore senza password.',
       ],
@@ -825,9 +825,9 @@ export const it = {
       ],
     },
     'watermark-pdf': {
-      metaTitle: 'Aggiungi filigrana al PDF online gratis — testo o immagine | CoolPDF',
+      metaTitle: 'Aggiungi filigrana al PDF — testo o immagine | CoolPDF',
       metaDescription:
-        'Apponi una filigrana di testo o immagine su ogni pagina del tuo PDF — affiancata o centrata, con opacità regolabile — direttamente nel browser. Nessun upload, gratis, senza registrazione.',
+        'Apponi una filigrana di testo o immagine su ogni pagina del tuo PDF — affiancata o centrata, opacità regolabile — direttamente nel browser. Gratis.',
       heading: 'Filigrana PDF',
       intro:
         'Apponi una filigrana di testo o immagine su ogni pagina del tuo PDF — affiancata in diagonale o centrata, con dimensione, colore e opacità a tua scelta. Tutto avviene sul tuo dispositivo.',
@@ -876,7 +876,7 @@ export const it = {
     'page-numbers': {
       metaTitle: 'Aggiungi numeri di pagina al PDF online gratis | CoolPDF',
       metaDescription:
-        'Inserisci numeri di pagina nel tuo PDF — sei posizioni, formati "1 di N", pagina iniziale a scelta — in locale nel tuo browser. Nessun upload, gratis, senza registrazione.',
+        'Inserisci numeri di pagina nel tuo PDF — sei posizioni, formati "1 di N", pagina iniziale a scelta — in locale nel tuo browser. Gratis.',
       heading: 'Numeri di pagina',
       intro:
         'Aggiungi i numeri di pagina al tuo PDF esattamente dove vuoi: sei posizioni, due formati e pieno controllo su dove inizia la numerazione. L’elaborazione avviene interamente sul tuo dispositivo.',
@@ -926,7 +926,7 @@ export const it = {
     'pdf-to-markdown': {
       metaTitle: 'Convertitore PDF in Markdown online gratis | CoolPDF',
       metaDescription:
-        'Trasforma il testo del PDF in Markdown pulito — titoli, paragrafi ed elenchi rilevati automaticamente — in locale nel tuo browser. Nessun upload, gratis, senza registrazione.',
+        'Trasforma il testo del PDF in Markdown pulito — titoli, paragrafi ed elenchi rilevati automaticamente — in locale nel tuo browser. Gratis.',
       heading: 'PDF in Markdown',
       intro:
         'Trasforma il testo del tuo PDF in Markdown pulito e strutturato: titoli, paragrafi ed elenchi rilevati automaticamente, intestazioni e piè di pagina rimossi. La conversione avviene interamente nel tuo browser.',

@@ -1,4 +1,4 @@
-import { degrees, PDFDocument } from '@cantoo/pdf-lib';
+import { getPdfLib } from './pdf-lib';
 
 export type RotationAngle = 90 | 180 | 270;
 
@@ -20,6 +20,7 @@ export async function rotatePdf(
   angle: RotationAngle,
   pageIndices?: number[],
 ): Promise<Uint8Array> {
+  const { PDFDocument, degrees } = await getPdfLib();
   const doc = await PDFDocument.load(bytes);
   const pages = doc.getPages();
   const targets = pageIndices ?? pages.map((_, i) => i);

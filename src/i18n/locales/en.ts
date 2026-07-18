@@ -798,7 +798,7 @@ export const en = {
       stepsHeading: 'How to unlock a PDF',
       steps: [
         'Add the password-protected PDF by dragging it onto the upload area, or click to browse.',
-        'Enter the current password of the document.',
+        'Enter the document’s password, if it has one.',
         'Click "Unlock PDF" — the protection is removed locally in seconds.',
         'Download the unlocked PDF. From now on it opens in any reader without a password.',
       ],

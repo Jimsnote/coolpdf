@@ -1,4 +1,4 @@
-import { PDFDocument } from '@cantoo/pdf-lib';
+import { getPdfLib } from './pdf-lib';
 
 export type PageOrientation = 'auto' | 'portrait' | 'landscape';
 export type ImageFitMode = 'fit' | 'fill' | 'original';
@@ -29,6 +29,7 @@ export async function imagesToPdf(
   orientation: PageOrientation,
   fitMode: ImageFitMode,
 ): Promise<Uint8Array> {
+  const { PDFDocument } = await getPdfLib();
   const doc = await PDFDocument.create();
   const embedded = [];
   for (const image of images) {

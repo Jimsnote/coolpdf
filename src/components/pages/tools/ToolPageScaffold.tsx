@@ -67,10 +67,26 @@ export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaff
     })),
   };
 
+  // Built from the same dictionary entries as the visible FAQ below, so the
+  // structured data always matches the on-page content.
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: copy.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <JsonLd data={webApplicationLd} />
       <JsonLd data={howToLd} />
+      <JsonLd data={faqLd} />
 
       {children}
 

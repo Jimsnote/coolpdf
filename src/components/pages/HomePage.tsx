@@ -4,7 +4,7 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/locales/en';
 import { localizedPath, localizedUrl } from '@/lib/seo';
 import { GITHUB_URL, SITE_NAME } from '@/lib/site';
-import { tools, toolNamesEn } from '@/lib/tools';
+import { tools, toolNames } from '@/lib/tools';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 interface HomePageProps {
@@ -27,7 +27,7 @@ export function HomePage({ locale, dict }: HomePageProps) {
       price: 0,
       priceCurrency: 'USD',
     },
-    featureList: toolNamesEn,
+    featureList: toolNames(dict),
   };
 
   const organizationLd = {

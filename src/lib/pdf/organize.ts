@@ -1,5 +1,5 @@
-import { degrees, PDFDocument } from '@cantoo/pdf-lib';
 import { PdfToolError } from './errors';
+import { getPdfLib } from './pdf-lib';
 import { normalizeRotation } from './rotate';
 
 /** One page in the final document, referencing the source PDF. */
@@ -23,6 +23,7 @@ export async function organizePdf(
   if (sequence.length === 0) {
     throw new PdfToolError('noPages', 'The output document needs at least one page');
   }
+  const { PDFDocument, degrees } = await getPdfLib();
   const source = await PDFDocument.load(bytes);
   const organized = await PDFDocument.create();
   const pages = await organized.copyPages(

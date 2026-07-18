@@ -13,7 +13,7 @@ import {
   Image,
   type LucideIcon,
 } from 'lucide-react';
-import { en, type Dictionary } from '@/i18n/locales/en';
+import type { Dictionary } from '@/i18n/locales/en';
 
 export type ToolStatus = 'live' | 'coming-soon';
 
@@ -44,5 +44,13 @@ export const tools: Tool[] = [
   { slug: 'pdf-to-markdown', icon: FileText, i18nKey: 'pdf-to-markdown', status: 'live' },
 ];
 
-/** English tool names, used for JSON-LD featureList regardless of locale. */
-export const toolNamesEn = tools.map((t) => en.tools[t.i18nKey].name);
+/** Live tools, derived from the central registry. */
+export const liveTools = tools.filter((tool) => tool.status === 'live');
+
+/**
+ * Localized names of the live tools, used for the home page's JSON-LD
+ * featureList so the structured data matches the locale of the page.
+ */
+export function toolNames(dict: Dictionary): string[] {
+  return liveTools.map((tool) => dict.tools[tool.i18nKey].name);
+}

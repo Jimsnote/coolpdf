@@ -29,7 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const locale of locales) {
       entries.push({
         url: localizedUrl(locale, path),
-        lastModified: new Date(),
+        // No lastModified: a build-time `new Date()` would change every
+        // deploy, which search engines learn to distrust.
         changeFrequency: path === '' || isTool ? 'weekly' : 'monthly',
         priority: path === '' ? 1 : isTool ? 0.9 : 0.8,
         alternates: { languages },
