@@ -21,3 +21,6 @@ Thumbs.db
 
 # typescript
 *.tsbuildinfo
+
+# Session transcripts (private, never publish)
+kimi-export-*.md
