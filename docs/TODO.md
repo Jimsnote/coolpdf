@@ -8,8 +8,8 @@
 - [x] 部署上线（Workers Static Assets + wrangler.jsonc）
 - [x] www → 主域名 301 统一（CNAME + 已有 Redirect）
 - [x] Cloudflare Web Analytics 开启
-- [ ] Google Search Console 验证（设置 → 域名属性 → DNS TXT 记录）并提交 sitemap.xml
-- [ ] Bing Webmaster Tools 验证并提交 sitemap
+- [x] Google Search Console 验证（设置 → 域名属性 → DNS TXT 记录）并提交 sitemap.xml
+- [x] Bing Webmaster Tools 验证并提交 sitemap
 - [ ] 上线后 1 周：检查收录（Search Console「覆盖率」）、确认无抓取错误
 - [ ] 上线后 2-4 周：观察关键词展示数据，记录表现好的语言/工具页
 - [ ] 上线后 4-6 周：申请 Google AdSense（清单见下）
