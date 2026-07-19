@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
-import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/locales/en';
+import { getGuideForTool } from '@/lib/guides';
 import { localizedUrl } from '@/lib/seo';
 import { SITE_NAME } from '@/lib/site';
 import { FactSummary } from '@/components/seo/FactSummary';
@@ -36,6 +38,8 @@ interface ToolPageScaffoldProps {
  */
 export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaffoldProps) {
   const copy = dict.toolPages[slug];
+  // English-only long-form tutorial attached to this tool, if one exists.
+  const guide = getGuideForTool(slug);
 
   const webApplicationLd = {
     '@context': 'https://schema.org',
@@ -125,6 +129,23 @@ export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaff
           ))}
         </div>
       </section>
+
+      {guide ? (
+        <section className="mt-12">
+          <Link
+            href={`/guides/${guide.slug}/`}
+            className="flex items-center justify-between gap-4 rounded-xl border border-brand-100 bg-brand-50 p-6 transition-colors hover:border-brand-300"
+          >
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+                Read the full guide
+              </p>
+              <p className="mt-1 font-semibold text-slate-900">{guide.title}</p>
+            </div>
+            <ArrowRight className="h-5 w-5 shrink-0 text-brand-600" aria-hidden />
+          </Link>
+        </section>
+      ) : null}
 
       <div className="mt-12">
         <FactSummary text={dict.factSummary} />

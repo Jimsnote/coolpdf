@@ -1,7 +1,8 @@
-import { ArrowDown, CheckCircle2, Lock, Zap } from 'lucide-react';
+import { ArrowDown, ArrowRight, CheckCircle2, Lock, Zap } from 'lucide-react';
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/locales/en';
+import { guides } from '@/lib/guides';
 import { localizedPath, localizedUrl } from '@/lib/seo';
 import { GITHUB_URL, SITE_NAME } from '@/lib/site';
 import { tools, toolNames } from '@/lib/tools';
@@ -164,6 +165,43 @@ export function HomePage({ locale, dict }: HomePageProps) {
           ))}
         </div>
       </section>
+
+      {/* Guides & Tutorials — guides are English-only, so this module is too */}
+      {locale === 'en' ? (
+        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                Guides &amp; Tutorials
+              </h2>
+              <p className="mt-2 text-slate-600">
+                In-depth, step-by-step tutorials for getting the most out of every tool.
+              </p>
+            </div>
+            <Link
+              href="/guides/"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+            >
+              All guides
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {guides.slice(0, 4).map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guides/${guide.slug}/`}
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <h3 className="text-base font-semibold text-slate-900">{guide.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                  {guide.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

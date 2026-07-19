@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { defaultLocale, locales } from '@/i18n/config';
+import { guides } from '@/lib/guides';
 import { localizedUrl } from '@/lib/seo';
 import { tools } from '@/lib/tools';
 
@@ -36,6 +37,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages },
       });
     }
+  }
+
+  // English-only guides (index + one URL per registered guide), derived from
+  // the registry. No hreflang alternates: guides have no localized versions.
+  const guidePaths = ['/guides', ...guides.map((guide) => `/guides/${guide.slug}`)];
+  for (const path of guidePaths) {
+    entries.push({
+      url: localizedUrl(defaultLocale, path),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
   }
 
   return entries;
