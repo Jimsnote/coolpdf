@@ -1,12 +1,36 @@
 import type { Guide } from './types';
+import { howToAddPageNumbersToPdf } from './how-to-add-page-numbers-to-pdf';
+import { howToAddWatermarkToPdf } from './how-to-add-watermark-to-pdf';
+import { howToCompressPdf } from './how-to-compress-pdf';
+import { howToConvertJpgToPdf } from './how-to-convert-jpg-to-pdf';
+import { howToConvertPdfToJpg } from './how-to-convert-pdf-to-jpg';
+import { howToConvertPdfToMarkdown } from './how-to-convert-pdf-to-markdown';
 import { howToMergePdf } from './how-to-merge-pdf';
+import { howToOrganizePdfPages } from './how-to-organize-pdf-pages';
+import { howToPasswordProtectPdf } from './how-to-password-protect-pdf';
+import { howToRotatePdf } from './how-to-rotate-pdf';
+import { howToSplitPdf } from './how-to-split-pdf';
+import { howToUnlockPdf } from './how-to-unlock-pdf';
 
 /**
  * Central guide registry, in display order. Guides are English-only and are
  * rendered at /guides/<slug>/; the sitemap and both guide routes derive from
  * this list, so adding a guide here is enough to publish it.
  */
-export const guides: Guide[] = [howToMergePdf];
+export const guides: Guide[] = [
+  howToMergePdf,
+  howToSplitPdf,
+  howToCompressPdf,
+  howToRotatePdf,
+  howToOrganizePdfPages,
+  howToConvertPdfToJpg,
+  howToConvertJpgToPdf,
+  howToPasswordProtectPdf,
+  howToUnlockPdf,
+  howToAddWatermarkToPdf,
+  howToAddPageNumbersToPdf,
+  howToConvertPdfToMarkdown,
+];
 
 /** Looks up a guide by its URL slug. */
 export function getGuide(slug: string): Guide | undefined {
