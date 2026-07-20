@@ -117,6 +117,7 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

@@ -115,6 +115,18 @@ export const de = {
       name: 'PDF organisieren',
       description: 'Sortieren, löschen und ordnen Sie Seiten per Drag & Drop neu.',
     },
+    'remove-pages': {
+      name: 'Seiten entfernen',
+      description: 'Unerwünschte Seiten mit wenigen Klicks aus einem PDF löschen.',
+    },
+    'extract-pages': {
+      name: 'Seiten extrahieren',
+      description: 'Ausgewählte Seiten eines PDF als neues Dokument speichern.',
+    },
+    'reorder-pages': {
+      name: 'Seiten neu ordnen',
+      description: 'Seiten per Drag & Drop in genau die gewünschte Reihenfolge ziehen.',
+    },
     'pdf-to-jpg': {
       name: 'PDF in JPG',
       description: 'Wandeln Sie jede PDF-Seite in ein hochwertiges JPG-Bild um.',
@@ -377,6 +389,7 @@ export const de = {
   toolUi: {
     privacyNote:
       'Ihre Dateien werden lokal in Ihrem Browser verarbeitet — es wird nichts hochgeladen.',
+    trustChips: ['Keine Uploads', 'Läuft lokal', 'Keine Anmeldung'],
     dropPdfs: 'PDF-Dateien hierher ziehen oder klicken, um zu durchsuchen',
     dropImages: 'JPG- oder PNG-Bilder hierher ziehen oder klicken, um zu durchsuchen',
     moveUp: 'Nach oben',
@@ -625,6 +638,156 @@ export const de = {
           question: 'Gibt es ein Limit bei Dateigröße oder Seitenzahl?',
           answer:
             'Dateien bis 100 MB (50 MB auf Mobilgeräten) werden unterstützt, ohne Limit bei der Seitenzahl. Bei sehr langen Dokumenten werden die Seitenvorschauen in Stapeln gerendert, damit das Tool reaktionsschnell bleibt.',
+        },
+      ],
+    },
+    'remove-pages': {
+      metaTitle: 'Seiten aus PDF entfernen – kostenlos online | CoolPDF',
+      metaDescription:
+        'Unerwünschte Seiten aus einem PDF löschen – visuell markieren, entfernen, herunterladen. 100 % im Browser, keine Uploads, keine Anmeldung.',
+      heading: 'Seiten aus PDF entfernen',
+      intro:
+        'Löschen Sie die Seiten, die Sie nicht brauchen – leere Scans, überflüssige Anhänge, die eine falsche Seite. Jede Seite zeigt eine Live-Vorschau, das bereinigte Dokument wird auf Ihrem Gerät neu erstellt. Die Originaldatei bleibt unverändert.',
+      button: 'Seiten entfernen & herunterladen',
+      loadingPreviews: 'Seitenvorschauen werden gerendert…',
+      loadMorePreviews: 'Weitere Vorschauen laden',
+      selectAll: 'Alle auswählen',
+      clearSelection: 'Auswahl aufheben',
+      deleteSelected: 'Ausgewählte löschen',
+      rotateSelected: 'Ausgewählte um 90° drehen',
+      reset: 'Zurücksetzen',
+      rotatePage: 'Seite um 90° drehen',
+      deletePage: 'Seite löschen',
+      restorePage: 'Seite wiederherstellen',
+      deletedBadge: 'Gelöscht',
+      pageLabel: 'Seite {n}',
+      keptSummary: '{kept} von {total} Seiten werden beibehalten',
+      stepsHeading: 'So entfernen Sie Seiten aus einem PDF',
+      steps: [
+        'Ziehen Sie das PDF in den Upload-Bereich oder klicken Sie zum Durchsuchen – eine Vorschau aller Seiten erscheint.',
+        'Klicken Sie auf das Papierkorb-Symbol jeder Seite, die Sie entfernen möchten, oder wählen Sie mehrere Seiten aus und nutzen Sie „Ausgewählte löschen“. Eine gelöschte Seite ist nur markiert – ein erneuter Klick stellt sie wieder her.',
+        'Prüfen Sie den Zähler: Er zeigt, wie viele der gesamten Seiten im neuen Dokument beibehalten werden.',
+        'Klicken Sie auf „Seiten entfernen & herunterladen“. Das bereinigte PDF wird lokal erstellt und als removed.pdf gespeichert.',
+      ],
+      privacyHeading: 'Sensible Seiten entfernen – ohne die Datei irgendwohin zu senden',
+      privacyText:
+        'Eine Seite zu entfernen geht oft darum, was Ihre Hände nicht verlassen soll: eine Signaturseite, ein Gehaltszettel, ein Anhang für einen anderen Empfänger. Bei CoolPDF verlässt die Datei Ihr Gerät nie – Seiten werden markiert und das Dokument vollständig in Ihrem Browser neu erstellt, ohne Upload und ohne temporäre Kopie auf einem Server. Das macht es sicher für Verträge, medizinische Unterlagen und Personalakten, selbst in öffentlichen WLANs.',
+      faqHeading: 'Häufig gestellte Fragen',
+      faq: [
+        {
+          question: 'Kann ich eine entfernte Seite rückgängig machen?',
+          answer:
+            'Ja, vor dem Herunterladen. Entfernte Seiten sind nur markiert – abgedunkelt mit einem Hinweis – und ein weiterer Klick stellt sie wieder her. Nach dem Herunterladen bleibt Ihre Originaldatei auf der Festplatte unverändert.',
+        },
+        {
+          question: 'Beeinträchtigt das Entfernen von Seiten die Qualität?',
+          answer:
+            'Nein. Die verbleibenden Seiten werden exakt so in das neue Dokument kopiert – ohne erneutes Rendern und ohne erneute Komprimierung.',
+        },
+        {
+          question: 'Was sind die Grenzen?',
+          answer:
+            'Dateien bis 100 MB (50 MB auf Mobilgeräten), ohne Seitenlimit. Lange Dokumente laden ihre Vorschauen stapelweise, damit das Tool reaktionsschnell bleibt.',
+        },
+      ],
+    },
+    'extract-pages': {
+      metaTitle: 'Seiten aus PDF extrahieren – kostenlos online | CoolPDF',
+      metaDescription:
+        'Ausgewählte Seiten eines PDF als neues Dokument speichern – Seiten visuell auswählen und im Browser extrahieren. Keine Uploads, keine Anmeldung.',
+      heading: 'Seiten aus PDF extrahieren',
+      intro:
+        'Ziehen Sie genau die Seiten heraus, die Sie brauchen – ein Kapitel, die Signaturseite, eine einzelne Rechnung – und speichern Sie sie als neues PDF. Alles läuft lokal in Ihrem Browser, das Dokument verlässt Ihr Gerät nie.',
+      button: 'Ausgewählte Seiten extrahieren',
+      loadingPreviews: 'Seitenvorschauen werden gerendert…',
+      loadMorePreviews: 'Weitere Vorschauen laden',
+      selectAll: 'Alle auswählen',
+      clearSelection: 'Auswahl aufheben',
+      deleteSelected: 'Ausgewählte löschen',
+      rotateSelected: 'Ausgewählte um 90° drehen',
+      reset: 'Zurücksetzen',
+      rotatePage: 'Seite um 90° drehen',
+      deletePage: 'Seite löschen',
+      restorePage: 'Seite wiederherstellen',
+      deletedBadge: 'Gelöscht',
+      pageLabel: 'Seite {n}',
+      keptSummary: '{kept} von {total} Seiten ausgewählt',
+      stepsHeading: 'So extrahieren Sie Seiten aus einem PDF',
+      steps: [
+        'Ziehen Sie das PDF in den Upload-Bereich oder klicken Sie zum Durchsuchen. Eine Live-Vorschau aller Seiten erscheint.',
+        'Klicken Sie auf die Miniaturansichten der Seiten, die Sie extrahieren möchten – ausgewählte Seiten erhalten einen hervorgehobenen Rahmen und ein Häkchen.',
+        'Prüfen Sie den Zähler, um zu bestätigen, wie viele Seiten ausgewählt sind.',
+        'Klicken Sie auf „Ausgewählte Seiten extrahieren“. Die gewählten Seiten werden lokal als neue Datei extracted.pdf gespeichert.',
+      ],
+      privacyHeading: 'Teilen Sie nur die Seiten, die Sie meinen – privat',
+      privacyText:
+        'Extrahieren ist die Art, ein Kapitel eines Berichts oder eine Seite eines Vertrags zu senden, ohne den Rest preiszugeben. CoolPDF erledigt Auswahl und Neuaufbau vollständig in Ihrem Browser: Die Quelldatei wird von Ihrer eigenen Festplatte gelesen und das neue PDF wird darauf zurückgeschrieben, ohne dass etwas hochgeladen wird. Kein Konto, keine Serverkopie, keine Spuren nach dem Schließen des Tabs.',
+      faqHeading: 'Häufig gestellte Fragen',
+      faq: [
+        {
+          question: 'Kann ich Seiten aus verschiedenen Teilen des Dokuments auswählen?',
+          answer:
+            'Ja – klicken Sie eine beliebige Kombination von Seiten an. Die extrahierte Datei behält die Seiten in ihrer ursprünglichen Dokumentreihenfolge, und Sie können Miniaturansichten vorher per Drag & Drop neu anordnen.',
+        },
+        {
+          question: 'Beeinträchtigt das Extrahieren die Qualität?',
+          answer:
+            'Nein. Seiten werden auf Objektebene in die neue Datei kopiert – Text bleibt auswählbar und Bilder behalten ihre ursprüngliche Auflösung.',
+        },
+        {
+          question: 'Was sind die Grenzen?',
+          answer:
+            'Dateien bis 100 MB (50 MB auf Mobilgeräten), ohne Seitenlimit. Vorschauen werden bei sehr langen Dokumenten stapelweise gerendert.',
+        },
+      ],
+    },
+    'reorder-pages': {
+      metaTitle: 'PDF-Seiten neu ordnen – kostenlos online | CoolPDF',
+      metaDescription:
+        'PDF-Seiten per Drag & Drop der Miniaturansichten neu anordnen – mit Live-Vorschau. 100 % im Browser, keine Uploads, keine Anmeldung.',
+      heading: 'PDF-Seiten neu ordnen',
+      intro:
+        'Ziehen Sie Seiten genau in die Reihenfolge, die Sie brauchen – jede Seite zeigt eine Live-Vorschau, sodass nichts an der falschen Stelle landet. Das neu geordnete Dokument wird auf Ihrem Gerät erstellt; nichts wird hochgeladen.',
+      button: 'Neu geordnetes PDF herunterladen',
+      loadingPreviews: 'Seitenvorschauen werden gerendert…',
+      loadMorePreviews: 'Weitere Vorschauen laden',
+      selectAll: 'Alle auswählen',
+      clearSelection: 'Auswahl aufheben',
+      deleteSelected: 'Ausgewählte löschen',
+      rotateSelected: 'Ausgewählte um 90° drehen',
+      reset: 'Zurücksetzen',
+      rotatePage: 'Seite um 90° drehen',
+      deletePage: 'Seite löschen',
+      restorePage: 'Seite wiederherstellen',
+      deletedBadge: 'Gelöscht',
+      pageLabel: 'Seite {n}',
+      keptSummary: '{kept} von {total} Seiten werden beibehalten',
+      stepsHeading: 'So ordnen Sie Seiten in einem PDF neu',
+      steps: [
+        'Ziehen Sie das PDF in den Upload-Bereich oder klicken Sie zum Durchsuchen – Miniaturansichten aller Seiten erscheinen.',
+        'Ziehen Sie eine beliebige Miniaturansicht an ihre neue Position; das Abzeichen zeigt immer die ursprüngliche Seitenzahl, damit Sie nachverfolgen können, was verschoben wurde.',
+        'Drehen Sie optional seitlich liegende Seiten oder markieren Sie Seiten zum Entfernen mit den Schaltflächen auf jeder Miniaturansicht.',
+        'Klicken Sie auf „Neu geordnetes PDF herunterladen“. Das neue Dokument wird lokal erstellt und als reordered.pdf gespeichert.',
+      ],
+      privacyHeading: 'Vertrauliche Dokumente auf Ihrem eigenen Gerät neu anordnen',
+      privacyText:
+        'Neuordnen passiert oft kurz bevor ein Dokument rausgeht – die unterschriebene Seite nach vorn ziehen, gescannte Belege umsortieren, Kapitel mischen. CoolPDF rendert die Vorschauen und erstellt die Datei vollständig in Ihrem Browser: nichts wird hochgeladen, in eine Warteschlange gestellt oder auf einem Server gespeichert. Es ist sicher für juristische, finanzielle und medizinische Dokumente, selbst in öffentlichen WLANs.',
+      faqHeading: 'Häufig gestellte Fragen',
+      faq: [
+        {
+          question: 'Woher weiß ich, dass die neue Reihenfolge stimmt?',
+          answer:
+            'Jede Miniaturansicht zeigt eine Live-Vorschau plus ein Abzeichen mit der ursprünglichen Seitenzahl, sodass Sie immer sehen, woher eine Seite stammt.',
+        },
+        {
+          question: 'Beeinträchtigt das Neuordnen die Qualität?',
+          answer:
+            'Nein. Seiten werden unverändert in das neue Dokument kopiert – kein erneutes Rendern, keine erneute Komprimierung; Drehungen werden als Standard-Seitenmetadaten gespeichert.',
+        },
+        {
+          question: 'Was sind die Grenzen?',
+          answer:
+            'Dateien bis 100 MB (50 MB auf Mobilgeräten), ohne Seitenlimit. Sehr lange Dokumente laden Vorschauen stapelweise.',
         },
       ],
     },
@@ -892,6 +1055,7 @@ export const de = {
       formatLabel: 'Format',
       formatN: 'Nur Zahl (1, 2, 3…)',
       formatTotal: 'Zahl und Gesamtzahl (1 von N)',
+      totalConnector: 'von',
       startNumberLabel: 'Erste Zahl',
       startPageLabel: 'Nummerierung beginnt auf Seite',
       fontSizeLabel: 'Schriftgröße',

@@ -86,6 +86,7 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

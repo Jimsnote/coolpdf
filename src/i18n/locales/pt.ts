@@ -116,6 +116,18 @@ export const pt = {
       name: 'Organizar PDF',
       description: 'Reordene, elimine e reorganize páginas com arrastar e largar.',
     },
+    'remove-pages': {
+      name: 'Remover páginas',
+      description: 'Elimine as páginas indesejadas de um PDF em poucos cliques.',
+    },
+    'extract-pages': {
+      name: 'Extrair páginas',
+      description: 'Guarde as páginas selecionadas de um PDF como novo documento.',
+    },
+    'reorder-pages': {
+      name: 'Reordenar páginas',
+      description: 'Arraste as páginas exatamente para a ordem que quiser.',
+    },
     'pdf-to-jpg': {
       name: 'PDF para JPG',
       description: 'Transforme cada página do PDF numa imagem JPG de alta qualidade.',
@@ -378,6 +390,7 @@ export const pt = {
   toolUi: {
     privacyNote:
       'Os seus ficheiros são processados localmente no seu navegador — nada é carregado.',
+    trustChips: ['Sem carregamentos', 'Funciona localmente', 'Sem registo'],
     dropPdfs: 'Largue os ficheiros PDF aqui, ou clique para procurar',
     dropImages: 'Largue imagens JPG ou PNG aqui, ou clique para procurar',
     moveUp: 'Mover para cima',
@@ -626,6 +639,156 @@ export const pt = {
           question: 'Há um limite de tamanho de ficheiro ou de número de páginas?',
           answer:
             'São suportados ficheiros até 100 MB (50 MB em telemóvel), sem limite de páginas. Em documentos muito longos, as pré-visualizações das páginas são geradas em lotes, para que a ferramenta se mantenha responsiva.',
+        },
+      ],
+    },
+    'remove-pages': {
+      metaTitle: 'Remover páginas de um PDF grátis online | CoolPDF',
+      metaDescription:
+        'Elimine as páginas indesejadas de um PDF com um seletor visual — marque, remova, descarregue. 100% no seu navegador, sem carregamentos, sem registo.',
+      heading: 'Remover páginas de um PDF',
+      intro:
+        'Elimine as páginas de que não precisa — digitalizações em branco, anexos a mais, aquela página errada. Cada página mostra uma pré-visualização ao vivo e o documento limpo é reconstruído no seu dispositivo. O ficheiro original permanece intocado.',
+      button: 'Remover páginas e descarregar',
+      loadingPreviews: 'A renderizar as pré-visualizações das páginas…',
+      loadMorePreviews: 'Carregar mais pré-visualizações',
+      selectAll: 'Selecionar tudo',
+      clearSelection: 'Limpar seleção',
+      deleteSelected: 'Eliminar selecionadas',
+      rotateSelected: 'Rodar selecionadas 90°',
+      reset: 'Repor',
+      rotatePage: 'Rodar página 90°',
+      deletePage: 'Eliminar página',
+      restorePage: 'Restaurar página',
+      deletedBadge: 'Eliminada',
+      pageLabel: 'Página {n}',
+      keptSummary: '{kept} de {total} páginas serão mantidas',
+      stepsHeading: 'Como remover páginas de um PDF',
+      steps: [
+        'Adicione o PDF arrastando-o para a área de carregamento, ou clique para procurar — aparece uma pré-visualização de cada página.',
+        'Clique no ícone do caixote de cada página que quer remover, ou selecione várias páginas e use «Eliminar selecionadas». Uma página removida fica apenas marcada — clique novamente para a restaurar.',
+        'Verifique o contador: mostra quantas das páginas totais serão mantidas no novo documento.',
+        'Clique em «Remover páginas e descarregar». O PDF limpo é montado localmente e guardado como removed.pdf.',
+      ],
+      privacyHeading: 'Retire páginas sensíveis — sem enviar o ficheiro para lado nenhum',
+      privacyText:
+        'Remover uma página é muitas vezes sobre o que não deve sair das suas mãos: uma página de assinatura, um recibo de salário, um anexo destinado a outro destinatário. Com o CoolPDF o ficheiro nunca sai do seu dispositivo — as páginas são marcadas e o documento é reconstruído inteiramente no seu navegador, sem carregamento e sem cópia temporária num servidor. É seguro para contratos, registos médicos e ficheiros de RH, mesmo em Wi-Fi público.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Posso anular uma página removida?',
+          answer:
+            'Sim, antes de descarregar. As páginas removidas estão apenas marcadas — esbatidas com um emblema — e mais um clique restaura-as. Após descarregar, o seu ficheiro original no disco permanece inalterado.',
+        },
+        {
+          question: 'Remover páginas reduz a qualidade?',
+          answer:
+            'Não. As páginas restantes são copiadas exatamente como estão para o novo documento — sem nova renderização e sem recompressão.',
+        },
+        {
+          question: 'Quais são os limites?',
+          answer:
+            'Ficheiros até 100 MB (50 MB em dispositivos móveis), sem limite de páginas. Os documentos longos carregam as pré-visualizações em lotes para se manterem responsivos.',
+        },
+      ],
+    },
+    'extract-pages': {
+      metaTitle: 'Extrair páginas de um PDF grátis online | CoolPDF',
+      metaDescription:
+        'Guarde as páginas selecionadas de um PDF como novo documento — escolha as páginas visualmente e extraia no seu navegador. Sem carregamentos, sem registo.',
+      heading: 'Extrair páginas de um PDF',
+      intro:
+        'Retire exatamente as páginas de que precisa — um capítulo, a página de assinatura, uma única fatura — e guarde-as como novo PDF. Tudo é executado localmente no seu navegador, o documento nunca sai do seu dispositivo.',
+      button: 'Extrair páginas selecionadas',
+      loadingPreviews: 'A renderizar as pré-visualizações das páginas…',
+      loadMorePreviews: 'Carregar mais pré-visualizações',
+      selectAll: 'Selecionar tudo',
+      clearSelection: 'Limpar seleção',
+      deleteSelected: 'Eliminar selecionadas',
+      rotateSelected: 'Rodar selecionadas 90°',
+      reset: 'Repor',
+      rotatePage: 'Rodar página 90°',
+      deletePage: 'Eliminar página',
+      restorePage: 'Restaurar página',
+      deletedBadge: 'Eliminada',
+      pageLabel: 'Página {n}',
+      keptSummary: '{kept} de {total} páginas selecionadas',
+      stepsHeading: 'Como extrair páginas de um PDF',
+      steps: [
+        'Adicione o PDF arrastando-o para a área de carregamento, ou clique para procurar. Aparece uma pré-visualização ao vivo de cada página.',
+        'Clique nas miniaturas das páginas que quer extrair — as páginas selecionadas ficam com um contorno realçado e um visto.',
+        'Verifique o contador para confirmar quantas páginas estão selecionadas.',
+        'Clique em «Extrair páginas selecionadas». As páginas escolhidas são guardadas localmente como novo ficheiro, extracted.pdf.',
+      ],
+      privacyHeading: 'Partilhe apenas as páginas que quer — em privado',
+      privacyText:
+        'Extrair é a forma de enviar um capítulo de um relatório ou uma página de um contrato sem expor o resto. O CoolPDF faz a seleção e a reconstrução inteiramente no seu navegador: o ficheiro de origem é lido do seu próprio disco e o novo PDF é escrito de volta nele, sem nada ser carregado entretanto. Sem conta, sem cópia no servidor, sem vestígios depois de fechar o separador.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Posso selecionar páginas de diferentes partes do documento?',
+          answer:
+            'Sim — clique em qualquer combinação de páginas, em qualquer ordem. O ficheiro extraído mantém as páginas na sua ordem original do documento, e pode arrastar as miniaturas para as reorganizar primeiro.',
+        },
+        {
+          question: 'A extração reduz a qualidade?',
+          answer:
+            'Não. As páginas são copiadas ao nível do objeto para o novo ficheiro — o texto permanece selecionável e as imagens mantêm a resolução original.',
+        },
+        {
+          question: 'Quais são os limites?',
+          answer:
+            'Ficheiros até 100 MB (50 MB em dispositivos móveis), sem limite de páginas. As pré-visualizações são renderizadas em lotes para documentos muito longos.',
+        },
+      ],
+    },
+    'reorder-pages': {
+      metaTitle: 'Reordenar páginas de um PDF grátis online | CoolPDF',
+      metaDescription:
+        'Reordene as páginas de um PDF arrastando as miniaturas para uma nova ordem — com pré-visualizações ao vivo. 100% no seu navegador, sem carregamentos, sem registo.',
+      heading: 'Reordenar páginas de um PDF',
+      intro:
+        'Arraste as páginas exatamente para a ordem de que precisa — cada página mostra uma pré-visualização ao vivo, para que nada fique fora do lugar. O documento reordenado é montado no seu dispositivo; nada é carregado.',
+      button: 'Descarregar PDF reordenado',
+      loadingPreviews: 'A renderizar as pré-visualizações das páginas…',
+      loadMorePreviews: 'Carregar mais pré-visualizações',
+      selectAll: 'Selecionar tudo',
+      clearSelection: 'Limpar seleção',
+      deleteSelected: 'Eliminar selecionadas',
+      rotateSelected: 'Rodar selecionadas 90°',
+      reset: 'Repor',
+      rotatePage: 'Rodar página 90°',
+      deletePage: 'Eliminar página',
+      restorePage: 'Restaurar página',
+      deletedBadge: 'Eliminada',
+      pageLabel: 'Página {n}',
+      keptSummary: '{kept} de {total} páginas serão mantidas',
+      stepsHeading: 'Como reordenar páginas num PDF',
+      steps: [
+        'Adicione o PDF arrastando-o para a área de carregamento, ou clique para procurar — aparecem as miniaturas de cada página.',
+        'Arraste qualquer miniatura para a sua nova posição; o emblema mostra sempre o número de página original para acompanhar o que mudou.',
+        'Opcionalmente rode páginas deitadas ou marque páginas para remoção com os botões em cada miniatura.',
+        'Clique em «Descarregar PDF reordenado». O novo documento é criado localmente e guardado como reordered.pdf.',
+      ],
+      privacyHeading: 'Reorganize documentos confidenciais no seu próprio dispositivo',
+      privacyText:
+        'Reordenar acontece muitas vezes mesmo antes de um documento sair — mover a página assinada para a frente, reordenar recibos digitalizados, baralhar capítulos. O CoolPDF gera as pré-visualizações e reconstrói o ficheiro inteiramente no seu navegador: nada é carregado, enfileirado ou armazenado num servidor. É seguro para documentos jurídicos, financeiros e médicos, mesmo em Wi-Fi público.',
+      faqHeading: 'Perguntas frequentes',
+      faq: [
+        {
+          question: 'Como sei que a nova ordem está correta?',
+          answer:
+            'Cada miniatura mostra uma pré-visualização ao vivo mais um emblema com o número de página original, por isso vê sempre de onde vem uma página.',
+        },
+        {
+          question: 'Reordenar reduz a qualidade?',
+          answer:
+            'Não. As páginas são copiadas inalteradas para o novo documento — sem nova renderização, sem recompressão; as rotações são guardadas como metadados de página padrão.',
+        },
+        {
+          question: 'Quais são os limites?',
+          answer:
+            'Ficheiros até 100 MB (50 MB em dispositivos móveis), sem limite de páginas. Os documentos muito longos carregam as pré-visualizações em lotes.',
         },
       ],
     },
@@ -893,6 +1056,7 @@ export const pt = {
       formatLabel: 'Formato',
       formatN: 'Apenas o número (1, 2, 3…)',
       formatTotal: 'Número e total (1 de N)',
+      totalConnector: 'de',
       startNumberLabel: 'Primeiro número',
       startPageLabel: 'Começar a numeração na página',
       fontSizeLabel: 'Tamanho da fonte',

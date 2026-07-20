@@ -104,6 +104,7 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

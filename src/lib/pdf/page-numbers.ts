@@ -19,6 +19,8 @@ export interface PageNumberOptions {
   /** 1-based page where numbering begins; earlier pages get no number. */
   startPage: number;
   fontSize: number;
+  /** Word between number and total in 'n-of-total' format (default 'of'). */
+  connector?: string;
 }
 
 /** Distance from the page edge, in points. */
@@ -60,7 +62,10 @@ export async function addPageNumbers(
   for (let i = firstIndex; i < total; i += 1) {
     const page = pages[i];
     const number = startNumber + (i - firstIndex);
-    const text = options.format === 'n-of-total' ? `${number} of ${total}` : `${number}`;
+    const text =
+      options.format === 'n-of-total'
+        ? `${number} ${options.connector ?? 'of'} ${total}`
+        : `${number}`;
     const { width, height } = page.getSize();
     const textWidth = font.widthOfTextAtSize(text, fontSize);
 

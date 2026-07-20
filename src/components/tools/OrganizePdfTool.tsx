@@ -37,7 +37,22 @@ import { toolErrorMessage } from './tool-error';
 
 interface OrganizePdfToolProps {
   dict: Dictionary;
+  /** Preset variant of the shared organizer UI (remove/extract/reorder pages). */
+  preset?: OrganizePreset;
 }
+
+export type OrganizePreset = 'organize' | 'remove' | 'extract' | 'reorder';
+
+/** Maps each preset to its localized copy entry and output file name. */
+const PRESET_CONFIG: Record<
+  OrganizePreset,
+  { copySlug: 'organize-pdf' | 'remove-pages' | 'extract-pages' | 'reorder-pages'; outputName: string }
+> = {
+  organize: { copySlug: 'organize-pdf', outputName: 'organized.pdf' },
+  remove: { copySlug: 'remove-pages', outputName: 'removed.pdf' },
+  extract: { copySlug: 'extract-pages', outputName: 'extracted.pdf' },
+  reorder: { copySlug: 'reorder-pages', outputName: 'reordered.pdf' },
+};
 
 type PageRotation = 0 | 90 | 180 | 270;
 
@@ -174,9 +189,10 @@ function SortablePageCard({
   );
 }
 
-export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
+export function OrganizePdfTool({ dict, preset = 'organize' }: OrganizePdfToolProps) {
   const ui = dict.toolUi;
-  const copy = dict.toolPages['organize-pdf'];
+  const { copySlug, outputName } = PRESET_CONFIG[preset];
+  const copy = dict.toolPages[copySlug];
   const [file, setFile] = useState<File | null>(null);
   const [pages, setPages] = useState<PageItem[]>([]);
   const [visibleCount, setVisibleCount] = useState(INITIAL_THUMB_COUNT);
@@ -376,12 +392,18 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
 
   const keptCount = pages.filter((p) => !p.deleted).length;
   const selectedCount = pages.filter((p) => p.selected).length;
+  /** Extract mode counts selections; the other modes count kept pages. */
+  const actionableCount = preset === 'extract' ? selectedCount : keptCount;
 
   async function process() {
     if (!file || pages.length === 0) return;
-    const sequence = pages
-      .filter((p) => !p.deleted)
-      .map((p) => ({ sourcePageIndex: p.sourceIndex, rotation: p.rotation }));
+    // Extract mode exports the selected pages; the other modes export what
+    // remains after deletions (both honor drag-reordering and rotation).
+    const sequence = (
+      preset === 'extract'
+        ? pages.filter((p) => p.selected && !p.deleted)
+        : pages.filter((p) => !p.deleted)
+    ).map((p) => ({ sourcePageIndex: p.sourceIndex, rotation: p.rotation }));
     if (sequence.length === 0) {
       setError(ui.errors.noPages);
       return;
@@ -393,7 +415,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const output = await organizePdf(bytes, sequence);
       const blob = pdfBlob(output);
-      setResult({ name: 'organized.pdf', size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: outputName, size: blob.size, url: URL.createObjectURL(blob) });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
@@ -408,6 +430,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>
@@ -487,7 +510,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
               </button>
               <span className="ml-auto text-sm text-slate-500">
                 {copy.keptSummary
-                  .replace('{kept}', String(keptCount))
+                  .replace('{kept}', String(actionableCount))
                   .replace('{total}', String(pages.length))}
               </span>
             </div>
@@ -535,7 +558,7 @@ export function OrganizePdfTool({ dict }: OrganizePdfToolProps) {
         <button
           type="button"
           onClick={process}
-          disabled={busy || pages.length === 0 || keptCount === 0}
+          disabled={busy || pages.length === 0 || actionableCount === 0}
           className="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {busy ? <Loader2 className="h-5 w-5 animate-spin" aria-hidden /> : null}

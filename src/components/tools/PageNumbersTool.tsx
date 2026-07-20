@@ -65,6 +65,7 @@ export function PageNumbersTool({ dict }: PageNumbersToolProps) {
         startNumber,
         startPage,
         fontSize,
+        connector: copy.totalConnector,
       });
       const blob = pdfBlob(output);
       setResult({ name: 'numbered.pdf', size: blob.size, url: URL.createObjectURL(blob) });
@@ -88,6 +89,7 @@ export function PageNumbersTool({ dict }: PageNumbersToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

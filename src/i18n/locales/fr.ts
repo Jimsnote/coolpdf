@@ -115,6 +115,18 @@ export const fr = {
       name: 'Organiser PDF',
       description: 'Réordonnez, supprimez et réorganisez les pages par glisser-déposer.',
     },
+    'remove-pages': {
+      name: 'Supprimer des pages',
+      description: 'Supprimez les pages indésirables d’un PDF en quelques clics.',
+    },
+    'extract-pages': {
+      name: 'Extraire des pages',
+      description: 'Enregistrez les pages sélectionnées d’un PDF comme nouveau document.',
+    },
+    'reorder-pages': {
+      name: 'Réorganiser des pages',
+      description: 'Faites glisser les pages exactement dans l’ordre voulu.',
+    },
     'pdf-to-jpg': {
       name: 'PDF en JPG',
       description: 'Transformez chaque page PDF en image JPG de haute qualité.',
@@ -377,6 +389,7 @@ export const fr = {
   toolUi: {
     privacyNote:
       'Vos fichiers sont traités localement dans votre navigateur — rien n’est téléversé.',
+    trustChips: ['Aucun téléversement', 'Exécution locale', 'Aucune inscription'],
     dropPdfs: 'Déposez vos fichiers PDF ici, ou cliquez pour parcourir',
     dropImages: 'Déposez vos images JPG ou PNG ici, ou cliquez pour parcourir',
     moveUp: 'Monter',
@@ -625,6 +638,156 @@ export const fr = {
           question: 'Y a-t-il une limite de taille de fichier ou de nombre de pages ?',
           answer:
             'Les fichiers jusqu’à 100 Mo sont pris en charge (50 Mo sur mobile), sans limite de pages. Pour les documents très longs, les aperçus de pages sont générés par lots, afin que l’outil reste fluide.',
+        },
+      ],
+    },
+    'remove-pages': {
+      metaTitle: 'Supprimer des pages d’un PDF gratuitement | CoolPDF',
+      metaDescription:
+        'Supprimez les pages indésirables d’un PDF avec un sélecteur visuel — marquez, supprimez, téléchargez. 100 % dans votre navigateur, sans téléversement ni inscription.',
+      heading: 'Supprimer des pages d’un PDF',
+      intro:
+        'Supprimez les pages dont vous n’avez pas besoin — scans vides, pièces jointes en trop, cette page erronée. Chaque page affiche un aperçu en direct, et le document nettoyé est reconstruit sur votre appareil. Le fichier original reste intact.',
+      button: 'Supprimer et télécharger',
+      loadingPreviews: 'Rendu des aperçus de pages…',
+      loadMorePreviews: 'Charger plus d’aperçus',
+      selectAll: 'Tout sélectionner',
+      clearSelection: 'Effacer la sélection',
+      deleteSelected: 'Supprimer la sélection',
+      rotateSelected: 'Faire pivoter la sélection de 90°',
+      reset: 'Réinitialiser',
+      rotatePage: 'Faire pivoter la page de 90°',
+      deletePage: 'Supprimer la page',
+      restorePage: 'Restaurer la page',
+      deletedBadge: 'Supprimée',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} pages sur {total} seront conservées',
+      stepsHeading: 'Comment supprimer des pages d’un PDF',
+      steps: [
+        'Ajoutez le PDF en le glissant sur la zone de téléversement, ou cliquez pour parcourir — un aperçu de chaque page apparaît.',
+        'Cliquez sur l’icône corbeille de chaque page à supprimer, ou sélectionnez plusieurs pages et utilisez « Supprimer la sélection ». Une page supprimée est seulement marquée — cliquez à nouveau pour la restaurer.',
+        'Vérifiez le compteur : il indique combien de pages seront conservées dans le nouveau document.',
+        'Cliquez sur « Supprimer et télécharger ». Le PDF nettoyé est assemblé localement et enregistré sous removed.pdf.',
+      ],
+      privacyHeading: 'Retirez les pages sensibles — sans envoyer le fichier nulle part',
+      privacyText:
+        'Supprimer une page concerne souvent ce qui ne doit pas quitter vos mains : une page de signature, une fiche de paie, une pièce jointe destinée à un autre destinataire. Avec CoolPDF, le fichier ne quitte jamais votre appareil — les pages sont marquées et le document est reconstruit entièrement dans votre navigateur, sans téléversement ni copie temporaire sur un serveur. C’est sûr pour les contrats, les dossiers médicaux et les fichiers RH, même sur un Wi-Fi public.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je annuler une page supprimée ?',
+          answer:
+            'Oui, avant le téléchargement. Les pages supprimées sont seulement marquées — estompées avec un badge — et un autre clic les restaure. Après le téléchargement, votre fichier original sur le disque reste inchangé.',
+        },
+        {
+          question: 'La suppression de pages réduit-elle la qualité ?',
+          answer:
+            'Non. Les pages restantes sont copiées telles quelles dans le nouveau document — sans nouveau rendu ni recompression.',
+        },
+        {
+          question: 'Quelles sont les limites ?',
+          answer:
+            'Fichiers jusqu’à 100 Mo (50 Mo sur mobile), sans limite de pages. Les longs documents chargent leurs aperçus par lots pour rester fluides.',
+        },
+      ],
+    },
+    'extract-pages': {
+      metaTitle: 'Extraire des pages d’un PDF gratuitement | CoolPDF',
+      metaDescription:
+        'Enregistrez les pages sélectionnées d’un PDF comme nouveau document — choisissez visuellement et extrayez dans votre navigateur. Sans téléversement ni inscription.',
+      heading: 'Extraire des pages d’un PDF',
+      intro:
+        'Retirez exactement les pages dont vous avez besoin — un chapitre, la page de signature, une seule facture — et enregistrez-les comme nouveau PDF. Tout s’exécute localement dans votre navigateur, le document ne quitte jamais votre appareil.',
+      button: 'Extraire les pages sélectionnées',
+      loadingPreviews: 'Rendu des aperçus de pages…',
+      loadMorePreviews: 'Charger plus d’aperçus',
+      selectAll: 'Tout sélectionner',
+      clearSelection: 'Effacer la sélection',
+      deleteSelected: 'Supprimer la sélection',
+      rotateSelected: 'Faire pivoter la sélection de 90°',
+      reset: 'Réinitialiser',
+      rotatePage: 'Faire pivoter la page de 90°',
+      deletePage: 'Supprimer la page',
+      restorePage: 'Restaurer la page',
+      deletedBadge: 'Supprimée',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} pages sur {total} sélectionnées',
+      stepsHeading: 'Comment extraire des pages d’un PDF',
+      steps: [
+        'Ajoutez le PDF en le glissant sur la zone de téléversement, ou cliquez pour parcourir. Un aperçu en direct de chaque page apparaît.',
+        'Cliquez sur les vignettes des pages à extraire — les pages sélectionnées affichent une bordure surlignée et une coche.',
+        'Vérifiez le compteur pour confirmer le nombre de pages sélectionnées.',
+        'Cliquez sur « Extraire les pages sélectionnées ». Les pages choisies sont enregistrées localement comme nouveau fichier, extracted.pdf.',
+      ],
+      privacyHeading: 'Partagez uniquement les pages voulues — en privé',
+      privacyText:
+        'L’extraction permet d’envoyer un chapitre d’un rapport ou une page d’un contrat sans exposer le reste. CoolPDF effectue la sélection et la reconstruction entièrement dans votre navigateur : le fichier source est lu depuis votre propre disque et le nouveau PDF y est réécrit, sans rien téléverser entre les deux. Aucun compte, aucune copie serveur, aucune trace après la fermeture de l’onglet.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Puis-je sélectionner des pages de différentes parties du document ?',
+          answer:
+            'Oui — cliquez sur n’importe quelle combinaison de pages, dans n’importe quel ordre. Le fichier extrait conserve les pages dans leur ordre d’origine, et vous pouvez d’abord faire glisser les vignettes pour les réorganiser.',
+        },
+        {
+          question: 'L’extraction réduit-elle la qualité ?',
+          answer:
+            'Non. Les pages sont copiées au niveau objet dans le nouveau fichier — le texte reste sélectionnable et les images gardent leur résolution d’origine.',
+        },
+        {
+          question: 'Quelles sont les limites ?',
+          answer:
+            'Fichiers jusqu’à 100 Mo (50 Mo sur mobile), sans limite de pages. Les aperçus sont rendus par lots pour les très longs documents.',
+        },
+      ],
+    },
+    'reorder-pages': {
+      metaTitle: 'Réorganiser les pages d’un PDF gratuitement | CoolPDF',
+      metaDescription:
+        'Réorganisez les pages d’un PDF en faisant glisser les vignettes dans un nouvel ordre — avec aperçus en direct. 100 % dans votre navigateur, sans téléversement ni inscription.',
+      heading: 'Réorganiser les pages d’un PDF',
+      intro:
+        'Faites glisser les pages exactement dans l’ordre dont vous avez besoin — chaque page affiche un aperçu en direct, rien ne se retrouve à la mauvaise place. Le document réorganisé est assemblé sur votre appareil ; rien n’est téléversé.',
+      button: 'Télécharger le PDF réorganisé',
+      loadingPreviews: 'Rendu des aperçus de pages…',
+      loadMorePreviews: 'Charger plus d’aperçus',
+      selectAll: 'Tout sélectionner',
+      clearSelection: 'Effacer la sélection',
+      deleteSelected: 'Supprimer la sélection',
+      rotateSelected: 'Faire pivoter la sélection de 90°',
+      reset: 'Réinitialiser',
+      rotatePage: 'Faire pivoter la page de 90°',
+      deletePage: 'Supprimer la page',
+      restorePage: 'Restaurer la page',
+      deletedBadge: 'Supprimée',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} pages sur {total} seront conservées',
+      stepsHeading: 'Comment réorganiser les pages d’un PDF',
+      steps: [
+        'Ajoutez le PDF en le glissant sur la zone de téléversement, ou cliquez pour parcourir — les vignettes de chaque page apparaissent.',
+        'Faites glisser une vignette vers sa nouvelle position ; le badge affiche toujours le numéro de page d’origine pour suivre ce qui a bougé.',
+        'Faites éventuellement pivoter les pages couchées ou marquez des pages à supprimer avec les boutons de chaque vignette.',
+        'Cliquez sur « Télécharger le PDF réorganisé ». Le nouveau document est construit localement et enregistré sous reordered.pdf.',
+      ],
+      privacyHeading: 'Réorganisez des documents confidentiels sur votre propre appareil',
+      privacyText:
+        'La réorganisation intervient souvent juste avant l’envoi d’un document — déplacer la page signée en premier, réordonner les reçus scannés, remélanger les chapitres. CoolPDF rend les aperçus et reconstruit le fichier entièrement dans votre navigateur : rien n’est téléversé, mis en file d’attente ou stocké sur un serveur. C’est sûr pour les documents juridiques, financiers et médicaux, même sur un Wi-Fi public.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Comment savoir si le nouvel ordre est correct ?',
+          answer:
+            'Chaque vignette affiche un aperçu en direct plus un badge avec le numéro de page d’origine, vous voyez toujours d’où vient une page.',
+        },
+        {
+          question: 'La réorganisation réduit-elle la qualité ?',
+          answer:
+            'Non. Les pages sont copiées inchangées dans le nouveau document — pas de nouveau rendu, pas de recompression ; les rotations sont stockées comme métadonnées de page standard.',
+        },
+        {
+          question: 'Quelles sont les limites ?',
+          answer:
+            'Fichiers jusqu’à 100 Mo (50 Mo sur mobile), sans limite de pages. Les très longs documents chargent les aperçus par lots.',
         },
       ],
     },
@@ -892,6 +1055,7 @@ export const fr = {
       formatLabel: 'Format',
       formatN: 'Numéro seul (1, 2, 3…)',
       formatTotal: 'Numéro et total (1 sur N)',
+      totalConnector: 'sur',
       startNumberLabel: 'Premier numéro',
       startPageLabel: 'Commencer la numérotation à la page',
       fontSizeLabel: 'Taille de police',

@@ -96,6 +96,7 @@ export function WatermarkPdfTool({ dict }: WatermarkPdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

@@ -112,6 +112,18 @@ export const zh = {
       name: '整理 PDF',
       description: '通过拖放重新排序、删除和调整页面。',
     },
+    'remove-pages': {
+      name: '删除页面',
+      description: '点击几下即可删除 PDF 中不需要的页面。',
+    },
+    'extract-pages': {
+      name: '提取页面',
+      description: '将 PDF 中选中的页面保存为新文档。',
+    },
+    'reorder-pages': {
+      name: '页面排序',
+      description: '拖拽页面到您想要的精确顺序。',
+    },
     'pdf-to-jpg': {
       name: 'PDF 转 JPG',
       description: '将 PDF 的每一页转换为高质量 JPG 图片。',
@@ -370,6 +382,7 @@ export const zh = {
     'CoolPDF 是一款免费的、基于浏览器的 PDF 工具箱。与传统在线 PDF 工具不同，CoolPDF 使用 WebAssembly 在用户设备上本地处理所有文件——文件绝不会被上传到任何服务器。这些工具无需账号、无需邮箱、无需注册，完全免费且没有使用限制。这使得 CoolPDF 适合处理合同、病历和财务报表等机密文档。',
   toolUi: {
     privacyNote: '您的文件在浏览器本地处理——不会有任何内容被上传。',
+    trustChips: ['无需上传', '本地运行', '无需注册'],
     dropPdfs: '将 PDF 文件拖到此处，或点击选择文件',
     dropImages: '将 JPG 或 PNG 图片拖到此处，或点击选择文件',
     moveUp: '上移',
@@ -613,6 +626,156 @@ export const zh = {
           question: '文件大小或页数有限制吗？',
           answer:
             '支持最大 100 MB 的文件（移动设备上为 50 MB），页数不限。对于超长文档，页面预览会分批渲染，因此工具始终保持流畅响应。',
+        },
+      ],
+    },
+    'remove-pages': {
+      metaTitle: '免费在线删除 PDF 页面 - 无需上传 | CoolPDF',
+      metaDescription:
+        '可视化删除 PDF 中不需要的页面——标记、删除、下载。100% 在浏览器本地完成，无需上传，无需注册。',
+      heading: '删除 PDF 页面',
+      intro:
+        '删除您不需要的页面——空白扫描页、多余附件、那一页放错的页面。每页都有实时预览，清理后的文档在您的设备上重建，原始文件保持不变。',
+      button: '删除页面并下载',
+      loadingPreviews: '正在渲染页面预览…',
+      loadMorePreviews: '加载更多预览',
+      selectAll: '全选',
+      clearSelection: '取消选择',
+      deleteSelected: '删除所选',
+      rotateSelected: '旋转所选 90°',
+      reset: '重置',
+      rotatePage: '旋转页面 90°',
+      deletePage: '删除页面',
+      restorePage: '恢复页面',
+      deletedBadge: '已删除',
+      pageLabel: '第 {n} 页',
+      keptSummary: '将保留 {total} 页中的 {kept} 页',
+      stepsHeading: '如何删除 PDF 中的页面',
+      steps: [
+        '将 PDF 拖入上传区域，或点击浏览——随即显示每一页的预览。',
+        '点击每页上的垃圾桶图标删除该页，或选中多页后使用“删除所选”。被删除的页面只是被标记——再次点击即可恢复。',
+        '查看计数器：它显示总页数中有多少页将保留在新文档中。',
+        '点击“删除页面并下载”。清理后的 PDF 在本地组装并保存为 removed.pdf。',
+      ],
+      privacyHeading: '删减掉敏感页面——文件哪也不用发',
+      privacyText:
+        '删除一页往往关乎不该流出您手掌的内容：签名页、工资单、给另一位收件人的附件。使用 CoolPDF，文件永不离开您的设备——页面在浏览器中标记、文档完全在浏览器中重建，没有上传，服务器上也没有临时副本。处理合同、病历和人事档案都很安全，即使在公共 Wi-Fi 下。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '删除的页面可以撤销吗？',
+          answer:
+            '可以，在下载之前。被删除的页面只是被标记——变暗并显示徽标——再点一次即可恢复。下载后，您磁盘上的原始文件仍未改变。',
+        },
+        {
+          question: '删除页面会降低质量吗？',
+          answer:
+            '不会。保留的页面原样复制到新文档中——不重新渲染、不重新压缩。',
+        },
+        {
+          question: '有什么限制？',
+          answer:
+            '文件最大 100 MB（移动端 50 MB），无页数限制。长文档的预览分批加载，保持工具响应流畅。',
+        },
+      ],
+    },
+    'extract-pages': {
+      metaTitle: '免费在线提取 PDF 页面 - 无需上传 | CoolPDF',
+      metaDescription:
+        '将 PDF 中选中的页面保存为新文档——可视化选择页面并在浏览器中提取。无需上传，无需注册。',
+      heading: '提取 PDF 页面',
+      intro:
+        '精确提取您需要的页面——一个章节、签名页、单张发票——并保存为新的 PDF。一切都在您的浏览器本地运行，文档永不离开您的设备。',
+      button: '提取选中页面',
+      loadingPreviews: '正在渲染页面预览…',
+      loadMorePreviews: '加载更多预览',
+      selectAll: '全选',
+      clearSelection: '取消选择',
+      deleteSelected: '删除所选',
+      rotateSelected: '旋转所选 90°',
+      reset: '重置',
+      rotatePage: '旋转页面 90°',
+      deletePage: '删除页面',
+      restorePage: '恢复页面',
+      deletedBadge: '已删除',
+      pageLabel: '第 {n} 页',
+      keptSummary: '已选择 {total} 页中的 {kept} 页',
+      stepsHeading: '如何提取 PDF 中的页面',
+      steps: [
+        '将 PDF 拖入上传区域，或点击浏览。随即显示每一页的实时预览。',
+        '点击要提取的页面缩略图——选中的页面会显示高亮边框和勾选标记。',
+        '查看计数器，确认已选中多少页。',
+        '点击“提取选中页面”。所选页面在本地保存为新文件 extracted.pdf。',
+      ],
+      privacyHeading: '只分享您想给的页面——私密地',
+      privacyText:
+        '提取，是发送报告某一章或合同某一页而不暴露其余部分的方式。CoolPDF 的选择和重建完全在您的浏览器中完成：源文件从您自己的磁盘读取，新 PDF 写回磁盘，中间没有任何上传。没有账号，没有服务器副本，关闭标签页后不留痕迹。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '可以选择文档不同部分的页面吗？',
+          answer:
+            '可以——点击任意组合的页面，顺序随意。提取的文件按文档原始顺序保留页面，您也可以先拖动缩略图重新排列。',
+        },
+        {
+          question: '提取会降低质量吗？',
+          answer:
+            '不会。页面以对象级复制到新文件——文字仍可选取，图片保持原始分辨率。',
+        },
+        {
+          question: '有什么限制？',
+          answer:
+            '文件最大 100 MB（移动端 50 MB），无页数限制。超长文档的预览分批渲染。',
+        },
+      ],
+    },
+    'reorder-pages': {
+      metaTitle: '免费在线调整 PDF 页面顺序 - 无需上传 | CoolPDF',
+      metaDescription:
+        '拖拽缩略图重新排列 PDF 页面顺序——带实时预览。100% 在浏览器本地完成，无需上传，无需注册。',
+      heading: '调整 PDF 页面顺序',
+      intro:
+        '把页面拖到您需要的精确顺序——每页都有实时预览，不会有任何一页放错位置。重排后的文档在您的设备上组装，没有任何上传。',
+      button: '下载重排后的 PDF',
+      loadingPreviews: '正在渲染页面预览…',
+      loadMorePreviews: '加载更多预览',
+      selectAll: '全选',
+      clearSelection: '取消选择',
+      deleteSelected: '删除所选',
+      rotateSelected: '旋转所选 90°',
+      reset: '重置',
+      rotatePage: '旋转页面 90°',
+      deletePage: '删除页面',
+      restorePage: '恢复页面',
+      deletedBadge: '已删除',
+      pageLabel: '第 {n} 页',
+      keptSummary: '将保留 {total} 页中的 {kept} 页',
+      stepsHeading: '如何调整 PDF 页面顺序',
+      steps: [
+        '将 PDF 拖入上传区域，或点击浏览——随即显示每页缩略图。',
+        '将任意缩略图拖到新位置；角标始终显示原始页码，方便您追踪移动了什么。',
+        '也可以旋转侧放的页面，或用每页上的按钮标记要删除的页面。',
+        '点击“下载重排后的 PDF”。新文档在本地生成并保存为 reordered.pdf。',
+      ],
+      privacyHeading: '在您自己的设备上整理机密文档',
+      privacyText:
+        '重排往往发生在文档发出前的最后一刻——把签名页移到最前、重排扫描的发票、调整章节顺序。CoolPDF 的预览渲染和文件重建完全在您的浏览器中进行：没有任何内容被上传、排队或存储在服务器上。处理法律、财务和医疗文档都很安全，即使在公共 Wi-Fi 下。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '怎么确认新顺序是对的？',
+          answer:
+            '每个缩略图都有实时预览，外加显示原始页码的角标，您总能看到每页原来在哪里。',
+        },
+        {
+          question: '重排会降低质量吗？',
+          answer:
+            '不会。页面原封不动地复制到新文档中——不重新渲染、不重新压缩；旋转以标准页面元数据存储。',
+        },
+        {
+          question: '有什么限制？',
+          answer:
+            '文件最大 100 MB（移动端 50 MB），无页数限制。超长文档分批加载预览。',
         },
       ],
     },
@@ -872,7 +1035,8 @@ export const zh = {
       posBottomRight: '右下',
       formatLabel: '格式',
       formatN: '仅页码（1、2、3…）',
-      formatTotal: '页码加总页数（1 of N）',
+      formatTotal: '页码加总页数（1 / N）',
+      totalConnector: '/',
       startNumberLabel: '起始页码',
       startPageLabel: '从第几页开始编号',
       fontSizeLabel: '字号',

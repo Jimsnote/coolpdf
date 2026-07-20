@@ -1,9 +1,11 @@
 import type { ReactNode } from 'react';
-import { Lock } from 'lucide-react';
+import { Check, Lock } from 'lucide-react';
 
 interface ToolShellProps {
   title: string;
   intro: string;
+  /** Trust badges shown right under the intro (e.g. No uploads / Runs locally). */
+  chips?: string[];
   /** Fixed privacy line shown directly under the upload area. */
   privacyNote: string;
   /** Upload area (FileDropzone plus any file list). */
@@ -26,6 +28,7 @@ interface ToolShellProps {
 export function ToolShell({
   title,
   intro,
+  chips,
   privacyNote,
   upload,
   options,
@@ -37,6 +40,19 @@ export function ToolShell({
     <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{title}</h1>
       <p className="mt-3 leading-relaxed text-slate-600">{intro}</p>
+      {chips && chips.length > 0 ? (
+        <ul className="mt-4 flex flex-wrap gap-2" aria-label="Trust badges">
+          {chips.map((chip) => (
+            <li
+              key={chip}
+              className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700"
+            >
+              <Check className="h-3.5 w-3.5" aria-hidden />
+              {chip}
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       <div className="mt-8">{upload}</div>
       <p className="mt-4 flex items-center gap-2 text-sm text-slate-500">

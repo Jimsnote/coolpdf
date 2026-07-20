@@ -115,6 +115,18 @@ export const en = {
       name: 'Organize PDF',
       description: 'Reorder, delete, and rearrange pages with drag and drop.',
     },
+    'remove-pages': {
+      name: 'Remove Pages',
+      description: 'Delete unwanted pages from a PDF in a few clicks.',
+    },
+    'extract-pages': {
+      name: 'Extract Pages',
+      description: 'Save selected pages of a PDF as a new document.',
+    },
+    'reorder-pages': {
+      name: 'Reorder Pages',
+      description: 'Drag pages into exactly the order you want.',
+    },
     'pdf-to-jpg': {
       name: 'PDF to JPG',
       description: 'Turn each PDF page into a high-quality JPG image.',
@@ -377,6 +389,7 @@ export const en = {
   toolUi: {
     privacyNote:
       'Your files are processed locally in your browser — nothing is uploaded.',
+    trustChips: ['No uploads', 'Runs locally', 'No sign-up'],
     dropPdfs: 'Drop PDF files here, or click to browse',
     dropImages: 'Drop JPG or PNG images here, or click to browse',
     moveUp: 'Move up',
@@ -625,6 +638,156 @@ export const en = {
           question: 'Is there a limit on file size or page count?',
           answer:
             'Files up to 100 MB are supported (50 MB on mobile), with no page limit. For very long documents the page previews are rendered in batches, so the tool stays responsive.',
+        },
+      ],
+    },
+    'remove-pages': {
+      metaTitle: 'Remove Pages from PDF Free Online — Delete Pages | CoolPDF',
+      metaDescription:
+        'Delete unwanted pages from a PDF with a visual page picker — mark, remove, download. 100% in your browser, no uploads, no sign-up.',
+      heading: 'Remove Pages from PDF',
+      intro:
+        'Delete the pages you do not need — blank scans, extra attachments, that one wrong page. Every page shows a live preview, and the cleaned document is rebuilt on your device. The original file stays untouched.',
+      button: 'Remove pages & download',
+      loadingPreviews: 'Rendering page previews…',
+      loadMorePreviews: 'Load more previews',
+      selectAll: 'Select all',
+      clearSelection: 'Clear selection',
+      deleteSelected: 'Delete selected',
+      rotateSelected: 'Rotate selected 90°',
+      reset: 'Reset',
+      rotatePage: 'Rotate page 90°',
+      deletePage: 'Delete page',
+      restorePage: 'Restore page',
+      deletedBadge: 'Deleted',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} of {total} pages will be kept',
+      stepsHeading: 'How to remove pages from a PDF',
+      steps: [
+        'Add the PDF by dragging it onto the upload area, or click to browse — a preview of every page appears.',
+        'Click the trash icon on each page you want to remove, or select several pages and use "Delete selected". A removed page is only marked — click again to restore it.',
+        'Check the counter: it shows how many of the total pages will be kept in the new document.',
+        'Click "Remove pages & download". The cleaned PDF is assembled locally and saved as removed.pdf.',
+      ],
+      privacyHeading: 'Cut sensitive pages out — without sending the file anywhere',
+      privacyText:
+        'Removing a page is often about what should not leave your hands: a signature page, a salary slip, an attachment meant for a different recipient. With CoolPDF the file never leaves your device — pages are marked and the document is rebuilt entirely in your browser, with no upload and no temporary copy on a server. That makes it safe for contracts, medical records, and HR files, even on public Wi-Fi.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I undo a removed page?',
+          answer:
+            'Yes, before downloading. Removed pages are only marked — dimmed with a badge — and one more click restores them. After downloading, your original file on disk is still unchanged.',
+        },
+        {
+          question: 'Does removing pages reduce quality?',
+          answer:
+            'No. The remaining pages are copied into the new document exactly as they are — no re-rendering and no recompression.',
+        },
+        {
+          question: 'What are the limits?',
+          answer:
+            'Files up to 100 MB (50 MB on mobile), with no page limit. Long documents load their previews in batches so the tool stays responsive.',
+        },
+      ],
+    },
+    'extract-pages': {
+      metaTitle: 'Extract Pages from PDF Free Online | CoolPDF',
+      metaDescription:
+        'Save selected pages of a PDF as a new document — pick pages visually and extract them in your browser. No uploads, no sign-up.',
+      heading: 'Extract Pages from PDF',
+      intro:
+        'Pull out exactly the pages you need — one chapter, the signature page, a single invoice — and save them as a new PDF. Everything runs locally in your browser, so the document never leaves your device.',
+      button: 'Extract selected pages',
+      loadingPreviews: 'Rendering page previews…',
+      loadMorePreviews: 'Load more previews',
+      selectAll: 'Select all',
+      clearSelection: 'Clear selection',
+      deleteSelected: 'Delete selected',
+      rotateSelected: 'Rotate selected 90°',
+      reset: 'Reset',
+      rotatePage: 'Rotate page 90°',
+      deletePage: 'Delete page',
+      restorePage: 'Restore page',
+      deletedBadge: 'Deleted',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} of {total} pages selected',
+      stepsHeading: 'How to extract pages from a PDF',
+      steps: [
+        'Add the PDF by dragging it onto the upload area, or click to browse. A live preview of every page appears.',
+        'Click the thumbnails of the pages you want to extract — selected pages get a highlighted border and checkmark.',
+        'Check the counter to confirm how many pages are selected.',
+        'Click "Extract selected pages". The picked pages are saved locally as a new file, extracted.pdf.',
+      ],
+      privacyHeading: 'Share only the pages you mean to — privately',
+      privacyText:
+        'Extraction is how you send one chapter of a report or one page of a contract without exposing the rest. CoolPDF does the selection and the rebuild entirely in your browser: the source file is read from your own disk and the new PDF is written back to it, with nothing uploaded in between. No account, no server-side copy, no traces after you close the tab.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Can I select pages from different parts of the document?',
+          answer:
+            'Yes — click any combination of pages, in any order. The extracted file keeps the pages in their original document order, and you can drag thumbnails to rearrange them first.',
+        },
+        {
+          question: 'Does extraction reduce quality?',
+          answer:
+            'No. Pages are copied into the new file at the object level — text stays selectable and images keep their original resolution.',
+        },
+        {
+          question: 'What are the limits?',
+          answer:
+            'Files up to 100 MB (50 MB on mobile), with no page limit. Previews render in batches for very long documents.',
+        },
+      ],
+    },
+    'reorder-pages': {
+      metaTitle: 'Reorder PDF Pages Free Online — Rearrange Pages | CoolPDF',
+      metaDescription:
+        'Rearrange PDF pages by dragging thumbnails into a new order — with live previews. 100% in your browser, no uploads, no sign-up.',
+      heading: 'Reorder PDF Pages',
+      intro:
+        'Drag pages into exactly the order you need — every page shows a live preview, so nothing ends up out of place. The reordered document is assembled on your device; nothing is uploaded.',
+      button: 'Download reordered PDF',
+      loadingPreviews: 'Rendering page previews…',
+      loadMorePreviews: 'Load more previews',
+      selectAll: 'Select all',
+      clearSelection: 'Clear selection',
+      deleteSelected: 'Delete selected',
+      rotateSelected: 'Rotate selected 90°',
+      reset: 'Reset',
+      rotatePage: 'Rotate page 90°',
+      deletePage: 'Delete page',
+      restorePage: 'Restore page',
+      deletedBadge: 'Deleted',
+      pageLabel: 'Page {n}',
+      keptSummary: '{kept} of {total} pages will be kept',
+      stepsHeading: 'How to reorder pages in a PDF',
+      steps: [
+        'Add the PDF by dragging it onto the upload area, or click to browse — thumbnails of every page appear.',
+        'Drag any thumbnail to its new position; the badge always shows the original page number so you can track what moved.',
+        'Optionally rotate sideways pages or mark pages for removal with the buttons on each thumbnail.',
+        'Click "Download reordered PDF". The new document is built locally and saved as reordered.pdf.',
+      ],
+      privacyHeading: 'Rearrange confidential documents on your own device',
+      privacyText:
+        'Reordering often happens right before a document goes out — moving the signed page to the front, reordering scanned receipts, reshuffling chapters. CoolPDF renders the previews and rebuilds the file entirely in your browser: nothing is uploaded, queued, or stored on a server. It is safe for legal, financial, and medical documents, even on public Wi-Fi.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'How do I know the new order is right?',
+          answer:
+            'Every thumbnail shows a live preview plus a badge with the original page number, so you can always see where a page came from.',
+        },
+        {
+          question: 'Does reordering reduce quality?',
+          answer:
+            'No. Pages are copied into the new document unchanged — no re-rendering, no recompression; rotations are stored as standard page metadata.',
+        },
+        {
+          question: 'What are the limits?',
+          answer:
+            'Files up to 100 MB (50 MB on mobile), with no page limit. Very long documents load previews in batches.',
         },
       ],
     },
@@ -892,6 +1055,7 @@ export const en = {
       formatLabel: 'Format',
       formatN: 'Number only (1, 2, 3…)',
       formatTotal: 'Number and total (1 of N)',
+      totalConnector: 'of',
       startNumberLabel: 'First number',
       startPageLabel: 'Start numbering on page',
       fontSizeLabel: 'Font size',

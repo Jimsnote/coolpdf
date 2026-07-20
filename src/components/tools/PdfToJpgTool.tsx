@@ -133,6 +133,7 @@ export function PdfToJpgTool({ dict }: PdfToJpgToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

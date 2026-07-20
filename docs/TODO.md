@@ -29,7 +29,7 @@
 ## 二、二期功能（按优先级，2026-07 竞品分析后重排）
 
 ### 第一批 · 快赢包
-- [ ] organize 拆 3 个独立页：remove-pages / extract-pages / reorder-pages（复用现有组件，薄路由 + 预设模式 + 字典条目）
+- [ ] organize 拆 3 个独立页：remove-pages / extract-pages / reorder-pages。**方案**：`OrganizePdfTool` 加 `preset` 属性（三 URL 共享同一组件与逻辑，只变路由/metadata/H1/文案，不重写工具）；字典走精简模板（复用共享 toolUi key，每页只加 meta+intro+4步骤+短隐私段+3FAQ）；reorder-pages 链现有 organize 教程，remove/extract 的专属教程延后到第三批补（ToolPageScaffold 未命中教程时不渲染链接卡，无影响）；slug 用 remove-pages，title 覆盖 Delete 变体
 - [ ] 工具页 H1 下加信任 chips 行（No upload / Runs locally / No sign-up）
 - [ ] page-numbers 的 `n-of-total` 连接词本地化（当前硬编码英文 "of"）
 

@@ -74,6 +74,7 @@ export function RotatePdfTool({ dict }: RotatePdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>

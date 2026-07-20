@@ -1,5 +1,8 @@
 import {
+  ArrowUpDown,
   FileImage,
+  FileMinus,
+  FileOutput,
   FileText,
   Hash,
   Lock,
@@ -35,6 +38,9 @@ export const tools: Tool[] = [
   { slug: 'compress-pdf', icon: Minimize2, i18nKey: 'compress-pdf', status: 'live' },
   { slug: 'rotate-pdf', icon: RotateCw, i18nKey: 'rotate-pdf', status: 'live' },
   { slug: 'organize-pdf', icon: LayoutGrid, i18nKey: 'organize-pdf', status: 'live' },
+  { slug: 'remove-pages', icon: FileMinus, i18nKey: 'remove-pages', status: 'live' },
+  { slug: 'extract-pages', icon: FileOutput, i18nKey: 'extract-pages', status: 'live' },
+  { slug: 'reorder-pages', icon: ArrowUpDown, i18nKey: 'reorder-pages', status: 'live' },
   { slug: 'pdf-to-jpg', icon: Image, i18nKey: 'pdf-to-jpg', status: 'live' },
   { slug: 'jpg-to-pdf', icon: FileImage, i18nKey: 'jpg-to-pdf', status: 'live' },
   { slug: 'protect-pdf', icon: Lock, i18nKey: 'protect-pdf', status: 'live' },

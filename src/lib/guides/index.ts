@@ -39,5 +39,8 @@ export function getGuide(slug: string): Guide | undefined {
 
 /** Finds the guide attached to a tool, if one has been written for it. */
 export function getGuideForTool(toolSlug: string): Guide | undefined {
-  return guides.find((guide) => guide.toolSlug === toolSlug);
+  // Preset variants of the organizer share the umbrella organize guide.
+  const alias: Record<string, string> = { 'reorder-pages': 'organize-pdf' };
+  const slug = alias[toolSlug] ?? toolSlug;
+  return guides.find((guide) => guide.toolSlug === slug);
 }

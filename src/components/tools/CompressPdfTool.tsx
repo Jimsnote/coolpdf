@@ -113,6 +113,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
     <ToolShell
       title={copy.heading}
       intro={copy.intro}
+      chips={ui.trustChips}
       privacyNote={ui.privacyNote}
       upload={
         <>
