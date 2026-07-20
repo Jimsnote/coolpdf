@@ -54,8 +54,11 @@ src/
 ├── lib/site.ts          # SITE_URL / GITHUB_URL（env 可覆盖）
 ├── lib/seo.ts           # buildAlternates / pageMetadata / localizedPath / OG_IMAGE_URL
 ├── lib/tools.ts         # 12 工具注册表（slug/图标/status）
+├── lib/guides/          # 教程内容系统（仅英文）：types.ts + index.ts 注册表 + 每篇一个 <slug>.ts 数据文件
 └── lib/pdf/             # 纯函数处理层（与 React 解耦，Node 可测）
 ```
+
+**教程（Guides）系统**：教程页在 `src/app/(en)/guides/`（仅英文，无 hreflang），由 `src/components/pages/guides/GuidePage.tsx` 渲染数据文件。新增教程：在 `src/lib/guides/` 加数据文件（结构见 `how-to-merge-pdf.ts` exemplar，正文链接用 `[label](/path/)` 语法）→ 在 `index.ts` 注册（sitemap/索引页/工具页互链自动生效）。截图由 `scripts/capture-guide-images.mjs`（+ `*-fix.mjs`）用 Playwright 对 `out/` 实拍生成，存 `public/guides/<slug>/`；改图后必须核对数据文件里的 alt 与画面一致。
 
 ## 5. 工作约定
 

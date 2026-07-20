@@ -37,7 +37,7 @@ export const howToOrganizePdfPages: Guide = {
       ],
       image: {
         src: '/guides/how-to-organize-pdf-pages/step-1.png',
-        alt: 'The CoolPDF Organize PDF grid showing eight page thumbnails with one being dragged to a new position, the selection toolbar above it, and the kept-pages counter on the right.',
+        alt: 'The CoolPDF Organize PDF grid showing page thumbnails after a document is loaded, with the selection toolbar above it and the kept-pages counter on the right.',
       },
     },
     {
@@ -48,7 +48,7 @@ export const howToOrganizePdfPages: Guide = {
       ],
       image: {
         src: '/guides/how-to-organize-pdf-pages/step-2.png',
-        alt: 'Close-up of two page thumbnails: one rotated 90 degrees, the other grayed out with a red "Deleted" badge and a restore button underneath.',
+        alt: 'Close-up of the Organize PDF grid: the third page thumbnail has been rotated 90 degrees and now shows its content sideways, while selection checkboxes mark the pages chosen for a batch action.',
       },
     },
     {

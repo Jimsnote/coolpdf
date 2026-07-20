@@ -6,6 +6,7 @@ export const es = {
   nav: {
     home: 'Inicio',
     tools: 'Herramientas',
+    guides: 'Guides',
     about: 'Acerca de',
     faq: 'Preguntas frecuentes',
     openMenu: 'Abrir menú',

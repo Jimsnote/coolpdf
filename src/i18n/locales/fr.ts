@@ -6,6 +6,7 @@ export const fr = {
   nav: {
     home: 'Accueil',
     tools: 'Outils',
+    guides: 'Guides',
     about: 'À propos',
     faq: 'FAQ',
     openMenu: 'Ouvrir le menu',

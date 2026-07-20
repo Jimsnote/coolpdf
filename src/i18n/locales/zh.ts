@@ -6,6 +6,7 @@ export const zh = {
   nav: {
     home: '首页',
     tools: '工具',
+    guides: 'Guides',
     about: '关于我们',
     faq: '常见问题',
     openMenu: '打开菜单',

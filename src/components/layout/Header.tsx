@@ -20,6 +20,8 @@ export function Header({ locale, dict }: HeaderProps) {
   const navItems = [
     { label: dict.nav.home, href: homeHref },
     { label: dict.nav.tools, href: `${homeHref}#tools` },
+    // Guides are English-only, so always link the unprefixed path.
+    { label: dict.nav.guides, href: '/guides/' },
     { label: dict.nav.about, href: localizedPath(locale, '/about') },
     { label: dict.nav.faq, href: localizedPath(locale, '/faq') },
   ];
