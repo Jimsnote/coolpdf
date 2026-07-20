@@ -26,14 +26,32 @@
 - [ ] 隐私政策 AdSense/CMP 条款从"将来时"改为"进行时"（7 语言同步）
 - [ ] 红线自查：不点自己广告、不引导点击、广告位不造成误点
 
-## 二、二期功能（按优先级）
+## 二、二期功能（按优先级，2026-07 竞品分析后重排）
 
+### 第一批 · 快赢包
+- [ ] organize 拆 3 个独立页：remove-pages / extract-pages / reorder-pages（复用现有组件，薄路由 + 预设模式 + 字典条目）
+- [ ] 工具页 H1 下加信任 chips 行（No upload / Runs locally / No sign-up）
+- [ ] page-numbers 的 `n-of-total` 连接词本地化（当前硬编码英文 "of"）
+
+### 第二批 · Markdown 护城河（竞品都没有）
 - [ ] Word(docx) → Markdown（mammoth.js，纯浏览器成熟方案）
 - [ ] Excel(xlsx) → Markdown（SheetJS）
-- [ ] Service Worker 全站离线缓存（FAQ 已按"路线图"口径描述，实现后改文案）
-- [ ] 证件照/护照照排版工具（Konva 画布 + 300DPI 输出；Passport Photo 是高价值 SEO 词；可参考 C:\home\icreate\ipdftoo 的 IDPhotoEditor 实现思路）
-- [ ] page-numbers 的 `n-of-total` 连接词本地化（当前硬编码英文 "of"）
-- [ ] 对比/榜单内容页（"iLovePDF alternative privacy" 等 GEO 关键词博客文）
+
+### 第三批 · 功能补词 + 内容
+- [ ] extract-images-from-pdf（pdf.js operatorList 提取原图）
+- [ ] compare 页 ×3（coolpdf-vs-ilovepdf / vs-smallpdf / vs-sejda；对比表 + FAQ schema，参考 LocalPDF 的"Fact checked + 来源"写法）
+- [ ] 榜单文 1 篇（"5 PDF Tools That Don't Upload Your Files"，GEO 高频引用源）
+
+### 第四批 · 中等功能
+- [ ] heic-to-pdf（iPhone 照片直转 PDF，heic2any 类解码库）
+- [ ] sign-pdf（canvas 手绘签名 + pdf-lib 嵌入）
+
+### 第五批 · 大件二选一（届时按数据拍板）
+- [ ] 证件照/护照照排版（Konva 画布 + 300DPI；"passport photo" 词量极大；可参考 C:\home\icreate\ipdftoo 的 IDPhotoEditor 实现思路）
+- [ ] OCR PDF（tesseract.js WASM；可打通"扫描件 → Markdown"独家链路）
+
+### 暂缓
+- [~] Service Worker 全站离线缓存（SEO 零收益 + 工程风险：17MB wasm 预缓存/版本失效/旧内容过期；FAQ 现有措辞够用，实现后再改文案）
 
 ## 三、已知小项（不紧急，择机处理）
 
