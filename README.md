@@ -14,7 +14,7 @@ Don't take our word for it: disconnect from the internet after a page loads and 
 
 ## Tools
 
-All twelve tools run 100% locally in your browser — no uploads, no sign-up, free forever:
+All tools run 100% locally in your browser — no uploads, no sign-up, free forever:
 
 - **Merge PDF** — combine multiple PDFs into a single file, in the order you want
 - **Split PDF** — extract a page range or split one PDF into separate documents

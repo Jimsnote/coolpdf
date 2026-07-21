@@ -60,7 +60,7 @@ export const zh = {
     },
     toolsSection: {
       heading: '全部工具',
-      subheading: '十二款必备 PDF 工具，每一款都完全在您自己的设备上运行。',
+      subheading: '{count} 款必备 PDF 工具，每一款都完全在您自己的设备上运行。',
     },
     why: {
       heading: '为什么本地处理很重要',
@@ -386,7 +386,7 @@ export const zh = {
       {
         question: 'CoolPDF 提供哪些 PDF 工具？',
         answer:
-          'CoolPDF 提供十二款工具：合并 PDF、拆分 PDF、压缩 PDF、旋转 PDF、整理 PDF、PDF 转 JPG、JPG 转 PDF、保护 PDF、解锁 PDF、PDF 加水印、页码和 PDF 转 Markdown。所有工具都在您的浏览器中本地运行。',
+          'CoolPDF 提供 18 款工具，涵盖合并、分割、压缩、旋转与页面整理、图片转换、加密与解锁、水印与页码、Markdown 转换（PDF、Word、Excel）以及图片提取。所有工具都在您的浏览器中本地运行。',
       },
     ],
   },

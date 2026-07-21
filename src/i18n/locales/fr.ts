@@ -62,7 +62,7 @@ export const fr = {
     toolsSection: {
       heading: 'Les outils',
       subheading:
-        'Douze outils PDF essentiels, chacun fonctionnant entièrement sur votre propre appareil.',
+        '{count} outils PDF essentiels, chacun fonctionnant entièrement sur votre propre appareil.',
     },
     why: {
       heading: 'Pourquoi le traitement local est important',
@@ -392,7 +392,7 @@ export const fr = {
       {
         question: 'Quels outils PDF CoolPDF propose-t-il ?',
         answer:
-          'CoolPDF propose douze outils : Fusionner PDF, Diviser PDF, Compresser PDF, Faire pivoter PDF, Organiser PDF, PDF en JPG, JPG en PDF, Protéger PDF, Déverrouiller PDF, Filigrane PDF, Numéros de page et PDF en Markdown. Tous fonctionnent localement dans votre navigateur.',
+          'CoolPDF propose 18 outils pour fusionner, diviser, compresser, pivoter et organiser les pages, convertir des images, protéger et déverrouiller, ajouter filigranes et numéros de page, convertir en Markdown (PDF, Word, Excel) et extraire des images. Tous fonctionnent localement dans votre navigateur.',
       },
     ],
   },

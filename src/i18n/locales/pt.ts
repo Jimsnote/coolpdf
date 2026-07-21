@@ -63,7 +63,7 @@ export const pt = {
     toolsSection: {
       heading: 'As ferramentas',
       subheading:
-        'Doze ferramentas essenciais de PDF, cada uma a funcionar inteiramente no seu próprio dispositivo.',
+        '{count} ferramentas essenciais de PDF, cada uma a funcionar inteiramente no seu próprio dispositivo.',
     },
     why: {
       heading: 'Por que o processamento local é importante',
@@ -393,7 +393,7 @@ export const pt = {
       {
         question: 'Que ferramentas de PDF o CoolPDF oferece?',
         answer:
-          "O CoolPDF oferece doze ferramentas: Juntar PDF, Dividir PDF, Comprimir PDF, Rodar PDF, Organizar PDF, PDF para JPG, JPG para PDF, Proteger PDF, Desbloquear PDF, Marca de água PDF, Números de página e PDF para Markdown. Todas funcionam localmente no seu navegador.",
+          "O CoolPDF oferece 18 ferramentas para juntar, dividir, comprimir, rodar e organizar páginas, converter imagens, proteger e desbloquear, adicionar marcas de água e números de página, converter para Markdown (PDF, Word, Excel) e extrair imagens. Todas funcionam localmente no seu navegador.",
       },
     ],
   },

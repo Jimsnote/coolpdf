@@ -62,7 +62,7 @@ export const de = {
     toolsSection: {
       heading: 'Die Tools',
       subheading:
-        'Zwölf unverzichtbare PDF-Tools, die vollständig auf Ihrem eigenen Gerät laufen.',
+        '{count} unverzichtbare PDF-Tools, die vollständig auf Ihrem eigenen Gerät laufen.',
     },
     why: {
       heading: 'Warum lokale Verarbeitung wichtig ist',
@@ -392,7 +392,7 @@ export const de = {
       {
         question: 'Welche PDF-Tools bietet CoolPDF an?',
         answer:
-          'CoolPDF bietet zwölf Tools: PDF zusammenfügen, PDF teilen, PDF komprimieren, PDF drehen, PDF organisieren, PDF in JPG, JPG in PDF, PDF schützen, PDF entsperren, PDF mit Wasserzeichen, Seitenzahlen und PDF in Markdown. Alle laufen lokal in Ihrem Browser.',
+          'CoolPDF bietet 18 Tools zum Zusammenfügen, Teilen, Komprimieren, Drehen und Organisieren von Seiten, zur Bildkonvertierung, zum Schutz und Entsperren, für Wasserzeichen und Seitenzahlen, zur Markdown-Konvertierung (PDF, Word, Excel) sowie zum Extrahieren von Bildern. Alle laufen lokal in Ihrem Browser.',
       },
     ],
   },

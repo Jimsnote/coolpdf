@@ -62,7 +62,7 @@ export const it = {
     toolsSection: {
       heading: 'Gli strumenti',
       subheading:
-        'Dodici strumenti PDF essenziali, ognuno dei quali funziona interamente sul tuo dispositivo.',
+        '{count} strumenti PDF essenziali, ognuno dei quali funziona interamente sul tuo dispositivo.',
     },
     why: {
       heading: 'Perché l’elaborazione locale è importante',
@@ -392,7 +392,7 @@ export const it = {
       {
         question: 'Quali strumenti PDF offre CoolPDF?',
         answer:
-          'CoolPDF offre dodici strumenti: Unisci PDF, Dividi PDF, Comprimi PDF, Ruota PDF, Organizza PDF, PDF in JPG, JPG in PDF, Proteggi PDF, Sblocca PDF, Filigrana PDF, Numeri di pagina e PDF in Markdown. Tutti funzionano localmente nel tuo browser.',
+          'CoolPDF offre 18 strumenti per unire, dividere, comprimere, ruotare e organizzare le pagine, convertire immagini, proteggere e sbloccare, aggiungere filigrane e numeri di pagina, convertire in Markdown (PDF, Word, Excel) ed estrarre immagini. Tutti funzionano localmente nel tuo browser.',
       },
     ],
   },

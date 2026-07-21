@@ -62,7 +62,7 @@ export const en = {
     toolsSection: {
       heading: 'The tools',
       subheading:
-        'Twelve essential PDF tools, each one running entirely on your own device.',
+        '{count} essential PDF tools, each one running entirely on your own device.',
     },
     why: {
       heading: 'Why local processing matters',
@@ -392,7 +392,7 @@ export const en = {
       {
         question: 'Which PDF tools does CoolPDF offer?',
         answer:
-          'CoolPDF offers twelve tools: Merge PDF, Split PDF, Compress PDF, Rotate PDF, Organize PDF, PDF to JPG, JPG to PDF, Protect PDF, Unlock PDF, Watermark PDF, Page Numbers, and PDF to Markdown. All of them run locally in your browser.',
+          'CoolPDF offers 18 tools covering merging, splitting, compression, rotation and page organization, JPG and image conversion, encryption and unlocking, watermarking, page numbering, Markdown conversion (PDF, Word, Excel), and image extraction. All of them run locally in your browser.',
       },
     ],
   },

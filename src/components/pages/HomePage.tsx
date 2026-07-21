@@ -5,7 +5,7 @@ import type { Dictionary } from '@/i18n/locales/en';
 import { guides } from '@/lib/guides';
 import { localizedPath, localizedUrl } from '@/lib/seo';
 import { GITHUB_URL, SITE_NAME } from '@/lib/site';
-import { tools, toolNames } from '@/lib/tools';
+import { liveTools, tools, toolNames } from '@/lib/tools';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 interface HomePageProps {
@@ -91,7 +91,9 @@ export function HomePage({ locale, dict }: HomePageProps) {
         <h2 className="text-3xl font-bold tracking-tight text-slate-900">
           {dict.home.toolsSection.heading}
         </h2>
-        <p className="mt-3 text-slate-600">{dict.home.toolsSection.subheading}</p>
+        <p className="mt-3 text-slate-600">
+          {dict.home.toolsSection.subheading.replace('{count}', String(liveTools.length))}
+        </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => {
             const Icon = tool.icon;
