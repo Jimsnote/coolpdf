@@ -15,13 +15,16 @@ CoolPDF is a free, browser-based PDF toolkit. Unlike traditional online PDF tool
 
 ## Tools
 
-Twelve tools, each running 100% client-side in the browser:
+Seventeen tools, each running 100% client-side in the browser:
 
 - Merge PDF — combine multiple PDFs into a single file, in the order you want. https://getcoolpdf.com/merge-pdf/
 - Split PDF — extract a page range or split one PDF into separate documents. https://getcoolpdf.com/split-pdf/
 - Compress PDF — shrink the file size while keeping the quality you need. https://getcoolpdf.com/compress-pdf/
 - Rotate PDF — rotate single pages or an entire document in seconds. https://getcoolpdf.com/rotate-pdf/
 - Organize PDF — reorder, delete, and rearrange pages with drag and drop. https://getcoolpdf.com/organize-pdf/
+- Remove Pages — delete unwanted pages from a PDF with a visual page picker. https://getcoolpdf.com/remove-pages/
+- Extract Pages — save selected pages of a PDF as a new document. https://getcoolpdf.com/extract-pages/
+- Reorder Pages — drag pages into exactly the order you want. https://getcoolpdf.com/reorder-pages/
 - PDF to JPG — turn each PDF page into a high-quality JPG image. https://getcoolpdf.com/pdf-to-jpg/
 - JPG to PDF — convert JPG images into a clean, shareable PDF document. https://getcoolpdf.com/jpg-to-pdf/
 - Protect PDF — add AES-256 password encryption to keep your PDF private. https://getcoolpdf.com/protect-pdf/
@@ -29,6 +32,9 @@ Twelve tools, each running 100% client-side in the browser:
 - Watermark PDF — stamp a text or image watermark over every page, tiled or centered. https://getcoolpdf.com/watermark-pdf/
 - Page Numbers — add page numbers to your PDF, exactly where you want them. https://getcoolpdf.com/page-numbers/
 - PDF to Markdown — extract clean, structured Markdown (headings, paragraphs, lists) from any PDF. https://getcoolpdf.com/pdf-to-markdown/
+- Word to Markdown — convert .docx documents into clean, AI-ready Markdown. https://getcoolpdf.com/docx-to-markdown/
+- Excel to Markdown — turn spreadsheet sheets into Markdown tables. https://getcoolpdf.com/xlsx-to-markdown/
+- Extract Images — pull every embedded image out of a PDF as JPG/PNG files. https://getcoolpdf.com/extract-images/
 
 ## Pages
 
@@ -37,6 +43,18 @@ Twelve tools, each running 100% client-side in the browser:
 - Privacy Policy: https://getcoolpdf.com/privacy/
 - Terms of Service: https://getcoolpdf.com/terms/
 - FAQ: https://getcoolpdf.com/faq/
+
+## Guides
+
+Step-by-step tutorials with real UI screenshots: https://getcoolpdf.com/guides/
+
+## Compare
+
+Fact-checked comparisons with popular PDF tools, including their genuine strengths:
+
+- CoolPDF vs iLovePDF: https://getcoolpdf.com/compare/coolpdf-vs-ilovepdf/
+- CoolPDF vs Smallpdf: https://getcoolpdf.com/compare/coolpdf-vs-smallpdf/
+- CoolPDF vs Sejda: https://getcoolpdf.com/compare/coolpdf-vs-sejda/
 
 ## Source code
 

@@ -135,6 +135,10 @@ export const de = {
       name: 'Excel zu Markdown',
       description: 'Tabellenblätter in Markdown-Tabellen umwandeln.',
     },
+    'extract-images': {
+      name: 'Bilder extrahieren',
+      description: 'Alle eingebetteten Bilder aus einem PDF herausziehen.',
+    },
     'pdf-to-jpg': {
       name: 'PDF in JPG',
       description: 'Wandeln Sie jede PDF-Seite in ein hochwertiges JPG-Bild um.',
@@ -416,6 +420,7 @@ export const de = {
       onlyImages: 'Es werden nur JPG- und PNG-Bilder unterstützt.',
       onlyDocx: 'Nur .docx Word-Dokumente werden unterstützt (das alte .doc-Format nicht).',
       onlyExcel: 'Nur Excel-Arbeitsmappen (.xlsx/.xls) werden unterstützt.',
+      noImages: 'In diesem PDF wurden keine eingebetteten Bilder gefunden.',
       tooManyFiles: 'Sie können höchstens {max} Dateien hinzufügen.',
       fileTooLarge: '„{name}“ ist zu groß — das Limit beträgt {max} MB pro Datei.',
       minFiles: 'Bitte fügen Sie mindestens {min} Dateien hinzu.',
@@ -876,6 +881,48 @@ export const de = {
           question: 'Was ist mit .xls-Dateien?',
           answer:
             'Sowohl moderne .xlsx- als auch ältere .xls-Arbeitsmappen werden unterstützt.',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: 'Bilder aus PDF extrahieren – kostenlos online | CoolPDF',
+      metaDescription:
+        'Alle eingebetteten Bilder aus einem PDF ziehen – Fotos, Scans, Logos – als JPG/PNG-Dateien. 100 % im Browser, keine Uploads, keine Anmeldung.',
+      heading: 'Bilder aus PDF extrahieren',
+      intro:
+        'Ziehen Sie Fotos, Scans und Logos aus jedem PDF heraus und speichern Sie sie als einzelne JPG- oder PNG-Dateien – Originalpixel, ohne Neukomprimierung. Alles läuft lokal in Ihrem Browser.',
+      button: 'Bilder extrahieren',
+      scopeLabel: 'Seiten',
+      scopeAll: 'Alle Seiten',
+      scopeCustom: 'Ausgewählte Seiten',
+      pagesLabel: 'Seiten',
+      pagesPlaceholder: 'z. B. 1-3, 5',
+      progressFound: '{count} Bilder gefunden…',
+      stepsHeading: 'So extrahieren Sie Bilder aus einem PDF',
+      steps: [
+        'Ziehen Sie das PDF in den Upload-Bereich oder klicken Sie zum Durchsuchen.',
+        'Begrenzen Sie die Extraktion optional auf bestimmte Seiten (z. B. 1-3, 5).',
+        'Klicken Sie auf „Bilder extrahieren“ — die eingebetteten Bilder werden einzeln in Originalqualität herausgezogen.',
+        'Laden Sie das Ergebnis herunter: ein einzelnes Bild direkt oder alles gepackt als images.zip.',
+      ],
+      privacyHeading: 'Die Fotos in Ihren Dokumenten bleiben privat',
+      privacyText:
+        'Die Bilder in PDFs sind meist der sensibelste Teil: Pass-Scans, Immobilienfotos, Produktbilder unter NDA. CoolPDF entpackt sie vollständig in Ihrem Browser — die Datei wird von Ihrer eigenen Festplatte gelesen und die Bilder werden darauf zurückgespeichert, ohne dass etwas hochgeladen wird.',
+      faqHeading: 'Häufig gestellte Fragen',
+      faq: [
+        {
+          question: 'Sind die Bilder in Originalqualität?',
+          answer:
+            'Es sind exakt die eingebetteten Bilder. Bilder mit Transparenz werden als PNG gespeichert, alle anderen als hochwertiges JPEG (92 %). Die Extraktion skaliert oder komprimiert nie unter das Original.',
+        },
+        {
+          question: 'Warum habe ich weniger Bilder als erwartet bekommen?',
+          answer:
+            'Die Extraktion zieht eingebettete Rasterbilder heraus. Diagramme und Grafiken, die als Vektor gezeichnet sind, sind keine Rasterbilder und daher nicht enthalten — nutzen Sie PDF zu JPG, um solche Seiten als Bild zu rendern.',
+        },
+        {
+          question: 'Was sind die Grenzen?',
+          answer: 'Dateien bis 100 MB (50 MB auf Mobilgeräten), bis zu 200 Bilder pro Dokument.',
         },
       ],
     },

@@ -1,13 +1,16 @@
 import type { Guide } from './types';
+import { pdfToolsThatDontUpload } from './5-pdf-tools-that-dont-upload-your-files';
 import { howToAddPageNumbersToPdf } from './how-to-add-page-numbers-to-pdf';
 import { howToAddWatermarkToPdf } from './how-to-add-watermark-to-pdf';
 import { howToCompressPdf } from './how-to-compress-pdf';
 import { howToConvertJpgToPdf } from './how-to-convert-jpg-to-pdf';
 import { howToConvertPdfToJpg } from './how-to-convert-pdf-to-jpg';
 import { howToConvertPdfToMarkdown } from './how-to-convert-pdf-to-markdown';
+import { howToExtractPagesFromPdf } from './how-to-extract-pages-from-pdf';
 import { howToMergePdf } from './how-to-merge-pdf';
 import { howToOrganizePdfPages } from './how-to-organize-pdf-pages';
 import { howToPasswordProtectPdf } from './how-to-password-protect-pdf';
+import { howToRemovePagesFromPdf } from './how-to-remove-pages-from-pdf';
 import { howToRotatePdf } from './how-to-rotate-pdf';
 import { howToSplitPdf } from './how-to-split-pdf';
 import { howToUnlockPdf } from './how-to-unlock-pdf';
@@ -23,6 +26,8 @@ export const guides: Guide[] = [
   howToCompressPdf,
   howToRotatePdf,
   howToOrganizePdfPages,
+  howToRemovePagesFromPdf,
+  howToExtractPagesFromPdf,
   howToConvertPdfToJpg,
   howToConvertJpgToPdf,
   howToPasswordProtectPdf,
@@ -30,6 +35,7 @@ export const guides: Guide[] = [
   howToAddWatermarkToPdf,
   howToAddPageNumbersToPdf,
   howToConvertPdfToMarkdown,
+  pdfToolsThatDontUpload,
 ];
 
 /** Looks up a guide by its URL slug. */

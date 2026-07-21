@@ -135,6 +135,10 @@ export const es = {
       name: 'Excel a Markdown',
       description: 'Convierte hojas de cálculo en tablas Markdown.',
     },
+    'extract-images': {
+      name: 'Extraer imágenes',
+      description: 'Saca todas las imágenes incrustadas de un PDF.',
+    },
     'pdf-to-jpg': {
       name: 'PDF a JPG',
       description: 'Convierte cada página del PDF en una imagen JPG de alta calidad.',
@@ -416,6 +420,7 @@ export const es = {
       onlyImages: 'Solo se admiten imágenes JPG y PNG.',
       onlyDocx: 'Solo se admiten documentos Word .docx (no el antiguo .doc).',
       onlyExcel: 'Solo se admiten libros de Excel (.xlsx/.xls).',
+      noImages: 'No se encontraron imágenes incrustadas en este PDF.',
       tooManyFiles: 'Puedes añadir como máximo {max} archivos.',
       fileTooLarge: '«{name}» es demasiado grande: el límite es de {max} MB por archivo.',
       minFiles: 'Añade al menos {min} archivos.',
@@ -875,6 +880,48 @@ export const es = {
         {
           question: '¿Y los archivos .xls?',
           answer: 'Se admiten tanto los libros modernos .xlsx como los antiguos .xls.',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: 'Extraer imágenes de un PDF gratis online | CoolPDF',
+      metaDescription:
+        'Saca todas las imágenes incrustadas de un PDF — fotos, escaneos, logos — como archivos JPG/PNG. 100 % en tu navegador, sin subidas, sin registro.',
+      heading: 'Extraer imágenes de un PDF',
+      intro:
+        'Saca fotos, escaneos y logos de cualquier PDF y guárdalos como archivos JPG o PNG individuales — píxeles originales, sin recompresión. Todo se ejecuta localmente en tu navegador.',
+      button: 'Extraer imágenes',
+      scopeLabel: 'Páginas',
+      scopeAll: 'Todas las páginas',
+      scopeCustom: 'Páginas seleccionadas',
+      pagesLabel: 'Páginas',
+      pagesPlaceholder: 'p. ej. 1-3, 5',
+      progressFound: '{count} imágenes encontradas…',
+      stepsHeading: 'Cómo extraer imágenes de un PDF',
+      steps: [
+        'Añade el PDF arrastrándolo al área de carga, o haz clic para examinar.',
+        'Opcionalmente limita la extracción a páginas concretas (p. ej. 1-3, 5).',
+        'Haz clic en «Extraer imágenes» — las imágenes incrustadas se extraen una a una, en calidad original.',
+        'Descarga el resultado: una sola imagen directamente, o todo en images.zip.',
+      ],
+      privacyHeading: 'Las fotos dentro de tus documentos siguen siendo privadas',
+      privacyText:
+        'Las imágenes dentro de los PDF suelen ser la parte más sensible: escaneos de pasaportes, fotos de propiedades, imágenes de producto bajo NDA. CoolPDF las desempaqueta por completo en tu navegador — el archivo se lee de tu propio disco y las imágenes se guardan de vuelta en él, sin subir nada entre medias.',
+      faqHeading: 'Preguntas frecuentes',
+      faq: [
+        {
+          question: '¿Las imágenes tienen calidad original?',
+          answer:
+            'Son exactamente las imágenes incrustadas. Las que tienen transparencia se guardan como PNG, el resto como JPEG de alta calidad (92 %). La extracción nunca reduce ni recompromete por debajo del original.',
+        },
+        {
+          question: '¿Por qué obtuve menos imágenes de las esperadas?',
+          answer:
+            'El extractor saca imágenes raster incrustadas. Los gráficos y diagramas dibujados como vectores no son imágenes raster y no se incluyen — usa PDF a JPG para renderizar esas páginas como imágenes.',
+        },
+        {
+          question: '¿Cuáles son los límites?',
+          answer: 'Archivos de hasta 100 MB (50 MB en móvil), hasta 200 imágenes por documento.',
         },
       ],
     },

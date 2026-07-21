@@ -135,6 +135,10 @@ export const it = {
       name: 'Excel in Markdown',
       description: 'Trasforma i fogli di calcolo in tabelle Markdown.',
     },
+    'extract-images': {
+      name: 'Estrai immagini',
+      description: 'Estrai tutte le immagini incorporate da un PDF.',
+    },
     'pdf-to-jpg': {
       name: 'PDF in JPG',
       description: 'Trasforma ogni pagina del PDF in un’immagine JPG di alta qualità.',
@@ -416,6 +420,7 @@ export const it = {
       onlyImages: 'Sono supportate solo immagini JPG e PNG.',
       onlyDocx: 'Sono supportati solo documenti Word .docx (non il vecchio .doc).',
       onlyExcel: 'Sono supportate solo cartelle di lavoro Excel (.xlsx/.xls).',
+      noImages: 'Nessuna immagine incorporata trovata in questo PDF.',
       tooManyFiles: 'Puoi aggiungere al massimo {max} file.',
       fileTooLarge: '“{name}” è troppo grande — il limite è di {max} MB per file.',
       minFiles: 'Aggiungi almeno {min} file.',
@@ -875,6 +880,48 @@ export const it = {
         {
           question: 'E i file .xls?',
           answer: 'Sono supportate sia le moderne cartelle .xlsx che le vecchie .xls.',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: 'Estrarre immagini da un PDF gratis online | CoolPDF',
+      metaDescription:
+        'Estrai tutte le immagini incorporate da un PDF — foto, scansioni, loghi — come file JPG/PNG. 100% nel tuo browser, nessun caricamento, nessuna registrazione.',
+      heading: 'Estrarre immagini da un PDF',
+      intro:
+        'Estrai foto, scansioni e loghi da qualsiasi PDF e salvali come singoli file JPG o PNG — pixel originali, senza ricompressione. Tutto avviene localmente nel tuo browser.',
+      button: 'Estrai immagini',
+      scopeLabel: 'Pagine',
+      scopeAll: 'Tutte le pagine',
+      scopeCustom: 'Pagine selezionate',
+      pagesLabel: 'Pagine',
+      pagesPlaceholder: 'es. 1-3, 5',
+      progressFound: '{count} immagini trovate…',
+      stepsHeading: 'Come estrarre immagini da un PDF',
+      steps: [
+        'Aggiungi il PDF trascinandolo nell’area di caricamento, o fai clic per sfogliare.',
+        'Facoltativamente limita l’estrazione a pagine specifiche (es. 1-3, 5).',
+        'Fai clic su «Estrai immagini» — le immagini incorporate vengono estratte una a una, in qualità originale.',
+        'Scarica il risultato: una singola immagine direttamente, o tutto in images.zip.',
+      ],
+      privacyHeading: 'Le foto nei tuoi documenti restano private',
+      privacyText:
+        'Le immagini nei PDF sono spesso la parte più sensibile: scansioni di passaporti, foto di immobili, immagini di prodotto sotto NDA. CoolPDF le scompatta interamente nel tuo browser — il file viene letto dal tuo disco e le immagini vi vengono riscritte, senza caricare nulla nel frattempo.',
+      faqHeading: 'Domande frequenti',
+      faq: [
+        {
+          question: 'Le immagini sono in qualità originale?',
+          answer:
+            'Sono esattamente le immagini incorporate. Quelle con trasparenza vengono salvate come PNG, le altre come JPEG di alta qualità (92%). L’estrazione non riduce né ricomprime mai sotto l’originale.',
+        },
+        {
+          question: 'Perché ho ottenuto meno immagini del previsto?',
+          answer:
+            'L’estrattore recupera le immagini raster incorporate. Grafici e diagrammi disegnati come vettori non sono immagini raster e non sono inclusi — usa PDF in JPG per renderizzare quelle pagine come immagini.',
+        },
+        {
+          question: 'Quali sono i limiti?',
+          answer: 'File fino a 100 MB (50 MB su mobile), fino a 200 immagini per documento.',
         },
       ],
     },

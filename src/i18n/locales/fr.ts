@@ -135,6 +135,10 @@ export const fr = {
       name: 'Excel en Markdown',
       description: 'Transformez les feuilles de calcul en tableaux Markdown.',
     },
+    'extract-images': {
+      name: 'Extraire les images',
+      description: 'Récupérez toutes les images intégrées d’un PDF.',
+    },
     'pdf-to-jpg': {
       name: 'PDF en JPG',
       description: 'Transformez chaque page PDF en image JPG de haute qualité.',
@@ -416,6 +420,7 @@ export const fr = {
       onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
       onlyDocx: 'Seuls les documents Word .docx sont pris en charge (pas l’ancien .doc).',
       onlyExcel: 'Seuls les classeurs Excel (.xlsx/.xls) sont pris en charge.',
+      noImages: 'Aucune image intégrée n’a été trouvée dans ce PDF.',
       tooManyFiles: 'Vous pouvez ajouter au maximum {max} fichiers.',
       fileTooLarge: '« {name} » est trop volumineux — la limite est de {max} Mo par fichier.',
       minFiles: 'Veuillez ajouter au moins {min} fichiers.',
@@ -875,6 +880,48 @@ export const fr = {
         {
           question: 'Et les fichiers .xls ?',
           answer: 'Les classeurs modernes .xlsx comme les anciens .xls sont pris en charge.',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: 'Extraire les images d’un PDF gratuitement | CoolPDF',
+      metaDescription:
+        'Récupérez toutes les images intégrées d’un PDF — photos, scans, logos — en fichiers JPG/PNG. 100 % dans votre navigateur, sans téléversement ni inscription.',
+      heading: 'Extraire les images d’un PDF',
+      intro:
+        'Récupérez les photos, scans et logos de n’importe quel PDF et enregistrez-les en fichiers JPG ou PNG individuels — pixels d’origine, sans recompression. Tout s’exécute localement dans votre navigateur.',
+      button: 'Extraire les images',
+      scopeLabel: 'Pages',
+      scopeAll: 'Toutes les pages',
+      scopeCustom: 'Pages sélectionnées',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'ex. 1-3, 5',
+      progressFound: '{count} images trouvées…',
+      stepsHeading: 'Comment extraire les images d’un PDF',
+      steps: [
+        'Ajoutez le PDF en le glissant sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Limitez éventuellement l’extraction à certaines pages (ex. 1-3, 5).',
+        'Cliquez sur « Extraire les images » — les images intégrées sont extraites une par une, en qualité d’origine.',
+        'Téléchargez le résultat : une seule image directement, ou tout en images.zip.',
+      ],
+      privacyHeading: 'Les photos dans vos documents restent privées',
+      privacyText:
+        'Les images dans les PDF sont souvent la partie la plus sensible : scans de passeports, photos immobilières, visuels produits sous NDA. CoolPDF les décompresse entièrement dans votre navigateur — le fichier est lu depuis votre propre disque et les images y sont réenregistrées, sans rien téléverser entre les deux.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Les images sont-elles en qualité d’origine ?',
+          answer:
+            'Ce sont exactement les images intégrées. Celles avec transparence sont enregistrées en PNG, les autres en JPEG haute qualité (92 %). L’extraction ne réduit ni ne recompresse jamais en dessous de l’original.',
+        },
+        {
+          question: 'Pourquoi ai-je obtenu moins d’images que prévu ?',
+          answer:
+            'L’extracteur récupère les images matricielles intégrées. Les graphiques et diagrammes dessinés en vectoriel ne sont pas des images matricielles et ne sont donc pas inclus — utilisez PDF en JPG pour rendre ces pages en images.',
+        },
+        {
+          question: 'Quelles sont les limites ?',
+          answer: 'Fichiers jusqu’à 100 Mo (50 Mo sur mobile), jusqu’à 200 images par document.',
         },
       ],
     },

@@ -135,6 +135,10 @@ export const en = {
       name: 'Excel to Markdown',
       description: 'Turn spreadsheet sheets into Markdown tables.',
     },
+    'extract-images': {
+      name: 'Extract Images',
+      description: 'Pull every embedded image out of a PDF.',
+    },
     'pdf-to-jpg': {
       name: 'PDF to JPG',
       description: 'Turn each PDF page into a high-quality JPG image.',
@@ -416,6 +420,7 @@ export const en = {
       onlyImages: 'Only JPG and PNG images are supported.',
       onlyDocx: 'Only .docx Word documents are supported (legacy .doc is not).',
       onlyExcel: 'Only Excel workbooks (.xlsx/.xls) are supported.',
+      noImages: 'No embedded images were found in this PDF.',
       tooManyFiles: 'You can add at most {max} files.',
       fileTooLarge: '"{name}" is too large — the limit is {max} MB per file.',
       minFiles: 'Please add at least {min} files.',
@@ -875,6 +880,48 @@ export const en = {
         {
           question: 'What about .xls files?',
           answer: 'Both modern .xlsx and legacy .xls workbooks are supported.',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: 'Extract Images from PDF Free Online | CoolPDF',
+      metaDescription:
+        'Pull every embedded image out of a PDF — photos, scans, logos — as JPG/PNG files. 100% in your browser, no uploads, no sign-up.',
+      heading: 'Extract Images from PDF',
+      intro:
+        'Pull the photos, scans, and logos out of any PDF and save them as individual JPG or PNG files — original pixels, no re-compression. Everything runs locally in your browser.',
+      button: 'Extract images',
+      scopeLabel: 'Pages',
+      scopeAll: 'All pages',
+      scopeCustom: 'Selected pages',
+      pagesLabel: 'Pages',
+      pagesPlaceholder: 'e.g. 1-3, 5',
+      progressFound: 'Found {count} images…',
+      stepsHeading: 'How to extract images from a PDF',
+      steps: [
+        'Add the PDF by dragging it onto the upload area, or click to browse.',
+        'Optionally limit the extraction to specific pages (e.g. 1-3, 5).',
+        'Click "Extract images" — the embedded images are pulled out one by one, in their original quality.',
+        'Download the result: a single image directly, or everything packed as images.zip.',
+      ],
+      privacyHeading: 'The photos inside your documents stay private',
+      privacyText:
+        'The images inside PDFs are usually the most sensitive part: passport scans, property photos, product shots under NDA. CoolPDF unpacks them entirely in your browser — the file is read from your own disk and the images are saved back to it, with nothing uploaded in between.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Are the images the original quality?',
+          answer:
+            'They are the exact embedded images. Pictures with transparency are saved as PNG, everything else as high-quality JPEG (92%). The extraction never downscales or re-compresses below the original.',
+        },
+        {
+          question: 'Why did I get fewer images than expected?',
+          answer:
+            'The extractor pulls out embedded raster images. Charts and diagrams drawn as vector graphics are not raster images, so they are not included — use PDF to JPG to render those pages as images instead.',
+        },
+        {
+          question: 'What are the limits?',
+          answer: 'Files up to 100 MB (50 MB on mobile), up to 200 images per document.',
         },
       ],
     },

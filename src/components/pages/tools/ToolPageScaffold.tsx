@@ -20,6 +20,7 @@ export type ToolSlug =
   | 'reorder-pages'
   | 'docx-to-markdown'
   | 'xlsx-to-markdown'
+  | 'extract-images'
   | 'pdf-to-jpg'
   | 'compress-pdf'
   | 'protect-pdf'

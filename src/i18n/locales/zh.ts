@@ -132,6 +132,10 @@ export const zh = {
       name: 'Excel 转 Markdown',
       description: '将电子表格转换为 Markdown 表格。',
     },
+    'extract-images': {
+      name: '提取图片',
+      description: '提取 PDF 中所有内嵌图片。',
+    },
     'pdf-to-jpg': {
       name: 'PDF 转 JPG',
       description: '将 PDF 的每一页转换为高质量 JPG 图片。',
@@ -409,6 +413,7 @@ export const zh = {
       onlyImages: '仅支持 JPG 和 PNG 图片。',
       onlyDocx: '仅支持 .docx 格式的 Word 文档（不支持旧版 .doc）。',
       onlyExcel: '仅支持 Excel 工作簿（.xlsx/.xls）。',
+      noImages: '此 PDF 中未找到内嵌图片。',
       tooManyFiles: '最多只能添加 {max} 个文件。',
       fileTooLarge: '“{name}”过大——每个文件上限为 {max} MB。',
       minFiles: '请至少添加 {min} 个文件。',
@@ -860,6 +865,48 @@ export const zh = {
         {
           question: '支持 .xls 文件吗？',
           answer: '现代的 .xlsx 和旧版的 .xls 工作簿都支持。',
+        },
+      ],
+    },
+    'extract-images': {
+      metaTitle: '免费在线提取 PDF 图片 - 无需上传 | CoolPDF',
+      metaDescription:
+        '提取 PDF 中所有内嵌图片——照片、扫描件、Logo——保存为 JPG/PNG 文件。100% 在浏览器本地完成，无需上传，无需注册。',
+      heading: '提取 PDF 图片',
+      intro:
+        '从任何 PDF 中提取照片、扫描件和 Logo，保存为单独的 JPG 或 PNG 文件——原始像素，无二次压缩。一切在您的浏览器本地运行。',
+      button: '提取图片',
+      scopeLabel: '页面',
+      scopeAll: '所有页面',
+      scopeCustom: '指定页面',
+      pagesLabel: '页面',
+      pagesPlaceholder: '例如 1-3, 5',
+      progressFound: '已找到 {count} 张图片…',
+      stepsHeading: '如何提取 PDF 中的图片',
+      steps: [
+        '将 PDF 拖入上传区域，或点击浏览。',
+        '也可以将提取范围限定到指定页面（例如 1-3, 5）。',
+        '点击“提取图片”——内嵌图片将以原始质量逐张提取出来。',
+        '下载结果：单张图片直接下载，多张打包为 images.zip。',
+      ],
+      privacyHeading: '文档里的照片保持私密',
+      privacyText:
+        'PDF 里的图片往往是最敏感的部分：护照扫描件、房产照片、保密协议下的产品图。CoolPDF 完全在您的浏览器中解包它们——文件从您自己的磁盘读取，图片写回磁盘，中间没有任何上传。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '图片是原始质量吗？',
+          answer:
+            '就是内嵌的原图。带透明通道的保存为 PNG，其余保存为高质量 JPEG（92%）。提取过程不会降低分辨率或再次压缩。',
+        },
+        {
+          question: '为什么提取到的图片比预期少？',
+          answer:
+            '本工具提取的是内嵌的位图图片。以矢量方式绘制的图表和示意图不是位图，因此不包含在内——如需将这类页面转为图片，请使用 PDF 转 JPG。',
+        },
+        {
+          question: '有什么限制？',
+          answer: '文件最大 100 MB（移动端 50 MB），每个文档最多 200 张图片。',
         },
       ],
     },
