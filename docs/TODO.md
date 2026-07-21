@@ -34,8 +34,8 @@
 - [x] page-numbers 的 `n-of-total` 连接词本地化（当前硬编码英文 "of"）
 
 ### 第二批 · Markdown 护城河（竞品都没有）
-- [ ] Word(docx) → Markdown（mammoth.js，纯浏览器成熟方案）
-- [ ] Excel(xlsx) → Markdown（SheetJS）
+- [x] Word(docx) → Markdown（mammoth.js + turndown，纯浏览器；Node 实测标题/加粗/列表/表格全对）
+- [x] Excel(xlsx) → Markdown（SheetJS，每工作表一个 Markdown 表格节）
 
 ### 第三批 · 功能补词 + 内容
 - [ ] extract-images-from-pdf（pdf.js operatorList 提取原图）
