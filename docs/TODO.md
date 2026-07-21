@@ -38,9 +38,10 @@
 - [x] Excel(xlsx) → Markdown（SheetJS，每工作表一个 Markdown 表格节）
 
 ### 第三批 · 功能补词 + 内容
-- [ ] extract-images-from-pdf（pdf.js operatorList 提取原图）
-- [ ] compare 页 ×3（coolpdf-vs-ilovepdf / vs-smallpdf / vs-sejda；对比表 + FAQ schema，参考 LocalPDF 的"Fact checked + 来源"写法）
-- [ ] 榜单文 1 篇（"5 PDF Tools That Don't Upload Your Files"，GEO 高频引用源）
+- [x] extract-images-from-pdf（pdf.js operatorList 提取原图；v6 机制：注册回调→渲染触发解析→ImageBitmap 收割）
+- [x] compare 页 ×3（coolpdf-vs-ilovepdf / vs-smallpdf / vs-sejda；对比表 + "对手强项"诚实栏 + Fact checked + 来源 + FAQ schema）
+- [x] 榜单文 1 篇（"5 PDF Tools That Don't Upload Your Files"，GEO 高频引用源）
+- [x] remove/extract 专属教程 2 篇（第一批拆页的配套教程）
 
 ### 第四批 · 中等功能
 - [ ] heic-to-pdf（iPhone 照片直转 PDF，heic2any 类解码库）
