@@ -24,3 +24,6 @@ Thumbs.db
 
 # Session transcripts (private, never publish)
 kimi-export-*.md
+
+# Local debug/scratch scripts
+tmp-*
