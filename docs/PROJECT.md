@@ -196,7 +196,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 ## 6. 多语言说明
 
-- 8 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制）；新工具允许英文占位先行（heic-to-pdf 为首例：其余 7 语言暂为英文文案，翻译后补），既有内容零遗留英文（审查 B 全量比对确认）
+- 8 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制）；新工具允许英文占位先行、翻译随后补全（heic-to-pdf 已按此流程完成：英文占位上线 → 7 语言翻译补齐），当前零遗留英文
 - 术语统一：三支柱固定译法；工具名按各语言搜索习惯（PDF komprimieren / Compresser PDF / Comprimi PDF / Comprimir PDF / Compactar PDF / 压缩 PDF / PDF 圧縮 等）
 - 葡语统一欧洲葡语（ficheiro/registo/palavra-passe 体系）
 - 中文版定位：服务海外华人，无备案百度基本不收录，不作为流量主力

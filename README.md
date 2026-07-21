@@ -28,6 +28,13 @@ All tools run 100% locally in your browser — no uploads, no sign-up, free fore
 - **Watermark PDF** — stamp a text or image watermark over every page, tiled or centered
 - **Page Numbers** — add page numbers to your PDF, exactly where you want them
 - **PDF to Markdown** — extract clean, structured Markdown from any PDF
+- **Word to Markdown** — convert .docx documents into clean, AI-ready Markdown
+- **Excel to Markdown** — turn spreadsheet sheets into Markdown tables
+- **Remove Pages** — delete unwanted pages from a PDF with a visual page picker
+- **Extract Pages** — save selected pages of a PDF as a new document
+- **Reorder Pages** — drag pages into exactly the order you want
+- **Extract Images** — pull every embedded image out of a PDF as JPG/PNG files
+- **HEIC to PDF** — turn iPhone HEIC photos into a clean, shareable PDF document
 
 ## Tech stack
 

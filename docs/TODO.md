@@ -45,7 +45,7 @@
 
 ### 第四批 · 中等功能
 - [x] heic-to-pdf（iPhone 照片直转 PDF，heic2any 类解码库 → 实际用 heic-to/csp 1.5.2（libheif 1.22.2，LGPL-3.0，blob Worker 解码零 eval 过 CSP）；复用 jpg-to-pdf 的 orientation/fit 管线，英文版先行）
-- [ ] heic-to-pdf 其余 7 语言翻译补全（当前英文占位，type-check 已保证结构同构）
+- [x] heic-to-pdf 其余 7 语言翻译补全（de/fr/it/es/pt/zh/ja，术语对齐各语言 jpg-to-pdf 既有译法；占位符/meta 长度机器校验通过）
 - [ ] sign-pdf（canvas 手绘签名 + pdf-lib 嵌入）
 
 ### 第五批 · 大件二选一（届时按数据拍板）

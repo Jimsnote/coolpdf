@@ -75,6 +75,6 @@ src/
 
 ## 7. 当前状态与下一步
 
-- 已完成：M1-M4 工具全量（现 19 个，heic-to-pdf 为英文先行版）+ 8 语言 + SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过
+- 已完成：M1-M4 工具全量（现 19 个，8 语言齐全）+ SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过
 - 进行中/待办：`docs/TODO.md`（Search Console 提交 → 养收录 → AdSense；二期：Word/Excel→Markdown、Service Worker 离线、证件照排版）
 - 已知限制：文字水印 canvas 路径、EXIF 重编码路径未经 Node 测试（浏览器已人工验收）；qpdf AES-256 下 accessibility 权限不生效（规范行为，FAQ 已说明）
