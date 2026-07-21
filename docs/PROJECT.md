@@ -15,7 +15,7 @@
   3. **Free Forever** — 免费无次数限制
 - **变现模式**：Google AdSense（待接入，见第 7 节）
 - **许可证**：**AGPL-3.0**（因压缩功能使用 Ghostscript WASM，全仓库开源；`LICENSE` 已就位）
-- **语言**：en（根路径）+ de / fr / it / es / pt / zh（前缀路径），共 7 语言
+- **语言**：en（根路径）+ de / fr / it / es / pt / zh / ja（前缀路径），共 8 语言
 - **无需备案**：域名与托管均在境外（Cloudflare 美国），不涉及中国 ICP
 
 ---
@@ -173,16 +173,16 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 - **jspawn 包升级**：`copy-wasm.mjs` 从安装版本自动生成 `manifest.json`，worker 运行时读取——**不要硬编码 wasm 文件名**；升级后无需改代码，但需验证三工具
 - **Node 版本**：锁 22（.nvmrc + engines）；Cloudflare Pages v3 镜像不读 engines，必要时在 Pages 环境变量设 `NODE_VERSION=22`
 - **npm audit**：当前 2 个 moderate（postcss 传递依赖，仅构建期，静态导出无暴露面），可接受
-- **新增工具流程**：`src/lib/pdf/` 纯函数 → `src/components/tools/` 组件 → `ToolPageScaffold` 加 slug → `(en)/` + `(i18n)/[locale]/` 各加薄路由 → 7 语言字典加 `toolPages` 条目（只增不改）→ `tools.ts` 置 live（sitemap/首页自动生效）→ type-check/lint/build 三件套 → Node 实测核心逻辑
-- **翻译修改流程**：只改 `src/i18n/locales/*.ts`；en 是类型源头，改结构先改 en；metaTitle ≤60 字符、metaDescription ≤160 字符（zh title ≤30 汉字）
+- **新增工具流程**：`src/lib/pdf/` 纯函数 → `src/components/tools/` 组件 → `ToolPageScaffold` 加 slug → `(en)/` + `(i18n)/[locale]/` 各加薄路由 → 8 语言字典加 `toolPages` 条目（只增不改）→ `tools.ts` 置 live（sitemap/首页自动生效）→ type-check/lint/build 三件套 → Node 实测核心逻辑
+- **翻译修改流程**：只改 `src/i18n/locales/*.ts`；en 是类型源头，改结构先改 en；metaTitle ≤60 字符、metaDescription ≤160 字符（zh title ≤30 汉字、ja title ≤35 全角字符）
 
 ---
 
 ## 5. SEO / GEO 体系
 
-- **hreflang**：每页 7 语言 + x-default 互链，canonical 自指，og:url 一致（修复后 119 页机器校验）
-- **html lang**：route groups 双根布局，各语言页面 lang 正确（en/de/fr/it/es/pt/zh）
-- **sitemap.xml**：119 URL（5 内容页 + 12 工具页 × 7 语言），无 lastmod（避免构建时间戳失真）
+- **hreflang**：每页 8 语言 + x-default 互链，canonical 自指，og:url 一致（修复后机器校验）
+- **html lang**：route groups 双根布局，各语言页面 lang 正确（en/de/fr/it/es/pt/zh/ja）
+- **sitemap.xml**：136 URL（5 内容页 + 12 工具页 × 8 语言），无 lastmod（避免构建时间戳失真）
 - **robots.txt**：全放行 + 显式 Allow AI 爬虫
 - **llms.txt**：12 工具页带 URL 清单 + 核心事实
 - **JSON-LD**：首页 WebApplication（featureList 按 locale 本地化、仅 live 工具）+ Organization；每个工具页 WebApplication + HowTo + FAQPage（与可见 FAQ 同源生成，无 Google 处罚风险）；FAQ 页 FAQPage
@@ -195,8 +195,8 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 ## 6. 多语言说明
 
-- 7 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制），零遗留英文（审查 B 全量比对确认）
-- 术语统一：三支柱固定译法；工具名按各语言搜索习惯（PDF komprimieren / Compresser PDF / Comprimi PDF / Comprimir PDF / Compactar PDF / 压缩 PDF 等）
+- 8 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制），零遗留英文（审查 B 全量比对确认）
+- 术语统一：三支柱固定译法；工具名按各语言搜索习惯（PDF komprimieren / Compresser PDF / Comprimi PDF / Comprimir PDF / Compactar PDF / 压缩 PDF / PDF 圧縮 等）
 - 葡语统一欧洲葡语（ficheiro/registo/palavra-passe 体系）
 - 中文版定位：服务海外华人，无备案百度基本不收录，不作为流量主力
 
@@ -214,7 +214,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 5. 放置 AdBanner（建议：工具区下方、how-to 内容段中部——**绝不挨着工具按钮**）
 6. **装 CMP**（GDPR 必须）：CookieYes 免费档等支持 Google Consent Mode v2 的方案
 7. **放宽 `_headers` CSP**（见 4.3）
-8. 隐私政策改为现在时（当前文本已按"may/planned"写，启用广告后把第 4 节与 FAQ 两条改回进行时，7 语言同步）
+8. 隐私政策改为现在时（当前文本已按"may/planned"写，启用广告后把第 4 节与 FAQ 两条改回进行时，8 语言同步）
 
 红线：不点自己广告、不引导点击、广告位不造成误点。
 

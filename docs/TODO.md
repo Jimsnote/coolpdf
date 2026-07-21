@@ -23,7 +23,7 @@
 - [ ] `public/ads.txt` 添加授权行
 - [ ] `public/_headers` CSP 按 Google 官方清单放宽（docs/PROJECT.md 4.3）
 - [ ] 装 CMP（CookieYes 免费档，支持 Consent Mode v2）
-- [ ] 隐私政策 AdSense/CMP 条款从"将来时"改为"进行时"（7 语言同步）
+- [ ] 隐私政策 AdSense/CMP 条款从"将来时"改为"进行时"（8 语言同步）
 - [ ] 红线自查：不点自己广告、不引导点击、广告位不造成误点
 
 ## 二、二期功能（按优先级，2026-07 竞品分析后重排）

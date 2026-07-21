@@ -6,8 +6,9 @@ import { it } from './locales/it';
 import { es } from './locales/es';
 import { pt } from './locales/pt';
 import { zh } from './locales/zh';
+import { ja } from './locales/ja';
 
-const dictionaries: Record<Locale, Dictionary> = { en, de, fr, it, es, pt, zh };
+const dictionaries: Record<Locale, Dictionary> = { en, de, fr, it, es, pt, zh, ja };
 
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale];

@@ -11,7 +11,7 @@ CoolPDF is a free, browser-based PDF toolkit. Unlike traditional online PDF tool
 - Free forever: every tool is free with no usage limits, no watermarks, and no premium tier; the site is funded by unobtrusive advertising.
 - Open source: the full codebase is released under the GNU AGPL-3.0 license and can be audited on GitHub.
 - Verifiable privacy: the tools keep working after disconnecting from the internet, and browser DevTools show zero file uploads.
-- Available in 7 languages: English, German, French, Italian, Spanish, Portuguese, and Chinese.
+- Available in 8 languages: English, German, French, Italian, Spanish, Portuguese, Chinese, and Japanese.
 
 ## Tools
 

@@ -1,4 +1,4 @@
-export const locales = ['en', 'de', 'fr', 'it', 'es', 'pt', 'zh'] as const;
+export const locales = ['en', 'de', 'fr', 'it', 'es', 'pt', 'zh', 'ja'] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -23,6 +23,7 @@ export const localeLabels: Record<Locale, string> = {
   es: 'Español',
   pt: 'Português',
   zh: '中文',
+  ja: '日本語',
 };
 
 /** Open Graph locale values (og:locale). */
@@ -34,4 +35,5 @@ export const ogLocales: Record<Locale, string> = {
   es: 'es_ES',
   pt: 'pt_PT',
   zh: 'zh_CN',
+  ja: 'ja_JP',
 };

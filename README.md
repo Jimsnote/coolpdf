@@ -34,7 +34,7 @@ All tools run 100% locally in your browser — no uploads, no sign-up, free fore
 - **Next.js 15** (App Router, `output: 'export'` static export to `out/`) + **React 19** + **TypeScript** (strict)
 - **Tailwind CSS 3.4** — no UI framework, system font stack
 - **lucide-react** icons
-- Hand-rolled lightweight i18n (no next-intl): 7 locales — `en` (default, at the root), `de`, `fr`, `it`, `es`, `pt`, `zh` (path-prefixed)
+- Hand-rolled lightweight i18n (no next-intl): 8 locales — `en` (default, at the root), `de`, `fr`, `it`, `es`, `pt`, `zh`, `ja` (path-prefixed)
 - Zero backend: no API routes, no server code, nothing to deploy but static files
 
 ## Local development
@@ -64,8 +64,8 @@ src/
 ├── app/                    # routes: English pages at the root, other locales under [locale]/
 │   ├── page.tsx            # Home (en) — thin wrapper around components/pages/*
 │   ├── about|privacy|terms|faq/page.tsx
-│   ├── [locale]/           # mirrored routes for de/fr/it/es/pt/zh (generateStaticParams)
-│   ├── sitemap.ts          # all pages × 7 locales with hreflang alternates
+│   ├── [locale]/           # mirrored routes for de/fr/it/es/pt/zh/ja (generateStaticParams)
+│   ├── sitemap.ts          # all pages × 8 locales with hreflang alternates
 │   └── robots.ts           # allow all + explicit AI-crawler rules
 ├── components/
 │   ├── layout/             # Header (with language switcher), Footer, SiteShell
@@ -75,7 +75,7 @@ src/
 ├── i18n/
 │   ├── config.ts           # locales, defaultLocale, isLocale()
 │   ├── get-dictionary.ts
-│   └── locales/            # en.ts defines the Dictionary type; the other 6 mirror it
+│   └── locales/            # en.ts defines the Dictionary type; the other 7 mirror it
 └── lib/
     ├── site.ts             # SITE_URL, GITHUB_URL, tokens (env-overridable)
     ├── seo.ts              # buildAlternates() (canonical + hreflang), pageMetadata()
