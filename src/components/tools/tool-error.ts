@@ -22,6 +22,7 @@ export function toolErrorMessage(err: unknown, dict: Dictionary): string {
     if (err.code === 'rangeOutOfBounds') return errors.rangeOutOfBounds;
     if (err.code === 'noPages') return errors.noPages;
     if (err.code === 'encrypted') return errors.encrypted;
+    if (err.code === 'corruptedFile') return errors.corruptedFile;
     if (err.code === 'corrupted') return errors.corrupted;
     if (err.code === 'wrong-password') return errors.wrongPassword;
     if (err.code === 'not-encrypted') return errors.notEncrypted;

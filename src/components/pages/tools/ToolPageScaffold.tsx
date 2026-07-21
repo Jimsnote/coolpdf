@@ -18,6 +18,8 @@ export type ToolSlug =
   | 'remove-pages'
   | 'extract-pages'
   | 'reorder-pages'
+  | 'docx-to-markdown'
+  | 'xlsx-to-markdown'
   | 'pdf-to-jpg'
   | 'compress-pdf'
   | 'protect-pdf'

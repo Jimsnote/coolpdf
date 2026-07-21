@@ -127,6 +127,14 @@ export const fr = {
       name: 'Réorganiser des pages',
       description: 'Faites glisser les pages exactement dans l’ordre voulu.',
     },
+    'docx-to-markdown': {
+      name: 'Word en Markdown',
+      description: 'Convertissez un document Word en Markdown propre, prêt pour l’IA.',
+    },
+    'xlsx-to-markdown': {
+      name: 'Excel en Markdown',
+      description: 'Transformez les feuilles de calcul en tableaux Markdown.',
+    },
     'pdf-to-jpg': {
       name: 'PDF en JPG',
       description: 'Transformez chaque page PDF en image JPG de haute qualité.',
@@ -392,6 +400,8 @@ export const fr = {
     trustChips: ['Aucun téléversement', 'Exécution locale', 'Aucune inscription'],
     dropPdfs: 'Déposez vos fichiers PDF ici, ou cliquez pour parcourir',
     dropImages: 'Déposez vos images JPG ou PNG ici, ou cliquez pour parcourir',
+    dropDocx: 'Déposez un document Word (.docx) ici, ou cliquez pour parcourir',
+    dropExcel: 'Déposez un classeur Excel (.xlsx/.xls) ici, ou cliquez pour parcourir',
     moveUp: 'Monter',
     moveDown: 'Descendre',
     remove: 'Supprimer',
@@ -404,6 +414,8 @@ export const fr = {
     errors: {
       onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
       onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
+      onlyDocx: 'Seuls les documents Word .docx sont pris en charge (pas l’ancien .doc).',
+      onlyExcel: 'Seuls les classeurs Excel (.xlsx/.xls) sont pris en charge.',
       tooManyFiles: 'Vous pouvez ajouter au maximum {max} fichiers.',
       fileTooLarge: '« {name} » est trop volumineux — la limite est de {max} Mo par fichier.',
       minFiles: 'Veuillez ajouter au moins {min} fichiers.',
@@ -419,6 +431,8 @@ export const fr = {
       filesSkipped: '{count} fichier(s) non pris en charge ont été ignorés.',
       totalTooLarge: 'Les fichiers sélectionnés sont trop volumineux ensemble — la limite totale est de {max} Mo.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
+      corruptedFile:
+        'Ce fichier n’a pas pu être lu — il est peut-être endommagé ou dans un format que cet outil ne prend pas en charge.',
       engineDownload:
         'Le moteur PDF n’a pas pu être téléchargé (erreur réseau). Vérifiez votre connexion et réessayez — aucun fichier n’a été envoyé.',
     },
@@ -790,6 +804,77 @@ export const fr = {
           question: 'Quelles sont les limites ?',
           answer:
             'Fichiers jusqu’à 100 Mo (50 Mo sur mobile), sans limite de pages. Les très longs documents chargent les aperçus par lots.',
+        },
+      ],
+    },
+    'docx-to-markdown': {
+      metaTitle: 'Word en Markdown — Gratuit et local | CoolPDF',
+      metaDescription:
+        'Transformez vos documents .docx en Markdown propre pour notes, wikis et outils IA — directement dans votre navigateur. Sans téléversement ni inscription.',
+      heading: 'Word en Markdown',
+      intro:
+        'Convertissez vos documents .docx en Markdown propre — titres, listes, tableaux, gras et italique préservés. Parfait pour Obsidian, les wikis et les assistants IA. Tout s’exécute sur votre appareil.',
+      button: 'Convertir en Markdown',
+      stepsHeading: 'Comment convertir Word en Markdown',
+      steps: [
+        'Déposez le fichier .docx sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Cliquez sur « Convertir en Markdown » — la conversion s’exécute localement dans votre navigateur.',
+        'Téléchargez le fichier download.md et collez-le dans vos notes, wikis ou outils IA.',
+      ],
+      privacyHeading: 'Vos documents restent sur votre appareil',
+      privacyText:
+        'Markdown est souvent la dernière étape avant qu’un document parte dans un assistant IA ou une base de connaissances — et ce sont exactement les fichiers qui n’ont rien à faire sur un serveur inconnu : rapports internes, brouillons de contrats, notes de réunion. CoolPDF convertit entièrement dans votre navigateur — sans téléversement, sans compte et sans traces après la fermeture de l’onglet.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Quelle mise en forme est préservée ?',
+          answer:
+            'Les titres, listes à puces et numérotées, tableaux, gras, italique et liens sont convertis en leurs équivalents Markdown. Les mises en page complexes (zones de texte, colonnes, images flottantes) sont simplifiées en ordre de lecture, et les images intégrées ne sont pas extraites.',
+        },
+        {
+          question: 'Ça marche avec les fichiers .doc ?',
+          answer:
+            'Non — seul le format moderne .docx est pris en charge. Ouvrez les anciens fichiers .doc dans Word ou LibreOffice et enregistrez-les d’abord en .docx.',
+        },
+        {
+          question: 'À quoi sert le Markdown ?',
+          answer:
+            'Obsidian, Notion, wikis, README GitHub, générateurs de sites statiques, et comme entrée propre pour ChatGPT, Claude et d’autres outils IA — le Markdown est le format qu’ils lisent le mieux.',
+        },
+      ],
+    },
+    'xlsx-to-markdown': {
+      metaTitle: 'Excel en Markdown — Gratuit et local | CoolPDF',
+      metaDescription:
+        'Convertissez vos classeurs .xlsx en tableaux Markdown — une section par feuille. Entièrement dans votre navigateur. Sans téléversement ni inscription.',
+      heading: 'Excel en Markdown',
+      intro:
+        'Transformez vos classeurs Excel en tableaux Markdown propres — une section par feuille, prêts pour docs, wikis et outils IA. La conversion s’exécute entièrement sur votre appareil.',
+      button: 'Convertir en Markdown',
+      stepsHeading: 'Comment convertir Excel en Markdown',
+      steps: [
+        'Déposez le fichier .xlsx ou .xls sur la zone de téléversement, ou cliquez pour parcourir.',
+        'Cliquez sur « Convertir en Markdown » — la conversion s’exécute localement dans votre navigateur.',
+        'Téléchargez le fichier download.md avec un tableau Markdown par feuille de calcul.',
+      ],
+      privacyHeading: 'Vos chiffres restent sur votre appareil',
+      privacyText:
+        'Les feuilles de calcul contiennent les chiffres qui comptent : budgets, salaires, listes de clients, modèles financiers. Les convertir sur un outil en ligne quelconque, c’est envoyer tout cela sur le serveur de quelqu’un d’autre. CoolPDF lit votre classeur et construit le Markdown entièrement dans votre navigateur — rien n’est téléversé, et fermer l’onglet efface toute trace.',
+      faqHeading: 'Questions fréquentes',
+      faq: [
+        {
+          question: 'Comment les feuilles sont-elles gérées ?',
+          answer:
+            'Chaque feuille non vide devient une section « ## Sheet: <nom> » avec un tableau Markdown GitHub. La première ligne non vide devient l’en-tête du tableau.',
+        },
+        {
+          question: 'Les formules sont-elles converties ?',
+          answer:
+            'Les cellules sont exportées avec leurs valeurs calculées telles qu’enregistrées dans le fichier, pas avec les formules elles-mêmes.',
+        },
+        {
+          question: 'Et les fichiers .xls ?',
+          answer: 'Les classeurs modernes .xlsx comme les anciens .xls sont pris en charge.',
         },
       ],
     },

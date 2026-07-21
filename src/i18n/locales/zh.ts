@@ -124,6 +124,14 @@ export const zh = {
       name: '页面排序',
       description: '拖拽页面到您想要的精确顺序。',
     },
+    'docx-to-markdown': {
+      name: 'Word 转 Markdown',
+      description: '将 Word 文档转换为干净、AI 友好的 Markdown。',
+    },
+    'xlsx-to-markdown': {
+      name: 'Excel 转 Markdown',
+      description: '将电子表格转换为 Markdown 表格。',
+    },
     'pdf-to-jpg': {
       name: 'PDF 转 JPG',
       description: '将 PDF 的每一页转换为高质量 JPG 图片。',
@@ -385,6 +393,8 @@ export const zh = {
     trustChips: ['无需上传', '本地运行', '无需注册'],
     dropPdfs: '将 PDF 文件拖到此处，或点击选择文件',
     dropImages: '将 JPG 或 PNG 图片拖到此处，或点击选择文件',
+    dropDocx: '将 Word 文档（.docx）拖到此处，或点击选择文件',
+    dropExcel: '将 Excel 工作簿（.xlsx/.xls）拖到此处，或点击选择文件',
     moveUp: '上移',
     moveDown: '下移',
     remove: '移除',
@@ -397,6 +407,8 @@ export const zh = {
     errors: {
       onlyPdf: '仅支持 PDF 文件。',
       onlyImages: '仅支持 JPG 和 PNG 图片。',
+      onlyDocx: '仅支持 .docx 格式的 Word 文档（不支持旧版 .doc）。',
+      onlyExcel: '仅支持 Excel 工作簿（.xlsx/.xls）。',
       tooManyFiles: '最多只能添加 {max} 个文件。',
       fileTooLarge: '“{name}”过大——每个文件上限为 {max} MB。',
       minFiles: '请至少添加 {min} 个文件。',
@@ -412,6 +424,7 @@ export const zh = {
       filesSkipped: '已跳过 {count} 个不支持的文件。',
       totalTooLarge: '所选文件合计过大——总量上限为 {max} MB。',
       generic: '处理文件时出错，请重试。',
+      corruptedFile: '无法读取此文件——文件可能已损坏，或格式不受此工具支持。',
       engineDownload: 'PDF 引擎下载失败（网络错误）。请检查网络后重试——您的文件没有发送到任何地方。',
     },
   },
@@ -777,6 +790,76 @@ export const zh = {
           question: '有什么限制？',
           answer:
             '文件最大 100 MB（移动端 50 MB），无页数限制。超长文档分批加载预览。',
+        },
+      ],
+    },
+    'docx-to-markdown': {
+      metaTitle: 'Word 转 Markdown 转换器——免费、本地、无需上传 | CoolPDF',
+      metaDescription:
+        '将 .docx 文档转换为干净的 Markdown，用于笔记、Wiki 和 AI 工具——全部在浏览器本地完成。无需上传，无需注册，永久免费。',
+      heading: 'Word 转 Markdown',
+      intro:
+        '将 .docx 文档转换为干净的 Markdown——标题、列表、表格、加粗和斜体全部保留。非常适合 Obsidian、Wiki 和喂给 AI 助手。一切在您的设备上运行。',
+      button: '转换为 Markdown',
+      stepsHeading: '如何将 Word 转换为 Markdown',
+      steps: [
+        '将 .docx 文件拖入上传区域，或点击浏览。',
+        '点击“转换为 Markdown”——转换在您的浏览器本地完成。',
+        '下载 download.md 文件，粘贴到笔记、Wiki 或 AI 工具中。',
+      ],
+      privacyHeading: '您的文档始终留在您的设备上',
+      privacyText:
+        'Markdown 往往是文档进入 AI 助手或知识库前的最后一站——而这些恰恰是您不想放在陌生服务器上的文件：内部报告、合同草稿、会议记录。CoolPDF 完全在您的浏览器中转换——没有上传，没有账号，关闭标签页后不留任何痕迹。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '保留哪些格式？',
+          answer:
+            '标题、无序和有序列表、表格、加粗、斜体和链接都会转换为对应的 Markdown 语法。复杂版式（文本框、分栏、浮动图片）会按阅读顺序简化，内嵌图片不会被提取。',
+        },
+        {
+          question: '支持 .doc 文件吗？',
+          answer:
+            '不支持——仅支持现代的 .docx 格式。请先在 Word 或 LibreOffice 中打开旧的 .doc 文件并另存为 .docx。',
+        },
+        {
+          question: 'Markdown 能用来做什么？',
+          answer:
+            'Obsidian、Notion、Wiki、GitHub README、静态网站生成器，以及作为 ChatGPT、Claude 等 AI 工具的干净输入——Markdown 是它们最擅长阅读的格式。',
+        },
+      ],
+    },
+    'xlsx-to-markdown': {
+      metaTitle: 'Excel 转 Markdown 转换器——免费、本地、无需上传 | CoolPDF',
+      metaDescription:
+        '将 .xlsx 工作簿转换为 Markdown 表格——每个工作表一个章节。全部在浏览器本地完成。无需上传，无需注册，永久免费。',
+      heading: 'Excel 转 Markdown',
+      intro:
+        '将 Excel 工作簿转换为干净的 Markdown 表格——每个工作表一个章节，可直接用于文档、Wiki 和 AI 工具。转换完全在您的设备上运行。',
+      button: '转换为 Markdown',
+      stepsHeading: '如何将 Excel 转换为 Markdown',
+      steps: [
+        '将 .xlsx 或 .xls 文件拖入上传区域，或点击浏览。',
+        '点击“转换为 Markdown”——转换在您的浏览器本地完成。',
+        '下载 download.md 文件，每个工作表对应一个 Markdown 表格。',
+      ],
+      privacyHeading: '您的数字留在您的设备上',
+      privacyText:
+        '电子表格里存放着最重要的数字：预算、工资、客户名单、财务模型。在随便一个在线工具上转换它们，就等于把这一切发到别人的服务器。CoolPDF 读取您的工作簿并完全在您的浏览器中生成 Markdown——没有任何上传，关闭标签页即清除所有痕迹。',
+      faqHeading: '常见问题',
+      faq: [
+        {
+          question: '工作表如何处理？',
+          answer:
+            '每个非空工作表都会生成一个“## Sheet: <名称>”章节，内容为 GitHub 风格的 Markdown 表格。第一个非空行成为表头。',
+        },
+        {
+          question: '公式会被转换吗？',
+          answer: '单元格按文件中存储的计算结果导出，而不是公式本身。',
+        },
+        {
+          question: '支持 .xls 文件吗？',
+          answer: '现代的 .xlsx 和旧版的 .xls 工作簿都支持。',
         },
       ],
     },

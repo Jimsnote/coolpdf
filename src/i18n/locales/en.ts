@@ -127,6 +127,14 @@ export const en = {
       name: 'Reorder Pages',
       description: 'Drag pages into exactly the order you want.',
     },
+    'docx-to-markdown': {
+      name: 'Word to Markdown',
+      description: 'Convert a Word document into clean, AI-ready Markdown.',
+    },
+    'xlsx-to-markdown': {
+      name: 'Excel to Markdown',
+      description: 'Turn spreadsheet sheets into Markdown tables.',
+    },
     'pdf-to-jpg': {
       name: 'PDF to JPG',
       description: 'Turn each PDF page into a high-quality JPG image.',
@@ -392,6 +400,8 @@ export const en = {
     trustChips: ['No uploads', 'Runs locally', 'No sign-up'],
     dropPdfs: 'Drop PDF files here, or click to browse',
     dropImages: 'Drop JPG or PNG images here, or click to browse',
+    dropDocx: 'Drop a Word document (.docx) here, or click to browse',
+    dropExcel: 'Drop an Excel workbook (.xlsx/.xls) here, or click to browse',
     moveUp: 'Move up',
     moveDown: 'Move down',
     remove: 'Remove',
@@ -404,6 +414,8 @@ export const en = {
     errors: {
       onlyPdf: 'Only PDF files are supported.',
       onlyImages: 'Only JPG and PNG images are supported.',
+      onlyDocx: 'Only .docx Word documents are supported (legacy .doc is not).',
+      onlyExcel: 'Only Excel workbooks (.xlsx/.xls) are supported.',
       tooManyFiles: 'You can add at most {max} files.',
       fileTooLarge: '"{name}" is too large — the limit is {max} MB per file.',
       minFiles: 'Please add at least {min} files.',
@@ -419,6 +431,8 @@ export const en = {
       filesSkipped: '{count} unsupported file(s) were skipped.',
       totalTooLarge: 'The selected files are too large together — the total limit is {max} MB.',
       generic: 'Something went wrong while processing your file. Please try again.',
+      corruptedFile:
+        'This file could not be read — it may be damaged or in a format this tool does not support.',
       engineDownload:
         'The PDF engine could not be downloaded (network error). Please check your connection and try again — no file was sent anywhere.',
     },
@@ -790,6 +804,77 @@ export const en = {
           question: 'What are the limits?',
           answer:
             'Files up to 100 MB (50 MB on mobile), with no page limit. Very long documents load previews in batches.',
+        },
+      ],
+    },
+    'docx-to-markdown': {
+      metaTitle: 'Word to Markdown Converter — Free, Local, No Upload | CoolPDF',
+      metaDescription:
+        'Turn .docx documents into clean Markdown for notes, wikis, and AI tools — right in your browser. No uploads, no sign-up, free forever.',
+      heading: 'Word to Markdown',
+      intro:
+        'Convert .docx documents into clean Markdown — headings, lists, tables, bold and italic preserved. Perfect for Obsidian, wikis, and feeding AI assistants. Everything runs on your device.',
+      button: 'Convert to Markdown',
+      stepsHeading: 'How to convert Word to Markdown',
+      steps: [
+        'Drop the .docx file onto the upload area, or click to browse.',
+        'Click "Convert to Markdown" — the conversion runs locally in your browser.',
+        'Download the download.md file and paste it into your notes, wiki, or AI tool.',
+      ],
+      privacyHeading: 'Your documents stay on your device',
+      privacyText:
+        'Markdown is often the last stop before a document goes into an AI assistant or a knowledge base — and those are exactly the files you do not want on a random server: internal reports, draft contracts, meeting notes. CoolPDF converts entirely in your browser with no upload, no account, and no traces after you close the tab.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'What formatting is preserved?',
+          answer:
+            'Headings, bullet and numbered lists, tables, bold, italic, and links are converted to their Markdown equivalents. Complex layout (text boxes, columns, floating images) is simplified to reading order, and embedded images are not extracted.',
+        },
+        {
+          question: 'Does it work with .doc files?',
+          answer:
+            'No — only the modern .docx format is supported. Open older .doc files in Word or LibreOffice and save them as .docx first.',
+        },
+        {
+          question: 'What can I use the Markdown for?',
+          answer:
+            'Obsidian, Notion, wikis, GitHub READMEs, static site generators, and as clean input for ChatGPT, Claude, and other AI tools — Markdown is the format they read best.',
+        },
+      ],
+    },
+    'xlsx-to-markdown': {
+      metaTitle: 'Excel to Markdown Converter — Free, Local, No Upload | CoolPDF',
+      metaDescription:
+        'Convert .xlsx workbooks into Markdown tables — one section per sheet. Runs entirely in your browser. No uploads, no sign-up, free forever.',
+      heading: 'Excel to Markdown',
+      intro:
+        'Turn Excel workbooks into clean Markdown tables — one section per sheet, ready for docs, wikis, and AI tools. The conversion runs entirely on your device.',
+      button: 'Convert to Markdown',
+      stepsHeading: 'How to convert Excel to Markdown',
+      steps: [
+        'Drop the .xlsx or .xls file onto the upload area, or click to browse.',
+        'Click "Convert to Markdown" — the conversion runs locally in your browser.',
+        'Download the download.md file with one Markdown table per worksheet.',
+      ],
+      privacyHeading: 'Your numbers stay on your device',
+      privacyText:
+        'Spreadsheets hold the numbers that matter: budgets, payroll, client lists, financial models. Converting them on a random online tool means sending all of that to someone else’s server. CoolPDF reads your workbook and builds the Markdown entirely in your browser — nothing is uploaded, and closing the tab removes every trace.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'How are sheets handled?',
+          answer:
+            'Every non-empty sheet becomes a "## Sheet: <name>" section with a GitHub-flavored Markdown table. The first non-empty row becomes the table header.',
+        },
+        {
+          question: 'Are formulas converted?',
+          answer:
+            'Cells are exported with their computed values as stored in the file, not the formulas themselves.',
+        },
+        {
+          question: 'What about .xls files?',
+          answer: 'Both modern .xlsx and legacy .xls workbooks are supported.',
         },
       ],
     },

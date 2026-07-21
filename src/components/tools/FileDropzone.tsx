@@ -4,7 +4,7 @@ import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
 import { CloudUpload } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 
-type AcceptedKind = 'pdf' | 'images';
+type AcceptedKind = 'pdf' | 'images' | 'docx' | 'excel';
 
 interface FileDropzoneProps {
   accept: AcceptedKind;
@@ -24,6 +24,8 @@ interface FileDropzoneProps {
 function isAccepted(file: File, accept: AcceptedKind): boolean {
   const name = file.name.toLowerCase();
   if (accept === 'pdf') return file.type === 'application/pdf' || name.endsWith('.pdf');
+  if (accept === 'docx') return name.endsWith('.docx');
+  if (accept === 'excel') return /\.(xlsx|xls)$/.test(name);
   return file.type === 'image/jpeg' || file.type === 'image/png' || /\.(jpe?g|png)$/.test(name);
 }
 
@@ -48,6 +50,24 @@ export function FileDropzone({
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toolUi } = dict;
+  const copyByKind = {
+    pdf: { drop: toolUi.dropPdfs, only: toolUi.errors.onlyPdf, acceptAttr: '.pdf,application/pdf' },
+    images: {
+      drop: toolUi.dropImages,
+      only: toolUi.errors.onlyImages,
+      acceptAttr: '.jpg,.jpeg,.png,image/jpeg,image/png',
+    },
+    docx: {
+      drop: toolUi.dropDocx,
+      only: toolUi.errors.onlyDocx,
+      acceptAttr: '.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    },
+    excel: {
+      drop: toolUi.dropExcel,
+      only: toolUi.errors.onlyExcel,
+      acceptAttr: '.xlsx,.xls',
+    },
+  }[accept];
 
   function handleIncoming(incoming: File[]) {
     if (disabled || incoming.length === 0) return;
@@ -55,7 +75,7 @@ export function FileDropzone({
     const valid = incoming.filter((file) => isAccepted(file, accept));
     const skipped = incoming.length - valid.length;
     if (valid.length === 0) {
-      setError(accept === 'pdf' ? toolUi.errors.onlyPdf : toolUi.errors.onlyImages);
+      setError(copyByKind.only);
       return;
     }
     const messages: string[] = [];
@@ -113,16 +133,14 @@ export function FileDropzone({
         }`}
       >
         <CloudUpload className="h-10 w-10 text-brand-600" aria-hidden />
-        <span className="text-sm font-medium text-slate-700">
-          {accept === 'pdf' ? toolUi.dropPdfs : toolUi.dropImages}
-        </span>
+        <span className="text-sm font-medium text-slate-700">{copyByKind.drop}</span>
       </button>
       <input
         ref={inputRef}
         type="file"
         hidden
         multiple={multiple}
-        accept={accept === 'pdf' ? '.pdf,application/pdf' : '.jpg,.jpeg,.png,image/jpeg,image/png'}
+        accept={copyByKind.acceptAttr}
         onChange={onChange}
       />
       {error ? (
