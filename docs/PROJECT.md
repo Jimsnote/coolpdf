@@ -33,6 +33,7 @@
 | 压缩 | `@jspawn/ghostscript-wasm` 0.0.2（**AGPL**，wasm 15.4MB，Web Worker 内按需加载） |
 | 加密/解密 | `@jspawn/qpdf-wasm` 0.0.2（Apache-2.0，wasm 1.2MB，同 Worker） |
 | 打包下载 | jszip |
+| HEIC 解码 | `heic-to/csp` 1.5.2（**LGPL-3.0**，libheif 1.22.2 wasm ~3MB，blob URL 起 Worker 解码，懒加载；CSP 构建零 eval） |
 | 拖拽排序 | @dnd-kit（organize-pdf） |
 
 **关键性能数据**（修复后实测）：全部页面 First Load JS ≈ 103–149KB；pdf-lib（584KB）、pdf.js（428KB）、GS wasm（15.4MB）、qpdf wasm（1.2MB）全部按需加载。
@@ -46,10 +47,10 @@ coolpdf/
 │   │   ├── (en)/                  # route group：英文页面（根路径，<html lang="en">）
 │   │   │   ├── layout.tsx / not-found.tsx / page.tsx
 │   │   │   ├── about|privacy|terms|faq/page.tsx
-│   │   │   └── <12 个工具目录>/page.tsx
-│   │   ├── (i18n)/[locale]/       # route group：de/fr/it/es/pt/zh（<html lang={locale}>）
+│   │   │   └── <19 个工具目录>/page.tsx
+│   │   ├── (i18n)/[locale]/       # route group：de/fr/it/es/pt/zh/ja（<html lang={locale}>）
 │   │   │   ├── layout.tsx（generateStaticParams + dynamicParams=false）
-│   │   │   └── …同构镜像 17 页
+│   │   │   └── …同构镜像 24 页
 │   │   ├── global-not-found.tsx
 │   │   ├── sitemap.ts             # 按 tools.ts 的 live 状态派生，119 URL × hreflang 互链
 │   │   └── robots.ts              # 放行 AI 爬虫（GPTBot/ClaudeBot/PerplexityBot 等）
@@ -182,7 +183,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 - **hreflang**：每页 8 语言 + x-default 互链，canonical 自指，og:url 一致（修复后机器校验）
 - **html lang**：route groups 双根布局，各语言页面 lang 正确（en/de/fr/it/es/pt/zh/ja）
-- **sitemap.xml**：136 URL（5 内容页 + 12 工具页 × 8 语言），无 lastmod（避免构建时间戳失真）
+- **sitemap.xml**：192 URL（5 内容页 + 19 工具页 × 8 语言），无 lastmod（避免构建时间戳失真）
 - **robots.txt**：全放行 + 显式 Allow AI 爬虫
 - **llms.txt**：12 工具页带 URL 清单 + 核心事实
 - **JSON-LD**：首页 WebApplication（featureList 按 locale 本地化、仅 live 工具）+ Organization；每个工具页 WebApplication + HowTo + FAQPage（与可见 FAQ 同源生成，无 Google 处罚风险）；FAQ 页 FAQPage
@@ -195,7 +196,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 ## 6. 多语言说明
 
-- 8 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制），零遗留英文（审查 B 全量比对确认）
+- 8 语言字典类型同构（`Record<Locale, Dictionary>` 编译期强制）；新工具允许英文占位先行（heic-to-pdf 为首例：其余 7 语言暂为英文文案，翻译后补），既有内容零遗留英文（审查 B 全量比对确认）
 - 术语统一：三支柱固定译法；工具名按各语言搜索习惯（PDF komprimieren / Compresser PDF / Comprimi PDF / Comprimir PDF / Compactar PDF / 压缩 PDF / PDF 圧縮 等）
 - 葡语统一欧洲葡语（ficheiro/registo/palavra-passe 体系）
 - 中文版定位：服务海外华人，无备案百度基本不收录，不作为流量主力

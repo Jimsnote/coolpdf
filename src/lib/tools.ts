@@ -17,6 +17,7 @@ import {
   Stamp,
   LayoutGrid,
   Image,
+  ImagePlus,
   type LucideIcon,
 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
@@ -49,6 +50,7 @@ export const tools: Tool[] = [
   { slug: 'extract-images', icon: Images, i18nKey: 'extract-images', status: 'live' },
   { slug: 'pdf-to-jpg', icon: Image, i18nKey: 'pdf-to-jpg', status: 'live' },
   { slug: 'jpg-to-pdf', icon: FileImage, i18nKey: 'jpg-to-pdf', status: 'live' },
+  { slug: 'heic-to-pdf', icon: ImagePlus, i18nKey: 'heic-to-pdf', status: 'live' },
   { slug: 'protect-pdf', icon: Lock, i18nKey: 'protect-pdf', status: 'live' },
   { slug: 'unlock-pdf', icon: LockOpen, i18nKey: 'unlock-pdf', status: 'live' },
   { slug: 'watermark-pdf', icon: Stamp, i18nKey: 'watermark-pdf', status: 'live' },

@@ -4,7 +4,7 @@ import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
 import { CloudUpload } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 
-type AcceptedKind = 'pdf' | 'images' | 'docx' | 'excel';
+type AcceptedKind = 'pdf' | 'images' | 'docx' | 'excel' | 'heic';
 
 interface FileDropzoneProps {
   accept: AcceptedKind;
@@ -26,6 +26,11 @@ function isAccepted(file: File, accept: AcceptedKind): boolean {
   if (accept === 'pdf') return file.type === 'application/pdf' || name.endsWith('.pdf');
   if (accept === 'docx') return name.endsWith('.docx');
   if (accept === 'excel') return /\.(xlsx|xls)$/.test(name);
+  if (accept === 'heic') {
+    return (
+      file.type === 'image/heic' || file.type === 'image/heif' || /\.(heic|heif)$/.test(name)
+    );
+  }
   return file.type === 'image/jpeg' || file.type === 'image/png' || /\.(jpe?g|png)$/.test(name);
 }
 
@@ -66,6 +71,11 @@ export function FileDropzone({
       drop: toolUi.dropExcel,
       only: toolUi.errors.onlyExcel,
       acceptAttr: '.xlsx,.xls',
+    },
+    heic: {
+      drop: toolUi.dropHeic,
+      only: toolUi.errors.onlyHeic,
+      acceptAttr: '.heic,.heif,image/heic,image/heif',
     },
   }[accept];
 

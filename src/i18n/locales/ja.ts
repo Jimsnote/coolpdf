@@ -147,6 +147,10 @@ export const ja = {
       name: 'JPG → PDF 変換',
       description: 'JPG 画像をすっきりとした共有しやすい PDF 文書に変換します。',
     },
+    'heic-to-pdf': {
+      name: 'HEIC to PDF',
+      description: 'Turn iPhone HEIC photos into a clean, shareable PDF document.',
+    },
     'protect-pdf': {
       name: 'PDF 保護',
       description: 'パスワード暗号化を追加して PDF のプライバシーを守ります。',
@@ -406,6 +410,7 @@ export const ja = {
     dropImages: 'JPG または PNG 画像をここにドラッグするか、クリックして選択',
     dropDocx: 'Word 文書（.docx）をここにドラッグするか、クリックして選択',
     dropExcel: 'Excel ブック（.xlsx/.xls）をここにドラッグするか、クリックして選択',
+    dropHeic: 'Drop HEIC or HEIF photos here, or click to browse',
     moveUp: '上に移動',
     moveDown: '下に移動',
     remove: '削除',
@@ -420,6 +425,7 @@ export const ja = {
       onlyImages: 'JPG と PNG 画像のみ対応しています。',
       onlyDocx: '.docx 形式の Word 文書のみ対応しています（旧形式の .doc は非対応）。',
       onlyExcel: 'Excel ブック（.xlsx/.xls）のみ対応しています。',
+      onlyHeic: 'Only HEIC/HEIF photos are supported.',
       noImages: 'この PDF には埋め込み画像が見つかりませんでした。',
       tooManyFiles: '追加できるファイルは最大 {max} 個です。',
       fileTooLarge: '「{name}」は大きすぎます。1 ファイルあたりの上限は {max} MB です。',
@@ -609,6 +615,54 @@ export const ja = {
           question: '画像の画質は落ちますか？',
           answer:
             'いいえ。画像はそのまま埋め込まれます。再圧縮は一切ありません。PDF は元の画像データを包むだけなので、画像に見えるものがそのまま PDF に入ります。',
+        },
+      ],
+    },
+    'heic-to-pdf': {
+      metaTitle: 'HEIC to PDF — Convert iPhone Photos Locally | CoolPDF',
+      metaDescription:
+        'Convert HEIC photos from your iPhone into a clean A4 PDF right in your browser. No uploads, no sign-up — your pictures never leave your device.',
+      heading: 'HEIC to PDF',
+      intro:
+        'Turn up to 20 HEIC photos from your iPhone into a single A4 PDF. The HEIC decoding and the PDF assembly both run entirely on your device.',
+      button: 'Convert to PDF',
+      orientationLabel: 'Page orientation',
+      orientationAuto: 'Auto (match the first photo)',
+      orientationPortrait: 'Portrait',
+      orientationLandscape: 'Landscape',
+      fitLabel: 'Image placement',
+      fitFit: 'Fit — whole photo visible, with margins',
+      fitFill: 'Fill — cover the page, crop the edges',
+      fitOriginal: 'Original — natural size, centered',
+      decodingProgress: 'Decoding photo {current} of {total}…',
+      decodeError:
+        '"{name}" could not be decoded — it may use a HEIC variant this decoder does not support. Try sharing the photo as a JPEG from your iPhone instead.',
+      stepsHeading: 'How to convert HEIC photos to PDF',
+      steps: [
+        'Add up to 20 HEIC or HEIF photos by dragging them onto the upload area, or click to browse.',
+        'Choose the page orientation: auto follows the aspect ratio of your first photo, or force portrait or landscape.',
+        'Pick how photos are placed — fit with margins, fill the page, or keep the original size — then click "Convert to PDF".',
+        'Download your PDF, with one photo per page in A4 format.',
+      ],
+      privacyHeading: 'Convert iPhone photos without uploading them anywhere',
+      privacyText:
+        'Photos are the most personal files most of us own — family, documents, whiteboards, receipts. The usual HEIC converter asks you to upload every picture to a server, convert it there, and trust that it is deleted afterwards. CoolPDF does the whole job on your device: a WebAssembly build of the libheif decoder runs in a background worker right in your browser tab, turns each HEIC photo into a JPEG, and wraps the results in an A4 PDF — all locally. Your pictures never touch the network, so they cannot be logged, leaked, or land in a dataset. It even works offline once the page has loaded: turn on airplane mode and convert away.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'What is HEIC, and why convert it to PDF?',
+          answer:
+            'HEIC is the default photo format on iPhones since iOS 11. It keeps files small, but many apps, websites, and Windows PCs cannot open it. PDF, on the other hand, opens everywhere — and it bundles many photos into a single document that is easy to share or print.',
+        },
+        {
+          question: 'Why did one of my HEIC files fail to convert?',
+          answer:
+            'HEIF is a container that can hold different codecs and features, and no browser decoder supports every variant. Photos shot on an iPhone in the standard HEVC format work reliably. If one file fails, open it on your iPhone and share it as a JPEG (or set Camera → Formats → Most Compatible), then convert that.',
+        },
+        {
+          question: 'Do my photos keep their quality and orientation?',
+          answer:
+            'Yes. Each photo is decoded at full resolution and written as a high-quality JPEG (92% quality), with the stored rotation applied automatically. The PDF then embeds those images without any further recompression.',
         },
       ],
     },

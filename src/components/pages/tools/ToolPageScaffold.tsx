@@ -14,6 +14,7 @@ export type ToolSlug =
   | 'split-pdf'
   | 'rotate-pdf'
   | 'jpg-to-pdf'
+  | 'heic-to-pdf'
   | 'organize-pdf'
   | 'remove-pages'
   | 'extract-pages'

@@ -21,6 +21,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@jspawn/ghostscript-wasm": "^0.0.2",
     "@jspawn/qpdf-wasm": "^0.0.2",
+    "heic-to": "^1.5.2",
     "jszip": "^3.10.1",
     "lucide-react": "^0.469.0",
     "mammoth": "^1.12.0",
