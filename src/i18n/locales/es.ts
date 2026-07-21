@@ -419,6 +419,8 @@ export const es = {
       filesSkipped: 'Se omitieron {count} archivo(s) no compatibles.',
       totalTooLarge: 'Los archivos seleccionados son demasiado grandes en conjunto: el límite total es de {max} MB.',
       generic: 'Se produjo un error al procesar tu archivo. Inténtalo de nuevo.',
+      engineDownload:
+        'No se pudo descargar el motor PDF (error de red). Comprueba tu conexión e inténtalo de nuevo — ningún archivo se ha enviado.',
     },
   },
   toolPages: {

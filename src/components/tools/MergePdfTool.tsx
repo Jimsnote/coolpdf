@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUp, FileText, Loader2, Trash2 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 import { mergePdfs } from '@/lib/pdf/merge';
+import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
 import { DownloadCard, formatBytes } from './DownloadCard';
@@ -54,6 +55,7 @@ export function MergePdfTool({ dict }: MergePdfToolProps) {
   }, [result]);
 
   function addFiles(files: File[]) {
+    warmPdfLib();
     setError(null);
     setResult(null);
     const total =

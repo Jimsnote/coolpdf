@@ -419,6 +419,8 @@ export const de = {
       filesSkipped: '{count} nicht unterstützte Datei(en) wurden übersprungen.',
       totalTooLarge: 'Die ausgewählten Dateien sind zusammen zu groß — das Gesamtlimit beträgt {max} MB.',
       generic: 'Beim Verarbeiten Ihrer Datei ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.',
+      engineDownload:
+        'Die PDF-Engine konnte nicht heruntergeladen werden (Netzwerkfehler). Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut — es wurde keine Datei übertragen.',
     },
   },
   toolPages: {

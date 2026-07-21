@@ -412,6 +412,7 @@ export const zh = {
       filesSkipped: '已跳过 {count} 个不支持的文件。',
       totalTooLarge: '所选文件合计过大——总量上限为 {max} MB。',
       generic: '处理文件时出错，请重试。',
+      engineDownload: 'PDF 引擎下载失败（网络错误）。请检查网络后重试——您的文件没有发送到任何地方。',
     },
   },
   toolPages: {

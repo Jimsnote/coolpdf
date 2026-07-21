@@ -419,6 +419,8 @@ export const fr = {
       filesSkipped: '{count} fichier(s) non pris en charge ont été ignorés.',
       totalTooLarge: 'Les fichiers sélectionnés sont trop volumineux ensemble — la limite totale est de {max} Mo.',
       generic: 'Une erreur est survenue lors du traitement de votre fichier. Veuillez réessayer.',
+      engineDownload:
+        'Le moteur PDF n’a pas pu être téléchargé (erreur réseau). Vérifiez votre connexion et réessayez — aucun fichier n’a été envoyé.',
     },
   },
   toolPages: {

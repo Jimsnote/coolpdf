@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 import { organizePdf } from '@/lib/pdf/organize';
+import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import { loadPdfJsDocument, renderThumbnail, type PdfJsDocument } from '@/lib/pdf/pdfjs';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
@@ -268,6 +269,7 @@ export function OrganizePdfTool({ dict, preset = 'organize' }: OrganizePdfToolPr
   }, [docReady, visibleCount, pages]);
 
   async function handleFiles(files: File[]) {
+    warmPdfLib();
     const next = files[0];
     if (!next) return;
     setError(null);

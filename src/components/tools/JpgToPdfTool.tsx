@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Image as ImageIcon, Loader2, Trash2 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 import { normalizeImageForPdf } from '@/lib/pdf/image-orientation';
+import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import {
   imagesToPdf,
   type ImageFitMode,
@@ -97,6 +98,7 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
             maxSizeBytes={maxSizeBytes}
             disabled={busy}
             onFiles={(files) => {
+              warmPdfLib();
               setError(null);
               setResult(null);
               setItems((prev) => [

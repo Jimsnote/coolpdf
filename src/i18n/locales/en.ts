@@ -419,6 +419,8 @@ export const en = {
       filesSkipped: '{count} unsupported file(s) were skipped.',
       totalTooLarge: 'The selected files are too large together — the total limit is {max} MB.',
       generic: 'Something went wrong while processing your file. Please try again.',
+      engineDownload:
+        'The PDF engine could not be downloaded (network error). Please check your connection and try again — no file was sent anywhere.',
     },
   },
   toolPages: {

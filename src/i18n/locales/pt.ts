@@ -420,6 +420,8 @@ export const pt = {
       filesSkipped: '{count} ficheiro(s) não suportado(s) foram ignorados.',
       totalTooLarge: 'Os ficheiros selecionados são demasiado grandes em conjunto — o limite total é de {max} MB.',
       generic: 'Ocorreu um erro ao processar o seu ficheiro. Tente novamente.',
+      engineDownload:
+        'Não foi possível descarregar o motor PDF (erro de rede). Verifique a sua ligação e tente novamente — nenhum ficheiro foi enviado.',
     },
   },
   toolPages: {

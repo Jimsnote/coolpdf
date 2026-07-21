@@ -7,6 +7,16 @@ import { classifyPdfError, PdfToolError } from '@/lib/pdf/errors';
  */
 export function toolErrorMessage(err: unknown, dict: Dictionary): string {
   const { errors } = dict.toolUi;
+  // A failed lazy-chunk download is a network problem, not a file problem —
+  // tell the user to retry instead of blaming the document.
+  if (
+    err instanceof TypeError &&
+    /dynamically imported module|Loading chunk|Importing a module script failed/i.test(
+      err.message,
+    )
+  ) {
+    return errors.engineDownload;
+  }
   if (err instanceof PdfToolError) {
     if (err.code === 'invalidRange') return errors.invalidRange;
     if (err.code === 'rangeOutOfBounds') return errors.rangeOutOfBounds;

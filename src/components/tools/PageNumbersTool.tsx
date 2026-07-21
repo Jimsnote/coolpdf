@@ -8,6 +8,7 @@ import {
   type PageNumberFormat,
   type PageNumberPosition,
 } from '@/lib/pdf/page-numbers';
+import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
 import { DownloadCard, formatBytes } from './DownloadCard';
@@ -101,6 +102,7 @@ export function PageNumbersTool({ dict }: PageNumbersToolProps) {
             maxSizeBytes={maxSizeBytes}
             disabled={busy}
             onFiles={(files) => {
+              warmPdfLib();
               setError(null);
               setResult(null);
               setFile(files[0] ?? null);

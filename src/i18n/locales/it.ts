@@ -419,6 +419,8 @@ export const it = {
       filesSkipped: '{count} file non supportati sono stati ignorati.',
       totalTooLarge: 'I file selezionati sono troppo grandi nel complesso — il limite totale è di {max} MB.',
       generic: 'Si è verificato un errore durante l’elaborazione del file. Riprova.',
+      engineDownload:
+        'Il motore PDF non ha potuto essere scaricato (errore di rete). Controlla la connessione e riprova — nessun file è stato inviato.',
     },
   },
   toolPages: {

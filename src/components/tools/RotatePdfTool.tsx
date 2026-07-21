@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { FileText, Loader2, Trash2 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
 import { parsePageRanges } from '@/lib/pdf/page-ranges';
+import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import { rotatePdf, type RotationAngle } from '@/lib/pdf/rotate';
 import { getPdfPageCount } from '@/lib/pdf/split';
 import { FileDropzone } from './FileDropzone';
@@ -86,6 +87,7 @@ export function RotatePdfTool({ dict }: RotatePdfToolProps) {
             maxSizeBytes={maxSizeBytes}
             disabled={busy}
             onFiles={(files) => {
+              warmPdfLib();
               setError(null);
               setResult(null);
               setFile(files[0] ?? null);
