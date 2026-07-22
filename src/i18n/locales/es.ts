@@ -151,6 +151,10 @@ export const es = {
       name: 'HEIC a PDF',
       description: 'Convierte fotos HEIC del iPhone en un documento PDF limpio y fácil de compartir.',
     },
+    'sign-pdf': {
+      name: 'Sign PDF',
+      description: 'Draw your signature and place it anywhere on a PDF document.',
+    },
     'protect-pdf': {
       name: 'Proteger PDF',
       description: 'Añade cifrado con contraseña para mantener tu PDF privado.',
@@ -663,6 +667,52 @@ export const es = {
           question: '¿Mis fotos conservan su calidad y orientación?',
           answer:
             'Sí. Cada foto se decodifica a resolución completa y se guarda como un JPEG de alta calidad (92 % de calidad), aplicando automáticamente la rotación almacenada. Después, el PDF incrusta esas imágenes sin ninguna recompresión adicional.',
+        },
+      ],
+    },
+    'sign-pdf': {
+      metaTitle: 'Sign PDF Online Free — Draw & Place Signatures | CoolPDF',
+      metaDescription:
+        'Draw your signature, place it anywhere on a PDF, and download the signed document — all in your browser. No uploads, no sign-up, free.',
+      heading: 'Sign PDF',
+      intro:
+        'Draw your signature with your mouse, trackpad, or finger, place it on any page of your PDF, and download the signed document. Everything happens locally on your device.',
+      button: 'Sign & Download',
+      padLabel: 'Your signature',
+      padHint: 'Draw your signature here',
+      clearPad: 'Clear',
+      addToPage: 'Add to current page',
+      placementHint: 'Drag a signature to move it — drag the corner dot to resize.',
+      pageIndicator: 'Page {current} of {total}',
+      prevPage: 'Previous page',
+      nextPage: 'Next page',
+      stampLabel: 'Signature',
+      stepsHeading: 'How to sign a PDF',
+      steps: [
+        'Upload the PDF you want to sign — it is opened locally, never sent to a server.',
+        'Draw your signature in the pad with your mouse, trackpad, or finger, then click "Add to current page".',
+        'Drag the signature to the right spot and resize it with the corner dot. Switch pages to sign in more than one place.',
+        'Click "Sign & Download" to get your signed PDF.',
+      ],
+      privacyHeading: 'Sign contracts without uploading them',
+      privacyText:
+        'The documents you sign are usually the most sensitive ones you handle: employment contracts, NDAs, lease agreements, invoices. Most online signing tools make you upload the document — and your signature — to their servers, where both sit in queues and storage you cannot audit. CoolPDF turns the flow around: the document is rendered by your own browser, and the signature you draw never leaves your device either. It exists only in this tab’s memory while you work, is stamped into the PDF locally, and is gone the moment you close the page. No account, no upload, no copy of your signature anywhere but in the document you download.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Is a drawn signature legally valid?',
+          answer:
+            'In many jurisdictions, yes for everyday documents: the US ESIGN Act and the EU’s eIDAS regulation recognize simple electronic signatures for most contracts. Some documents — wills, notarized deeds, certain government forms — require specific formats or qualified signatures. When in doubt, check the requirements of your particular document.',
+        },
+        {
+          question: 'Can I sign in more than one place?',
+          answer:
+            'Yes. Add as many signatures as you need, on any page — each one can be moved and resized independently. They are all stamped into a single PDF when you download.',
+        },
+        {
+          question: 'Do you store my signature?',
+          answer:
+            'No. Your drawing exists only in your browser tab’s memory while you work and disappears when you close or refresh the page. It is never uploaded, saved, or sent anywhere.',
         },
       ],
     },

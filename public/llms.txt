@@ -15,7 +15,7 @@ CoolPDF is a free, browser-based PDF toolkit. Unlike traditional online PDF tool
 
 ## Tools
 
-Nineteen tools, each running 100% client-side in the browser:
+Twenty tools, each running 100% client-side in the browser:
 
 - Merge PDF — combine multiple PDFs into a single file, in the order you want. https://getcoolpdf.com/merge-pdf/
 - Split PDF — extract a page range or split one PDF into separate documents. https://getcoolpdf.com/split-pdf/
@@ -28,6 +28,7 @@ Nineteen tools, each running 100% client-side in the browser:
 - PDF to JPG — turn each PDF page into a high-quality JPG image. https://getcoolpdf.com/pdf-to-jpg/
 - JPG to PDF — convert JPG images into a clean, shareable PDF document. https://getcoolpdf.com/jpg-to-pdf/
 - HEIC to PDF — turn iPhone HEIC photos into a clean, shareable PDF document. https://getcoolpdf.com/heic-to-pdf/
+- Sign PDF — draw a signature and place it anywhere on a PDF document. https://getcoolpdf.com/sign-pdf/
 - Protect PDF — add AES-256 password encryption to keep your PDF private. https://getcoolpdf.com/protect-pdf/
 - Unlock PDF — remove password protection from PDFs you own. https://getcoolpdf.com/unlock-pdf/
 - Watermark PDF — stamp a text or image watermark over every page, tiled or centered. https://getcoolpdf.com/watermark-pdf/

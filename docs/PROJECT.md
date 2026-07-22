@@ -47,10 +47,10 @@ coolpdf/
 │   │   ├── (en)/                  # route group：英文页面（根路径，<html lang="en">）
 │   │   │   ├── layout.tsx / not-found.tsx / page.tsx
 │   │   │   ├── about|privacy|terms|faq/page.tsx
-│   │   │   └── <19 个工具目录>/page.tsx
+│   │   │   └── <20 个工具目录>/page.tsx
 │   │   ├── (i18n)/[locale]/       # route group：de/fr/it/es/pt/zh/ja（<html lang={locale}>）
 │   │   │   ├── layout.tsx（generateStaticParams + dynamicParams=false）
-│   │   │   └── …同构镜像 24 页
+│   │   │   └── …同构镜像 25 页
 │   │   ├── global-not-found.tsx
 │   │   ├── sitemap.ts             # 按 tools.ts 的 live 状态派生，119 URL × hreflang 互链
 │   │   └── robots.ts              # 放行 AI 爬虫（GPTBot/ClaudeBot/PerplexityBot 等）
@@ -183,7 +183,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 - **hreflang**：每页 8 语言 + x-default 互链，canonical 自指，og:url 一致（修复后机器校验）
 - **html lang**：route groups 双根布局，各语言页面 lang 正确（en/de/fr/it/es/pt/zh/ja）
-- **sitemap.xml**：192 URL（5 内容页 + 19 工具页 × 8 语言），无 lastmod（避免构建时间戳失真）
+- **sitemap.xml**：200 URL（5 内容页 + 20 工具页 × 8 语言），无 lastmod（避免构建时间戳失真）
 - **robots.txt**：全放行 + 显式 Allow AI 爬虫
 - **llms.txt**：12 工具页带 URL 清单 + 核心事实
 - **JSON-LD**：首页 WebApplication（featureList 按 locale 本地化、仅 live 工具）+ Organization；每个工具页 WebApplication + HowTo + FAQPage（与可见 FAQ 同源生成，无 Google 处罚风险）；FAQ 页 FAQPage

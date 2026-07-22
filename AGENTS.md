@@ -39,7 +39,7 @@ CoolPDF 是面向海外用户的**纯浏览器端 PDF 工具站**（类 ilovepdf
 
 ```
 src/
-├── app/(en)/            # 英文页（根路径）：layout/not-found + 5 内容页 + 19 工具页
+├── app/(en)/            # 英文页（根路径）：layout/not-found + 5 内容页 + 20 工具页
 ├── app/(i18n)/[locale]/ # 其他 7 语言镜像（generateStaticParams，dynamicParams=false）
 ├── app/sitemap.ts       # 由 tools.ts 的 live 工具派生，勿硬编码；无 lastmod（刻意）
 ├── app/robots.ts        # 放行 AI 爬虫（GPTBot/ClaudeBot/PerplexityBot 等）
@@ -53,7 +53,7 @@ src/
 ├── i18n/locales/*.ts    # 8 语言字典，**en 是 Dictionary 类型源头，必须同构**（tsc 强制）
 ├── lib/site.ts          # SITE_URL / GITHUB_URL（env 可覆盖）
 ├── lib/seo.ts           # buildAlternates / pageMetadata / localizedPath / OG_IMAGE_URL
-├── lib/tools.ts         # 19 工具注册表（slug/图标/status）
+├── lib/tools.ts         # 20 工具注册表（slug/图标/status）
 ├── lib/guides/          # 教程内容系统（仅英文）：types.ts + index.ts 注册表 + 每篇一个 <slug>.ts 数据文件
 └── lib/pdf/             # 纯函数处理层（与 React 解耦，Node 可测）
 ```
@@ -75,6 +75,6 @@ src/
 
 ## 7. 当前状态与下一步
 
-- 已完成：M1-M4 工具全量（现 19 个，8 语言齐全）+ SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过
+- 已完成：M1-M4 工具全量（现 20 个；sign-pdf 英文先行、翻译待补，其余 8 语言齐全）+ SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过
 - 进行中/待办：`docs/TODO.md`（Search Console 提交 → 养收录 → AdSense；二期：Word/Excel→Markdown、Service Worker 离线、证件照排版）
 - 已知限制：文字水印 canvas 路径、EXIF 重编码路径未经 Node 测试（浏览器已人工验收）；qpdf AES-256 下 accessibility 权限不生效（规范行为，FAQ 已说明）

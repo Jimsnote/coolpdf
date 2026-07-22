@@ -28,7 +28,8 @@ export type ToolSlug =
   | 'unlock-pdf'
   | 'watermark-pdf'
   | 'page-numbers'
-  | 'pdf-to-markdown';
+  | 'pdf-to-markdown'
+  | 'sign-pdf';
 
 interface ToolPageScaffoldProps {
   locale: Locale;
