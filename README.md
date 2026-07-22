@@ -35,7 +35,7 @@ All tools run 100% locally in your browser — no uploads, no sign-up, free fore
 - **Reorder Pages** — drag pages into exactly the order you want
 - **Extract Images** — pull every embedded image out of a PDF as JPG/PNG files
 - **HEIC to PDF** — turn iPhone HEIC photos into a clean, shareable PDF document
-- **Sign PDF** — draw your signature and place it anywhere on a PDF document
+- **Sign PDF** — draw a signature or upload a photo of it, and place it anywhere on a PDF document
 
 ## Tech stack
 

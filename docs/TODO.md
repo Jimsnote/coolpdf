@@ -47,7 +47,7 @@
 - [x] heic-to-pdf（iPhone 照片直转 PDF，heic2any 类解码库 → 实际用 heic-to/csp 1.5.2（libheif 1.22.2，LGPL-3.0，blob Worker 解码零 eval 过 CSP）；复用 jpg-to-pdf 的 orientation/fit 管线，英文版先行）
 - [x] heic-to-pdf 其余 7 语言翻译补全（de/fr/it/es/pt/zh/ja，术语对齐各语言 jpg-to-pdf 既有译法；占位符/meta 长度机器校验通过）
 - [x] sign-pdf（canvas 手绘签名 + pdf-lib 嵌入；SignaturePad 自动裁边 PNG，页面预览上拖拽/缩放摆放，支持 /Rotate 旋转页（显示坐标→内容坐标映射 + 签名图反向预旋转，displayRectToPdf 已 Node 实测 4 种角度）；英文先行）
-- [ ] sign-pdf 其余 7 语言翻译补全（当前英文占位）
+- [ ] sign-pdf 其余 7 语言翻译补全（当前英文占位，含上传签名图片功能的新文案）
 
 ### 第五批 · 大件候选（届时按数据与节奏拍板）
 - [ ] **PDF 表单设计器**（给现有 PDF 叠加 AcroForm 字段：文本/复选/单选/下拉；pdf-lib 原生支持已 PoC 验证，竞品 ilovepdf/smallpdf 均无）。**立项调研见 `docs/FORM-DESIGNER.md`**

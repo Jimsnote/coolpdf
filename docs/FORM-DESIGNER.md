@@ -72,7 +72,7 @@ addFormFieldsToPdf(pdfBytes: Uint8Array, specs: FieldSpec[]): Promise<Uint8Array
 1. **fork API 差异**：cantoo 版外观刷新是 `updateFieldAppearances()`（非上游 `updateAppearances`）——PoC 已确认。
 2. **CJK 默认值**：pdf-lib 生成外观仅 WinAnsi；字段默认值/占位文本含中文会抛错。对策：v1 不设默认值；v2 填写功能需要时嵌自定义字体（NotoSans 子集）或置 `NeedAppearances=true` 让查看器自行生成外观。
 3. **XFA 表单**：老式 XML 表单 pdf-lib 不支持 → 上传时检测并友好报错（字典加专用错误 key）。
-4. **数字签名字段**：pdf-lib 能力外，不做、不承诺（签名需求由 sign-pdf 覆盖手绘图片签名）。
+4. **数字签名字段**：pdf-lib 能力外，不做、不承诺（签名需求由 sign-pdf 覆盖手绘/拍照图片签名）。
 5. **加密 PDF**：走现有 `classifyPdfError` 友好报错管线，无需新逻辑。
 6. **内存**：表单设计只读页渲染 + 矢量字段，无大图驻留，沿用 100MB/50MB 上限即可。
 

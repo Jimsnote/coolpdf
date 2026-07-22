@@ -19,6 +19,7 @@ import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
 import { SignaturePad } from './SignaturePad';
+import { SignatureImageUpload } from './SignatureImageUpload';
 
 interface SignPdfToolProps {
   dict: Dictionary;
@@ -69,6 +70,7 @@ export function SignPdfTool({ dict }: SignPdfToolProps) {
   const [stamps, setStamps] = useState<Stamp[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [signature, setSignature] = useState<{ dataUrl: string; aspect: number } | null>(null);
+  const [signatureTab, setSignatureTab] = useState<'draw' | 'upload'>('draw');
   const [maxSizeBytes, setMaxSizeBytes] = useState(MAX_SIZE_BYTES);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -354,11 +356,42 @@ export function SignPdfTool({ dict }: SignPdfToolProps) {
           <div className="space-y-5">
             <div>
               <p className="mb-2 text-sm font-semibold text-slate-900">{copy.padLabel}</p>
-              <SignaturePad
-                onChange={onSignatureChange}
-                clearLabel={copy.clearPad}
-                hint={copy.padHint}
-              />
+              <div className="mb-3 inline-flex rounded-lg bg-slate-100 p-1">
+                {(['draw', 'upload'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => setSignatureTab(tab)}
+                    className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
+                      signatureTab === tab
+                        ? 'bg-white text-slate-900 shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {tab === 'draw' ? copy.drawTab : copy.uploadTab}
+                  </button>
+                ))}
+              </div>
+              {signatureTab === 'draw' ? (
+                <SignaturePad
+                  onChange={onSignatureChange}
+                  clearLabel={copy.clearPad}
+                  hint={copy.padHint}
+                />
+              ) : (
+                <SignatureImageUpload
+                  onChange={setSignature}
+                  copy={{
+                    choose: copy.uploadChoose,
+                    change: copy.uploadChange,
+                    hint: copy.uploadHint,
+                    removeBg: copy.uploadRemoveBg,
+                    strength: copy.uploadStrength,
+                    empty: copy.uploadEmpty,
+                    error: copy.uploadError,
+                  }}
+                />
+              )}
               <button
                 type="button"
                 onClick={addStamp}

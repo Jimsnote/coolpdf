@@ -676,7 +676,7 @@ export const fr = {
         'Draw your signature, place it anywhere on a PDF, and download the signed document — all in your browser. No uploads, no sign-up, free.',
       heading: 'Sign PDF',
       intro:
-        'Draw your signature with your mouse, trackpad, or finger, place it on any page of your PDF, and download the signed document. Everything happens locally on your device.',
+        'Draw your signature with your mouse, trackpad, or finger — or upload a photo of it — then place it on any page of your PDF and download the signed document. Everything happens locally on your device.',
       button: 'Sign & Download',
       padLabel: 'Your signature',
       padHint: 'Draw your signature here',
@@ -687,22 +687,38 @@ export const fr = {
       prevPage: 'Previous page',
       nextPage: 'Next page',
       stampLabel: 'Signature',
+      drawTab: 'Draw',
+      uploadTab: 'Upload',
+      uploadChoose: 'Choose an image',
+      uploadChange: 'Choose a different image',
+      uploadHint:
+        'A photo or scan of your signature works best — dark ink on plain white paper. We remove the background for you, right in your browser.',
+      uploadRemoveBg: 'Remove the white background',
+      uploadStrength: 'Removal strength',
+      uploadEmpty: 'Nothing left after background removal — try lowering the strength.',
+      uploadError:
+        'Could not read that image. Try a PNG or JPG photo of your signature (HEIC from an iPhone works too).',
       stepsHeading: 'How to sign a PDF',
       steps: [
         'Upload the PDF you want to sign — it is opened locally, never sent to a server.',
-        'Draw your signature in the pad with your mouse, trackpad, or finger, then click "Add to current page".',
+        'Draw your signature in the pad — or switch to Upload to use a photo of it — then click "Add to current page".',
         'Drag the signature to the right spot and resize it with the corner dot. Switch pages to sign in more than one place.',
         'Click "Sign & Download" to get your signed PDF.',
       ],
       privacyHeading: 'Sign contracts without uploading them',
       privacyText:
-        'The documents you sign are usually the most sensitive ones you handle: employment contracts, NDAs, lease agreements, invoices. Most online signing tools make you upload the document — and your signature — to their servers, where both sit in queues and storage you cannot audit. CoolPDF turns the flow around: the document is rendered by your own browser, and the signature you draw never leaves your device either. It exists only in this tab’s memory while you work, is stamped into the PDF locally, and is gone the moment you close the page. No account, no upload, no copy of your signature anywhere but in the document you download.',
+        'The documents you sign are usually the most sensitive ones you handle: employment contracts, NDAs, lease agreements, invoices. Most online signing tools make you upload the document — and your signature — to their servers, where both sit in queues and storage you cannot audit. CoolPDF turns the flow around: the document is rendered by your own browser, and the signature you draw or upload never leaves your device either. It exists only in this tab’s memory while you work, is stamped into the PDF locally, and is gone the moment you close the page. No account, no upload, no copy of your signature anywhere but in the document you download.',
       faqHeading: 'Frequently asked questions',
       faq: [
         {
           question: 'Is a drawn signature legally valid?',
           answer:
             'In many jurisdictions, yes for everyday documents: the US ESIGN Act and the EU’s eIDAS regulation recognize simple electronic signatures for most contracts. Some documents — wills, notarized deeds, certain government forms — require specific formats or qualified signatures. When in doubt, check the requirements of your particular document.',
+        },
+        {
+          question: 'Can I use a photo of my signature instead of drawing?',
+          answer:
+            'Yes. Switch to the Upload tab and choose a photo or scan of your signature — dark ink on plain white paper gives the cleanest result. The white background is removed automatically, right in your browser, so the signature blends into the document. Nothing is uploaded anywhere.',
         },
         {
           question: 'Can I sign in more than one place?',
