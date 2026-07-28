@@ -11,7 +11,7 @@
 - [x] Google Search Console 验证（设置 → 域名属性 → DNS TXT 记录）并提交 sitemap.xml
 - [x] Bing Webmaster Tools 验证并提交 sitemap
 - [ ] 上线后 1 周：检查收录（Search Console「覆盖率」）、确认无抓取错误
-- [ ] 上线后 2-4 周：观察关键词展示数据，记录表现好的语言/工具页
+- [ ] 上线后 2-4 周：观察关键词展示数据，记录表现好的语言/工具页（同时导「国家」维度数据，按 docs/PROJECT.md §6.1 框架评估是否扩新语言）
 - [ ] 上线后 4-6 周：申请 Google AdSense（清单见下）
 - [ ] AdSense 审核通过后：放广告位（工具区下方 + 内容段中部，远离工具按钮）
 
