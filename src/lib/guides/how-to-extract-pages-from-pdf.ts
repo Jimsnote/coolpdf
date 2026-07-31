@@ -37,6 +37,20 @@ export const howToExtractPagesFromPdf: Guide = {
       ],
     },
     {
+      heading: 'Everyday wins: one invoice, one receipt, one page',
+      paragraphs: [
+        'The most common extraction is a single page. Your bookkeeping software exports a 60-page PDF of the month, and all you need is the one invoice on page 38 for a reimbursement claim. Open the file, scroll to the thumbnail, click once, extract — done in seconds, and nobody else’s server ever sees your accounts.',
+        'The same move covers a receipt out of a scanned expenses book, one payslip from a yearly bundle, or the single bank statement an agency asked for. When the need is "just this one page", visual picking beats typing page numbers every time.',
+      ],
+    },
+    {
+      heading: 'Contracts and reports: share a page, not the whole file',
+      paragraphs: [
+        'Sometimes the point is not convenience but restraint. A counterparty asks for proof of signature — send them the signature page, not all eighty clauses. A professor asks for chapter three — extract it instead of the full thesis. An application form asks for "page 1 of your transcript" — that is one click, not a re-scan.',
+        'Because the selection happens on your device, this is also the safe way to share excerpts of sensitive documents: the parts you keep to yourself never go anywhere. That is the whole point of extracting locally.',
+      ],
+    },
+    {
       heading: 'Extract vs remove vs split: pick the right tool',
       paragraphs: [
         'Use **Extract** when you want a few pages out of many. Use [Remove Pages](/remove-pages/) when you want to delete a few pages and keep the rest. And use [Split PDF](/split-pdf/) when you want to break a document into ranges or fixed-size chunks in one go (e.g. every 10 pages).',
@@ -78,8 +92,16 @@ export const howToExtractPagesFromPdf: Guide = {
       a: 'Yes — free forever, with no task limits, no watermarks, and no sign-up. Processing happens on your own device, so there is no server cost to pass on.',
     },
     {
+      q: 'Can I extract just one page?',
+      a: 'Yes — click only that page and extract; you get a one-page PDF losslessly copied from the original. If you already know the exact page number, [Split PDF](/split-pdf/) with a range like `38-38` does the same job.',
+    },
+    {
       q: 'Can I extract pages from different parts of the document?',
       a: 'Yes — click any combination of pages, in any order. The extracted file keeps the pages in their original document order, and you can drag thumbnails to rearrange them first.',
+    },
+    {
+      q: 'Does it work on scanned PDFs?',
+      a: 'Yes. Extraction copies pages at the object level, so scanned pages come out exactly as they went in — same images, same resolution. (If you need the text out of a scan, that requires OCR, which is a different job.)',
     },
     {
       q: 'Does extraction reduce quality?',
