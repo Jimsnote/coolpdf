@@ -6,6 +6,8 @@ import { howToCompressPdf } from './how-to-compress-pdf';
 import { howToConvertJpgToPdf } from './how-to-convert-jpg-to-pdf';
 import { howToConvertPdfToJpg } from './how-to-convert-pdf-to-jpg';
 import { howToConvertPdfToMarkdown } from './how-to-convert-pdf-to-markdown';
+import { howToConvertDocxToMarkdown } from './how-to-convert-docx-to-markdown';
+import { howToConvertXlsxToMarkdown } from './how-to-convert-xlsx-to-markdown';
 import { howToExtractPagesFromPdf } from './how-to-extract-pages-from-pdf';
 import { howToMergePdf } from './how-to-merge-pdf';
 import { howToOrganizePdfPages } from './how-to-organize-pdf-pages';
@@ -35,6 +37,8 @@ export const guides: Guide[] = [
   howToAddWatermarkToPdf,
   howToAddPageNumbersToPdf,
   howToConvertPdfToMarkdown,
+  howToConvertDocxToMarkdown,
+  howToConvertXlsxToMarkdown,
   pdfToolsThatDontUpload,
 ];
 
