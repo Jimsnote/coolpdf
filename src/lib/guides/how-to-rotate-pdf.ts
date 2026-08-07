@@ -45,6 +45,20 @@ export const howToRotatePdf: Guide = {
       ],
     },
     {
+      heading: 'The classic case: scans that came out sideways',
+      paragraphs: [
+        'Nine times out of ten, a page that needs rotating was born on a camera or a scanner: a signed contract photographed in landscape, a form that went through the feeder at an angle, a receipt captured one page too wide. The text is fine — it is just lying on its side.',
+        'Fix the whole batch in one pass with "All pages", or pick out the odd ones with "Selected pages only" — a scan run usually means most pages are fine and one or two fed through rotated. And if the pages started as phone photos, [JPG to PDF](/jpg-to-pdf/) reads each image\u2019s orientation flag and builds them upright from the start, no fix-up pass needed.',
+      ],
+    },
+    {
+      heading: 'Rotate it and keep it rotated: the save trap',
+      paragraphs: [
+        'The most common rotation frustration goes like this: you open the PDF, click the rotate button in your viewer, the page looks right — you close it, and next time it is sideways again. Your click was fine; that button only turns your view, and viewers never write the change back into the file.',
+        'A rotation only survives sharing when it is stored in the document itself. That is what CoolPDF does: the new orientation is written into the page settings following the PDF standard, so the file opens upright in Acrobat, Preview, Chrome, and on phones — for you and for everyone you send it to.',
+      ],
+    },
+    {
       heading: 'Why rotate locally instead of uploading the scan?',
       paragraphs: [
         'Pages that need rotating almost always come from a scanner or a phone camera: signed contracts, ID documents, medical forms, receipts. Those are exactly the files you should think twice about uploading to a stranger\u2019s server just to turn them upright.',
@@ -111,6 +125,10 @@ export const howToRotatePdf: Guide = {
     {
       q: 'What are the limits?',
       a: 'One PDF at a time, up to 100 MB on desktop and 50 MB on mobile. There is no fixed page-count limit, and you can run the tool repeatedly to give different pages different angles.',
+    },
+    {
+      q: 'How do I rotate just one page of a PDF?',
+      a: 'Choose "Selected pages only" under "Apply to" and type the page number — just 7 for page 7. Only that page is turned; everything else stays exactly as it was. You can mix single pages and ranges freely, like 1, 3, 5-8.',
     },
     {
       q: 'Is it safe to rotate confidential documents here?',
