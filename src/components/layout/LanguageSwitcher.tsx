@@ -31,6 +31,9 @@ function logicalPathFromPathname(pathname: string): string {
   return p === '/' ? '' : p;
 }
 
+/** Sections that exist in English only (no locale-prefixed versions). */
+const ENGLISH_ONLY_PREFIXES = ['/guides', '/compare'];
+
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const detailsRef = useRef<HTMLDetailsElement>(null);
@@ -41,6 +44,13 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   }, [pathname]);
 
   const logicalPath = logicalPathFromPathname(pathname);
+
+  // Guides and compare pages exist in English only — there is nothing to
+  // switch to, and locale links generated here would point at 404s (Bing's
+  // site scan surfaced 126 of them).
+  if (ENGLISH_ONLY_PREFIXES.some((p) => logicalPath === p || logicalPath.startsWith(`${p}/`))) {
+    return null;
+  }
 
   return (
     <details ref={detailsRef} className="group relative">

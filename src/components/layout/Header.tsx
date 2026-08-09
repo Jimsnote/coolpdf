@@ -31,7 +31,7 @@ export function Header({ locale, dict }: HeaderProps) {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href={homeHref} className="flex items-center gap-2" aria-label="CoolPDF">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" className="h-8 w-8" />
+          <img src="/logo.svg" alt="CoolPDF" className="h-8 w-8" />
           <span className="text-xl font-bold text-brand-700">CoolPDF</span>
         </Link>
 
