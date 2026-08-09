@@ -242,7 +242,7 @@ export const en = {
       items: [
         'Your files are processed 100% locally in your browser. We never receive, store, or even touch them.',
         'No account, no email address, no personal information — ever.',
-        'We may use Cloudflare Web Analytics, a cookieless, privacy-friendly statistics tool, when it is enabled.',
+        'We use privacy-friendly analytics: cookieless Cloudflare Web Analytics and Microsoft Clarity (session statistics with input masking). Neither can see the files you process.',
         'We may display Google AdSense ads to keep CoolPDF free. If ads are enabled, Google may use cookies for personalized ads, and you can opt out.',
       ],
     },
@@ -262,7 +262,7 @@ export const en = {
       {
         title: '3. Analytics',
         paragraphs: [
-          'When enabled, we use Cloudflare Web Analytics to understand aggregate traffic — for example, which pages are popular and roughly where visitors come from. It is cookieless, does not track individual users, and does not collect personal data. It cannot see the files you process, because neither can we.',
+          'We use two analytics tools. Cloudflare Web Analytics gives us aggregate, cookieless traffic statistics — which pages are popular and roughly where visitors come from — without tracking individuals. Microsoft Clarity provides session statistics and heatmaps (pages visited, clicks, scrolls); it masks input fields by default, and we use it only to understand how the site is used, never file contents. Neither tool can see the files you open or process: those never leave your device, so there is nothing for analytics to observe.',
         ],
       },
       {

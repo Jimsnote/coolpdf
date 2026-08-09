@@ -145,6 +145,7 @@ npx serve out      # 以产物形态本地预览
 | `NEXT_PUBLIC_SITE_URL` | 默认 https://getcoolpdf.com |
 | `NEXT_PUBLIC_GITHUB_URL` | GitHub 仓库地址（当前默认 https://github.com/Jimsnote/coolpdf，页脚/About/llms.txt 引用它） |
 | `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | Cloudflare Web Analytics token（设置后全站注入 beacon） |
+| `NEXT_PUBLIC_CLARITY_ID` | Microsoft Clarity 项目 id（会话统计/热图；生产 id 已内置为默认值，置空可禁用） |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | ca-pub-xxx（设置后 AdBanner 可用，目前未放置广告位） |
 
 ### 4.2 部署（Cloudflare Pages）
@@ -231,7 +232,7 @@ CSP 当前策略：`default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-
 
 红线：不点自己广告、不引导点击、广告位不造成误点。
 
-**统计**：Cloudflare Web Analytics（设 `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`，注意 CSP 放行）+ Search Console/Bing（SEO 数据）+ AdSense 后台（RPM/CTR）。
+**统计**：Microsoft Clarity（会话统计/热图，已默认开启）+ Cloudflare Web Analytics（设 `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`，注意 CSP 放行）+ Search Console/Bing（SEO 数据）+ AdSense 后台（RPM/CTR）。
 
 ---
 

@@ -242,7 +242,7 @@ export const fr = {
       items: [
         'Vos fichiers sont traités à 100 % localement dans votre navigateur. Nous ne les recevons, ne les stockons et ne les touchons même jamais.',
         'Pas de compte, pas d’adresse e-mail, pas d’informations personnelles — jamais.',
-        'Nous pouvons utiliser Cloudflare Web Analytics, un outil de statistiques sans cookie et respectueux de la vie privée, lorsqu’il est activé.',
+        'Nous utilisons des outils de statistiques respectueux de la vie privée : Cloudflare Web Analytics, sans cookie, et Microsoft Clarity (statistiques de session avec masquage des champs de saisie). Aucun des deux ne peut voir les fichiers que vous traitez.',
         'Nous pouvons afficher des publicités Google AdSense pour que CoolPDF reste gratuit. Si la publicité est activée, Google peut utiliser des cookies pour les publicités personnalisées, et vous pouvez vous y opposer.',
       ],
     },
@@ -262,7 +262,7 @@ export const fr = {
       {
         title: '3. Statistiques',
         paragraphs: [
-          'Lorsqu’il est activé, nous utilisons Cloudflare Web Analytics pour comprendre le trafic global — par exemple, quelles pages sont populaires et d’où viennent approximativement les visiteurs. Cet outil fonctionne sans cookie, ne suit pas les utilisateurs individuels et ne collecte aucune donnée personnelle. Il ne peut pas voir les fichiers que vous traitez, car nous ne le pouvons pas non plus.',
+          'Nous utilisons deux outils de statistiques. Cloudflare Web Analytics nous fournit des statistiques de trafic globales et sans cookie — quelles pages sont populaires et d’où viennent approximativement les visiteurs — sans suivre les individus. Microsoft Clarity fournit des statistiques de session et des cartes de chaleur (pages visitées, clics, défilements) ; il masque les champs de saisie par défaut, et nous ne l’utilisons que pour comprendre comment le site est utilisé, jamais pour voir le contenu des fichiers. Aucun de ces deux outils ne peut voir les fichiers que vous ouvrez ou traitez : ceux-ci ne quittent jamais votre appareil, il n’y a donc rien que les statistiques puissent observer.',
         ],
       },
       {

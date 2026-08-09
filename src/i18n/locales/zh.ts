@@ -239,7 +239,7 @@ export const zh = {
       items: [
         '您的文件 100% 在您的浏览器中本地处理。我们从不接收、存储，甚至从不接触它们。',
         '没有账号，没有邮箱地址，没有个人信息——永远如此。',
-        '在启用时，我们可能会使用 Cloudflare Web Analytics——一款无 Cookie、保护隐私的统计工具。',
+        '我们使用保护隐私的分析工具：无 Cookie 的 Cloudflare Web Analytics 和 Microsoft Clarity（带输入掩码的会话统计）。两者都看不到您处理的文件。',
         '我们可能会展示 Google AdSense 广告以维持 CoolPDF 免费。如果启用广告，Google 可能会使用 Cookie 投放个性化广告，您可以选择退出。',
       ],
     },
@@ -259,7 +259,7 @@ export const zh = {
       {
         title: '3. 统计分析',
         paragraphs: [
-          '在启用时，我们使用 Cloudflare Web Analytics 来了解整体流量情况——例如哪些页面受欢迎、访客大致来自哪里。它不使用 Cookie，不追踪单个用户，也不收集个人数据。它看不到您处理的文件，因为连我们自己都看不到。',
+          '我们使用两款分析工具。Cloudflare Web Analytics 提供汇总的、无 Cookie 的流量统计——哪些页面受欢迎、访客大致来自哪里——且不追踪个人。Microsoft Clarity 提供会话统计和热力图（访问的页面、点击、滚动）；它默认遮蔽输入框内容，我们仅用它来了解网站的使用情况，绝不涉及文件内容。这两款工具都看不到您打开或处理的文件：文件绝不离开您的设备，没有任何内容可供分析工具观察。',
         ],
       },
       {

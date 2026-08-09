@@ -242,7 +242,7 @@ export const de = {
       items: [
         'Ihre Dateien werden zu 100 % lokal in Ihrem Browser verarbeitet. Wir erhalten, speichern oder berühren sie niemals.',
         'Kein Konto, keine E-Mail-Adresse, keine persönlichen Daten — niemals.',
-        'Wir können Cloudflare Web Analytics, ein cookieloses, datenschutzfreundliches Statistik-Tool, verwenden, wenn es aktiviert ist.',
+        'Wir verwenden datenschutzfreundliche Analyse-Tools: das cookielose Cloudflare Web Analytics und Microsoft Clarity (Sitzungsstatistiken mit Eingabemaskierung). Keines davon kann die von Ihnen verarbeiteten Dateien sehen.',
         'Wir zeigen möglicherweise Google AdSense-Werbung, um CoolPDF kostenlos zu halten. Falls Werbung aktiviert ist, kann Google Cookies für personalisierte Werbung verwenden, und Sie können widersprechen.',
       ],
     },
@@ -262,7 +262,7 @@ export const de = {
       {
         title: '3. Analyse',
         paragraphs: [
-          'Wenn aktiviert, verwenden wir Cloudflare Web Analytics, um den aggregierten Datenverkehr zu verstehen — zum Beispiel, welche Seiten beliebt sind und woher Besucher ungefähr kommen. Das Tool ist cookielos, verfolgt keine einzelnen Nutzer und erhebt keine personenbezogenen Daten. Es kann die von Ihnen verarbeiteten Dateien nicht sehen, weil wir es auch nicht können.',
+          'Wir verwenden zwei Analyse-Tools. Cloudflare Web Analytics liefert uns aggregierte, cookielose Zugriffsstatistiken — welche Seiten beliebt sind und woher Besucher ungefähr kommen — ohne einzelne Nutzer zu verfolgen. Microsoft Clarity stellt Sitzungsstatistiken und Heatmaps bereit (besuchte Seiten, Klicks, Scrollen); es maskiert Eingabefelder standardmäßig, und wir verwenden es ausschließlich, um zu verstehen, wie die Website genutzt wird, niemals für Dateiinhalte. Keines der beiden Tools kann die Dateien sehen, die Sie öffnen oder verarbeiten: Diese verlassen Ihr Gerät niemals, sodass es für die Analyse-Tools nichts zu beobachten gibt.',
         ],
       },
       {

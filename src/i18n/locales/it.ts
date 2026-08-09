@@ -242,7 +242,7 @@ export const it = {
       items: [
         'I tuoi file vengono elaborati al 100% localmente nel tuo browser. Non li riceviamo, non li archiviamo e non li tocchiamo nemmeno.',
         'Nessun account, nessun indirizzo email, nessuna informazione personale. Mai.',
-        'Possiamo utilizzare Cloudflare Web Analytics, uno strumento di statistiche senza cookie e rispettoso della privacy, quando è attivato.',
+        'Utilizziamo strumenti di statistica rispettosi della privacy: Cloudflare Web Analytics senza cookie e Microsoft Clarity (statistiche di sessione con mascheramento dei campi di input). Nessuno dei due può vedere i file che elabori.',
         'Potremmo mostrare annunci di Google AdSense per mantenere CoolPDF gratuito. Se gli annunci sono attivati, Google può utilizzare cookie per annunci personalizzati, e puoi disattivarli.',
       ],
     },
@@ -262,7 +262,7 @@ export const it = {
       {
         title: '3. Statistiche',
         paragraphs: [
-          'Quando è attivato, utilizziamo Cloudflare Web Analytics per comprendere il traffico aggregato, ad esempio quali pagine sono popolari e da dove provengono approssimativamente i visitatori. Non utilizza cookie, non traccia i singoli utenti e non raccoglie dati personali. Non può vedere i file che elabori, perché non possiamo vederli nemmeno noi.',
+          'Utilizziamo due strumenti di statistica. Cloudflare Web Analytics ci fornisce statistiche aggregate sul traffico senza cookie — quali pagine sono popolari e da dove provengono approssimativamente i visitatori — senza tracciare i singoli utenti. Microsoft Clarity fornisce statistiche di sessione e mappe di calore (pagine visitate, clic, scorrimenti); maschera i campi di input per impostazione predefinita e lo utilizziamo solo per capire come viene utilizzato il sito, mai per i contenuti dei file. Nessuno dei due strumenti può vedere i file che apri o elabori: non lasciano mai il tuo dispositivo, quindi non c’è nulla che gli strumenti di statistica possano osservare.',
         ],
       },
       {

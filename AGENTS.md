@@ -71,7 +71,7 @@ src/
 
 ## 6. 环境变量（均构建期内联，无敏感信息）
 
-`NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_GITHUB_URL`（默认 https://github.com/Jimsnote/coolpdf）/ `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`（Cloudflare 控制台自动注入已开，此变量未用）/ `NEXT_PUBLIC_ADSENSE_CLIENT`（未启用）
+`NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_GITHUB_URL`（默认 https://github.com/Jimsnote/coolpdf）/ `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`（Cloudflare 控制台自动注入已开，此变量未用）/ `NEXT_PUBLIC_CLARITY_ID`（Microsoft Clarity 会话统计，生产 id 内置为默认值，置空禁用）/ `NEXT_PUBLIC_ADSENSE_CLIENT`（未启用）
 
 ## 7. 当前状态与下一步
 
