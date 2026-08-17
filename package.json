@@ -12,7 +12,8 @@
     "build": "next build",
     "postinstall": "node scripts/copy-wasm.mjs",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "@cantoo/pdf-lib": "^2.7.4",
