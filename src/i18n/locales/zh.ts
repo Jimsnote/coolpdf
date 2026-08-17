@@ -417,6 +417,7 @@ export const zh = {
     engineLoading: '正在加载 PDF 引擎…',
     engineLoadingProgress: '正在加载 PDF 引擎…已加载 {loaded} MB，共 {total} MB',
     engineFirstRun: '首次使用需下载约 {size} MB，之后会缓存在您的设备上。',
+    sessionUpload: '本次会话上传的文件数据：{size}',
     errors: {
       onlyPdf: '仅支持 PDF 文件。',
       onlyImages: '仅支持 JPG 和 PNG 图片。',
@@ -443,6 +444,13 @@ export const zh = {
       engineDownload: 'PDF 引擎下载失败（网络错误）。请检查网络后重试——您的文件没有发送到任何地方。',
     },
   },
+  sharedToolFaq: [
+    {
+      question: '有使用次数限制吗？',
+      answer:
+        '没有。所有工具完全免费、不限次数——没有每日上限，没有配额，也无需注册。处理工作由你自己的设备完成，我们没有服务器成本需要分摊。为保证浏览器稳定运行，每个工具设有宽裕的单文件大小限制（根据工具为 50–150 MB），远超日常文档所需。',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: '免费在线合并 PDF - 无需上传 | CoolPDF',

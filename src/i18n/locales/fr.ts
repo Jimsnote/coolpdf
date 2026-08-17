@@ -424,6 +424,7 @@ export const fr = {
     engineLoading: 'Chargement du moteur PDF…',
     engineLoadingProgress: 'Chargement du moteur PDF… {loaded} sur {total} Mo',
     engineFirstRun: 'La première utilisation télécharge environ {size} Mo ; le moteur est ensuite mis en cache sur votre appareil.',
+    sessionUpload: 'Données de fichiers téléversées durant cette session : {size}',
     errors: {
       onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
       onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
@@ -452,6 +453,13 @@ export const fr = {
         'Le moteur PDF n’a pas pu être téléchargé (erreur réseau). Vérifiez votre connexion et réessayez — aucun fichier n’a été envoyé.',
     },
   },
+  sharedToolFaq: [
+    {
+      question: 'Y a-t-il des limites d’utilisation ?',
+      answer:
+        'Non. Tous les outils sont gratuits et illimités — aucun plafond quotidien, aucun quota, aucune inscription. C’est votre appareil qui fait le travail, il n’y a donc aucun coût de serveur à répercuter. Pour garantir la stabilité, chaque outil applique une généreuse limite de taille par fichier (50 à 150 Mo selon l’outil), bien au-delà des besoins du quotidien.',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: 'Fusionner des PDF en ligne gratuit | CoolPDF',

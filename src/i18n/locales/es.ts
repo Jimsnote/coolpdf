@@ -424,6 +424,7 @@ export const es = {
     engineLoading: 'Cargando el motor PDF…',
     engineLoadingProgress: 'Cargando el motor PDF… {loaded} de {total} MB',
     engineFirstRun: 'El primer uso descarga unos {size} MB; después queda en caché en tu dispositivo.',
+    sessionUpload: 'Datos de archivos subidos en esta sesión: {size}',
     errors: {
       onlyPdf: 'Solo se admiten archivos PDF.',
       onlyImages: 'Solo se admiten imágenes JPG y PNG.',
@@ -452,6 +453,13 @@ export const es = {
         'No se pudo descargar el motor PDF (error de red). Comprueba tu conexión e inténtalo de nuevo — ningún archivo se ha enviado.',
     },
   },
+  sharedToolFaq: [
+    {
+      question: '¿Hay límites de uso?',
+      answer:
+        'No. Todas las herramientas son gratuitas e ilimitadas: sin topes diarios, sin cuotas y sin registro. Tu propio dispositivo hace el trabajo, así que no hay costes de servidor que repercutir. Para mantener la estabilidad, cada herramienta tiene un generoso límite de tamaño por archivo (50–150 MB según la herramienta), muy por encima de lo que necesitan los documentos habituales.',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: 'Unir PDF online gratis — Sin subidas ni registro | CoolPDF',

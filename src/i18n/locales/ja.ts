@@ -424,6 +424,7 @@ export const ja = {
     engineLoading: 'PDF エンジンを読み込んでいます…',
     engineLoadingProgress: 'PDF エンジンを読み込んでいます…{total} MB 中 {loaded} MB',
     engineFirstRun: '初回使用時に約 {size} MB がダウンロードされます。以降はデバイスにキャッシュされます。',
+    sessionUpload: 'このセッションでアップロードされたファイルデータ: {size}',
     errors: {
       onlyPdf: 'PDF ファイルのみ対応しています。',
       onlyImages: 'JPG と PNG 画像のみ対応しています。',
@@ -452,6 +453,13 @@ export const ja = {
         'PDF エンジンをダウンロードできませんでした（ネットワークエラー）。接続を確認してもう一度お試しください。ファイルがどこかに送信されたわけではありません。',
     },
   },
+  sharedToolFaq: [
+    {
+      question: '利用回数の制限はありますか？',
+      answer:
+        'ありません。すべてのツールは無料で無制限に利用できます。1日の上限やクォータ、登録は不要です。処理はお使いのデバイス上で行われるため、サーバーコストを転嫁する必要がありません。安定性のため、ツールごとに十分余裕のあるファイルサイズ上限（ツールにより50〜150 MB）を設けていますが、日常の文書には十分すぎる大きさです。',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: 'PDF 結合―アップロード不要の無料ツール | CoolPDF',

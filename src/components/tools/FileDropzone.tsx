@@ -3,6 +3,7 @@
 import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
 import { CloudUpload } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
+import { UploadMeter } from './UploadMeter';
 
 type AcceptedKind = 'pdf' | 'images' | 'docx' | 'excel' | 'heic';
 
@@ -153,6 +154,7 @@ export function FileDropzone({
         accept={copyByKind.acceptAttr}
         onChange={onChange}
       />
+      <UploadMeter label={toolUi.sessionUpload} />
       {error ? (
         <p role="alert" className="mt-3 rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700">
           {error}

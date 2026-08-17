@@ -424,6 +424,7 @@ export const en = {
     engineLoading: 'Loading the PDF engine…',
     engineLoadingProgress: 'Loading the PDF engine… {loaded} of {total} MB',
     engineFirstRun: 'First use downloads about {size} MB; it is cached on your device afterwards.',
+    sessionUpload: 'File data uploaded this session: {size}',
     errors: {
       onlyPdf: 'Only PDF files are supported.',
       onlyImages: 'Only JPG and PNG images are supported.',
@@ -452,6 +453,13 @@ export const en = {
         'The PDF engine could not be downloaded (network error). Please check your connection and try again — no file was sent anywhere.',
     },
   },
+  sharedToolFaq: [
+    {
+      question: 'Are there any usage limits?',
+      answer:
+        'No. Every tool is free with unlimited use — no daily caps, no quotas, and no sign-up. Your own device does the work, so there is no server cost to pass on. To keep your browser stable, each tool has a generous per-file size limit (50–150 MB depending on the tool), far more than everyday documents need.',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: 'Merge PDF Online Free — No Upload, No Sign-Up | CoolPDF',

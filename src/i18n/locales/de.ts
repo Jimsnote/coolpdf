@@ -424,6 +424,7 @@ export const de = {
     engineLoading: 'Die PDF-Engine wird geladen…',
     engineLoadingProgress: 'Die PDF-Engine wird geladen… {loaded} von {total} MB',
     engineFirstRun: 'Beim ersten Mal werden etwa {size} MB heruntergeladen; danach ist sie auf Ihrem Gerät zwischengespeichert.',
+    sessionUpload: 'Hochgeladene Dateidaten in dieser Sitzung: {size}',
     errors: {
       onlyPdf: 'Es werden nur PDF-Dateien unterstützt.',
       onlyImages: 'Es werden nur JPG- und PNG-Bilder unterstützt.',
@@ -452,6 +453,13 @@ export const de = {
         'Die PDF-Engine konnte nicht heruntergeladen werden (Netzwerkfehler). Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut — es wurde keine Datei übertragen.',
     },
   },
+  sharedToolFaq: [
+    {
+      question: 'Gibt es Nutzungslimits?',
+      answer:
+        'Nein. Alle Tools sind kostenlos und unbegrenzt nutzbar — keine Tageslimits, keine Kontingente, keine Anmeldung. Ihr eigenes Gerät erledigt die Arbeit, es fallen also keine Serverkosten an. Für einen stabilen Ablauf hat jedes Tool ein großzügiges Größenlimit pro Datei (je nach Tool 50–150 MB) — weit mehr, als Alltagsdokumente benötigen.',
+    },
+  ],
   toolPages: {
     'merge-pdf': {
       metaTitle: 'PDF zusammenfügen — kostenlos, ohne Upload | CoolPDF',

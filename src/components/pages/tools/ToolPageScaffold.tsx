@@ -5,6 +5,7 @@ import type { Locale } from '@/i18n/config';
 import type { Dictionary } from '@/i18n/locales/en';
 import { getGuideForTool } from '@/lib/guides';
 import { localizedUrl } from '@/lib/seo';
+import { splitLeadSentence } from '@/lib/text';
 import { SITE_NAME } from '@/lib/site';
 import { FactSummary } from '@/components/seo/FactSummary';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -48,6 +49,8 @@ export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaff
   const copy = dict.toolPages[slug];
   // English-only long-form tutorial attached to this tool, if one exists.
   const guide = getGuideForTool(slug);
+  // Tool-specific FAQs plus the site-wide shared ones (e.g. usage limits).
+  const faqItems = [...copy.faq, ...dict.sharedToolFaq];
 
   const webApplicationLd = {
     '@context': 'https://schema.org',
@@ -84,7 +87,7 @@ export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaff
   const faqLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: copy.faq.map((item) => ({
+    mainEntity: faqItems.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -123,18 +126,24 @@ export function ToolPageScaffold({ locale, dict, slug, children }: ToolPageScaff
       <section className="mt-16">
         <h2 className="text-2xl font-bold tracking-tight text-slate-900">{copy.faqHeading}</h2>
         <div className="mt-6 divide-y divide-slate-200 rounded-xl border border-slate-200">
-          {copy.faq.map((item) => (
-            <details key={item.question} className="group px-6 py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
-                {item.question}
-                <ChevronDown
-                  className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
-                  aria-hidden
-                />
-              </summary>
-              <p className="mt-3 leading-relaxed text-slate-700">{item.answer}</p>
-            </details>
-          ))}
+          {faqItems.map((item) => {
+            const [lead, rest] = splitLeadSentence(item.answer);
+            return (
+              <details key={item.question} className="group px-6 py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+                  {item.question}
+                  <ChevronDown
+                    className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
+                    aria-hidden
+                  />
+                </summary>
+                <p className="mt-3 leading-relaxed text-slate-700">
+                  <strong className="font-semibold text-slate-900">{lead}</strong>
+                  {rest ? ` ${rest}` : ''}
+                </p>
+              </details>
+            );
+          })}
         </div>
       </section>
 
