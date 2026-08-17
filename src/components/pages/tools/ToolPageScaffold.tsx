@@ -30,7 +30,8 @@ export type ToolSlug =
   | 'watermark-pdf'
   | 'page-numbers'
   | 'pdf-to-markdown'
-  | 'sign-pdf';
+  | 'sign-pdf'
+  | 'qr-code';
 
 interface ToolPageScaffoldProps {
   locale: Locale;

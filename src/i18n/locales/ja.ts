@@ -95,6 +95,10 @@ export const ja = {
     },
   },
   tools: {
+    'qr-code': {
+      name: 'QRコード生成',
+      description: 'リンクやテキストなどのQRコードをローカルで生成。',
+    },
     'merge-pdf': {
       name: 'PDF 結合',
       description: '複数の PDF をお好みの順序で 1 つのファイルに結合します。',
@@ -1390,6 +1394,64 @@ export const ja = {
           question: 'スキャン PDF についてのメッセージが出るのはなぜ？',
           answer:
             'スキャンは実際のテキストレイヤーを持たないページの写真なので、抽出できるものがありません。先に OCR ソフトウェアで処理してください。スキャンにテキストレイヤーができれば、このツールで変換できます。',
+        },
+      ],
+    },
+    'qr-code': {
+      metaTitle: 'QR Code Generator — Free, Local, No Sign-Up | CoolPDF',
+      metaDescription:
+        'Generate QR codes for links, text, Wi-Fi and more — right in your browser. No uploads, no sign-up, free forever. Download as PNG or SVG.',
+      heading: 'QR Code Generator',
+      intro:
+        'Type or paste any link or text and watch the QR code appear as you type. It is generated entirely on your own device — nothing is sent anywhere.',
+      inputLabel: 'Content',
+      inputPlaceholder: 'https://example.com — or any text…',
+      sizeLabel: 'Size',
+      levelLabel: 'Error correction',
+      levels: {
+        l: 'Low (7%)',
+        m: 'Medium (15%)',
+        q: 'Quartile (25%)',
+        h: 'High (30%)',
+      },
+      downloadPng: 'Download PNG',
+      downloadSvg: 'Download SVG',
+      emptyHint: 'Your QR code will appear here as soon as you start typing.',
+      errorTooLong:
+        'That content is too long for one QR code. Shorten it, or pick a lower error correction level.',
+      privacyNoteInput:
+        'Your text never leaves your browser — the code is generated locally.',
+      stepsHeading: 'How to create a QR code',
+      steps: [
+        'Type or paste a link, some text, Wi-Fi credentials or anything else into the content box.',
+        'The QR code appears instantly as you type — pick a size and an error correction level if you need to.',
+        'Higher error correction keeps the code readable when printed small or slightly damaged; lower correction fits more data.',
+        'Download the code as a crisp PNG image, or as an SVG that scales to any print size.',
+      ],
+      privacyHeading: 'A QR generator that cannot see what you encode',
+      privacyText:
+        'Most QR generators send your text to a server and hand back an image — which means the server sees every Wi-Fi password, private link and phone number people encode. CoolPDF works the other way around: the generator code comes to your browser, and your text never leaves the tab. You can open the network panel while you type and watch — nothing is sent. That makes it safe for credentials, internal URLs and anything else you would rather keep to yourself.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Do the QR codes expire?',
+          answer:
+            'Never. The code is a plain image of your content — there is no account, no redirect service and no expiry date. Once downloaded, it keeps working forever.',
+        },
+        {
+          question: 'Can I use the codes commercially?',
+          answer:
+            'Yes. Everything you generate is yours — use it on packaging, posters, business cards or client work, free of charge and with no attribution required.',
+        },
+        {
+          question: 'Which error correction level should I pick?',
+          answer:
+            'Medium (the default) suits most uses. Pick High when printing small or expecting wear — the code survives up to 30% damage. Pick Low to fit more data into one code.',
+        },
+        {
+          question: 'Is my text uploaded anywhere?',
+          answer:
+            'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
         },
       ],
     },

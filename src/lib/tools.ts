@@ -19,6 +19,7 @@ import {
   LayoutGrid,
   Image,
   ImagePlus,
+  QrCode,
   type LucideIcon,
 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
@@ -58,6 +59,7 @@ export const tools: Tool[] = [
   { slug: 'watermark-pdf', icon: Stamp, i18nKey: 'watermark-pdf', status: 'live' },
   { slug: 'page-numbers', icon: Hash, i18nKey: 'page-numbers', status: 'live' },
   { slug: 'pdf-to-markdown', icon: FileText, i18nKey: 'pdf-to-markdown', status: 'live' },
+  { slug: 'qr-code', icon: QrCode, i18nKey: 'qr-code', status: 'live' },
 ];
 
 /** Live tools, derived from the central registry. */
