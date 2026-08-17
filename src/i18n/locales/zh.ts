@@ -418,6 +418,7 @@ export const zh = {
     engineLoadingProgress: '正在加载 PDF 引擎…已加载 {loaded} MB，共 {total} MB',
     engineFirstRun: '首次使用需下载约 {size} MB，之后会缓存在您的设备上。',
     sessionUpload: '本次会话上传的文件数据：{size}',
+    chainNext: '下一步',
     errors: {
       onlyPdf: '仅支持 PDF 文件。',
       onlyImages: '仅支持 JPG 和 PNG 图片。',

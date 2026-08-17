@@ -9,6 +9,7 @@ import { rotatePdf, type RotationAngle } from '@/lib/pdf/rotate';
 import { getPdfPageCount } from '@/lib/pdf/split';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
@@ -23,6 +24,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob: Blob;
 }
 
 const ANGLES: RotationAngle[] = [90, 180, 270];
@@ -63,7 +65,7 @@ export function RotatePdfTool({ dict }: RotatePdfToolProps) {
         scope === 'selected' ? parsePageRanges(pagesInput, await getPdfPageCount(bytes)) : undefined;
       const output = await rotatePdf(bytes, angle, pageIndices);
       const blob = pdfBlob(output);
-      setResult({ name: 'rotated.pdf', size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: 'rotated.pdf', size: blob.size, url: URL.createObjectURL(blob), blob });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
@@ -194,13 +196,16 @@ export function RotatePdfTool({ dict }: RotatePdfToolProps) {
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            <ChainNext dict={dict} slug="rotate-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

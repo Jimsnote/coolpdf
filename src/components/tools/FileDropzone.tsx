@@ -1,8 +1,9 @@
 'use client';
 
-import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
+import { useEffect, useRef, useState, type ChangeEvent, type DragEvent } from 'react';
 import { CloudUpload } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
+import { takeHandoff } from '@/lib/tool-handoff';
 import { UploadMeter } from './UploadMeter';
 
 type AcceptedKind = 'pdf' | 'images' | 'docx' | 'excel' | 'heic';
@@ -56,6 +57,27 @@ export function FileDropzone({
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toolUi } = dict;
+
+  // 工具链接力接收侧：URL 带 ?from=handoff 时，从 IndexedDB 取出上一个工具的
+  // 结果文件并自动载入（一次性消费），让用户免重新上传。仅 PDF 工具参与。
+  useEffect(() => {
+    if (accept !== 'pdf') return;
+    if (new URLSearchParams(window.location.search).get('from') !== 'handoff') return;
+    let cancelled = false;
+    takeHandoff()
+      .then((entry) => {
+        if (!entry || cancelled) return;
+        onFiles([new File([entry.blob], entry.name, { type: 'application/pdf' })]);
+        window.history.replaceState(null, '', window.location.pathname);
+      })
+      .catch(() => {
+        // IndexedDB 不可用等场景下静默降级为普通上传流程
+      });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 仅在挂载时执行一次
+  }, []);
   const copyByKind = {
     pdf: { drop: toolUi.dropPdfs, only: toolUi.errors.onlyPdf, acceptAttr: '.pdf,application/pdf' },
     images: {

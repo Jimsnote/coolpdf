@@ -32,6 +32,7 @@ import { warmPdfLib } from '@/lib/pdf/pdf-lib';
 import { loadPdfJsDocument, renderThumbnail, type PdfJsDocument } from '@/lib/pdf/pdfjs';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
@@ -74,6 +75,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob: Blob;
 }
 
 const MAX_SIZE_BYTES = 100 * 1024 * 1024;
@@ -417,7 +419,7 @@ export function OrganizePdfTool({ dict, preset = 'organize' }: OrganizePdfToolPr
       const bytes = new Uint8Array(await file.arrayBuffer());
       const output = await organizePdf(bytes, sequence);
       const blob = pdfBlob(output);
-      setResult({ name: outputName, size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: outputName, size: blob.size, url: URL.createObjectURL(blob), blob });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
@@ -576,13 +578,16 @@ export function OrganizePdfTool({ dict, preset = 'organize' }: OrganizePdfToolPr
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            <ChainNext dict={dict} slug="organize-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

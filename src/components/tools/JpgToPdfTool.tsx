@@ -13,6 +13,7 @@ import {
 } from '@/lib/pdf/jpg-to-pdf';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
@@ -30,6 +31,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob: Blob;
 }
 
 const MAX_FILES = 20;
@@ -72,7 +74,7 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
       );
       const bytes = await imagesToPdf(images, orientation, fitMode);
       const blob = pdfBlob(bytes);
-      setResult({ name: 'images.pdf', size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: 'images.pdf', size: blob.size, url: URL.createObjectURL(blob), blob });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
@@ -185,13 +187,16 @@ export function JpgToPdfTool({ dict }: JpgToPdfToolProps) {
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            <ChainNext dict={dict} slug="jpg-to-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

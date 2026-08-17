@@ -11,6 +11,7 @@ import {
 import type { HeavyProgress } from '@/lib/pdf/heavy-worker';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { EngineStatus } from './EngineStatus';
 import { pdfBlob } from './blob';
@@ -24,6 +25,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob: Blob;
 }
 
 const MAX_SIZE_BYTES = 100 * 1024 * 1024;
@@ -86,7 +88,7 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const output = await protectPdf(bytes, password, permissions, setProgress, controller.signal);
       const blob = pdfBlob(output);
-      setResult({ name: 'protected.pdf', size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: 'protected.pdf', size: blob.size, url: URL.createObjectURL(blob), blob });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
     } finally {
@@ -248,13 +250,16 @@ export function ProtectPdfTool({ dict }: ProtectPdfToolProps) {
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            <ChainNext dict={dict} slug="protect-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

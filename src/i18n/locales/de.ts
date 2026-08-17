@@ -425,6 +425,7 @@ export const de = {
     engineLoadingProgress: 'Die PDF-Engine wird geladen… {loaded} von {total} MB',
     engineFirstRun: 'Beim ersten Mal werden etwa {size} MB heruntergeladen; danach ist sie auf Ihrem Gerät zwischengespeichert.',
     sessionUpload: 'Hochgeladene Dateidaten in dieser Sitzung: {size}',
+    chainNext: 'Nächste Schritte',
     errors: {
       onlyPdf: 'Es werden nur PDF-Dateien unterstützt.',
       onlyImages: 'Es werden nur JPG- und PNG-Bilder unterstützt.',

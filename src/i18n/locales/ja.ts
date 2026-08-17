@@ -425,6 +425,7 @@ export const ja = {
     engineLoadingProgress: 'PDF エンジンを読み込んでいます…{total} MB 中 {loaded} MB',
     engineFirstRun: '初回使用時に約 {size} MB がダウンロードされます。以降はデバイスにキャッシュされます。',
     sessionUpload: 'このセッションでアップロードされたファイルデータ: {size}',
+    chainNext: '次のステップ',
     errors: {
       onlyPdf: 'PDF ファイルのみ対応しています。',
       onlyImages: 'JPG と PNG 画像のみ対応しています。',

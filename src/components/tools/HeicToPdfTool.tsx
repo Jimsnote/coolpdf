@@ -15,6 +15,7 @@ import {
 } from '@/lib/pdf/jpg-to-pdf';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
@@ -32,6 +33,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob: Blob;
 }
 
 const MAX_FILES = 20;
@@ -83,7 +85,7 @@ export function HeicToPdfTool({ dict }: HeicToPdfToolProps) {
       }
       const bytes = await imagesToPdf(images, orientation, fitMode);
       const blob = pdfBlob(bytes);
-      setResult({ name: 'photos.pdf', size: blob.size, url: URL.createObjectURL(blob) });
+      setResult({ name: 'photos.pdf', size: blob.size, url: URL.createObjectURL(blob), blob });
     } catch (err) {
       if (err instanceof PdfToolError && err.code === 'heic-decode') {
         setError(copy.decodeError.replace('{name}', err.message));
@@ -207,13 +209,16 @@ export function HeicToPdfTool({ dict }: HeicToPdfToolProps) {
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            <ChainNext dict={dict} slug="heic-to-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

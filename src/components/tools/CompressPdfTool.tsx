@@ -7,6 +7,7 @@ import { compressPdf, type CompressionLevel } from '@/lib/pdf/compress';
 import type { HeavyProgress } from '@/lib/pdf/heavy-worker';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { formatBytes } from './DownloadCard';
 import { EngineStatus } from './EngineStatus';
 import { pdfBlob } from './blob';
@@ -21,6 +22,7 @@ interface Result {
   size: number;
   url: string;
   originalSize: number;
+  blob: Blob;
 }
 
 const LEVELS: CompressionLevel[] = ['extreme', 'recommended', 'light'];
@@ -83,6 +85,7 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
         size: blob.size,
         url: URL.createObjectURL(blob),
         originalSize: file.size,
+        blob,
       });
     } catch (err) {
       setError(toolErrorMessage(err, dict));
@@ -222,7 +225,8 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
       }
       result={
         result ? (
-          <div className="flex flex-col items-start justify-between gap-4 rounded-xl border border-green-200 bg-green-50 p-5 sm:flex-row sm:items-center">
+          <>
+            <div className="flex flex-col items-start justify-between gap-4 rounded-xl border border-green-200 bg-green-50 p-5 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
               <FileCheck2 className="h-8 w-8 shrink-0 text-green-600" aria-hidden />
               <div>
@@ -244,6 +248,8 @@ export function CompressPdfTool({ dict }: CompressPdfToolProps) {
               {ui.download}
             </a>
           </div>
+            <ChainNext dict={dict} slug="compress-pdf" blob={result.blob} fileName={result.name} />
+          </>
         ) : undefined
       }
     />

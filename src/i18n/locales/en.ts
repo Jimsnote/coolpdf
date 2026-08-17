@@ -425,6 +425,7 @@ export const en = {
     engineLoadingProgress: 'Loading the PDF engine… {loaded} of {total} MB',
     engineFirstRun: 'First use downloads about {size} MB; it is cached on your device afterwards.',
     sessionUpload: 'File data uploaded this session: {size}',
+    chainNext: 'Next steps',
     errors: {
       onlyPdf: 'Only PDF files are supported.',
       onlyImages: 'Only JPG and PNG images are supported.',

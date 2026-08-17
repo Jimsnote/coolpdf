@@ -16,6 +16,7 @@ import {
 } from '@/lib/pdf/split';
 import { FileDropzone } from './FileDropzone';
 import { ToolShell } from './ToolShell';
+import { ChainNext } from './ChainNext';
 import { DownloadCard, formatBytes } from './DownloadCard';
 import { pdfBlob } from './blob';
 import { toolErrorMessage } from './tool-error';
@@ -30,6 +31,7 @@ interface Result {
   name: string;
   size: number;
   url: string;
+  blob?: Blob;
 }
 
 const MAX_SIZE_BYTES = 100 * 1024 * 1024;
@@ -79,7 +81,7 @@ export function SplitPdfTool({ dict }: SplitPdfToolProps) {
 
       if (outputs.length === 1) {
         const blob = pdfBlob(outputs[0].bytes);
-        setResult({ name: outputs[0].name, size: blob.size, url: URL.createObjectURL(blob) });
+        setResult({ name: outputs[0].name, size: blob.size, url: URL.createObjectURL(blob), blob });
       } else {
         const zip = new JSZip();
         for (const output of outputs) {
@@ -214,13 +216,16 @@ export function SplitPdfTool({ dict }: SplitPdfToolProps) {
       }
       result={
         result ? (
-          <DownloadCard
-            fileName={result.name}
-            sizeBytes={result.size}
-            url={result.url}
-            title={ui.readyTitle}
-            downloadLabel={ui.download}
-          />
+          <>
+            <DownloadCard
+              fileName={result.name}
+              sizeBytes={result.size}
+              url={result.url}
+              title={ui.readyTitle}
+              downloadLabel={ui.download}
+            />
+            {result.blob ? <ChainNext dict={dict} slug="split-pdf" blob={result.blob} fileName={result.name} /> : null}
+          </>
         ) : undefined
       }
     />

@@ -425,6 +425,7 @@ export const fr = {
     engineLoadingProgress: 'Chargement du moteur PDF… {loaded} sur {total} Mo',
     engineFirstRun: 'La première utilisation télécharge environ {size} Mo ; le moteur est ensuite mis en cache sur votre appareil.',
     sessionUpload: 'Données de fichiers téléversées durant cette session : {size}',
+    chainNext: 'Étapes suivantes',
     errors: {
       onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
       onlyImages: 'Seules les images JPG et PNG sont prises en charge.',
