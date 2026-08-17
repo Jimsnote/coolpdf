@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { isLocale, prefixedLocales } from '@/i18n/config';
 import { SITE_NAME } from '@/lib/site';
 import { AnalyticsScript } from '@/components/layout/AnalyticsScript';
+import { ServiceWorkerRegister } from '@/components/layout/ServiceWorkerRegister';
 import '../../globals.css';
 
 export const dynamicParams = false;
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
     template: `%s`,
   },
   description: 'Free PDF tools that respect your privacy',
+  manifest: '/manifest.webmanifest',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#4f46e5',
 };
 
 /**
@@ -41,6 +47,7 @@ export default async function LocaleRootLayout({
       <body>
         {children}
         <AnalyticsScript />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

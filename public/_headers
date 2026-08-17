@@ -21,3 +21,11 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Service Worker 必须始终 revalidate，否则浏览器拿不到 SW 更新
+/sw.js
+  Cache-Control: no-cache
+
+# manifest 不宜长缓存（图标/名称可能调整）
+/manifest.webmanifest
+  Cache-Control: public, max-age=3600
