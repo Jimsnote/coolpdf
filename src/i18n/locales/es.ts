@@ -1402,113 +1402,113 @@ export const es = {
       ],
     },
     'qr-code': {
-      metaTitle: 'QR Code Generator — Free, Local, No Sign-Up | CoolPDF',
+      metaTitle: 'Generador de códigos QR gratis — Sin registro | CoolPDF',
       metaDescription:
-        'Generate QR codes for links, text, Wi-Fi and more — right in your browser. No uploads, no sign-up, free forever. Download as PNG or SVG.',
-      heading: 'QR Code Generator',
+        'Genera códigos QR para enlaces, texto, Wi-Fi y más, directamente en tu navegador. Sin subidas, sin registro y gratis para siempre. Descarga en PNG o SVG.',
+      heading: 'Generador de códigos QR',
       intro:
-        'Type or paste any link or text and watch the QR code appear as you type. It is generated entirely on your own device — nothing is sent anywhere.',
-      inputLabel: 'Content',
-      inputPlaceholder: 'https://example.com — or any text…',
-      sizeLabel: 'Size',
-      levelLabel: 'Error correction',
+        'Escribe o pega cualquier enlace o texto y verás aparecer el código QR mientras escribes. Se genera por completo en tu propio dispositivo: nada se envía a ningún sitio.',
+      inputLabel: 'Contenido',
+      inputPlaceholder: 'https://example.com — o cualquier texto…',
+      sizeLabel: 'Tamaño',
+      levelLabel: 'Corrección de errores',
       levels: {
-        l: 'Low (7%)',
-        m: 'Medium (15%)',
-        q: 'Quartile (25%)',
-        h: 'High (30%)',
+        l: 'Baja (7 %)',
+        m: 'Media (15 %)',
+        q: 'Cuartil (25 %)',
+        h: 'Alta (30 %)',
       },
-      downloadPng: 'Download PNG',
-      downloadSvg: 'Download SVG',
-      emptyHint: 'Your QR code will appear here as soon as you start typing.',
+      downloadPng: 'Descargar PNG',
+      downloadSvg: 'Descargar SVG',
+      emptyHint: 'Tu código QR aparecerá aquí en cuanto empieces a escribir.',
       errorTooLong:
-        'That content is too long for one QR code. Shorten it, or pick a lower error correction level.',
+        'Ese contenido es demasiado largo para un solo código QR. Acórtalo o elige un nivel de corrección de errores más bajo.',
       privacyNoteInput:
-        'Your text never leaves your browser — the code is generated locally.',
-      stepsHeading: 'How to create a QR code',
+        'Tu texto nunca sale de tu navegador — el código se genera localmente.',
+      stepsHeading: 'Cómo crear un código QR',
       steps: [
-        'Type or paste a link, some text, Wi-Fi credentials or anything else into the content box.',
-        'The QR code appears instantly as you type — pick a size and an error correction level if you need to.',
-        'Higher error correction keeps the code readable when printed small or slightly damaged; lower correction fits more data.',
-        'Download the code as a crisp PNG image, or as an SVG that scales to any print size.',
+        'Escribe o pega un enlace, un texto, credenciales Wi-Fi o cualquier otra cosa en el cuadro de contenido.',
+        'El código QR aparece al instante mientras escribes: elige un tamaño y un nivel de corrección de errores si lo necesitas.',
+        'Una corrección de errores más alta mantiene el código legible al imprimirlo pequeño o ligeramente dañado; una más baja permite incluir más datos.',
+        'Descarga el código como una imagen PNG nítida, o como un SVG que escala a cualquier tamaño de impresión.',
       ],
-      privacyHeading: 'A QR generator that cannot see what you encode',
+      privacyHeading: 'Un generador de QR que no puede ver lo que codificas',
       privacyText:
-        'Most QR generators send your text to a server and hand back an image — which means the server sees every Wi-Fi password, private link and phone number people encode. CoolPDF works the other way around: the generator code comes to your browser, and your text never leaves the tab. You can open the network panel while you type and watch — nothing is sent. That makes it safe for credentials, internal URLs and anything else you would rather keep to yourself.',
-      faqHeading: 'Frequently asked questions',
+        'La mayoría de los generadores de QR envían tu texto a un servidor y te devuelven una imagen, lo que significa que el servidor ve cada contraseña Wi-Fi, enlace privado y número de teléfono que la gente codifica. CoolPDF funciona al revés: el código del generador llega a tu navegador y tu texto nunca sale de la pestaña. Puedes abrir el panel de red mientras escribes y comprobarlo: no se envía nada. Eso lo hace seguro para credenciales, URL internas y cualquier otra cosa que prefieras guardar para ti.',
+      faqHeading: 'Preguntas frecuentes',
       faq: [
         {
-          question: 'Do the QR codes expire?',
+          question: '¿Los códigos QR caducan?',
           answer:
-            'Never. The code is a plain image of your content — there is no account, no redirect service and no expiry date. Once downloaded, it keeps working forever.',
+            'Nunca. El código es una simple imagen de tu contenido: no hay cuenta, ni servicio de redirección ni fecha de caducidad. Una vez descargado, sigue funcionando para siempre.',
         },
         {
-          question: 'Can I use the codes commercially?',
+          question: '¿Puedo usar los códigos con fines comerciales?',
           answer:
-            'Yes. Everything you generate is yours — use it on packaging, posters, business cards or client work, free of charge and with no attribution required.',
+            'Sí. Todo lo que generas es tuyo: úsalo en embalajes, carteles, tarjetas de visita o trabajos para clientes, gratis y sin necesidad de atribución.',
         },
         {
-          question: 'Which error correction level should I pick?',
+          question: '¿Qué nivel de corrección de errores debo elegir?',
           answer:
-            'Medium (the default) suits most uses. Pick High when printing small or expecting wear — the code survives up to 30% damage. Pick Low to fit more data into one code.',
+            'Media (el valor predeterminado) sirve para la mayoría de los usos. Elige Alta si vas a imprimir pequeño o esperas desgaste: el código sobrevive hasta un 30 % de daño. Elige Baja para incluir más datos en un solo código.',
         },
         {
-          question: 'Is my text uploaded anywhere?',
+          question: '¿Mi texto se sube a algún sitio?',
           answer:
-            'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+            'No. El código QR se genera por completo en tu navegador con JavaScript. Puedes desconectarte de internet después de cargar la página: sigue funcionando.',
         },
       ],
     },
     'ocr-pdf': {
-      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaTitle: 'OCR PDF — Haz buscables tus PDF escaneados | CoolPDF',
       metaDescription:
-        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+        'Convierte PDF escaneados en documentos buscables y seleccionables con OCR, todo en tu navegador. Reconocimiento en inglés. Sin subidas, sin registro, gratis.',
       heading: 'OCR PDF',
       intro:
-        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+        'Añade una capa de texto real a los PDF escaneados para poder buscar, seleccionar y copiar el texto. El reconocimiento se ejecuta por completo en tu propio dispositivo: el documento nunca lo abandona.',
       button: 'OCR PDF',
-      dpiLabel: 'Recognition quality',
+      dpiLabel: 'Calidad de reconocimiento',
       dpiOptions: {
-        d150: 'Fast (150 DPI)',
-        d200: 'Standard (200 DPI)',
-        d300: 'Fine print (300 DPI)',
+        d150: 'Rápida (150 DPI)',
+        d200: 'Estándar (200 DPI)',
+        d300: 'Letra pequeña (300 DPI)',
       },
       engineLoading:
-        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
-      processingPages: 'Recognizing page {current} of {total}…',
-      downloadPdf: 'Download searchable PDF',
-      downloadText: 'Download text (.txt)',
-      stepsHeading: 'How to OCR a PDF',
+        'Cargando el motor OCR — el primer uso descarga unos 7 MB y después queda en caché…',
+      processingPages: 'Reconociendo página {current} de {total}…',
+      downloadPdf: 'Descargar PDF buscable',
+      downloadText: 'Descargar texto (.txt)',
+      stepsHeading: 'Cómo aplicar OCR a un PDF',
       steps: [
-        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
-        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
-        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
-        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+        'Añade el PDF escaneado arrastrándolo al área de carga, o haz clic para examinar (hasta 100 MB).',
+        'Elige una calidad de reconocimiento: Estándar (200 DPI) sirve para la mayoría de los documentos; Letra pequeña (300 DPI) ayuda con el texto reducido; Rápida (150 DPI) es la más veloz.',
+        'Haz clic en «OCR PDF». El primer uso descarga el motor de reconocimiento una sola vez; después arranca al instante.',
+        'Descarga el PDF buscable — las mismas páginas, ahora con una capa de texto real — o quédate solo con el texto extraído.',
       ],
-      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyHeading: 'Aplica OCR a escaneos confidenciales sin enviarlos a ningún sitio',
       privacyText:
-        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
-      faqHeading: 'Frequently asked questions',
+        'Los documentos escaneados suelen ser los más sensibles: contratos firmados, historiales médicos, copias de documentos de identidad, cartas antiguas. La mayoría de los servicios OCR online te obligan a subirlos primero. CoolPDF ejecuta el motor de reconocimiento — Tesseract, compilado a WebAssembly — dentro de la pestaña de tu navegador. El documento se lee y se procesa en tu propia máquina, y ni un byte cruza la red. Puedes comprobarlo en el panel de red de tu navegador mientras trabaja. Como no hay ningún servidor haciendo el trabajo, tampoco hay cuota de páginas ni límite diario: tu dispositivo pone el único límite.',
+      faqHeading: 'Preguntas frecuentes',
       faq: [
         {
-          question: 'Which languages can it recognize?',
+          question: '¿Qué idiomas puede reconocer?',
           answer:
-            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+            'Inglés (alfabeto latino) por ahora. Otros idiomas necesitan sus propios archivos de datos de entrenamiento, que no están incluidos en esta versión: el soporte multilingüe está previsto. Los acentos y la puntuación europea habitual se manejan sin problema.',
         },
         {
-          question: 'Will it work on a PDF that already has text?',
+          question: '¿Funciona con un PDF que ya tiene texto?',
           answer:
-            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+            'Está pensado para escaneos e imágenes sin capa de texto. Si tu PDF ya tiene texto seleccionable, no necesitas OCR: la herramienta PDF a Markdown puede extraer el texto directamente.',
         },
         {
-          question: 'Why does the first run take longer?',
+          question: '¿Por qué tarda más el primer uso?',
           answer:
-            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+            'El primer reconocimiento descarga el motor OCR y los datos de idioma (unos 7 MB). Ambos quedan en caché en tu dispositivo, así que los usos siguientes arrancan al instante, incluso sin conexión.',
         },
         {
-          question: 'Are my documents uploaded for OCR?',
+          question: '¿Mis documentos se suben para el OCR?',
           answer:
-            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
+            'No. El reconocimiento se ejecuta por completo en tu navegador, en tu propio procesador. No se envía nada a ningún servidor: el contador de datos subidos de arriba se queda en cero mientras trabaja.',
         },
       ],
     },

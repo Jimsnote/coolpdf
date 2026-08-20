@@ -1402,113 +1402,113 @@ export const ja = {
       ],
     },
     'qr-code': {
-      metaTitle: 'QR Code Generator — Free, Local, No Sign-Up | CoolPDF',
+      metaTitle: 'QRコード生成―無料・ローカル・登録不要 | CoolPDF',
       metaDescription:
-        'Generate QR codes for links, text, Wi-Fi and more — right in your browser. No uploads, no sign-up, free forever. Download as PNG or SVG.',
-      heading: 'QR Code Generator',
+        'リンク、テキスト、Wi-Fi などの QR コードをブラウザ上で即座に生成。アップロード不要・登録不要・永久無料。PNG または SVG でダウンロード。',
+      heading: 'QRコード生成',
       intro:
-        'Type or paste any link or text and watch the QR code appear as you type. It is generated entirely on your own device — nothing is sent anywhere.',
-      inputLabel: 'Content',
-      inputPlaceholder: 'https://example.com — or any text…',
-      sizeLabel: 'Size',
-      levelLabel: 'Error correction',
+        'リンクやテキストを入力または貼り付けると、入力に合わせて QR コードがその場で生成されていきます。生成はすべてお使いのデバイス上で行われ、何もどこにも送信されません。',
+      inputLabel: '内容',
+      inputPlaceholder: 'https://example.com または任意のテキスト…',
+      sizeLabel: 'サイズ',
+      levelLabel: '誤り訂正',
       levels: {
-        l: 'Low (7%)',
-        m: 'Medium (15%)',
-        q: 'Quartile (25%)',
-        h: 'High (30%)',
+        l: '低（7%）',
+        m: '中（15%）',
+        q: 'やや高（25%）',
+        h: '高（30%）',
       },
-      downloadPng: 'Download PNG',
-      downloadSvg: 'Download SVG',
-      emptyHint: 'Your QR code will appear here as soon as you start typing.',
+      downloadPng: 'PNG をダウンロード',
+      downloadSvg: 'SVG をダウンロード',
+      emptyHint: '入力を開始すると、ここに QR コードが表示されます。',
       errorTooLong:
-        'That content is too long for one QR code. Shorten it, or pick a lower error correction level.',
+        '内容が 1 つの QR コードに収まりません。短くするか、誤り訂正レベルを下げてください。',
       privacyNoteInput:
-        'Your text never leaves your browser — the code is generated locally.',
-      stepsHeading: 'How to create a QR code',
+        'テキストはブラウザから離れません。コードはローカルで生成されます。',
+      stepsHeading: 'QR コードの作成方法',
       steps: [
-        'Type or paste a link, some text, Wi-Fi credentials or anything else into the content box.',
-        'The QR code appears instantly as you type — pick a size and an error correction level if you need to.',
-        'Higher error correction keeps the code readable when printed small or slightly damaged; lower correction fits more data.',
-        'Download the code as a crisp PNG image, or as an SVG that scales to any print size.',
+        'リンク、テキスト、Wi-Fi の認証情報など、任意の内容を入力ボックスに入力または貼り付けます。',
+        '入力に合わせて QR コードが即座に表示されます。必要に応じてサイズと誤り訂正レベルを選びます。',
+        '誤り訂正レベルが高いほど、小さく印刷したり多少破損したりしても読み取れます。低いほど多くのデータを収められます。',
+        'くっきりした PNG 画像、またはどんな印刷サイズにも拡大できる SVG でコードをダウンロードします。',
       ],
-      privacyHeading: 'A QR generator that cannot see what you encode',
+      privacyHeading: 'エンコード内容を見ることのできない QR ジェネレーター',
       privacyText:
-        'Most QR generators send your text to a server and hand back an image — which means the server sees every Wi-Fi password, private link and phone number people encode. CoolPDF works the other way around: the generator code comes to your browser, and your text never leaves the tab. You can open the network panel while you type and watch — nothing is sent. That makes it safe for credentials, internal URLs and anything else you would rather keep to yourself.',
-      faqHeading: 'Frequently asked questions',
+        'ほとんどの QR ジェネレーターはテキストをサーバーに送信し、画像を返します。つまり、Wi-Fi のパスワード、非公開リンク、電話番号など、エンコードされた内容がすべてサーバーに見られてしまいます。CoolPDF は逆のやり方です。生成プログラムがブラウザにやってきて、テキストはタブから離れません。入力中にネットワークパネルを開いて確かめてみてください。何も送信されていないことがわかります。だから、認証情報や社内 URL など、人に知られたくない内容にも安心して使えます。',
+      faqHeading: 'よくある質問',
       faq: [
         {
-          question: 'Do the QR codes expire?',
+          question: 'QR コードに有効期限はありますか？',
           answer:
-            'Never. The code is a plain image of your content — there is no account, no redirect service and no expiry date. Once downloaded, it keeps working forever.',
+            'ありません。コードは内容をそのまま映した画像にすぎません。アカウントもリダイレクトサービスも有効期限もありません。ダウンロードすれば、ずっと使い続けられます。',
         },
         {
-          question: 'Can I use the codes commercially?',
+          question: '生成したコードは商用利用できますか？',
           answer:
-            'Yes. Everything you generate is yours — use it on packaging, posters, business cards or client work, free of charge and with no attribution required.',
+            'はい。生成したものはすべてあなたのものです。パッケージ、ポスター、名刺、クライアントワークなどに、無料で、帰属表示なしで使えます。',
         },
         {
-          question: 'Which error correction level should I pick?',
+          question: '誤り訂正レベルはどれを選べばよいですか？',
           answer:
-            'Medium (the default) suits most uses. Pick High when printing small or expecting wear — the code survives up to 30% damage. Pick Low to fit more data into one code.',
+            '「中」（デフォルト）がほとんどの用途に適しています。小さく印刷する場合や摩耗が予想される場合は「高」を選びましょう。最大 30% の損傷にも耐えられます。1 つのコードにより多くのデータを収めたい場合は「低」を選んでください。',
         },
         {
-          question: 'Is my text uploaded anywhere?',
+          question: '入力したテキストはどこかにアップロードされますか？',
           answer:
-            'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+            'いいえ。QR コードは JavaScript により完全にブラウザ内で生成されます。ページの読み込み後にインターネットを切断しても、動き続けます。',
         },
       ],
     },
     'ocr-pdf': {
-      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaTitle: 'OCR PDF―スキャンPDFを検索可能に変換 | CoolPDF',
       metaDescription:
-        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+        'スキャンした PDF を OCR で検索・選択可能な文書に変換。すべてブラウザ内で処理。英語認識に対応。アップロード不要・登録不要・無料。',
       heading: 'OCR PDF',
       intro:
-        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+        'スキャンした PDF に本物のテキストレイヤーを追加し、テキストの検索、選択、コピーを可能にします。認識処理はすべてお使いのデバイス上で行われ、文書がデバイスから離れることはありません。',
       button: 'OCR PDF',
-      dpiLabel: 'Recognition quality',
+      dpiLabel: '認識品質',
       dpiOptions: {
-        d150: 'Fast (150 DPI)',
-        d200: 'Standard (200 DPI)',
-        d300: 'Fine print (300 DPI)',
+        d150: '高速（150 DPI）',
+        d200: '標準（200 DPI）',
+        d300: '高精細（300 DPI）',
       },
       engineLoading:
-        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
-      processingPages: 'Recognizing page {current} of {total}…',
-      downloadPdf: 'Download searchable PDF',
-      downloadText: 'Download text (.txt)',
-      stepsHeading: 'How to OCR a PDF',
+        'OCR エンジンを読み込んでいます。初回は約 7 MB がダウンロードされ、以降はキャッシュされます…',
+      processingPages: '{total} ページ中 {current} ページ目を認識中…',
+      downloadPdf: '検索可能な PDF をダウンロード',
+      downloadText: 'テキスト（.txt）をダウンロード',
+      stepsHeading: 'PDF を OCR する方法',
       steps: [
-        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
-        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
-        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
-        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+        'スキャンした PDF をアップロードエリアにドラッグするか、クリックして選択します（最大 100 MB）。',
+        '認識品質を選びます。「標準（200 DPI）」はほとんどの文書に適し、「高精細（300 DPI）」は小さな文字に有効で、「高速（150 DPI）」は最も速く処理できます。',
+        '「OCR PDF」をクリックします。初回のみ認識エンジンがダウンロードされ、以降は即座に起動します。',
+        '検索可能な PDF（同じページに本物のテキストレイヤーが追加されたもの）をダウンロードするか、抽出されたテキストだけを取得します。',
       ],
-      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyHeading: 'どこにも送信せずに機密スキャンを OCR',
       privacyText:
-        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
-      faqHeading: 'Frequently asked questions',
+        'スキャン文書は、往々にして機密性の高いものです。署名済みの契約書、医療記録、身分証のコピー、古い手紙。ほとんどのオンライン OCR サービスでは、まずそれらをアップロードさせられます。CoolPDF は、認識エンジン（WebAssembly にコンパイルされた Tesseract）をブラウザのタブ内で実行します。文書はお使いのマシン上で読み込まれて処理され、その 1 バイトもネットワークを横断しません。処理中にブラウザのネットワークパネルで確かめられます。作業を担うサーバーがないため、ページ数のクォータも 1 日の上限もありません。制限を決めるのはあなたのデバイスだけです。',
+      faqHeading: 'よくある質問',
       faq: [
         {
-          question: 'Which languages can it recognize?',
+          question: 'どの言語を認識できますか？',
           answer:
-            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+            '現在は英語（ラテンアルファベット）のみです。他の言語にはそれぞれ専用の学習データファイルが必要で、このビルドには含まれていません。多言語対応は計画されています。アクセント記号やヨーロッパ圏の一般的な句読点は問題なく処理されます。',
         },
         {
-          question: 'Will it work on a PDF that already has text?',
+          question: 'すでにテキストがある PDF でも使えますか？',
           answer:
-            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+            'このツールはテキストレイヤーのないスキャンや画像向けです。PDF にすでに選択可能なテキストがある場合、OCR は不要です。「PDF → Markdown 変換」ツールでテキストを直接抽出できます。',
         },
         {
-          question: 'Why does the first run take longer?',
+          question: 'なぜ初回は時間がかかるのですか？',
           answer:
-            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+            '初回の認識では OCR エンジンと言語データ（約 7 MB）がダウンロードされます。どちらも以降はデバイスにキャッシュされるため、2 回目以降はオフラインでも即座に起動します。',
         },
         {
-          question: 'Are my documents uploaded for OCR?',
+          question: 'OCR のために文書はアップロードされますか？',
           answer:
-            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
+            'いいえ。認識は完全にブラウザ内で、お使いのデバイスのプロセッサー上で行われます。どのサーバーにも何も送信されません。上のアップロードデータカウンターは処理中もゼロのままです。',
         },
       ],
     },
