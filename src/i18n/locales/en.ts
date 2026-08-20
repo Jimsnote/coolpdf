@@ -95,6 +95,10 @@ export const en = {
     },
   },
   tools: {
+    'ocr-pdf': {
+      name: 'OCR PDF',
+      description: 'Make scanned PDFs searchable and selectable with on-device OCR.',
+    },
     'qr-code': {
       name: 'QR Code Generator',
       description: 'Create QR codes for links, text and more — generated locally.',
@@ -246,7 +250,7 @@ export const en = {
       items: [
         'Your files are processed 100% locally in your browser. We never receive, store, or even touch them.',
         'No account, no email address, no personal information — ever.',
-        'We use privacy-friendly analytics: cookieless Cloudflare Web Analytics and Microsoft Clarity (session statistics with input masking). Neither can see the files you process.',
+        'We use privacy-friendly analytics: cookieless, aggregate Cloudflare Web Analytics only. It cannot see the files you process.',
         'We may display Google AdSense ads to keep CoolPDF free. If ads are enabled, Google may use cookies for personalized ads, and you can opt out.',
       ],
     },
@@ -266,7 +270,7 @@ export const en = {
       {
         title: '3. Analytics',
         paragraphs: [
-          'We use two analytics tools. Cloudflare Web Analytics gives us aggregate, cookieless traffic statistics — which pages are popular and roughly where visitors come from — without tracking individuals. Microsoft Clarity provides session statistics and heatmaps (pages visited, clicks, scrolls); it masks input fields by default, and we use it only to understand how the site is used, never file contents. Neither tool can see the files you open or process: those never leave your device, so there is nothing for analytics to observe.',
+          'We use a single analytics tool: Cloudflare Web Analytics. It gives us aggregate, cookieless traffic statistics — which pages are popular and roughly where visitors come from — without tracking individuals. It cannot see the files you open or process: those never leave your device, so there is nothing for analytics to observe.',
         ],
       },
       {
@@ -1452,6 +1456,59 @@ export const en = {
           question: 'Is my text uploaded anywhere?',
           answer:
             'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+        },
+      ],
+    },
+    'ocr-pdf': {
+      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaDescription:
+        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+      heading: 'OCR PDF',
+      intro:
+        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+      button: 'OCR PDF',
+      dpiLabel: 'Recognition quality',
+      dpiOptions: {
+        d150: 'Fast (150 DPI)',
+        d200: 'Standard (200 DPI)',
+        d300: 'Fine print (300 DPI)',
+      },
+      engineLoading:
+        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
+      processingPages: 'Recognizing page {current} of {total}…',
+      downloadPdf: 'Download searchable PDF',
+      downloadText: 'Download text (.txt)',
+      stepsHeading: 'How to OCR a PDF',
+      steps: [
+        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
+        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
+        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
+        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+      ],
+      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyText:
+        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which languages can it recognize?',
+          answer:
+            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+        },
+        {
+          question: 'Will it work on a PDF that already has text?',
+          answer:
+            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+        },
+        {
+          question: 'Why does the first run take longer?',
+          answer:
+            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+        },
+        {
+          question: 'Are my documents uploaded for OCR?',
+          answer:
+            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
         },
       ],
     },

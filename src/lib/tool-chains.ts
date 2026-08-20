@@ -20,4 +20,5 @@ export const TOOL_CHAINS: Partial<Record<ToolKey, ToolKey[]>> = {
   'sign-pdf': ['compress-pdf', 'protect-pdf', 'merge-pdf', 'page-numbers'],
   'jpg-to-pdf': ['compress-pdf', 'merge-pdf', 'rotate-pdf', 'protect-pdf'],
   'heic-to-pdf': ['compress-pdf', 'jpg-to-pdf', 'merge-pdf', 'protect-pdf'],
+  'ocr-pdf': ['pdf-to-markdown', 'compress-pdf', 'protect-pdf', 'merge-pdf'],
 };

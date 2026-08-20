@@ -6,7 +6,7 @@
 // at runtime, so nothing needs to stay in sync by hand.
 import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -34,3 +34,33 @@ for (const pkg of packages) {
 
 writeFileSync(join(outDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 console.log('wrote public/wasm/manifest.json');
+
+// ---------------------------------------------------------------------------
+// Tesseract.js 自托管资源（OCR 工具用）→ public/tesseract/
+//
+// 布局依据（tesseract.js v7 源码实测）：
+// - workerPath/langPath/corePath 指向后，worker 直接拼 `${corePath}/tesseract-core-<变体>.wasm.js`；
+//   core 的 .wasm.js 加载器按 worker 脚本所在目录解析同名 .wasm —— 所以全部文件平铺同目录。
+// - langPath 直接拼接 `${langPath}/eng.traineddata.gz`（自定义 langPath 时不再附加 lang/版本段）。
+// - lstmOnly 模式用 4.0.0_best_int 语言数据（更小更准）。
+// ---------------------------------------------------------------------------
+const tesseractOut = join(root, 'public', 'tesseract');
+mkdirSync(tesseractOut, { recursive: true });
+
+const tesseractPkg = dirname(require.resolve('tesseract.js/package.json'));
+const corePkg = dirname(require.resolve('tesseract.js-core/package.json'));
+const langPkg = dirname(require.resolve('@tesseract.js-data/eng/package.json'));
+
+const tesseractFiles = [
+  join(tesseractPkg, 'dist', 'worker.min.js'),
+  // LSTM-only 的三种 core 变体（worker 运行时按 SIMD 支持自动选择）
+  ...['simd-lstm', 'relaxedsimd-lstm', 'lstm'].flatMap((variant) => [
+    join(corePkg, `tesseract-core-${variant}.wasm.js`),
+    join(corePkg, `tesseract-core-${variant}.wasm`),
+  ]),
+  join(langPkg, '4.0.0_best_int', 'eng.traineddata.gz'),
+];
+for (const src of tesseractFiles) {
+  copyFileSync(src, join(tesseractOut, basename(src)));
+}
+console.log(`copied ${tesseractFiles.length} tesseract assets -> public/tesseract/`);

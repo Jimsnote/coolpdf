@@ -31,7 +31,8 @@ export type ToolSlug =
   | 'page-numbers'
   | 'pdf-to-markdown'
   | 'sign-pdf'
-  | 'qr-code';
+  | 'qr-code'
+  | 'ocr-pdf';
 
 interface ToolPageScaffoldProps {
   locale: Locale;

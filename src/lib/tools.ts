@@ -20,6 +20,7 @@ import {
   Image,
   ImagePlus,
   QrCode,
+  ScanText,
   type LucideIcon,
 } from 'lucide-react';
 import type { Dictionary } from '@/i18n/locales/en';
@@ -60,6 +61,7 @@ export const tools: Tool[] = [
   { slug: 'page-numbers', icon: Hash, i18nKey: 'page-numbers', status: 'live' },
   { slug: 'pdf-to-markdown', icon: FileText, i18nKey: 'pdf-to-markdown', status: 'live' },
   { slug: 'qr-code', icon: QrCode, i18nKey: 'qr-code', status: 'live' },
+  { slug: 'ocr-pdf', icon: ScanText, i18nKey: 'ocr-pdf', status: 'live' },
 ];
 
 /** Live tools, derived from the central registry. */

@@ -52,10 +52,10 @@
 ### 第五批 · 大件候选（届时按数据与节奏拍板）
 - [ ] **PDF 表单设计器**（给现有 PDF 叠加 AcroForm 字段：文本/复选/单选/下拉；pdf-lib 原生支持已 PoC 验证，竞品 ilovepdf/smallpdf 均无）。**立项调研见 `docs/FORM-DESIGNER.md`**
 - [ ] 证件照/护照照排版（Konva 画布 + 300DPI；"passport photo" 词量极大；可参考 C:\home\icreate\ipdftoo 的 IDPhotoEditor 实现思路）
-- [ ] OCR PDF（tesseract.js WASM；可打通"扫描件 → Markdown"独家链路）
+- [x] OCR PDF（tesseract.js WASM；可打通"扫描件 → Markdown"独家链路）—— 2026-08 完成：自托管 /tesseract/ 资源（worker+core wasm×3+eng best_int），逐页渲染识别，输出可搜索 PDF + 纯文本，已入工具链推荐；英文先行，多语言为后续差异化
 
 ### 暂缓
-- [~] Service Worker 全站离线缓存（SEO 零收益 + 工程风险：17MB wasm 预缓存/版本失效/旧内容过期；FAQ 现有措辞够用，实现后再改文案）
+- [x] Service Worker 全站离线缓存（2026-08 完成：public/sw.js，未做全量预缓存所以规避了 17MB wasm/版本失效风险——hashed 静态资源 cache-first、页面 network-first 离线回退、/wasm/ 仍归 worker 的 Cache Storage；FAQ 措辞已同步"离线可用"）
 
 ## 三、已知小项（不紧急，择机处理）
 

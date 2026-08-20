@@ -92,6 +92,10 @@ export const zh = {
     },
   },
   tools: {
+    'ocr-pdf': {
+      name: 'OCR 文字识别',
+      description: '用本地 OCR 让扫描件 PDF 可搜索、可选择。',
+    },
     'qr-code': {
       name: '二维码生成器',
       description: '为链接、文本等生成二维码——全部在本地生成。',
@@ -243,7 +247,7 @@ export const zh = {
       items: [
         '您的文件 100% 在您的浏览器中本地处理。我们从不接收、存储，甚至从不接触它们。',
         '没有账号，没有邮箱地址，没有个人信息——永远如此。',
-        '我们使用保护隐私的分析工具：无 Cookie 的 Cloudflare Web Analytics 和 Microsoft Clarity（带输入掩码的会话统计）。两者都看不到您处理的文件。',
+        '我们仅使用一款保护隐私的分析工具：无 Cookie、只提供汇总数据的 Cloudflare Web Analytics。它看不到您处理的文件。',
         '我们可能会展示 Google AdSense 广告以维持 CoolPDF 免费。如果启用广告，Google 可能会使用 Cookie 投放个性化广告，您可以选择退出。',
       ],
     },
@@ -263,7 +267,7 @@ export const zh = {
       {
         title: '3. 统计分析',
         paragraphs: [
-          '我们使用两款分析工具。Cloudflare Web Analytics 提供汇总的、无 Cookie 的流量统计——哪些页面受欢迎、访客大致来自哪里——且不追踪个人。Microsoft Clarity 提供会话统计和热力图（访问的页面、点击、滚动）；它默认遮蔽输入框内容，我们仅用它来了解网站的使用情况，绝不涉及文件内容。这两款工具都看不到您打开或处理的文件：文件绝不离开您的设备，没有任何内容可供分析工具观察。',
+          '我们只使用一款分析工具：Cloudflare Web Analytics。它提供汇总的、无 Cookie 的流量统计——哪些页面受欢迎、访客大致来自哪里——且不追踪个人。它看不到您打开或处理的文件：文件绝不离开您的设备，没有任何内容可供分析工具观察。',
         ],
       },
       {
@@ -1429,6 +1433,59 @@ export const zh = {
           question: 'Is my text uploaded anywhere?',
           answer:
             'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+        },
+      ],
+    },
+    'ocr-pdf': {
+      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaDescription:
+        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+      heading: 'OCR PDF',
+      intro:
+        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+      button: 'OCR PDF',
+      dpiLabel: 'Recognition quality',
+      dpiOptions: {
+        d150: 'Fast (150 DPI)',
+        d200: 'Standard (200 DPI)',
+        d300: 'Fine print (300 DPI)',
+      },
+      engineLoading:
+        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
+      processingPages: 'Recognizing page {current} of {total}…',
+      downloadPdf: 'Download searchable PDF',
+      downloadText: 'Download text (.txt)',
+      stepsHeading: 'How to OCR a PDF',
+      steps: [
+        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
+        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
+        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
+        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+      ],
+      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyText:
+        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which languages can it recognize?',
+          answer:
+            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+        },
+        {
+          question: 'Will it work on a PDF that already has text?',
+          answer:
+            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+        },
+        {
+          question: 'Why does the first run take longer?',
+          answer:
+            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+        },
+        {
+          question: 'Are my documents uploaded for OCR?',
+          answer:
+            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
         },
       ],
     },

@@ -8,7 +8,7 @@
 
 ## 1. 项目一句话
 
-CoolPDF 是面向海外用户的**纯浏览器端 PDF 工具站**（类 ilovepdf.com），**零后端**：全部 12 个工具的处理都在浏览器（JS/WASM/Web Worker）完成。核心卖点三支柱：**No Uploads（文件永不离开设备）/ No Sign-Up / Free Forever**。变现目标 Google AdSense（未接入，接入清单见 `docs/TODO.md`）。
+CoolPDF 是面向海外用户的**纯浏览器端 PDF 工具站**（类 ilovepdf.com），**零后端**：全部 22 个工具的处理都在浏览器（JS/WASM/Web Worker）完成。核心卖点三支柱：**No Uploads（文件永不离开设备）/ No Sign-Up / Free Forever**。变现目标 Google AdSense（未接入，接入清单见 `docs/TODO.md`）。
 
 - **线上**：https://getcoolpdf.com（Cloudflare Workers Static Assets，www 已 301 到主域）
 - **仓库**：https://github.com/Jimsnote/coolpdf（Public，**AGPL-3.0**——因压缩用 Ghostscript WASM）
@@ -20,7 +20,8 @@ CoolPDF 是面向海外用户的**纯浏览器端 PDF 工具站**（类 ilovepdf
 - Node 22（`.nvmrc` + `engines: >=20 <23`，勿升级换大版本）
 - 8 语言 i18n：**en 在根路径（无前缀），de/fr/it/es/pt/zh/ja 在 `[locale]` 前缀下**；route groups 双根布局 `src/app/(en)/` 与 `src/app/(i18n)/[locale]/`（各带 `<html lang>`）
 - 核心库：`@cantoo/pdf-lib`（页面对象操作，**必须经 `src/lib/pdf/pdf-lib.ts` 的 `getPdfLib()` 动态 import，禁止静态 import 进首屏**）、`pdfjs-dist` v6（渲染/文本提取，懒加载经 `src/lib/pdf/pdfjs.ts`）、`@jspawn/ghostscript-wasm` + `@jspawn/qpdf-wasm`（Worker 内）、`heic-to/csp`（HEIC 解码，**LGPL-3.0**，libheif wasm 内嵌、blob URL 起 Worker，零 eval 过 CSP，懒加载）、jszip、@dnd-kit
-- 部署：`wrangler.jsonc`（assets → ./out）+ Deploy command `npx wrangler deploy`；`public/_headers`（CSP）；`scripts/copy-wasm.mjs`（postinstall+prebuild 生成 `public/wasm/` 与 manifest.json，该目录 gitignore）
+- 部署：`wrangler.jsonc`（assets → ./out）+ Deploy command `npx wrangler deploy`；`public/_headers`（CSP）；`scripts/copy-wasm.mjs`（postinstall+prebuild 生成 `public/wasm/`（含 manifest.json）与 `public/tesseract/`（OCR 引擎/语言包），两目录均 gitignore）
+- PWA：`public/sw.js`（Service Worker，访问过的页面与静态资源离线可用）+ `public/manifest.webmanifest` + `src/components/layout/ServiceWorkerRegister.tsx`（仅生产注册）
 
 ## 3. 血泪教训（改动相关代码前必读）
 
@@ -71,10 +72,12 @@ src/
 
 ## 6. 环境变量（均构建期内联，无敏感信息）
 
-`NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_GITHUB_URL`（默认 https://github.com/Jimsnote/coolpdf）/ `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`（Cloudflare 控制台自动注入已开，此变量未用）/ `NEXT_PUBLIC_CLARITY_ID`（Microsoft Clarity 会话统计，生产 id 内置为默认值，置空禁用）/ `NEXT_PUBLIC_ADSENSE_CLIENT`（未启用）
+`NEXT_PUBLIC_SITE_URL` / `NEXT_PUBLIC_GITHUB_URL`（默认 https://github.com/Jimsnote/coolpdf）/ `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`（Cloudflare 控制台自动注入已开，此变量未用）/ `NEXT_PUBLIC_ADSENSE_CLIENT`（未启用，AdSense 审核通过后配置）
+
+> 2026-08：Microsoft Clarity 已移除（代码、CSP、隐私文案同步清理），站点只保留 CF 无 Cookie 汇总统计，走"零行为追踪"叙事。
 
 ## 7. 当前状态与下一步
 
-- 已完成：M1-M4 工具全量（现 20 个，8 语言齐全）+ SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过
-- 进行中/待办：`docs/TODO.md`（Search Console 提交 → 养收录 → AdSense；二期：Word/Excel→Markdown、Service Worker 离线、证件照排版）
+- 已完成：M1-M4 工具全量（现 22 个，8 语言齐全）+ SEO/GEO 基建；三路对抗审查 + 两批修复闭环；上线；www 统一；压缩/保护/解锁生产实测通过；siritools 对标批次①-④（上传计数器、FAQ 首句加粗、工具链推荐、PWA、QR 码、OCR）
+- 进行中/待办：`docs/TODO.md`（Search Console 提交 → 养收录 → AdSense；二期：Word/Excel→Markdown、证件照排版；OCR 多语言扩展）
 - 已知限制：文字水印 canvas 路径、EXIF 重编码路径未经 Node 测试（浏览器已人工验收）；qpdf AES-256 下 accessibility 权限不生效（规范行为，FAQ 已说明）

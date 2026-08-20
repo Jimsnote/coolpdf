@@ -95,6 +95,10 @@ export const es = {
     },
   },
   tools: {
+    'ocr-pdf': {
+      name: 'OCR PDF',
+      description: 'Haz que tus PDF escaneados sean buscables con OCR, en tu propio dispositivo.',
+    },
     'qr-code': {
       name: 'Generador de códigos QR',
       description: 'Crea códigos QR para enlaces, texto y más, generados localmente.',
@@ -246,7 +250,7 @@ export const es = {
       items: [
         'Tus archivos se procesan 100% localmente en tu navegador. Nunca los recibimos, almacenamos ni siquiera tocamos.',
         'Sin cuenta, sin correo electrónico, sin datos personales. Nunca.',
-        'Usamos herramientas de analítica respetuosas con la privacidad: Cloudflare Web Analytics, que no usa cookies, y Microsoft Clarity (estadísticas de sesión con enmascaramiento de campos de entrada). Ninguna de las dos puede ver los archivos que procesas.',
+        'Usamos analítica respetuosa con la privacidad: solo Cloudflare Web Analytics, sin cookies y con datos agregados. No puede ver los archivos que procesas.',
         'Es posible que mostremos anuncios de Google AdSense para mantener CoolPDF gratuito. Si los anuncios están activados, Google puede usar cookies para anuncios personalizados, y puedes desactivarlos.',
       ],
     },
@@ -266,7 +270,7 @@ export const es = {
       {
         title: '3. Analítica',
         paragraphs: [
-          'Usamos dos herramientas de analítica. Cloudflare Web Analytics nos ofrece estadísticas de tráfico agregadas y sin cookies —qué páginas son populares y de dónde proceden aproximadamente los visitantes— sin rastrear a usuarios individuales. Microsoft Clarity proporciona estadísticas de sesión y mapas de calor (páginas visitadas, clics y desplazamientos); enmascara los campos de entrada de forma predeterminada y lo usamos únicamente para entender cómo se utiliza el sitio, nunca el contenido de los archivos. Ninguna de las dos herramientas puede ver los archivos que abres o procesas: esos nunca salen de tu dispositivo, así que no hay nada que la analítica pueda observar.',
+          'Usamos una única herramienta de analítica: Cloudflare Web Analytics. Nos ofrece estadísticas de tráfico agregadas y sin cookies —qué páginas son populares y de dónde proceden aproximadamente los visitantes— sin rastrear a usuarios individuales. No puede ver los archivos que abres o procesas: esos nunca salen de tu dispositivo, así que no hay nada que la analítica pueda observar.',
         ],
       },
       {
@@ -1452,6 +1456,59 @@ export const es = {
           question: 'Is my text uploaded anywhere?',
           answer:
             'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+        },
+      ],
+    },
+    'ocr-pdf': {
+      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaDescription:
+        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+      heading: 'OCR PDF',
+      intro:
+        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+      button: 'OCR PDF',
+      dpiLabel: 'Recognition quality',
+      dpiOptions: {
+        d150: 'Fast (150 DPI)',
+        d200: 'Standard (200 DPI)',
+        d300: 'Fine print (300 DPI)',
+      },
+      engineLoading:
+        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
+      processingPages: 'Recognizing page {current} of {total}…',
+      downloadPdf: 'Download searchable PDF',
+      downloadText: 'Download text (.txt)',
+      stepsHeading: 'How to OCR a PDF',
+      steps: [
+        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
+        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
+        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
+        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+      ],
+      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyText:
+        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which languages can it recognize?',
+          answer:
+            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+        },
+        {
+          question: 'Will it work on a PDF that already has text?',
+          answer:
+            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+        },
+        {
+          question: 'Why does the first run take longer?',
+          answer:
+            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+        },
+        {
+          question: 'Are my documents uploaded for OCR?',
+          answer:
+            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
         },
       ],
     },

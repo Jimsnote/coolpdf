@@ -95,6 +95,10 @@ export const de = {
     },
   },
   tools: {
+    'ocr-pdf': {
+      name: 'OCR PDF',
+      description: 'Machen Sie gescannte PDFs durchsuchbar — OCR direkt auf Ihrem Gerät.',
+    },
     'qr-code': {
       name: 'QR-Code-Generator',
       description: 'QR-Codes für Links, Text und mehr erstellen — lokal generiert.',
@@ -246,7 +250,7 @@ export const de = {
       items: [
         'Ihre Dateien werden zu 100 % lokal in Ihrem Browser verarbeitet. Wir erhalten, speichern oder berühren sie niemals.',
         'Kein Konto, keine E-Mail-Adresse, keine persönlichen Daten — niemals.',
-        'Wir verwenden datenschutzfreundliche Analyse-Tools: das cookielose Cloudflare Web Analytics und Microsoft Clarity (Sitzungsstatistiken mit Eingabemaskierung). Keines davon kann die von Ihnen verarbeiteten Dateien sehen.',
+        'Wir verwenden datenschutzfreundliche Analysen: ausschließlich das cookielose, aggregierte Cloudflare Web Analytics. Es kann die von Ihnen verarbeiteten Dateien nicht sehen.',
         'Wir zeigen möglicherweise Google AdSense-Werbung, um CoolPDF kostenlos zu halten. Falls Werbung aktiviert ist, kann Google Cookies für personalisierte Werbung verwenden, und Sie können widersprechen.',
       ],
     },
@@ -266,7 +270,7 @@ export const de = {
       {
         title: '3. Analyse',
         paragraphs: [
-          'Wir verwenden zwei Analyse-Tools. Cloudflare Web Analytics liefert uns aggregierte, cookielose Zugriffsstatistiken — welche Seiten beliebt sind und woher Besucher ungefähr kommen — ohne einzelne Nutzer zu verfolgen. Microsoft Clarity stellt Sitzungsstatistiken und Heatmaps bereit (besuchte Seiten, Klicks, Scrollen); es maskiert Eingabefelder standardmäßig, und wir verwenden es ausschließlich, um zu verstehen, wie die Website genutzt wird, niemals für Dateiinhalte. Keines der beiden Tools kann die Dateien sehen, die Sie öffnen oder verarbeiten: Diese verlassen Ihr Gerät niemals, sodass es für die Analyse-Tools nichts zu beobachten gibt.',
+          'Wir verwenden ein einziges Analyse-Tool: Cloudflare Web Analytics. Es liefert uns aggregierte, cookielose Zugriffsstatistiken — welche Seiten beliebt sind und woher Besucher ungefähr kommen — ohne einzelne Nutzer zu verfolgen. Es kann die Dateien, die Sie öffnen oder verarbeiten, nicht sehen: Diese verlassen Ihr Gerät niemals, sodass es für die Analyse nichts zu beobachten gibt.',
         ],
       },
       {
@@ -1453,6 +1457,59 @@ export const de = {
           question: 'Is my text uploaded anywhere?',
           answer:
             'No. The QR code is generated entirely in your browser with JavaScript. You can disconnect from the internet after the page loads — it keeps working.',
+        },
+      ],
+    },
+    'ocr-pdf': {
+      metaTitle: 'OCR PDF — Make Scanned PDFs Searchable, Locally | CoolPDF',
+      metaDescription:
+        'Turn scanned PDFs into searchable, selectable documents with OCR — entirely in your browser. English recognition. No uploads, no sign-up, free.',
+      heading: 'OCR PDF',
+      intro:
+        'Add a real text layer to scanned PDFs so you can search, select and copy the text. Recognition runs entirely on your own device — the document never leaves it.',
+      button: 'OCR PDF',
+      dpiLabel: 'Recognition quality',
+      dpiOptions: {
+        d150: 'Fast (150 DPI)',
+        d200: 'Standard (200 DPI)',
+        d300: 'Fine print (300 DPI)',
+      },
+      engineLoading:
+        'Loading the OCR engine — the first run downloads about 7 MB and is cached afterwards…',
+      processingPages: 'Recognizing page {current} of {total}…',
+      downloadPdf: 'Download searchable PDF',
+      downloadText: 'Download text (.txt)',
+      stepsHeading: 'How to OCR a PDF',
+      steps: [
+        'Add the scanned PDF by dragging it onto the upload area, or click to browse (up to 100 MB).',
+        'Pick a recognition quality: Standard (200 DPI) suits most documents; Fine print (300 DPI) helps with small text; Fast (150 DPI) is quickest.',
+        'Click "OCR PDF". The first run downloads the recognition engine once; afterwards it starts instantly.',
+        'Download the searchable PDF — same pages, now with a real text layer — or grab just the extracted text.',
+      ],
+      privacyHeading: 'OCR confidential scans without sending them anywhere',
+      privacyText:
+        'Scanned documents are often the sensitive kind: signed contracts, medical records, ID copies, old letters. Most online OCR services make you upload them first. CoolPDF runs the recognition engine — Tesseract, compiled to WebAssembly — inside your browser tab instead. The document is read and processed on your own machine, and no byte of it crosses the network. You can verify that in your browser’s network panel while it works. Because there is no server doing the work, there is also no page quota and no daily cap: your device sets the only limit.',
+      faqHeading: 'Frequently asked questions',
+      faq: [
+        {
+          question: 'Which languages can it recognize?',
+          answer:
+            'English (Latin alphabet) for now. Other languages need their own trained data files, which are not included in this build — multi-language support is planned. Accents and common European punctuation are handled fine.',
+        },
+        {
+          question: 'Will it work on a PDF that already has text?',
+          answer:
+            'It is meant for scans and images without a text layer. If your PDF already has selectable text, you do not need OCR — the PDF to Markdown tool can extract the text directly.',
+        },
+        {
+          question: 'Why does the first run take longer?',
+          answer:
+            'The first recognition downloads the OCR engine and language data (about 7 MB). Both are cached on your device afterwards, so later runs start instantly — even offline.',
+        },
+        {
+          question: 'Are my documents uploaded for OCR?',
+          answer:
+            'No. Recognition runs entirely in your browser on your own processor. Nothing is sent to any server — the uploaded-data counter above stays at zero while it works.',
         },
       ],
     },

@@ -11,8 +11,9 @@ import { formatBytes } from './DownloadCard';
  * 由于所有文件处理都在浏览器内完成（CSP connect-src 'self' blob: 强制），
  * 这个计数器应该永远是 0 B——它把"零上传"从口号变成用户可验证的证据。
  *
- * 分析埋点域名（Clarity / Cloudflare Web Analytics）被排除在统计之外：
- * 它们只携带页面交互数据，不携带文件内容，而本计数器度量的是"文件数据外发"。
+ * 分析埋点域名被排除在统计之外：它们只携带页面浏览数据，不携带文件内容，
+ * 而本计数器度量的是"文件数据外发"。（Clarity 已移除；cloudflareinsights
+ * 为 CF 无 Cookie 汇总统计。保留 clarity.ms 是防御性的——万一将来重新启用。）
  */
 
 const ANALYTICS_HOSTS = ['clarity.ms', 'cloudflareinsights.com'];

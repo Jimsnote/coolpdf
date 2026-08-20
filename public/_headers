@@ -8,16 +8,12 @@
 #   connect-src 'self', which stays strict.
 # - static.cloudflareinsights.com / cloudflareinsights.com are allowed because
 #   Cloudflare Web Analytics (automatic beacon injection) is enabled on the zone.
-# - *.clarity.ms is allowed for Microsoft Clarity (session statistics); the
-#   tag loader on www.clarity.ms pulls the full library from scripts.clarity.ms.
-#   Note the privacy invariant still holds: user files are never sent through
-#   fetch/XHR at all, so widening connect-src for analytics beacons cannot
-#   exfiltrate document bytes.
+#   No other analytics: Microsoft Clarity was removed — no session recording.
 # - Enabling Google AdSense later will need Google's official host list
 #   (pagead2.googlesyndication.com etc.) added to script-src, frame-src,
 #   img-src and connect-src. Make that change when ads are switched on.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com https://*.clarity.ms; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' blob: https://cloudflareinsights.com https://*.clarity.ms; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' blob: https://cloudflareinsights.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
